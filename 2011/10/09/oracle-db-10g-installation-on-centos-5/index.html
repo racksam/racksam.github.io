@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>CentOS 5.7 完美安装 Oracle 10g &middot; Racksam</title>
+    <meta name="generator" content="Hugo 0.24" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Rack Sam">
+    
+      <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
+    
+    
+    <link rel="canonical" href="https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/"/>
+    <link rel="icon" href="https://racksam.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://racksam.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://racksam.github.io/css/style.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://racksam.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="CentOS 5.7 完美安装 Oracle 10g" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/" />
+
+
+
+<meta property="article:published_time" content="2011-10-09T18:53:24&#43;00:00"/>
+<meta property="article:modified_time" content="2011-10-09T18:53:24&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="CentOS 5.7 完美安装 Oracle 10g">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="dateModified" content="2011-10-09T18:53:24&#43;00:00" />
+<meta itemprop="wordCount" content="1958">
+
+
+
+<meta itemprop="keywords" content="dd-wrt,dsp,freeradius,linux,mac,mobile,mysql,php,postgresql,python,rails,ruby,shellscript,充电学习,ajax,android,centos,computer,cordova,dns,dnspod,dsp,firewalld,freeradius,gmail,java,linux,mobile,mysql,network,nginx,ngrok,oracle,phonegap,php,postgresql,protobuf,puma,python,rails,rsync,ruby,seo,shellscript,squid,ssh,ssl,vpn,web,website,wget,whmcs,wordpress,梯子," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="CentOS 5.7 完美安装 Oracle 10g"/>
+<meta name="twitter:title" content="CentOS 5.7 完美安装 Oracle 10g"/>
+<meta name="twitter:description" content=""/>
+
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://racksam.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://racksam.github.io/profile/ruby_logo.png')"></i>
+          
+          <span class="site-title">Racksam</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://racksam.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://racksam.github.io/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://racksam.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://racksam.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://racksam.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://racksam.github.io/profile/avatar.png">
+      
+      <h2 id="name">Rack Sam</h2>
+      <h3 id="title">Programmer - Freelancer - Father</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Earth</span>
+      
+          <a id="follow" href="https://github.com/racksam">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        69
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          40
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/racksam" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/howard2stone" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+
+          <td><a href="https://racksam.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/">
+    <h1 class="article-title" itemprop="name">
+        CentOS 5.7 完美安装 Oracle 10g
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2011-10-09 18:53:24 &#43;0000 UTC" itemprop="datePublished">2011-10-09</time>
+            &middot;
+            1958
+            words
+            &middot;
+            4
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://racksam.github.io/categories/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://racksam.github.io/tags/oracle">Oracle</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。</p>
+
+<h2 id="安装环境">安装环境：</h2>
+
+<ul>
+<li>VMware虚拟机 (这对Oracle安装并不重要)</li>
+<li>OS版本: CentOS 5.7 64Bit</li>
+<li>Oracle 10g版本: 10.2.0.1
+</li>
+</ul>
+
+<h2 id="安装规划">安装规划：</h2>
+
+<ul>
+<li>服务器主机名，IP地址</li>
+<li>Oracle安装目录</li>
+<li>oradata目录</li>
+<li>数据库服务名称（SID）</li>
+<li>数据库编码</li>
+<li>最大进程数</li>
+</ul>
+
+<h2 id="安装步骤">安装步骤：</h2>
+
+<h3 id="一-安装centos-5-7-64bit-操作系统">一、安装CentOS 5.7 64bit 操作系统</h3>
+
+<ul>
+<li>硬件要求：内存至少要大于1G，硬盘大小根据实际要求而定，建议最小也不要低于20G。</li>
+<li>安装要求：一定要安装图形界面X Window。不要启用SELinux。</li>
+<li>参考兔哥CentOS5.7服务器安装文档。</li>
+</ul>
+
+<h3 id="二-使用官方的-oracle-validated-软件自动安装所需软件包">二、使用官方的”oracle-validated”软件自动安装所需软件包</h3>
+
+<p>网上的大多数安装教程上都是说首先要检查并安装好Oracle 10g所需要的软件包，通常包括：</p>
+
+<p><code>binutils, compat-libstdc++, elfutils-libelf, elfutils-libelf-devel
+glibc, glibc-common, glibc-devel, gcc
+gcc-c++, libaio, libaio-devel, libgcc
+libstdc++, libstdc++-devel, make, sysstat
+unixODBC, unixODBC-devel</code></p>
+
+<p>一般这些软件的RPM安装包都能在安装光盘上找到。如果CentOS能连接互联网的话，也可以通过yum来进行安装会更方便些。</p>
+
+<p>不过，最近几年，Oracle官方开始提供”oracle-validated”软件，通过它可以自动检查并安装所需的软件包，并自动配置几个主要的系统环境设置文件。除了简化了系统工程师的工作，而且大幅提高了Oracle的安装成功率。</p>
+
+<p>*参考：</p>
+
+<ul>
+<li><a href="http://www.oracledatabase12g.com/archives/understand-oracle-validated-configurations.html">http://www.oracledatabase12g.com/archives/understand-oracle-validated-configurations.html</a></li>
+<li><a href="http://www.oracle.com/technetwork/server-storage/linux/validated-configurations-faq-090615.html">http://www.oracle.com/technetwork/server-storage/linux/validated-configurations-faq-090615.html</a></li>
+<li><a href="http://www.oracle.com/technetwork/topics/linux/validated-configurations-085828.html">http://www.oracle.com/technetwork/topics/linux/validated-configurations-085828.html</a>*</li>
+</ul>
+
+<p>安装和使用”oracle-validated”的过程：</p>
+
+<ol>
+<li><p>增加Oracle的repo文件</p>
+
+<pre><code>#cd /etc/yum.repos.d/
+#vi public-yum-el5.repo
+</code></pre>
+
+<p>将以下内容复制到该文件中：</p>
+
+<pre><code class="language-plain">[el5_ga_base]
+name=Enterprise Linux $releasever GA - $basearch - base
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/0/base/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=0
+[el5_u1_base]
+name=Enterprise Linux $releasever U1 - $basearch - base
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/1/base/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=0
+[el5_u2_base]
+name=Enterprise Linux $releasever U2 - $basearch - base
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/2/base/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=0
+[el5_u3_base]
+name=Enterprise Linux $releasever U3 - $basearch - base
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/3/base/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=0
+[el5_u4_base]
+name=Enterprise Linux $releasever U4 - $basearch - base
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/4/base/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=0
+[el5_u5_base]
+name=Enterprise Linux $releasever U5 - $basearch - base
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/5/base/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=1
+[el5_addons]
+name=Enterprise Linux $releasever - $basearch - addons
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/addons/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=1
+[el5_oracle_addons]
+name=Enterprise Linux $releasever - $basearch - oracle_addons
+baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/oracle_addons/$basearch/
+gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
+gpgcheck=1
+enabled=1
+</code></pre></li>
+
+<li><p>运行<code>yum install oracle-validated</code>命令</p>
+
+<p>该命令除了安装oracle-validated，还会一同将所需的软件包安装。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/SNAG-0000.png" alt="oracle-validated安装提示信息" /></p></li>
+
+<li><p>oracle-validated会自动配置以下环境设置文件：</p>
+
+<pre><code>/etc/security/limits.conf
+/etc/sysctl.conf
+</code></pre>
+
+<p>需要注意的是，oracle-validated默认是按照Oracle 11g的要求进行配置，如果是安装10g，某些参数需要手工进行变更。使用 <code>vi /etc/sysctl.conf</code> 命令，修改以下参数</p>
+
+<p><code>net.ipv4.ip_local_port_range=1024 65000</code></p>
+
+<p>修改后，使用/sbin/sysctl -p 命令操作来使所做的变更生效。</p></li>
+
+<li><p>（建议）禁用oracle-validated的自动升级。</p>
+
+<p>由于增加了oracle的repo文件后，yum升级系统时，也会搜索很多Oracle的软件包，会导致一些软件包的冲突。建议完成oracle-validated的安装以后，不再同步Oralce的软件库。</p>
+
+<pre><code>#cd /etc/yum.repos.d/
+#mv public-yum-el5.repo public-yum-el5.repo_bak_only_for_oracle_installed
+</code></pre></li>
+</ol>
+
+<h3 id="三-检查主机hosts设置">三、检查主机hosts设置</h3>
+
+<p>兔哥曾在hosts文件中漏掉了本机主机名的记录，结果导致oracle安装失败。一定记得要检查一下/etc/hosts一下是否有“IP地址 主机名”的记录，如：</p>
+
+<p><code>192.168.120.203         demo.mydomain demo</code></p>
+
+<h3 id="四-修改-etc-redhat-release-里面只有一行">四、修改/etc/redhat-release（里面只有一行）</h3>
+
+<p><code>redhat-4</code></p>
+
+<h3 id="五-创建oracle用户及组">五、创建oracle用户及组</h3>
+
+<pre><code>#/usr/sbin/groupadd oinstall
+#/usr/sbin/groupadd dba
+#/usr/sbin/useradd -g oinstall -G dba oracle
+#passwd oracle
+</code></pre>
+
+<h3 id="六-创建oracle安装目录">六、创建oracle安装目录</h3>
+
+<p>根据事先的规划，创建oracle的安装目录。这里是将所有的oracle文件及数据子目录集中放在/oracle下的。</p>
+
+<pre><code>#mkdir /oracle
+#chown -R oracle:oinstall /oracle
+</code></pre>
+
+<h3 id="七-修改用户环境变量">七、修改用户环境变量</h3>
+
+<ol>
+<li>修改/etc/profile文件，在文件的最后追加以下几行。</li>
+
+<li><p>根据实际情况，在/home/oracle/.bash_profile的最下部追加所需的变量。这里的例子：</p>
+
+<pre><code>ORACLE_BASE=/oracle
+ORACLE_DATA=$ORACLE_BASE/oradata
+ORACLE_HOME=$ORACLE_BASE/product/10.2.0.1
+PATH=$PATH:$ORACLE_HOME/bin
+ORACLE_SID=demodb
+NLS_LANG=american_america.zhs16GBK
+export ORACLE_BASE ORACLE_DATA ORACLE_HOME PATH ORACLE_SID NLS_LANG
+</code></pre></li>
+</ol>
+
+<h3 id="八-图形界面下-以oracle用户身份进行安装">八、图形界面下，以oracle用户身份进行安装</h3>
+
+<p>在终端窗口中，执行解压缩命令</p>
+
+<p><code>$tar zxvf database_10201_linux_x86_64.tar.gz</code></p>
+
+<p>cd命令进入解开后的安装目录，进入安装流程</p>
+
+<ol>
+<li><p>设置终端显示语言为英文，否则oracle安装界面会显示乱码 <code>$export LANG=en_US</code></p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_1.png" alt="Oracle安装过程【图1】" /></p></li>
+
+<li><p>安装界面启动后，可以根据事先规划，设置oracle的安装路径。例子数据库，可以选择不安装。然后点击”Next”。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_2.png" alt="Oracle安装过程【图2】" /></p></li>
+
+<li><p>使用默认的Inventory目录即可，继续点击”Next”。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_3.png" alt="Oracle安装过程【图3】" /></p></li>
+
+<li><p>进行安装环境的一系列检查。这里是最容易出现问题。如果缺失了某些必要的软件包，或者环境配置有问题，都有可能导致警告甚至报错。可以在纠正后，再次点击”retry”，来重新检查，而不用重启启动安装程序。检查没有问题后，点击”Next”。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_4.png" alt="Oracle安装过程【图4】" /></p></li>
+
+<li><p>”Summary”显示所有的安装选项，如果需要修改，仍能点击”Back”回退到前面的界面进行配置。如没问题，则点击”Install”。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_5.png" alt="Oracle安装过程【图5】" /></p></li>
+
+<li><p>安装进行中。。。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_6.png" alt="Oracle安装过程【图6】" /></p></li>
+
+<li><p>在安装过程中，会提示手工执行两个root权限的脚本。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_7.png" alt="Oracle安装过程【图7】" /></p></li>
+
+<li><p>方法是新开一个终端窗口，su -c 切换到root身份下，运行这两个脚本文件。</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_8.png" alt="Oracle安装过程【图8】" /></p></li>
+
+<li><p>安装完成</p>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_9.png" alt="Oracle安装过程【图9】" /></p></li>
+
+<li><p>退出安装程序</p></li>
+</ol>
+
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_10.png" alt="Oracle安装过程【图10】" /></p>
+
+<p>以上就是所有的安装过程。如果安装过程中出现问题，想重新来安装的话，可以先将指定的安装目录整个删除，然后再重新执行安装程序。
+The End.</p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/" data-id="b02fc74e6d48ea28aba4fa624b88a935" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://racksam.github.io/2011/09/02/cluster-troubles-for-small-company/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">小公司慎用RedHat集群</div>
+    </a>
+    
+
+    
+    <a href="https://racksam.github.io/2011/11/01/how-to-install-awstats-on-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CentOS下安装AWStats日志分析软件</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'racksam';
+    var disqus_identifier = 'https:\/\/racksam.github.io\/2011\/10\/09\/oracle-db-10g-installation-on-centos-5\/';
+    var disqus_title = 'CentOS 5.7 完美安装 Oracle 10g';
+    var disqus_url = 'https:\/\/racksam.github.io\/2011\/10\/09\/oracle-db-10g-installation-on-centos-5\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_php_msyql_wp.jpg)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/centos7-firewalld.jpg)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" class="title">CentOS7下</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/computer-time-to-upgrade-300x214.jpg)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
+                        FreeRadius
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/" class="title">从FreeRadius 2 迁移到 3</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-04-01 15:00:18 &#43;0000 UTC" itemprop="datePublished">2017-04-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/03/02/centos7-install-freeradius/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_freeradius.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
+                        FreeRadius
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/03/02/centos7-install-freeradius/" class="title">CentOS 7 安装FreeRadius</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-03-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-03-02</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/le-logo-wide.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="title">使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-12-26 19:14:40 &#43;0000 UTC" itemprop="datePublished">2016-12-26</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/dd-wrt">
+                    dd-wrt
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/dsp">
+                    dsp
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/freeradius">
+                    freeradius
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">24</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/mac">
+                    mac
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                    充电学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ajax">
+                    ajax
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/centos">
+                    centos
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/computer">
+                    computer
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/cordova">
+                    cordova
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/dns">
+                    dns
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/dnspod">
+                    dnspod
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/dsp">
+                    dsp
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/firewalld">
+                    firewalld
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/freeradius">
+                    freeradius
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/gmail">
+                    gmail
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/java">
+                    java
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">37</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ngrok">
+                    ngrok
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/oracle">
+                    oracle
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/phonegap">
+                    phonegap
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/php">
+                    php
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/protobuf">
+                    protobuf
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/puma">
+                    puma
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/rails">
+                    rails
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/rsync">
+                    rsync
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/seo">
+                    seo
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/squid">
+                    squid
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ssh">
+                    ssh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ssl">
+                    ssl
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/website">
+                    website
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/wget">
+                    wget
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/whmcs">
+                    whmcs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/wordpress">
+                    wordpress
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/%E6%A2%AF%E5%AD%90">
+                    梯子
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://racksam.github.io/tags/ajax" style="font-size: 12px;">ajax</a>
+        
+        
+        <a href="https://racksam.github.io/tags/android" style="font-size: 12px;">android</a>
+        
+        
+        <a href="https://racksam.github.io/tags/centos" style="font-size: 12px;">centos</a>
+        
+        
+        <a href="https://racksam.github.io/tags/computer" style="font-size: 12px;">computer</a>
+        
+        
+        <a href="https://racksam.github.io/tags/cordova" style="font-size: 12px;">cordova</a>
+        
+        
+        <a href="https://racksam.github.io/tags/dns" style="font-size: 12px;">dns</a>
+        
+        
+        <a href="https://racksam.github.io/tags/dnspod" style="font-size: 12px;">dnspod</a>
+        
+        
+        <a href="https://racksam.github.io/tags/dsp" style="font-size: 12px;">dsp</a>
+        
+        
+        <a href="https://racksam.github.io/tags/firewalld" style="font-size: 12px;">firewalld</a>
+        
+        
+        <a href="https://racksam.github.io/tags/freeradius" style="font-size: 12px;">freeradius</a>
+        
+        
+        <a href="https://racksam.github.io/tags/gmail" style="font-size: 12px;">gmail</a>
+        
+        
+        <a href="https://racksam.github.io/tags/java" style="font-size: 12px;">java</a>
+        
+        
+        <a href="https://racksam.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://racksam.github.io/tags/mobile" style="font-size: 12px;">mobile</a>
+        
+        
+        <a href="https://racksam.github.io/tags/mysql" style="font-size: 12px;">mysql</a>
+        
+        
+        <a href="https://racksam.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://racksam.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ngrok" style="font-size: 12px;">ngrok</a>
+        
+        
+        <a href="https://racksam.github.io/tags/oracle" style="font-size: 12px;">oracle</a>
+        
+        
+        <a href="https://racksam.github.io/tags/phonegap" style="font-size: 12px;">phonegap</a>
+        
+        
+        <a href="https://racksam.github.io/tags/php" style="font-size: 12px;">php</a>
+        
+        
+        <a href="https://racksam.github.io/tags/postgresql" style="font-size: 12px;">postgresql</a>
+        
+        
+        <a href="https://racksam.github.io/tags/protobuf" style="font-size: 12px;">protobuf</a>
+        
+        
+        <a href="https://racksam.github.io/tags/puma" style="font-size: 12px;">puma</a>
+        
+        
+        <a href="https://racksam.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://racksam.github.io/tags/rails" style="font-size: 12px;">rails</a>
+        
+        
+        <a href="https://racksam.github.io/tags/rsync" style="font-size: 12px;">rsync</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ruby" style="font-size: 12px;">ruby</a>
+        
+        
+        <a href="https://racksam.github.io/tags/seo" style="font-size: 12px;">seo</a>
+        
+        
+        <a href="https://racksam.github.io/tags/shellscript" style="font-size: 12px;">shellscript</a>
+        
+        
+        <a href="https://racksam.github.io/tags/squid" style="font-size: 12px;">squid</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ssh" style="font-size: 12px;">ssh</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ssl" style="font-size: 12px;">ssl</a>
+        
+        
+        <a href="https://racksam.github.io/tags/vpn" style="font-size: 12px;">vpn</a>
+        
+        
+        <a href="https://racksam.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://racksam.github.io/tags/website" style="font-size: 12px;">website</a>
+        
+        
+        <a href="https://racksam.github.io/tags/wget" style="font-size: 12px;">wget</a>
+        
+        
+        <a href="https://racksam.github.io/tags/whmcs" style="font-size: 12px;">whmcs</a>
+        
+        
+        <a href="https://racksam.github.io/tags/wordpress" style="font-size: 12px;">wordpress</a>
+        
+        
+        <a href="https://racksam.github.io/tags/%E6%A2%AF%E5%AD%90" style="font-size: 12px;">梯子</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://racksam.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://racksam.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

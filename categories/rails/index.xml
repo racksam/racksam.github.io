@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on Racksam</title>
+    <link>https://racksam.github.io/categories/rails/</link>
+    <description>Recent content in Rails on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Tue, 03 May 2016 09:02:30 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/categories/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索</title>
+      <link>https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</link>
+      <pubDate>Tue, 03 May 2016 09:02:30 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言：&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;全文搜索的实现方式&lt;/p&gt;
+
+&lt;p&gt;Web项目中如果要实现全文检索，最主流的做法是Web项目以外配置一个独立的搜索引擎，然后web程序通过API接口调用这些搜索引擎，实现建立索引以及搜索全文。目前常用的几个开源搜索引擎：&lt;a href=&#34;https://www.elastic.co/products/elasticsearch&#34;&gt;Elasticsearch&lt;/a&gt;、&lt;a href=&#34;https://lucene.apache.org/solr/&#34;&gt;Solr&lt;/a&gt;、&lt;a href=&#34;http://sphinxsearch.com/&#34;&gt;sphinx&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;云服务大行其道的今天，当然也少不了调用云服务类型搜索引擎。使用有实力的云搜索引擎服务，应该也是一个不错的选择。例如：&lt;a href=&#34;http://aws.amazon.com/cloudsearch/&#34;&gt;Amazon CloudSearch&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;还有一种简易做法是直接调用谷歌或者百度的索引结果。（使用&lt;code&gt;site=mydomain&lt;/code&gt;，将搜索结果限制在自己的网站域名中）。这种比较适用于实时性要求不高的文章类网站，使用情景有限。&lt;/p&gt;
+
+&lt;p&gt;最后一种是原始的数据库查询方式&lt;code&gt;like &#39;%keywords%&#39;&lt;/code&gt;。这种方式对于text文章类的字段来说效率低下，一般不要考虑用来做全文检索。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;中文的全文搜索&lt;/p&gt;
+
+&lt;p&gt;英文、西班牙文等这些字母语言，对于实现全文搜索来说有一个巨大的先天优势：人家不用去考虑&lt;strong&gt;分词&lt;/strong&gt;的问题。英文文章中的单词本来就是用空格及标点符号分隔的。但是像中文和日文这种，一句话中所有的字符都是沾在一起的情况，要实现全文检索，首先要做到的是能够正确地将一句话正确拆分成词语。要达到这个目的，一是需要一个高效的分词处理算法，二是需要一个尽可能包含所有词语的词典。由于语言的进化，这个词典还需要随着时代不停的去更新。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;一-为什么选择postgresql进行全文搜索&#34;&gt;一、为什么选择PostgreSQL进行全文搜索&lt;/h2&gt;
+
+&lt;p&gt;在用Rails4+PostgreSQL开发一个公司内部使用小系统时，对于全文搜索功能的实现让我陷入了选择的泥坑。&lt;/p&gt;
+
+&lt;p&gt;首先，配置一个Solr这样的第三方搜索引擎，看来是全文检索(主要是中文)的不二之选。但是我实在不甘心为了一个只有几千篇文章、用户数只有几百人的内部Web应用、让系统变得复杂化。这时候，这篇文章《&lt;a href=&#34;http://rachbelaid.com/postgres-full-text-search-is-good-enough/&#34;&gt;Postgres full-text search is Good Enough!&lt;/a&gt;》映入了我的眼帘。看起来PostgreSQL数据库在全文搜索方面的性能足以满足小规模系统的需求了。另外，&lt;a href=&#34;https://github.com/Casecommons/pg_search&#34;&gt;pg_search&lt;/a&gt;模块，为Rails应用提供了调用PostgreSQL搜索功能的优秀接口。如此看来，PostgreSQL+Rails4+pg_search能实现我的全文搜索功能。&lt;/p&gt;
+
+&lt;p&gt;但是经过一番测试，我发现这个方案默认只会对英语等那些字母语言有用，没有办法对中文进行全文检索。重新审视这个解决方案，原来我忘记了一个重要环节：那就是PostgreSQL默认没有中文分词功能。&lt;/p&gt;
+
+&lt;p&gt;通过网上的查找，发现了很多人都推荐的一个中文分词解决方案：&lt;a href=&#34;http://www.xunsearch.com/scws&#34;&gt;SCWS&lt;/a&gt;，以及实现调用这个分词引擎的PostgreSQL的扩展插件：&lt;a href=&#34;http://pgxn.org/dist/zhparser/&#34;&gt;zhparser&lt;/a&gt;。经过反复测试，终于实现了Rails4+pg_search来进行中文全文检索。&lt;/p&gt;
+
+&lt;p&gt;以下是CentOS6下SCWS+zhparser+rails4+pg_search+PostgreSQL的安装配置和开发的要点总结。另外，我也提供了一个完整的样例代码，以供参考&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rails 4 &#43; carrierwave &#43; Ajax &#43; BootStrap Modal弹出窗口下的文件上传</title>
+      <link>https://racksam.github.io/2016/03/12/upload-file-with-rails-and-ajax/</link>
+      <pubDate>Sat, 12 Mar 2016 20:21:04 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2016/03/12/upload-file-with-rails-and-ajax/</guid>
+      <description>&lt;p&gt;&lt;em&gt;从PHP开发转到Rails学习已经快两个月了，对Rails简直是相见恨晚！不过，Rails框架的很多的魔术用法再加上devise等各种大神级的gem，对初学者却是一把双刃剑：好处就不用多说了，坏处就是很多功能的内部实现原理不明白，一旦碰到小问题，不知道该如何下手。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;为了学习Rails，给做代购的朋友做了一个商品管理小系统。有一个页面使用了Modal窗口+Ajax方式实现公司的“新增”和“修改”。其中表单里面有logo的文件上传功能，服务器端采用的是carrierwave处理文件上传。在使用脚手架创建的页面上测试时，图片上传等都没问题，但是改为ajax方式以后，发现只要有文件上传，就会提示找不到模板（这时候已经改成xxx.js.erb方式了）。而如果不选择文件的话，只填写其它字段的话ajax表单是没有问题。&lt;/p&gt;
+
+&lt;p&gt;去Google上搜了一下，发现很多人都碰到过这个问题。有人推荐了remotipart这个gem，安装以后，发现真的解决了这个问题。
+&lt;a href=&#34;https://os.alfajango.com/remotipart/&#34;&gt;https://os.alfajango.com/remotipart/&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shellscript on Racksam</title>
+    <link>https://racksam.github.io/categories/shellscript/</link>
+    <description>Recent content in Shellscript on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Tue, 08 Apr 2014 20:56:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/categories/shellscript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一个Linux通用iptables脚本</title>
+      <link>https://racksam.github.io/2014/04/08/iptables-script-for-web-service/</link>
+      <pubDate>Tue, 08 Apr 2014 20:56:47 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2014/04/08/iptables-script-for-web-service/</guid>
+      <description>&lt;p&gt;最近为了上线一些Web服务器，整理了一个iptables的脚本。主要功能有：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以指定只有可信任主机及网段才能访问特定管理端口&lt;/li&gt;
+&lt;li&gt;可以防止几种常见的Dos攻击&lt;/li&gt;
+&lt;li&gt;非常容易修改和二次开发&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;样例代码：&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>从FreeRadius 2 迁移到 3 &middot; Racksam</title>
+    <meta name="generator" content="Hugo 0.24" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Rack Sam">
+    
+      <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
+    
+    
+    <link rel="canonical" href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/"/>
+    <link rel="icon" href="https://racksam.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://racksam.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://racksam.github.io/css/style.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://racksam.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="从FreeRadius 2 迁移到 3" />
+<meta property="og:description" content="目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。 数据库的差异与迁移 版本2与3的MySQL数据库定义大部分表是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/" />
+
+
+
+<meta property="article:published_time" content="2017-04-01T15:00:18&#43;00:00"/>
+<meta property="article:modified_time" content="2017-04-01T15:00:18&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="从FreeRadius 2 迁移到 3">
+<meta itemprop="description" content="目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。 数据库的差异与迁移 版本2与3的MySQL数据库定义大部分表是">
+
+
+<meta itemprop="dateModified" content="2017-04-01T15:00:18&#43;00:00" />
+<meta itemprop="wordCount" content="822">
+
+
+
+<meta itemprop="keywords" content="dd-wrt,dsp,freeradius,linux,mac,mobile,mysql,php,postgresql,python,rails,ruby,shellscript,充电学习,ajax,android,centos,computer,cordova,dns,dnspod,dsp,firewalld,freeradius,gmail,java,linux,mobile,mysql,network,nginx,ngrok,oracle,phonegap,php,postgresql,protobuf,puma,python,rails,rsync,ruby,seo,shellscript,squid,ssh,ssl,vpn,web,website,wget,whmcs,wordpress,梯子," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="从FreeRadius 2 迁移到 3"/>
+<meta name="twitter:title" content="从FreeRadius 2 迁移到 3"/>
+<meta name="twitter:description" content="目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。 数据库的差异与迁移 版本2与3的MySQL数据库定义大部分表是"/>
+
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://racksam.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://racksam.github.io/profile/ruby_logo.png')"></i>
+          
+          <span class="site-title">Racksam</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://racksam.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://racksam.github.io/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://racksam.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://racksam.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://racksam.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://racksam.github.io/profile/avatar.png">
+      
+      <h2 id="name">Rack Sam</h2>
+      <h3 id="title">Programmer - Freelancer - Father</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Earth</span>
+      
+          <a id="follow" href="https://github.com/racksam">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        69
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          40
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/racksam" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/howard2stone" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+
+          <td><a href="https://racksam.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="https://racksam.github.io/banners/computer-time-to-upgrade-300x214.jpg" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/">
+    <h1 class="article-title" itemprop="name">
+        从FreeRadius 2 迁移到 3
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-04-01 15:00:18 &#43;0000 UTC" itemprop="datePublished">2017-04-01</time>
+            &middot;
+            822
+            words
+            &middot;
+            2
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">FreeRadius</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://racksam.github.io/tags/freeradius">FreeRadius</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://racksam.github.io/tags/linux">Linux</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://racksam.github.io/tags/vpn">VPN</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。</p>
+
+<h2 id="数据库的差异与迁移">数据库的差异与迁移</h2>
+
+<p>版本2与3的MySQL数据库定义大部分表是相同的，除了<code>radacct</code>表里有字段调整:</p>
+
+<ul>
+<li><p>去掉了以下字段</p>
+
+<pre><code>acctstartdelay int(12) default NULL,
+acctstopdelay int(12) default NULL,
+xascendsessionsvrkey varchar(10) default NULL
+</code></pre></li>
+
+<li><p>新增了字段及KEY</p>
+
+<pre><code>acctupdatetime datetime NULL default NULL,
+acctinterval int(12) default NULL
+</code></pre></li>
+
+<li><p>KEY及引擎的变化</p>
+
+<pre><code>UNIQUE KEY acctuniqueid (acctuniqueid),
+KEY acctinterval (acctinterval),
+    
+另外，该表的引擎变更为INNODB
+</code></pre></li>
+</ul>
+
+<p>虽然FreeRadius3可以直接使用版本2的数据库内容，Radius认证功能完全正常，但是由于<code>radacct</code>字段不一直，将导致无法正常计费。另外，在日志中也会出现如下的报错。</p>
+
+<pre><code>rlm_sql_mysql: MySQL error 'Unknown column 'acctupdatetime' in 'field list''
+</code></pre>
+
+<h3 id="场景①-不需要迁移radacct表的旧数据">场景①：不需要迁移radacct表的旧数据</h3>
+
+<p>由于<code>radacct</code>的计费功能不是核心功能，那么可以不考虑迁移这个表的旧数据。这种情况下，最便捷的方法是在将数据库中的radacct表删除，然后重新创建FreeRadius3中的radacct表。MySQL命令行如下：</p>
+
+<pre><code>DROP TABLE IF EXISTS `radacct `;
+
+CREATE TABLE radacct (
+  radacctid bigint(21) NOT NULL auto_increment,
+  acctsessionid varchar(64) NOT NULL default '',
+  acctuniqueid varchar(32) NOT NULL default '',
+  username varchar(64) NOT NULL default '',
+  groupname varchar(64) NOT NULL default '',
+  realm varchar(64) default '',
+  nasipaddress varchar(15) NOT NULL default '',
+  nasportid varchar(15) default NULL,
+  nasporttype varchar(32) default NULL,
+  acctstarttime datetime NULL default NULL,
+  acctupdatetime datetime NULL default NULL,
+  acctstoptime datetime NULL default NULL,
+  acctinterval int(12) default NULL,
+  acctsessiontime int(12) unsigned default NULL,
+  acctauthentic varchar(32) default NULL,
+  connectinfo_start varchar(50) default NULL,
+  connectinfo_stop varchar(50) default NULL,
+  acctinputoctets bigint(20) default NULL,
+  acctoutputoctets bigint(20) default NULL,
+  calledstationid varchar(50) NOT NULL default '',
+  callingstationid varchar(50) NOT NULL default '',
+  acctterminatecause varchar(32) NOT NULL default '',
+  servicetype varchar(32) default NULL,
+  framedprotocol varchar(32) default NULL,
+  framedipaddress varchar(15) NOT NULL default '',
+  PRIMARY KEY (radacctid),
+  UNIQUE KEY acctuniqueid (acctuniqueid),
+  KEY username (username),
+  KEY framedipaddress (framedipaddress),
+  KEY acctsessionid (acctsessionid),
+  KEY acctsessiontime (acctsessiontime),
+  KEY acctstarttime (acctstarttime),
+  KEY acctinterval (acctinterval),
+  KEY acctstoptime (acctstoptime),
+  KEY nasipaddress (nasipaddress)
+) ENGINE = INNODB;
+</code></pre>
+
+<h3 id="场景②-需要迁移radacct表的旧数据">场景②：需要迁移radacct表的旧数据</h3>
+
+<p>如果需要迁移原来的数据表，建议使用以下创建一个临时表的方式进行过度。否则如果表中数据量很大，那么alert表会导致长时间锁表，等待时间较长。</p>
+
+<ol>
+<li><p>创建临时表3并根据新版本的定义进行修改（也可以使用radacct表定义新建一个表）</p>
+
+<pre><code>CREATE TABLE radacct3 LIKE radacct;
+ALTER TABLE radacct3 ADD acctupdatetime datetime NULL default NULL AFTER acctstarttime;
+ALTER TABLE radacct3 ADD acctinterval int(12) default NULL AFTER acctstoptime;
+ALTER TABLE radacct3 ADD KEY(acctinterval);
+ALTER TABLE radacct3 ADD UNIQUE KEY(acctuniqueid);
+ALTER TABLE radacct3 DROP column acctstartdelay;
+ALTER TABLE radacct3 DROP column acctstopdelay;
+ALTER TABLE radacct3 DROP column xascendsessionsvrkey;
+</code></pre></li>
+
+<li><p>使用insert by select方式复制数据。（可以增加where条件，仅导入近期数据）</p>
+
+<pre><code>INSERT INTO radacct3 (
+radacctid,acctsessionid,acctuniqueid,username,groupname,realm,nasipaddress,nasportid, 
+nasporttype,acctstarttime,acctstoptime,acctsessiontime,acctauthentic,connectinfo_start,
+connectinfo_stop,acctinputoctets,acctoutputoctets,calledstationid,callingstationid,
+acctterminatecause,servicetype,framedprotocol,framedipaddress
+) SELECT radacctid,acctsessionid,acctuniqueid,username,groupname,realm,nasipaddress,nasportid, 
+nasporttype,acctstarttime,acctstoptime,acctsessiontime,acctauthentic,connectinfo_start,
+connectinfo_stop,acctinputoctets,acctoutputoctets,calledstationid,callingstationid,
+acctterminatecause,servicetype,framedprotocol,framedipaddress FROM radacct;
+</code></pre></li>
+
+<li><p>将原表格改名，然后将新表格改为正式名称</p>
+
+<pre><code>RENAME TABLE radacct TO radacct_old;
+RENAME TABLE radacct3 TO radacct;
+    
+# 确定无误后，删除旧表
+DROP TABLE radacct_old;
+</code></pre></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/" data-id="76018be9d3f6c7e7643f3a7d130921ec" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://racksam.github.io/2017/03/02/centos7-install-freeradius/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">CentOS 7 安装FreeRadius</div>
+    </a>
+    
+
+    
+    <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">CentOS7下</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'racksam';
+    var disqus_identifier = 'https:\/\/racksam.github.io\/2017\/04\/01\/migration-of-freeradius-from-2-to-3\/';
+    var disqus_title = '从FreeRadius 2 迁移到 3';
+    var disqus_url = 'https:\/\/racksam.github.io\/2017\/04\/01\/migration-of-freeradius-from-2-to-3\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_php_msyql_wp.jpg)" alt="从FreeRadius 2 迁移到 3" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/centos7-firewalld.jpg)" alt="从FreeRadius 2 迁移到 3" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" class="title">CentOS7下</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/computer-time-to-upgrade-300x214.jpg)" alt="从FreeRadius 2 迁移到 3" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
+                        FreeRadius
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/" class="title">从FreeRadius 2 迁移到 3</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-04-01 15:00:18 &#43;0000 UTC" itemprop="datePublished">2017-04-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/03/02/centos7-install-freeradius/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_freeradius.png)" alt="从FreeRadius 2 迁移到 3" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
+                        FreeRadius
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/03/02/centos7-install-freeradius/" class="title">CentOS 7 安装FreeRadius</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-03-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-03-02</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/le-logo-wide.png)" alt="从FreeRadius 2 迁移到 3" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="title">使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</a></p>
+                    <p class="item-date">
+                        <time datetime="2016-12-26 19:14:40 &#43;0000 UTC" itemprop="datePublished">2016-12-26</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/dd-wrt">
+                    dd-wrt
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/dsp">
+                    dsp
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/freeradius">
+                    freeradius
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">24</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/mac">
+                    mac
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                    充电学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ajax">
+                    ajax
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/centos">
+                    centos
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/computer">
+                    computer
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/cordova">
+                    cordova
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/dns">
+                    dns
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/dnspod">
+                    dnspod
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/dsp">
+                    dsp
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/firewalld">
+                    firewalld
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/freeradius">
+                    freeradius
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/gmail">
+                    gmail
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/java">
+                    java
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/linux">
+                    linux
+                </a>
+                <span class="category-list-count">37</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/nginx">
+                    nginx
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ngrok">
+                    ngrok
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/oracle">
+                    oracle
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/phonegap">
+                    phonegap
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/php">
+                    php
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/protobuf">
+                    protobuf
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/puma">
+                    puma
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/rails">
+                    rails
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/rsync">
+                    rsync
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/seo">
+                    seo
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/squid">
+                    squid
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ssh">
+                    ssh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/ssl">
+                    ssl
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/web">
+                    web
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/website">
+                    website
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/wget">
+                    wget
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/whmcs">
+                    whmcs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/wordpress">
+                    wordpress
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/tags/%E6%A2%AF%E5%AD%90">
+                    梯子
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://racksam.github.io/tags/ajax" style="font-size: 12px;">ajax</a>
+        
+        
+        <a href="https://racksam.github.io/tags/android" style="font-size: 12px;">android</a>
+        
+        
+        <a href="https://racksam.github.io/tags/centos" style="font-size: 12px;">centos</a>
+        
+        
+        <a href="https://racksam.github.io/tags/computer" style="font-size: 12px;">computer</a>
+        
+        
+        <a href="https://racksam.github.io/tags/cordova" style="font-size: 12px;">cordova</a>
+        
+        
+        <a href="https://racksam.github.io/tags/dns" style="font-size: 12px;">dns</a>
+        
+        
+        <a href="https://racksam.github.io/tags/dnspod" style="font-size: 12px;">dnspod</a>
+        
+        
+        <a href="https://racksam.github.io/tags/dsp" style="font-size: 12px;">dsp</a>
+        
+        
+        <a href="https://racksam.github.io/tags/firewalld" style="font-size: 12px;">firewalld</a>
+        
+        
+        <a href="https://racksam.github.io/tags/freeradius" style="font-size: 12px;">freeradius</a>
+        
+        
+        <a href="https://racksam.github.io/tags/gmail" style="font-size: 12px;">gmail</a>
+        
+        
+        <a href="https://racksam.github.io/tags/java" style="font-size: 12px;">java</a>
+        
+        
+        <a href="https://racksam.github.io/tags/linux" style="font-size: 12px;">linux</a>
+        
+        
+        <a href="https://racksam.github.io/tags/mobile" style="font-size: 12px;">mobile</a>
+        
+        
+        <a href="https://racksam.github.io/tags/mysql" style="font-size: 12px;">mysql</a>
+        
+        
+        <a href="https://racksam.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://racksam.github.io/tags/nginx" style="font-size: 12px;">nginx</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ngrok" style="font-size: 12px;">ngrok</a>
+        
+        
+        <a href="https://racksam.github.io/tags/oracle" style="font-size: 12px;">oracle</a>
+        
+        
+        <a href="https://racksam.github.io/tags/phonegap" style="font-size: 12px;">phonegap</a>
+        
+        
+        <a href="https://racksam.github.io/tags/php" style="font-size: 12px;">php</a>
+        
+        
+        <a href="https://racksam.github.io/tags/postgresql" style="font-size: 12px;">postgresql</a>
+        
+        
+        <a href="https://racksam.github.io/tags/protobuf" style="font-size: 12px;">protobuf</a>
+        
+        
+        <a href="https://racksam.github.io/tags/puma" style="font-size: 12px;">puma</a>
+        
+        
+        <a href="https://racksam.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://racksam.github.io/tags/rails" style="font-size: 12px;">rails</a>
+        
+        
+        <a href="https://racksam.github.io/tags/rsync" style="font-size: 12px;">rsync</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ruby" style="font-size: 12px;">ruby</a>
+        
+        
+        <a href="https://racksam.github.io/tags/seo" style="font-size: 12px;">seo</a>
+        
+        
+        <a href="https://racksam.github.io/tags/shellscript" style="font-size: 12px;">shellscript</a>
+        
+        
+        <a href="https://racksam.github.io/tags/squid" style="font-size: 12px;">squid</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ssh" style="font-size: 12px;">ssh</a>
+        
+        
+        <a href="https://racksam.github.io/tags/ssl" style="font-size: 12px;">ssl</a>
+        
+        
+        <a href="https://racksam.github.io/tags/vpn" style="font-size: 12px;">vpn</a>
+        
+        
+        <a href="https://racksam.github.io/tags/web" style="font-size: 12px;">web</a>
+        
+        
+        <a href="https://racksam.github.io/tags/website" style="font-size: 12px;">website</a>
+        
+        
+        <a href="https://racksam.github.io/tags/wget" style="font-size: 12px;">wget</a>
+        
+        
+        <a href="https://racksam.github.io/tags/whmcs" style="font-size: 12px;">whmcs</a>
+        
+        
+        <a href="https://racksam.github.io/tags/wordpress" style="font-size: 12px;">wordpress</a>
+        
+        
+        <a href="https://racksam.github.io/tags/%E6%A2%AF%E5%AD%90" style="font-size: 12px;">梯子</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://racksam.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://racksam.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

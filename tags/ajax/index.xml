@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ajax on Racksam</title>
+    <link>https://racksam.github.io/tags/ajax/</link>
+    <description>Recent content in Ajax on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Sat, 12 Mar 2016 20:21:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rails 4 &#43; carrierwave &#43; Ajax &#43; BootStrap Modal弹出窗口下的文件上传</title>
+      <link>https://racksam.github.io/2016/03/12/upload-file-with-rails-and-ajax/</link>
+      <pubDate>Sat, 12 Mar 2016 20:21:04 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2016/03/12/upload-file-with-rails-and-ajax/</guid>
+      <description>&lt;p&gt;&lt;em&gt;从PHP开发转到Rails学习已经快两个月了，对Rails简直是相见恨晚！不过，Rails框架的很多的魔术用法再加上devise等各种大神级的gem，对初学者却是一把双刃剑：好处就不用多说了，坏处就是很多功能的内部实现原理不明白，一旦碰到小问题，不知道该如何下手。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;为了学习Rails，给做代购的朋友做了一个商品管理小系统。有一个页面使用了Modal窗口+Ajax方式实现公司的“新增”和“修改”。其中表单里面有logo的文件上传功能，服务器端采用的是carrierwave处理文件上传。在使用脚手架创建的页面上测试时，图片上传等都没问题，但是改为ajax方式以后，发现只要有文件上传，就会提示找不到模板（这时候已经改成xxx.js.erb方式了）。而如果不选择文件的话，只填写其它字段的话ajax表单是没有问题。&lt;/p&gt;
+
+&lt;p&gt;去Google上搜了一下，发现很多人都碰到过这个问题。有人推荐了remotipart这个gem，安装以后，发现真的解决了这个问题。
+&lt;a href=&#34;https://os.alfajango.com/remotipart/&#34;&gt;https://os.alfajango.com/remotipart/&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

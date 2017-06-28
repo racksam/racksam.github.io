@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Freeradius on Racksam</title>
+    <link>https://racksam.github.io/tags/freeradius/</link>
+    <description>Recent content in Freeradius on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Sat, 01 Apr 2017 15:00:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/freeradius/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从FreeRadius 2 迁移到 3</title>
+      <link>https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/</link>
+      <pubDate>Sat, 01 Apr 2017 15:00:18 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2017/04/01/migration-of-freeradius-from-2-to-3/</guid>
+      <description>目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。 数据库的差异与迁移 版本2与3的MySQL数据库定义大部分表是</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装FreeRadius</title>
+      <link>https://racksam.github.io/2017/03/02/centos7-install-freeradius/</link>
+      <pubDate>Thu, 02 Mar 2017 19:00:18 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2017/03/02/centos7-install-freeradius/</guid>
+      <description>目前FreeRadius 2仍在大量被应用于生产环境，但官网推荐尽早采用版本3，并且宣布不再更新版本2。虽然版本2和3内部有很大的区别，但由于</description>
+    </item>
+    
+  </channel>
+</rss>

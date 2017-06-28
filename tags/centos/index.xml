@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on Racksam</title>
+    <link>https://racksam.github.io/tags/centos/</link>
+    <description>Recent content in Centos on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Tue, 02 May 2017 19:00:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7下</title>
+      <link>https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/</link>
+      <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/</guid>
+      <description>为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent --zone=mysql --set-target=ACCEPT firewall-cmd --permanent --zone=mysql --add-service=mysql firewall-cmd --permanent --zone=mysql --add-source=192.168.110.27/32 firewall-cmd --permanent --zone=mysql --add-source=10.2.3.0/24 firewall-cmd --reload firewall-cmd --get-active-zones 只允许通过特定代理的IP地址访问http/https： firewall-cmd --permanent --new-zone=web</description>
+    </item>
+    
+  </channel>
+</rss>

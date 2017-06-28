@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Racksam</title>
+    <link>https://racksam.github.io/tags/network/</link>
+    <description>Recent content in Network on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Sat, 22 Sep 2012 09:41:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux下使用wondershaper限制网速</title>
+      <link>https://racksam.github.io/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
+      <pubDate>Sat, 22 Sep 2012 09:41:23 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
+      <description>&lt;p&gt;Linux下主要是使用tc工具来进行限速。不过tc用起来真是不容易，参数非常多且很难懂，要想用好的话很耗时间。&lt;/p&gt;
+
+&lt;p&gt;推荐一个老外写的脚本wondershaper，简单易用，也是很好的tc参考样例。
+虽然脚本早就不更新了，但是在CentOS6.2 64bit下验证仍可以用。
+网址：&lt;a href=&#34;http://lartc.org/wondershaper/&#34;&gt;http://lartc.org/wondershaper/&lt;/a&gt;
+下载：&lt;a href=&#34;http://lartc.org/wondershaper/wondershaper-1.1a.tar.gz&#34;&gt;http://lartc.org/wondershaper/wondershaper-1.1a.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压后，编辑wshaper脚本文件，修改开头的几个限速参数：
+下载，上传，网卡。速度的单位是kpbs。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

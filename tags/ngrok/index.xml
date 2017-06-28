@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ngrok on Racksam</title>
+    <link>https://racksam.github.io/tags/ngrok/</link>
+    <description>Recent content in Ngrok on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Sun, 18 Dec 2016 15:11:59 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>阿里云主机CentOS 7下编译安装ngrok</title>
+      <link>https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/</link>
+      <pubDate>Sun, 18 Dec 2016 15:11:59 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/</guid>
+      <description>&lt;p&gt;ngrok等隧道工具是Web程序员开发的神器！&lt;/p&gt;
+
+&lt;p&gt;配置微信及支付宝等接口，需要回调自己的公网服务器地址。开发过程中程序是跑在程序员自己的电脑上的，如果想在开发过程中调试接口的请求，必须想办法将本地应用穿透到公网上去，才能让微信或支付宝的服务器能访问到。&lt;/p&gt;
+
+&lt;p&gt;传统的硬派做法是在路由器上做端口映射，极其不便。有了ngrok这个神器，程序员可以很方便的将自己的应用临时公开在公网地上，然后在自己的电脑上观察和调试来自外界的访问。&lt;/p&gt;
+
+&lt;p&gt;ngrok的开源版本可以从github上获得。开源版本是老版本，该神器的作者已不再维护老版本，而将精力放在在线商业服务&lt;a href=&#34;https://ngrok.com&#34;&gt;ngrok.com&lt;/a&gt;上了。选择使用ngrok的在线服务，免掉了自己搭建服务器的辛苦，还有确保用到最新的ngrok软件，安全性比较高。理论上选择这种云隧道服务是最便捷的方式，但是在国内使用公开的云隧道，有以下几个明显的问题：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;由于“你懂得”的存在，ngrok.com在国内的访问不稳定，时不时会访问不到。&lt;/li&gt;
+&lt;li&gt;微信及支付宝的接口在对接时，需要审查接口地址的域名是否ICP备案，是否是签约域名等，这就限制了无法随意使用一个第三方的域名地址做隧道的公网地址。&lt;/li&gt;
+&lt;li&gt;微信或者支付宝平台很容易封杀一些用户量比较大的隧道提供商的域名。&lt;/li&gt;
+&lt;li&gt;如果选择一些不知名的第三方隧道提供者，很难确保信息不会恶意截获。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;因此我的观点是如果是国内开发团队的话，一定要搭建一个自己的隧道服务器。ngrok的开源版本(老版本)虽然据作者说存在安全隐患，但是如果仅作为调试用的话应该问题不大吧。期待作者能将最新版也开源化。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

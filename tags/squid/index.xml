@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Squid on Racksam</title>
+    <link>https://racksam.github.io/tags/squid/</link>
+    <description>Recent content in Squid on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Sat, 28 Sep 2013 10:59:22 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/squid/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用squid做网站的反向代理服务器</title>
+      <link>https://racksam.github.io/2013/09/28/squid-reverse-proxy/</link>
+      <pubDate>Sat, 28 Sep 2013 10:59:22 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2013/09/28/squid-reverse-proxy/</guid>
+      <description>&lt;p&gt;Squid就是Web服务器的大神。Squid的用途和用法实在是太丰富了。可以说如果有Squid做不到的，那一定是自己不会用而已。&lt;/p&gt;
+
+&lt;p&gt;草根站长们也许会碰到这样的某国特色的遭遇：由于自己的疏忽忘了提前重新备案，网站的ICP备案失效了。接着麻烦就来了：IDC机房根据某些政策将该域名劫持到了一个警示页面，提示该网站在备案重新完成之前无法访问。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

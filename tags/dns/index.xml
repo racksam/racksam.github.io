@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dns on Racksam</title>
+    <link>https://racksam.github.io/tags/dns/</link>
+    <description>Recent content in Dns on Racksam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
+    <lastBuildDate>Wed, 09 Apr 2014 21:30:01 +0000</lastBuildDate>
+    
+	<atom:link href="https://racksam.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>电脑清除DNS缓存的方法</title>
+      <link>https://racksam.github.io/2014/04/09/clear-dns-cache-in-pc/</link>
+      <pubDate>Wed, 09 Apr 2014 21:30:01 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2014/04/09/clear-dns-cache-in-pc/</guid>
+      <description>&lt;p&gt;MacOS及Windows不同版本下清除DNS缓存的方法不同。&lt;/p&gt;
+
+&lt;h3 id=&#34;mac-os-x-10-5-10-6&#34;&gt;Mac OS X 10.5, 10.6+&lt;/h3&gt;
+
+&lt;p&gt;终端窗口下执行以下命令：&lt;code&gt;#sudo dscacheutil -flushcache&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;mac-os-x-10-7-10-8-10-9&#34;&gt;Mac OS X 10.7, 10.8, 10.9&lt;/h3&gt;
+
+&lt;p&gt;终端窗口下执行以下命令：&lt;code&gt;#sudo killall -HUP mDNSResponder&lt;/code&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
