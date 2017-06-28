@@ -18,7 +18,7 @@
       <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
       
       <guid>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</guid>
-      <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent --zone=mysql --set-target=ACCEPT firewall-cmd --permanent --zone=mysql --add-service=mysql firewall-cmd --permanent --zone=mysql --add-source=192.168.110.27/32 firewall-cmd --permanent</description>
+      <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 指定IP Source地址 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent</description>
     </item>
     
   </channel>
