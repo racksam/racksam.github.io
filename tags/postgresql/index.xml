@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PostgreSQL on Racksam</title>
-    <link>https://racksam.github.io/tags/postgresql/</link>
+    <link>http://www.racksam.com/tags/postgresql/</link>
     <description>Recent content in PostgreSQL on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Tue, 03 May 2016 09:02:30 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索</title>
-      <link>https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</link>
+      <link>http://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</link>
       <pubDate>Tue, 03 May 2016 09:02:30 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</guid>
+      <guid>http://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言：&lt;/h2&gt;
 
 &lt;ol&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>CentOS6下最新版PostgreSQL的安装及设置</title>
-      <link>https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
+      <link>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
       <pubDate>Sat, 02 Apr 2016 16:46:37 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
+      <guid>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
       <description>&lt;p&gt;CentOS默认Yum源安装的PostgreSQL版本仍然停留在8.x。如果不想手工编译，又想安装使用最新版的PostgreSQL的话，可以通过引用PostgreSQL官方的Yum源进行安装。&lt;/p&gt;
 
 &lt;h2 id=&#34;一-安装postgresql&#34;&gt;一、安装PostgreSQL&lt;/h2&gt;

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Protobuf on Racksam</title>
-    <link>https://racksam.github.io/tags/protobuf/</link>
+    <link>http://www.racksam.com/tags/protobuf/</link>
     <description>Recent content in Protobuf on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Sun, 06 Apr 2014 17:08:10 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux下安装protobuf python版本</title>
-      <link>https://racksam.github.io/2014/04/06/protocol-buffers-in-python/</link>
+      <link>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
       <pubDate>Sun, 06 Apr 2014 17:08:10 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/04/06/protocol-buffers-in-python/</guid>
+      <guid>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
       <description>&lt;h2 id=&#34;protobuf简介-google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
 
 &lt;p&gt;当前分布式Web系统之间交换数据的所用数据格式的类型中，最常见的依然是json与XML。不过Google的技术大牛们认为json/XML这些文本类型的数据格式传输效率太差，于是他们发明了一种全新的数据格式：&lt;a href=&#34;https://github.com/google/protobuf&#34;&gt;https://github.com/google/protobuf&lt;/a&gt;。&lt;/p&gt;

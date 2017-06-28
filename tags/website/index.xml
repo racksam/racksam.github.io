@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on Racksam</title>
-    <link>https://racksam.github.io/tags/website/</link>
+    <link>http://www.racksam.com/tags/website/</link>
     <description>Recent content in Website on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Sat, 05 Apr 2014 15:27:09 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux下安装 Nginx &#43; uwsgi &#43; web.py &#43; MySQLdb</title>
-      <link>https://racksam.github.io/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</link>
+      <link>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</link>
       <pubDate>Sat, 05 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</guid>
+      <guid>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</guid>
       <description>&lt;p&gt;Web服务器上有多种方式运行Python：&lt;/p&gt;
 
 &lt;ul&gt;
@@ -26,7 +26,7 @@
 &lt;li&gt;uwsgi方式：目前生产环境下最受推崇的方式，尤其是Nginx+uwsgi服务器组合是上线的首选。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Python与Web服务器的关系基本上和PHP与Web服务器的关系类似，可以参考该文：&lt;a href=&#34;https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;CentOS6下搭建 Nginx + PHP + MySQL服务器&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;Python与Web服务器的关系基本上和PHP与Web服务器的关系类似，可以参考该文：&lt;a href=&#34;http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;CentOS6下搭建 Nginx + PHP + MySQL服务器&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;uwsgi服务器的作用类似于java里面的Tomcat服务器。至于在上面跑什么样的Python程序那可能性就太多了。例如：&lt;/p&gt;
 
@@ -49,10 +49,10 @@
     
     <item>
       <title>CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器</title>
-      <link>https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/</link>
+      <link>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</link>
       <pubDate>Fri, 04 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
+      <guid>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
       <description>&lt;p&gt;Nginx+PHP-FPM的组合是目前生产环境中最主流的php网站的选择。&lt;/p&gt;
 
 &lt;p&gt;PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器+后端php-fpm）的组合技术有如下的描述：&lt;/p&gt;
@@ -68,10 +68,10 @@
     
     <item>
       <title>强制浏览器刷新网站的favicon.ico</title>
-      <link>https://racksam.github.io/2014/03/26/how-to-force-refresh-favicon-ico/</link>
+      <link>http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</link>
       <pubDate>Wed, 26 Mar 2014 15:11:46 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/03/26/how-to-force-refresh-favicon-ico/</guid>
+      <guid>http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</guid>
       <description>网站更新了favicon.ico以后，很多浏览器里都无法立刻刷新。特别是Firefox，Chrome之类的浏览器，有时候即使清空缓存并重启以</description>
     </item>
     

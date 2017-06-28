@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PostgreSQL on Racksam</title>
-    <link>https://racksam.github.io/categories/postgresql/</link>
+    <link>http://www.racksam.com/categories/postgresql/</link>
     <description>Recent content in PostgreSQL on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Mon, 19 Dec 2016 21:00:18 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS 7 安装最新版PostgreSQL</title>
-      <link>https://racksam.github.io/2016/12/19/centos7-install-postgresql/</link>
+      <link>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/12/19/centos7-install-postgresql/</guid>
+      <guid>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
       <description>&lt;p&gt;以下操作均在root账号下操作.&lt;/p&gt;
 
 &lt;h2 id=&#34;一-安装&#34;&gt;一、安装&lt;/h2&gt;
@@ -47,10 +47,10 @@
     
     <item>
       <title>CentOS6下最新版PostgreSQL的安装及设置</title>
-      <link>https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
+      <link>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
       <pubDate>Sat, 02 Apr 2016 16:46:37 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
+      <guid>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
       <description>&lt;p&gt;CentOS默认Yum源安装的PostgreSQL版本仍然停留在8.x。如果不想手工编译，又想安装使用最新版的PostgreSQL的话，可以通过引用PostgreSQL官方的Yum源进行安装。&lt;/p&gt;
 
 &lt;h2 id=&#34;一-安装postgresql&#34;&gt;一、安装PostgreSQL&lt;/h2&gt;

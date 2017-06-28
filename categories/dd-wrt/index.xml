@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DD-WRT on Racksam</title>
-    <link>https://racksam.github.io/categories/dd-wrt/</link>
+    <link>http://www.racksam.com/categories/dd-wrt/</link>
     <description>Recent content in DD-WRT on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Fri, 09 Dec 2011 21:43:08 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/categories/dd-wrt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/categories/dd-wrt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DD-WRT使用3G上网卡</title>
-      <link>https://racksam.github.io/2011/12/09/connect-3g-on-dd-wrt/</link>
+      <link>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</link>
       <pubDate>Fri, 09 Dec 2011 21:43:08 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2011/12/09/connect-3g-on-dd-wrt/</guid>
+      <guid>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</guid>
       <description>&lt;p&gt;具有USB接口，并能刷成DD-WRT无线路由器，一般都能支持使用3G上网卡上网。设置方法是在Web管理界面上[设置]-&amp;gt;[基本设置]界面上，WAN的连接方式选择”3G/UMTS”,然后输入拨号的用户名及密码，如下图所示。
-&lt;img src=&#34;https://racksam.github.io/attachments/connect-3G-on-dd-wrt/dd-wrt-3g-chinatel.png&#34; alt=&#34;连接3G上网卡&#34; /&gt;&lt;/p&gt;</description>
+&lt;img src=&#34;http://www.racksam.com/attachments/connect-3G-on-dd-wrt/dd-wrt-3g-chinatel.png&#34; alt=&#34;连接3G上网卡&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用DD-WRT无线路由器增强无线信号（同一网段）</title>
-      <link>https://racksam.github.io/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</link>
+      <link>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</link>
       <pubDate>Fri, 02 Dec 2011 21:43:08 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</guid>
+      <guid>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</guid>
       <description>&lt;p&gt;上次写了一篇如何使用DD-WRT无线中继的文章。使用这种方式的话，扩展后的无线网络使用的是另外一个子网网段。如果想扩展无线网络的同时，还是想使用原有无线路由器的内网网段的话，就必须选择“中继桥接”的方式了。具体设置过程如下：&lt;/p&gt;
 
 &lt;h2 id=&#34;1-首先需要做好规划&#34;&gt;1. 首先需要做好规划&lt;/h2&gt;
@@ -53,10 +53,10 @@ SSID: &amp;lt;strong&amp;gt;ChildWiFi&amp;lt;/strong&amp;gt;
     
     <item>
       <title>使用DD-WRT无线路由器增强无线信号（使用新网段）</title>
-      <link>https://racksam.github.io/2011/11/21/using-dd-wrt-wireless-repeater/</link>
+      <link>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</link>
       <pubDate>Mon, 21 Nov 2011 21:43:08 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2011/11/21/using-dd-wrt-wireless-repeater/</guid>
+      <guid>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</guid>
       <description>&lt;p&gt;当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。&lt;/p&gt;
 
 &lt;h3 id=&#34;一-主力无线路由器-接宽带猫的那一台-的设置方法&#34;&gt;一、主力无线路由器（接宽带猫的那一台）的设置方法&lt;/h3&gt;
@@ -75,13 +75,13 @@ SSID: MasterWiFi
     
     <item>
       <title>DD-WRT的六种无线模式</title>
-      <link>https://racksam.github.io/2011/11/20/introduce-dd-wrt-wireless-modes/</link>
+      <link>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</link>
       <pubDate>Sun, 20 Nov 2011 21:43:08 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2011/11/20/introduce-dd-wrt-wireless-modes/</guid>
+      <guid>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</guid>
       <description>&lt;p&gt;为了设置无线路由器的中继功能，兔哥仔细学习了一下dd-wrt的六种无线模式，再也不会稀里糊涂了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://racksam.github.io/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png&#34; alt=&#34;DD-WRT的六种无线模式&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.racksam.com/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png&#34; alt=&#34;DD-WRT的六种无线模式&#34; /&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;访问点 (AP)&lt;/p&gt;

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SEO on Racksam</title>
-    <link>https://racksam.github.io/tags/seo/</link>
+    <link>http://www.racksam.com/tags/seo/</link>
     <description>Recent content in SEO on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Sat, 01 Feb 2014 10:59:22 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/seo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/seo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>屏蔽Baidu等搜索引擎的爬虫</title>
-      <link>https://racksam.github.io/2014/02/01/how-to-disable-searching-spider/</link>
+      <link>http://www.racksam.com/2014/02/01/how-to-disable-searching-spider/</link>
       <pubDate>Sat, 01 Feb 2014 10:59:22 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/02/01/how-to-disable-searching-spider/</guid>
+      <guid>http://www.racksam.com/2014/02/01/how-to-disable-searching-spider/</guid>
       <description>&lt;p&gt;正当我为SEO忧心重重的时候，有朋友竟然问我如何做到禁止Baidu等爬虫来收录网站，也就是说反SEO。真是林子大了什么鸟都有啊~&lt;/p&gt;
 
 &lt;p&gt;最简单的手段主要是通过robots.txt以及.htaccess文件，来禁止某些spider的User-Agent标识。当然前提是这些Spider都是正规的搜索引擎，不会耍流氓去伪装别的User-Agent标识。&lt;/p&gt;

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mobile on Racksam</title>
-    <link>https://racksam.github.io/tags/mobile/</link>
+    <link>http://www.racksam.com/tags/mobile/</link>
     <description>Recent content in Mobile on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Tue, 03 Sep 2013 10:39:07 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>手机定位技术分析</title>
-      <link>https://racksam.github.io/2013/09/03/mobile-location-technology/</link>
+      <link>http://www.racksam.com/2013/09/03/mobile-location-technology/</link>
       <pubDate>Tue, 03 Sep 2013 10:39:07 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2013/09/03/mobile-location-technology/</guid>
+      <guid>http://www.racksam.com/2013/09/03/mobile-location-technology/</guid>
       <description>&lt;p&gt;Android，iPhone等智能手机上的定位技术是一大亮点，实用性非常高。无数基于位置的服务(Location Based Service，简称LBS)应用都建立在该技术的基础上，尤其是地图类应用。&lt;/p&gt;
 
 &lt;p&gt;一说起手机定位，大家首先会想到是GPS。最近在网上搜集整理一下，发现手机定位远不止GPS这么单纯。事实上目前智能机上使用了至少3种定位技术：基于移动网络基站的低精度定位，基于美国GPS卫星信号的定位，还有就是基于WiFi资料库的定位。（还有一种叫A-GPS的方式，是复合应用了两种技术：既基于移动网的基站，也使用GPS卫星信号）&lt;/p&gt;</description>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Racksam</title>
-    <link>https://racksam.github.io/tags/nginx/</link>
+    <link>http://www.racksam.com/tags/nginx/</link>
     <description>Recent content in Nginx on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Thu, 08 Jun 2017 19:00:18 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</title>
-      <link>https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</link>
+      <link>http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</link>
       <pubDate>Thu, 08 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</guid>
+      <guid>http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</guid>
       <description>一、安装Fedora第三方源 安装Fedora第三方源 yum -y update yum -y install epel-release 修改epel为默认不启用 vi /etc/yum.repos.d/epel.repo 将[epel]部分的enabled=1修改成e</description>
     </item>
     
     <item>
       <title>使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</title>
-      <link>https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
+      <link>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
       <pubDate>Mon, 26 Dec 2016 19:14:40 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
+      <guid>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
       <description>&lt;p&gt;Linux服务器下使用acme.sh脚本是申请let&amp;rsquo;s encrypt证书最便捷的方式，比官方推荐的&lt;code&gt;certbot&lt;/code&gt;脚本工具要强大的多。&lt;/p&gt;
 
 &lt;p&gt;安装文档：
@@ -54,10 +54,10 @@ source .
     
     <item>
       <title>CentOS 7 安装最新版PostgreSQL</title>
-      <link>https://racksam.github.io/2016/12/19/centos7-install-postgresql/</link>
+      <link>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/12/19/centos7-install-postgresql/</guid>
+      <guid>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
       <description>&lt;p&gt;以下操作均在root账号下操作.&lt;/p&gt;
 
 &lt;h2 id=&#34;一-安装&#34;&gt;一、安装&lt;/h2&gt;
@@ -87,10 +87,10 @@ source .
     
     <item>
       <title>Centos6 下安装rbenv &#43; ruby &#43; rails &#43; puma &#43; ngnix</title>
-      <link>https://racksam.github.io/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
+      <link>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
       <pubDate>Tue, 01 Mar 2016 21:08:16 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
+      <guid>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
       <description>&lt;p&gt;Rails项目在生产环境上线时，可以选择的ruby服务器比较多，例如：Rainbows、Unicorn、Passenger、Puma。其中Puma是近年来口碑比较不错的一个。&lt;/p&gt;
 
 &lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;
@@ -100,11 +100,11 @@ source .
     
     <item>
       <title>Nginx上安装phpMyAdmin</title>
-      <link>https://racksam.github.io/2014/04/05/how-to-install-phpmyadmin-on-nginx/</link>
+      <link>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</link>
       <pubDate>Sat, 05 Apr 2014 17:23:26 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/04/05/how-to-install-phpmyadmin-on-nginx/</guid>
-      <description>&lt;p&gt;前提：首先要完成安装 &lt;a href=&#34;https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;nginx+php+php-fpm+mysql&lt;/a&gt;&lt;/p&gt;
+      <guid>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</guid>
+      <description>&lt;p&gt;前提：首先要完成安装 &lt;a href=&#34;http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;nginx+php+php-fpm+mysql&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;一-准备工作&#34;&gt;一、 准备工作：&lt;/h2&gt;
 

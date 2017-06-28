@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on Racksam</title>
-    <link>https://racksam.github.io/tags/php/</link>
+    <link>http://www.racksam.com/tags/php/</link>
     <description>Recent content in Php on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Fri, 04 Apr 2014 15:27:09 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器</title>
-      <link>https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/</link>
+      <link>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</link>
       <pubDate>Fri, 04 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
+      <guid>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
       <description>&lt;p&gt;Nginx+PHP-FPM的组合是目前生产环境中最主流的php网站的选择。&lt;/p&gt;
 
 &lt;p&gt;PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器+后端php-fpm）的组合技术有如下的描述：&lt;/p&gt;
@@ -33,10 +33,10 @@
     
     <item>
       <title>根据客户端IP地址识别ISP</title>
-      <link>https://racksam.github.io/2013/09/02/getting-client-isp-with-php/</link>
+      <link>http://www.racksam.com/2013/09/02/getting-client-isp-with-php/</link>
       <pubDate>Mon, 02 Sep 2013 10:39:07 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2013/09/02/getting-client-isp-with-php/</guid>
+      <guid>http://www.racksam.com/2013/09/02/getting-client-isp-with-php/</guid>
       <description>&lt;p&gt;PHP服务器端的程序，只要查询出客户端IP地址归属地以后，就可以在此基础上加以灵活应用。例如，针对来自不同的ISP的访问，返回不同的网页内容。或者根据用户所在的城市，跳转到该城市的地方网站。&lt;/p&gt;
 
 &lt;p&gt;这里是一个简单的区分不同的ISP的小程序。节选部分代码：&lt;/p&gt;</description>
@@ -44,10 +44,10 @@
     
     <item>
       <title>程序查询IP地址归属地的方法</title>
-      <link>https://racksam.github.io/2013/09/01/getting-ip-location-with-php/</link>
+      <link>http://www.racksam.com/2013/09/01/getting-ip-location-with-php/</link>
       <pubDate>Sun, 01 Sep 2013 10:39:07 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2013/09/01/getting-ip-location-with-php/</guid>
+      <guid>http://www.racksam.com/2013/09/01/getting-ip-location-with-php/</guid>
       <description>&lt;p&gt;程序中查询一个IP地址的归属地信息，方法有很多种。概括起来有两类：&lt;/p&gt;
 
 &lt;ol&gt;
@@ -71,19 +71,19 @@
     
     <item>
       <title>php中如何判断一个IP地址是否属于某个网络地址段</title>
-      <link>https://racksam.github.io/2013/08/09/good-php-script-to-judge-ip-range/</link>
+      <link>http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/</link>
       <pubDate>Fri, 09 Aug 2013 10:35:26 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2013/08/09/good-php-script-to-judge-ip-range/</guid>
+      <guid>http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/</guid>
       <description>这个问题困扰我很久了。很多人的做法是使用正则文字验证开头文字是否匹配。但是这种方式有很大的局限性，只能判断类似192.168.1.9是否属于</description>
     </item>
     
     <item>
       <title>PHP调用Linux Ping</title>
-      <link>https://racksam.github.io/2013/08/06/using-ping-with-php/</link>
+      <link>http://www.racksam.com/2013/08/06/using-ping-with-php/</link>
       <pubDate>Tue, 06 Aug 2013 10:06:57 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2013/08/06/using-ping-with-php/</guid>
+      <guid>http://www.racksam.com/2013/08/06/using-ping-with-php/</guid>
       <description>PHP中实现网络ping的功能，可以直接调用操作系统的ping命令。例如在Linux下，可以这样实现： &amp;lt;?php // 参照ping命令的参数 exec(&amp;quot;ping -c 2 www.tudaxia.com&amp;quot;, $output, $result);</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Whmcs on Racksam</title>
-    <link>https://racksam.github.io/tags/whmcs/</link>
+    <link>http://www.racksam.com/tags/whmcs/</link>
     <description>Recent content in Whmcs on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Thu, 01 Aug 2013 10:06:57 +0000</lastBuildDate>
     
-	<atom:link href="https://racksam.github.io/tags/whmcs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.racksam.com/tags/whmcs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Whmcs 密码api</title>
-      <link>https://racksam.github.io/2013/08/01/decode-password-with-whmcs-api/</link>
+      <link>http://www.racksam.com/2013/08/01/decode-password-with-whmcs-api/</link>
       <pubDate>Thu, 01 Aug 2013 10:06:57 +0000</pubDate>
       
-      <guid>https://racksam.github.io/2013/08/01/decode-password-with-whmcs-api/</guid>
+      <guid>http://www.racksam.com/2013/08/01/decode-password-with-whmcs-api/</guid>
       <description>&lt;p&gt;Whmcs是一款优秀的主机在线销售系统。虽然是使用php开发的，但是由于是商业软件，它使用&lt;a href=&#34;http://www.ioncube.com/&#34;&gt;ioncube&lt;/a&gt;对所有的php代码进行了加密。这样一来就无法在原有的代码基础上直接进行二次开发。&lt;/p&gt;
 
 &lt;p&gt;不过Whmcs开发人员为开发者预留了大量的API接口，可以很方便的进行功能扩展和定制&lt;a href=&#34;http://docs.whmcs.com/API&#34;&gt;http://docs.whmcs.com/API&lt;/a&gt;。这些接口可以通过两种方式进行调用。一种是php程序在whmcs目录内直接传递参数来调用localAPI函数，适宜于为whmcs开发各种模块或者hook；另外一种是通过web service方式，使用http接口来传递参数调用&lt;code&gt;http://yourdomain(host)/includes/api.php&lt;/code&gt;，这种方式适宜于不同系统之间的集成。如果使用web service接口，还有一个好处就是可以使用各种开发语言。&lt;/p&gt;</description>
