@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Centos on Racksam</title>
+    <title>CentOS on Racksam</title>
     <link>https://racksam.github.io/tags/centos/</link>
-    <description>Recent content in Centos on Racksam</description>
+    <description>Recent content in CentOS on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
