@@ -411,15 +411,15 @@
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
-        <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" itemprop="url">
+        <a href="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/" itemprop="url">
             <img src="https://racksam.github.io/banners/centos7-firewalld.jpg" class="article-banner">
         
         </a>
 
         <header class="article-header">
-    <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/">
+    <a href="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/">
     <h1 class="article-title" itemprop="name">
-        CentOS7下
+        CentOS7下使用Firewalld
     </h1>
     </a>
     <div class="article-meta">
@@ -429,7 +429,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
             &middot;
-            98
+            134
             words
             &middot;
             1
@@ -476,21 +476,21 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p>
-                为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent --zone=mysql --set-target=ACCEPT firewall-cmd --permanent --zone=mysql --add-service=mysql firewall-cmd --permanent --zone=mysql --add-source=192.168.110.27/32 firewall-cmd --permanent --zone=mysql --add-source=10.2.3.0/24 firewall-cmd --reload firewall-cmd --get-active-zones 只允许通过特定代理的IP地址访问http/https： firewall-cmd --permanent --new-zone=web
+                从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent --zone=mysql --set-target=ACCEPT firewall-cmd --permanent --zone=mysql --add-service=mysql firewall-cmd --permanent --zone=mysql --add-source=192.168.110.27/32 firewall-cmd --permanent
             </p>
             <p class="article-more-link">
-                <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/">
+                <a href="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/">
                     Read more
                 </a>
             </p>
         </div>
         <footer class="article-footer">
-    <a data-url="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" data-id="6fc3d6d7bcd872089285938e3eb5bd91" class="article-share-link">
+    <a data-url="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/" data-id="3d569903dc754f4e29534bfa212cef31" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/#disqus_thread" class="article-comment-link">
+    <a href="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -1915,7 +1915,7 @@ passwd deploy
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/" class="thumbnail">
                     
                         <span style="background-image:url(https://racksam.github.io/banners/centos7-firewalld.jpg)" alt="Racksam" class="thumbnail-image"></span>
                     
@@ -1932,7 +1932,7 @@ passwd deploy
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://racksam.github.io/2017/05/02/centos7-firewall-tips.md/" class="title">CentOS7下</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/05/02/centos7-firewalld-tips/" class="title">CentOS7下使用Firewalld</a></p>
                     <p class="item-date">
                         <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
                     </p>
