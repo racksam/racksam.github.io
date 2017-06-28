@@ -632,6 +632,10 @@ code {
 .profile-block:last-child {
   border-bottom: none;
 }
+.ads-sidebar {
+  padding: 20px 0px;
+}
+
 #profile {
   display: inline;
   float: left;
