@@ -47,7 +47,7 @@
 
 
 <meta itemprop="dateModified" content="2017-03-02T19:00:18&#43;00:00" />
-<meta itemprop="wordCount" content="2132">
+<meta itemprop="wordCount" content="2331">
 
 
 
@@ -188,7 +188,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        69
+        70
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -304,7 +304,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2017-03-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-03-02</time>
             &middot;
-            2132
+            2331
             words
             &middot;
             5
@@ -463,6 +463,7 @@ Bye
     (...省略...）
         
     driver = &quot;rlm_sql_mysql&quot;
+    dialect = &quot;mysql&quot;
         
     # Connection info:
     #
@@ -476,6 +477,11 @@ Bye
 </code></pre></li>
 
 <li><p><strong>调整FreeRadius与MariaDB的启动顺序</strong></p>
+
+<p>添加FreeRadius启动服务：</p>
+
+<pre><code># systemctl enable radiusd.service
+</code></pre>
 
 <p>FreeRadius服务必须在数据库正常启动后才能正常启动，否则会出错。为了确保这一点，按照以下方法强制指定radius服务启动的顺序</p>
 
@@ -494,20 +500,35 @@ After=mariadb.service
 
 <p>编辑<code>/etc/raddb/clients.conf</code>文件，为允许连接的客户端设置相应的共享秘钥</p>
 
-<p>例一：允许内网192.168.110网段连接该radius，共享秘钥为<code>MY_SHARED_SECRET</code>:</p>
+<p>例一：本地localhost接入(一般用于测试)，共享秘钥为<code>demo_radius_secret</code>:</p>
+
+<pre><code>client localhost {
+    ipaddr = 127.0.0.1
+    proto = *
+    secret = demo_radius_secret
+}
+    
+# IPv6 Client
+client localhost_ipv6 {
+    ipv6addr        = ::1
+    secret          = demo_radius_secret
+}
+</code></pre>
+
+<p>例二：允许内网192.168.110网段连接该radius，共享秘钥为<code>demo_radius_secret</code>:</p>
 
 <pre><code>client my_lan {
     ipaddr = 192.168.110.0/24
-    secret = MY_SHARED_SECRET
+    secret = demo_radius_secret
     require_message_authenticator = no
 }
 </code></pre>
 
-<p>例二：允许所有客户端连接：</p>
+<p>例三：允许所有客户端连接：</p>
 
 <pre><code>client all_client {
     ipaddr = 0.0.0.0/0
-    secret = thisisaescret
+    secret = demo_radius_secret
     require_message_authenticator = no
 }
 </code></pre></li>
@@ -515,7 +536,6 @@ After=mariadb.service
 <li><p>启动服务</p>
 
 <pre><code># systemctl start radiusd.service
-# systemctl enable radiusd.service
 # systemctl status radiusd.service
 </code></pre></li>
 
@@ -523,12 +543,12 @@ After=mariadb.service
 
 <p>连接mysql命令行<code>mysql -p radiusdb</code>，使用sql添加一条测试记录：</p>
 
-<pre><code>MariaDB [radiusdb]&gt; INSERT INTO radcheck (id, username, attribute, op, value) VALUES (1,'testuser','User-Password',':=','mypass');
+<pre><code>MariaDB [radiusdb]&gt; INSERT INTO radcheck (id, username, attribute, op, value) VALUES (1,'testuser','Cleartext-Password',':=','mypass');
 </code></pre>
 
 <p>使用radtest命令测试：<code>radtest [用户名] [密码] [radius服务器host/ip] 0 [对客户端设置的共享秘钥]</code>，例如：</p>
 
-<pre><code># radtest testuser mypass localhost 0 thisisaescret
+<pre><code># radtest testuser mypass localhost 0 demo_radius_secret
 </code></pre>
 
 <p>认证成功的输出如下：</p>
@@ -665,9 +685,22 @@ $configValues['CONFIG_DB_NAME'] = 'radiusdb';
 # systemctl restart nginx
 </code></pre></li>
 
+<li><p>打开防火墙http及https端口</p>
+
+<pre><code>firewall-cmd --permanent --add-service=http 
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload
+</code></pre></li>
+
 <li><p>登陆daloradius</p>
 
-<p>dns更改生效后，访问dalo.mysite.com即可配置FreeRadius。默认的管理员的用户名是administrator，密码是radius。</p></li>
+<p>dns更改生效后，访问dalo.mysite.com即可配置FreeRadius。默认的管理员的用户名是administrator，密码是radius。</p>
+
+<p>如果无法登陆，有一个可能的原因就是nginx无权限访问php的session目录。可以修改目录的属性或者将拥有者改为nginx用户, 例如：</p>
+
+<pre><code>chown nginx:nginx /var/run/php-fpm/ -R
+chown nginx:nginx /var/lib/php/ -R
+</code></pre></li>
 </ol>
 
 <h2 id="参考资料">参考资料</h2>
@@ -843,6 +876,32 @@ $configValues['CONFIG_DB_NAME'] = 'radiusdb';
             
             <li>
                 <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="CentOS 7 安装FreeRadius" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/05/02/centos7-firewalld-tips/" class="thumbnail">
                     
                         <span style="background-image:url(http://www.racksam.com/banners/centos7-firewalld.jpg)" alt="CentOS 7 安装FreeRadius" class="thumbnail-image"></span>
@@ -919,32 +978,6 @@ $configValues['CONFIG_DB_NAME'] = 'radiusdb';
                 </div>
             </li>
             
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/le-logo-wide.png)" alt="CentOS 7 安装FreeRadius" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="title">使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</a></p>
-                    <p class="item-date">
-                        <time datetime="2016-12-26 19:14:40 &#43;0000 UTC" itemprop="datePublished">2016-12-26</time>
-                    </p>
-                </div>
-            </li>
-            
         </ul>
     </div>
 </div>
@@ -998,7 +1031,7 @@ $configValues['CONFIG_DB_NAME'] = 'radiusdb';
                 <a class="category-list-link" href="http://www.racksam.com/categories/linux">
                     Linux
                 </a>
-                <span class="category-list-count">24</span>
+                <span class="category-list-count">25</span>
             </li>
             
             <li class="category-list-item">
@@ -1129,7 +1162,7 @@ $configValues['CONFIG_DB_NAME'] = 'radiusdb';
             
             
             
-            <a href="/tags/centos" style="font-size:0.8rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8333333333333334rem">CentOS</a></li>
          
             
             
@@ -1314,7 +1347,7 @@ $configValues['CONFIG_DB_NAME'] = 'radiusdb';
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8333333333333334rem">ssh</a></li>
          
             
             

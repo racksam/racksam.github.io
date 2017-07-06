@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://www.racksam.com/2017/06/05/centos7-change-sshd-port/</loc>
+    <lastmod>2017-06-05T19:00:18+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.racksam.com/about/</loc>
     <lastmod>2017-05-19T21:49:20+02:00</lastmod>
   </url>
@@ -38,7 +43,7 @@
   </url>
   
   <url>
-    <loc>http://www.racksam.com/2016/12/19/ssh%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
   </url>
   
@@ -371,7 +376,7 @@
   
   <url>
     <loc>http://www.racksam.com/tags/centos/</loc>
-    <lastmod>2017-05-02T19:00:18+00:00</lastmod>
+    <lastmod>2017-06-05T19:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -647,7 +652,7 @@
   
   <url>
     <loc>http://www.racksam.com/tags/ssh/</loc>
-    <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-05T19:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   

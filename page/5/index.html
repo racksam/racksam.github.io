@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2013-08-06T10:06:57&#43;00:00"/>
+<meta property="og:updated_time" content="2013-08-09T10:35:26&#43;00:00"/>
 
 
 
@@ -172,7 +172,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        69
+        70
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -270,6 +270,151 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/">
+    <h1 class="article-title" itemprop="name">
+        php中如何判断一个IP地址是否属于某个网络地址段
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2013-08-09 10:35:26 &#43;0000 UTC" itemprop="datePublished">2013-08-09</time>
+            &middot;
+            208
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/php">PHP</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/php">PHP</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                这个问题困扰我很久了。很多人的做法是使用正则文字验证开头文字是否匹配。但是这种方式有很大的局限性，只能判断类似192.168.1.9是否属于
+            </p>
+            <p class="article-more-link">
+                <a href="http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/" data-id="1cbb4f71daf6f2b67b76a84262c82b10" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1598,155 +1743,6 @@
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/">
-    <h1 class="article-title" itemprop="name">
-        将Python脚本程序发布成一个exe可执行文件
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2012-09-20 21:43:08 &#43;0000 UTC" itemprop="datePublished">2012-09-20</time>
-            &middot;
-            802
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/categories/python">Python</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/python">Python</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <h2 id="目的">目的</h2>
-
-<p>Python脚本如果需要发布给Windows客户运行，可以使用py2exe来编译成exe可执行文件,
-这样用户就不用安装Python运行环境。
-顺便还保护了源代码。（不过要注意，还是可以反编译的）</p>
-            </p>
-            <p class="article-more-link">
-                <a href="http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/" data-id="be3ce4042c8c0837d6d3dcf83f6fcaae" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1798,6 +1794,32 @@
                     <p class="item-title"><a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="Racksam" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
                     </p>
                 </div>
             </li>
@@ -1880,32 +1902,6 @@
                 </div>
             </li>
             
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/le-logo-wide.png)" alt="Racksam" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="title">使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</a></p>
-                    <p class="item-date">
-                        <time datetime="2016-12-26 19:14:40 &#43;0000 UTC" itemprop="datePublished">2016-12-26</time>
-                    </p>
-                </div>
-            </li>
-            
         </ul>
     </div>
 </div>
@@ -1959,7 +1955,7 @@
                 <a class="category-list-link" href="http://www.racksam.com/categories/linux">
                     Linux
                 </a>
-                <span class="category-list-count">24</span>
+                <span class="category-list-count">25</span>
             </li>
             
             <li class="category-list-item">
@@ -2090,7 +2086,7 @@
             
             
             
-            <a href="/tags/centos" style="font-size:0.8rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8333333333333334rem">CentOS</a></li>
          
             
             
@@ -2275,7 +2271,7 @@
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8333333333333334rem">ssh</a></li>
          
             
             

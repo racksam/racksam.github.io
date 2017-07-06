@@ -105,10 +105,10 @@ source .
     
     <item>
       <title>SSH免密码登录Linux服务器</title>
-      <link>http://www.racksam.com/2016/12/19/ssh%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/ssh%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95linux%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
       <description>一、如果本地没有创建ssh的秘钥对，则第一步需要先创建本地主机的ssh秘钥对 Linux或者MacOS可以直接用ssh-keygen命令在本地</description>
     </item>
     

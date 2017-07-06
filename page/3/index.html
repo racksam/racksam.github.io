@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-05-12T21:39:20&#43;00:00"/>
+<meta property="og:updated_time" content="2014-05-13T21:44:28&#43;00:00"/>
 
 
 
@@ -172,7 +172,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        69
+        70
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -270,6 +270,151 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/">
+    <h1 class="article-title" itemprop="name">
+        OS X 锁屏幕的快捷键
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2014-05-13 21:44:28 &#43;0000 UTC" itemprop="datePublished">2014-05-13</time>
+            &middot;
+            33
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/mac">Mac</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/computer">Computer</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Mac OS X下锁住屏幕的快捷键： ⌃ + ⇧ + ⏏ (Control + Shift + Eject) 其它的一些快捷键： http://support.apple.com/kb/ht1343
+            </p>
+            <p class="article-more-link">
+                <a href="http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/" data-id="3dae41cb459b394d29ddb06eae507256" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1718,151 +1863,6 @@ session.save_path = “/var/lib/php/session”</p></li>
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/">
-    <h1 class="article-title" itemprop="name">
-        强制浏览器刷新网站的favicon.ico
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2014-03-26 15:11:46 &#43;0000 UTC" itemprop="datePublished">2014-03-26</time>
-            &middot;
-            207
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/website">Website</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                网站更新了favicon.ico以后，很多浏览器里都无法立刻刷新。特别是Firefox，Chrome之类的浏览器，有时候即使清空缓存并重启以
-            </p>
-            <p class="article-more-link">
-                <a href="http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/" data-id="034cf18f0b300083da654b9cf8e6ffa9" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1914,6 +1914,32 @@ session.save_path = “/var/lib/php/session”</p></li>
                     <p class="item-title"><a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="Racksam" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
                     </p>
                 </div>
             </li>
@@ -1996,32 +2022,6 @@ session.save_path = “/var/lib/php/session”</p></li>
                 </div>
             </li>
             
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/le-logo-wide.png)" alt="Racksam" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" class="title">使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</a></p>
-                    <p class="item-date">
-                        <time datetime="2016-12-26 19:14:40 &#43;0000 UTC" itemprop="datePublished">2016-12-26</time>
-                    </p>
-                </div>
-            </li>
-            
         </ul>
     </div>
 </div>
@@ -2075,7 +2075,7 @@ session.save_path = “/var/lib/php/session”</p></li>
                 <a class="category-list-link" href="http://www.racksam.com/categories/linux">
                     Linux
                 </a>
-                <span class="category-list-count">24</span>
+                <span class="category-list-count">25</span>
             </li>
             
             <li class="category-list-item">
@@ -2206,7 +2206,7 @@ session.save_path = “/var/lib/php/session”</p></li>
             
             
             
-            <a href="/tags/centos" style="font-size:0.8rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8333333333333334rem">CentOS</a></li>
          
             
             
@@ -2391,7 +2391,7 @@ session.save_path = “/var/lib/php/session”</p></li>
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8333333333333334rem">ssh</a></li>
          
             
             
