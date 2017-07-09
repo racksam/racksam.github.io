@@ -7,10 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
-    <lastBuildDate>Tue, 02 May 2017 19:00:18 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jun 2017 21:00:18 +0000</lastBuildDate>
     
 	<atom:link href="http://www.racksam.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS7安装最新版rbenv&#43;ruby&#43;rails</title>
+      <link>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</link>
+      <pubDate>Wed, 28 Jun 2017 21:00:18 +0000</pubDate>
+      
+      <guid>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</guid>
+      <description>&lt;p&gt;这篇文章记录的是在一般国外的云服务器的安装过程，因此使用默认的gem源即可。 如果是在阿里云等国内的服务器上安装，需要考虑天朝的特殊网络问题。可以参考这篇文章：&lt;a href=&#34;http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails&#34;&gt;阿里云主机安装最新版rbenv+ruby+rails&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;一-安装编译环境-root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum update -y
+yum install -y git bzip2 openssl-devel readline-devel zlib-devel sqlite sqlite-devel gcc-c++
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;useradd deploy -G wheel
+passwd deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
+&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CentOS7下使用Firewalld</title>

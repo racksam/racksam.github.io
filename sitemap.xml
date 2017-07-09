@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</loc>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.racksam.com/2017/06/20/macos-xampp-mysql/</loc>
+    <lastmod>2017-06-20T19:00:18+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</loc>
     <lastmod>2017-06-08T19:00:18+00:00</lastmod>
   </url>
@@ -454,7 +464,7 @@
   
   <url>
     <loc>http://www.racksam.com/tags/linux/</loc>
-    <lastmod>2017-05-02T19:00:18+00:00</lastmod>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -467,6 +477,12 @@
   <url>
     <loc>http://www.racksam.com/categories/mac/</loc>
     <lastmod>2014-11-04T21:58:11+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.racksam.com/categories/macos/</loc>
+    <lastmod>2017-06-20T19:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -556,7 +572,7 @@
   
   <url>
     <loc>http://www.racksam.com/post/</loc>
-    <lastmod>2017-06-08T19:00:18+00:00</lastmod>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -586,13 +602,13 @@
   
   <url>
     <loc>http://www.racksam.com/</loc>
-    <lastmod>2017-06-08T19:00:18+00:00</lastmod>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/rails/</loc>
-    <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -610,13 +626,13 @@
   
   <url>
     <loc>http://www.racksam.com/tags/ruby/</loc>
-    <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/ruby/</loc>
-    <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -695,6 +711,12 @@
   <url>
     <loc>http://www.racksam.com/tags/wordpress/</loc>
     <lastmod>2011-11-02T21:04:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.racksam.com/tags/xampp/</loc>
+    <lastmod>2017-06-20T19:00:18+00:00</lastmod>
     <priority>0</priority>
   </url>
   

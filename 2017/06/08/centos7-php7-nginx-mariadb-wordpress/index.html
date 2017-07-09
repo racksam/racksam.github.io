@@ -47,11 +47,11 @@
 
 
 <meta itemprop="dateModified" content="2017-06-08T19:00:18&#43;00:00" />
-<meta itemprop="wordCount" content="1393">
+<meta itemprop="wordCount" content="1399">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,ngrok,php,protobuf,ssh,梯子," />
+<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,ngrok,php,protobuf,ssh,xampp,梯子," />
 
     
 
@@ -188,12 +188,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        70
+        72
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          41
+          42
         
         <span>
             Tags
@@ -304,7 +304,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
             &middot;
-            1393
+            1399
             words
             &middot;
             3
@@ -394,7 +394,7 @@ gpgcheck=1
 
 <li><p>修改設定</p>
 
-<p>亚洲语言的用户，建议将默认服务器内码修改成utf8。另外根据实际需要修改其它的配置。 <code>vi /etc/my.cnf</code>, 增加以下配置。</p>
+<p>亚洲语言的用户，建议将默认服务器内码修改成utf8。另外根据实际需要修改其它的配置。 <code>vi /etc/my.cnf.d/server.cnf</code>, 增加以下配置。</p>
 
 <pre><code>[mysqld]
 character-set-server = utf8
@@ -485,6 +485,8 @@ pear install DB
 
 <pre><code>user = nginx
 group = nginx
+listen.owner = nginx
+listen.group = nginx
     
 ；如果不需要外部主机访问该php-fpm的话，推荐改为监听unix socket.
 listen = /var/run/php-fpm/php-fpm.sock
@@ -495,13 +497,7 @@ listen = /var/run/php-fpm/php-fpm.sock
 <pre><code># systemctl start php-fpm
 # systemctl enable php-fpm
 </code></pre></li>
-
-<li><p>修改php-fpm的unix目录的用户及组</p></li>
 </ol>
-
-<pre><code>   chown nginx:nginx /var/run/php-fpm/ -R
-   chown nginx:nginx /var/lib/php/ -R
-</code></pre>
 
 <h2 id="六-安装配置wordpress站点">六、安装配置WordPress站点</h2>
 
@@ -598,6 +594,12 @@ mysql&gt; GRANT ALL PRIVILEGES ON my_site_db.* TO my_db_user@'localhost' IDENTIF
 <p>重启动nginx:</p>
 
 <pre><code># systemctl start nginx
+</code></pre></li>
+
+<li><p>修改php-fpm的unix目录的用户及组</p>
+
+<pre><code>chown nginx:nginx /var/run/php-fpm/ -R
+chown nginx:nginx /var/lib/php/ -R
 </code></pre></li>
 </ol>
 
@@ -712,6 +714,13 @@ firewall-cmd --list-services
     
 
     
+    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">macOS XAMPP MySQL配置</div>
+    </a>
+    
 </nav>
 
 
@@ -750,6 +759,58 @@ firewall-cmd --list-services
     </h3>
     <div class="widget">
         <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        macos
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP MySQL配置</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -825,58 +886,6 @@ firewall-cmd --list-services
                     <p class="item-title"><a href="http://www.racksam.com/2017/05/02/centos7-firewalld-tips/" class="title">CentOS7下使用Firewalld</a></p>
                     <p class="item-date">
                         <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/computer-time-to-upgrade-300x214.jpg)" alt="CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
-                        FreeRadius
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/" class="title">从FreeRadius 2 迁移到 3</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-04-01 15:00:18 &#43;0000 UTC" itemprop="datePublished">2017-04-01</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/03/02/centos7-install-freeradius/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
-                        FreeRadius
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/03/02/centos7-install-freeradius/" class="title">CentOS 7 安装FreeRadius</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-03-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-03-02</time>
                     </p>
                 </div>
             </li>
@@ -998,13 +1007,21 @@ firewall-cmd --list-services
                 <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
                     Ruby
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
                 <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
                     ShellScript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                    macos
                 </a>
                 <span class="category-list-count">1</span>
             </li>
@@ -1065,12 +1082,12 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/centos" style="font-size:0.8333333333333334rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8324324324324325rem">CentOS</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8666666666666667rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8648648648648649rem">Computer</a></li>
          
             
             
@@ -1090,7 +1107,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8333333333333334rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8324324324324325rem">DSP</a></li>
          
             
             
@@ -1100,7 +1117,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8333333333333334rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8324324324324325rem">FreeRadius</a></li>
          
             
             
@@ -1125,7 +1142,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/mysql" style="font-size:1rem">MySQL</a></li>
+            <a href="/tags/mysql" style="font-size:0.9945945945945946rem">MySQL</a></li>
          
             
             
@@ -1135,7 +1152,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9333333333333333rem">Nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9297297297297298rem">Nginx</a></li>
          
             
             
@@ -1145,7 +1162,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/php" style="font-size:0.9333333333333333rem">PHP</a></li>
+            <a href="/tags/php" style="font-size:0.9297297297297298rem">PHP</a></li>
          
             
             
@@ -1155,7 +1172,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8333333333333334rem">PostgreSQL</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8324324324324325rem">PostgreSQL</a></li>
          
             
             
@@ -1165,12 +1182,12 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/python" style="font-size:1rem">Python</a></li>
+            <a href="/tags/python" style="font-size:0.9945945945945946rem">Python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9rem">Rails</a></li>
+            <a href="/tags/rails" style="font-size:0.9297297297297298rem">Rails</a></li>
          
             
             
@@ -1180,7 +1197,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/ruby" style="font-size:0.8666666666666667rem">Ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.8972972972972973rem">Ruby</a></li>
          
             
             
@@ -1205,7 +1222,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8333333333333334rem">VPN</a></li>
+            <a href="/tags/vpn" style="font-size:0.8324324324324325rem">VPN</a></li>
          
             
             
@@ -1215,7 +1232,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/website" style="font-size:0.8666666666666667rem">Website</a></li>
+            <a href="/tags/website" style="font-size:0.8648648648648649rem">Website</a></li>
          
             
             
@@ -1240,7 +1257,7 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/php" style="font-size:0.8333333333333334rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.8324324324324325rem">php</a></li>
          
             
             
@@ -1250,7 +1267,12 @@ firewall-cmd --list-services
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8333333333333334rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8324324324324325rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/xampp" style="font-size:0.8rem">xampp</a></li>
          
             
             
