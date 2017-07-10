@@ -23,7 +23,7 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;git导致了很多额外的工作量:&lt;/p&gt;
 
-&lt;p&gt;由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Ruby on Rails的安装要比php复杂:&lt;/p&gt;
 
@@ -37,6 +37,8 @@
 &lt;/ol&gt;
 
 &lt;p&gt;所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。&lt;/p&gt;
+
+&lt;p&gt;这里记录的是配置ruby + puma + github + mina发布工具的方法。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -73,7 +75,7 @@ passwd deploy
     </item>
     
     <item>
-      <title>macOS XAMPP MySQL配置</title>
+      <title>macOS XAMPP使用mysql命令行</title>
       <link>http://www.racksam.com/2017/06/20/macos-xampp-mysql/</link>
       <pubDate>Tue, 20 Jun 2017 19:00:18 +0000</pubDate>
       
@@ -127,7 +129,7 @@ passwd deploy
     </item>
     
     <item>
-      <title>使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</title>
+      <title>使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书</title>
       <link>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
       <pubDate>Mon, 26 Dec 2016 19:14:40 +0000</pubDate>
       

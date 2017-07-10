@@ -26,7 +26,7 @@
 
 git导致了很多额外的工作量:
 
-由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。
+由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。
 
 Ruby on Rails的安装要比php复杂:
 
@@ -40,6 +40,8 @@ puma等ruby应用服务器的启动参数太复杂：
 
 
 所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
+
+这里记录的是配置ruby &#43; puma &#43; github &#43; mina发布工具的方法。
 
 " />
 <meta property="og:type" content="article" />
@@ -68,7 +70,7 @@ puma等ruby应用服务器的启动参数太复杂：
 
 git导致了很多额外的工作量:
 
-由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。
+由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。
 
 Ruby on Rails的安装要比php复杂:
 
@@ -83,11 +85,13 @@ puma等ruby应用服务器的启动参数太复杂：
 
 所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
 
+这里记录的是配置ruby &#43; puma &#43; github &#43; mina发布工具的方法。
+
 ">
 
 
 <meta itemprop="dateModified" content="2017-06-30T13:31:41&#43;00:00" />
-<meta itemprop="wordCount" content="3100">
+<meta itemprop="wordCount" content="3738">
 
 
 
@@ -106,7 +110,7 @@ puma等ruby应用服务器的启动参数太复杂：
 
 git导致了很多额外的工作量:
 
-由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。
+由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。
 
 Ruby on Rails的安装要比php复杂:
 
@@ -120,6 +124,8 @@ puma等ruby应用服务器的启动参数太复杂：
 
 
 所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
+
+这里记录的是配置ruby &#43; puma &#43; github &#43; mina发布工具的方法。
 
 "/>
 
@@ -364,10 +370,10 @@ puma等ruby应用服务器的启动参数太复杂：
             <i class="fa fa-calendar"></i>
             <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
             &middot;
-            3100
+            3738
             words
             &middot;
-            7
+            8
             minute read
         </div>
         
@@ -419,7 +425,7 @@ puma等ruby应用服务器的启动参数太复杂：
 <ol>
 <li><p>git导致了很多额外的工作量:</p>
 
-<p>由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。</p></li>
+<p>由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。</p></li>
 
 <li><p>Ruby on Rails的安装要比php复杂:</p>
 
@@ -433,6 +439,8 @@ puma等ruby应用服务器的启动参数太复杂：
 </ol>
 
 <p>所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。</p>
+
+<p>这里记录的是配置ruby + puma + github + mina发布工具的方法。</p>
 
 <p></p>
 
@@ -487,12 +495,19 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub deploy@xxx.xxx.xxx.xxx -p 2233
 <p>参考：<a href="/2016/12/19/centos7-setup-ssh-pubrsa">SSH免密码登录Linux服务器</a></p></li>
 </ol>
 
-<h2 id="三-ruby项目里安装-mina-gem">三、ruby项目里安装<code>mina</code>gem</h2>
+<h2 id="三-ruby项目里添加-mina-以及-dotenv-rails-gem">三、ruby项目里添加<code>mina</code>以及<code>dotenv-rails</code>gem</h2>
 
 <ol>
-<li><p>在<code>Gemfile</code>里添加mina。</p>
+<li><p>在<code>Gemfile</code>里添加mina</p>
 
 <pre><code>gem 'mina'
+</code></pre></li>
+
+<li><p>在<code>Gemfile</code>里添加<code>dotenv-rails</code>(可选)</p>
+
+<p>puma等ruby应用在启动时，经常需要读取系统的环境变量，例如<code>RAILS_ENV</code>以及<code>SECRET_KEY_BASE</code>。可以通过命令行加参数的方法，也可以直接使用linux的<code>export</code>命令赋值。不过<code>dotenv-rails</code>的使用方法更简单，安装了这个gem以后，可以直接读取在项目根目录下的<code>.env</code>里面的参数配置。</p>
+
+<pre><code>gem 'dotenv-rails'
 </code></pre></li>
 
 <li><p>安装gem</p>
@@ -506,9 +521,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub deploy@xxx.xxx.xxx.xxx -p 2233
 <ol>
 <li><p>参考文档：<a href="https://github.com/mina-deploy/mina/tree/master/docs">https://github.com/mina-deploy/mina/tree/master/docs</a></p></li>
 
-<li><p>mina增加了对puma的控制任务。这部分的代码主要来源于<a href="https://github.com/untitledkingdom/mina-puma">mina-puma</a>。考虑到学习及更个性化的定制的需求，这里将mina-puma的源代码直接复制到这里。除了将&rsquo;pumactl_socket&rsquo;改成了&rsquo;puma_socket&rsquo;以外，以及去掉了端口方式启动才有的<code>--control</code>启动参数，其它未做改动。</p></li>
-
-<li><p>这里没有使用config/puma.rb配置文件，而是mina在命令行中指定启动参数。也可以根据需要，将puma.rb配置文件放到shared/config目录里面，使用配置文件方式来启动puma。</p></li>
+<li><p>我的mina脚本中增加了对puma的控制任务。这部分的代码主要来源于<a href="https://github.com/untitledkingdom/mina-puma">mina-puma</a>。考虑到学习及更个性化的定制的需求，这里将mina-puma的源代码直接复制到这里。除了将&rsquo;pumactl_socket&rsquo;改成了&rsquo;puma_socket&rsquo;以外，以及去掉了端口方式启动才有的<code>--control</code>启动参数，其它未做改动。</p></li>
 
 <li><p>[rail项目]/config/deploy.rb脚本的内容：</p>
 
@@ -523,7 +536,7 @@ require 'mina/rbenv' # for rbenv support. (https://rbenv.org)
     
 # Basic settings:
 set :domain, 'my_server_host' # The hostname to SSH to.
-set :deploy_to, '/home/deploy/[my_project]' #Path to deploy into.
+set :deploy_to, '/opt/ruby/[my_project]' #Path to deploy into.
 set :repository, 'git@github.com:[myusename]/[my_project].git' # Git repo to clone from. (needed by mina/git)
 set :branch, 'master' #Branch name to deploy. (needed by mina/git)
     
@@ -537,7 +550,7 @@ set :user, 'deploy' # Username in the server to SSH to.
 # set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/secrets.yml')
 # set :shared_paths, ['config/database.yml', 'log', 'config/secrets.yml']
 set :shared_dirs, ['log', 'tmp', 'public/assets']
-set :shared_files, ['config/database.yml', '.env', 'config/secrets.yml']
+set :shared_files, ['config/database.yml', 'config/puma.rb', '.env', 'config/secrets.yml']
     
 # 将几个set参数简化成ruby变量
 deploy_to = fetch(:deploy_to)
@@ -605,12 +618,16 @@ task :scpconfig do
   ssh_port = fetch(:port)
   ssh_host = fetch(:domain)
   ssh_user = fetch(:user)
-    
+        
+  #执行本地的scp命令，将不受git控制的设置文件上传到服务器上的共享目录中   
   run :local do
     command &quot;scp -P #{ssh_port} config/database.yml #{ssh_user}@#{ssh_host}:#{shared_path}/config/&quot;
-    command &quot;scp -P #{ssh_port} config/puma.rb #{ssh_user}@#{ssh_host}:#{shared_path}/config/&quot;
     command &quot;scp -P #{ssh_port} config/secrets.yml #{ssh_user}@#{ssh_host}:#{shared_path}/config/&quot;
     # command &quot;scp -P #{ssh_port} .env #{ssh_user}@#{ssh_host}:#{shared_path}/&quot;
+        
+    # 本地开发环境下，可以将puma.rb放置到config/puma/目录下,
+    # 按照环境分别命名为development.rb及production.rb.
+    command &quot;scp -P #{ssh_port} config/puma/production.rb #{ssh_user}@#{ssh_host}:#{shared_path}/config/puma.rb&quot;
   end
     
 end
@@ -736,7 +753,40 @@ end
 </code></pre></li>
 </ol>
 
-<h2 id="五-使用mina发布服务的方法">五、使用mina发布服务的方法</h2>
+<h2 id="五-shared-config-puma-rb-的内容">五、<code>shared/config/puma.rb</code>的内容</h2>
+
+<ol>
+<li><p>CentOS生产服务器上如果存在<code>shared/config/puma.rb</code>配置文件，则mina中的puma启动参数是受该文件控制，否则mina会在命令行中指定启动参数。考虑到生产环境的还会有一个puma的自启动服务脚本，因此推荐使用puma.rb配置文件，这样就可以共享puma的启动参数。</p>
+
+<pre><code>threads_count = ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 }
+threads threads_count, threads_count
+    
+# 可以选择不监听tcp端口，只监听unix socket
+# port        ENV.fetch(&quot;PORT&quot;) { 3000 }
+environment ENV.fetch(&quot;RAILS_ENV&quot;) { &quot;production&quot; }
+    
+# 定义一个项目目录的变量
+project_tmp_dir = '/opt/ruby/[my_project]/shared/tmp'
+    
+pidfile &quot;#{project_tmp_dir}/pids/puma.pid&quot;
+bind &quot;unix://#{project_tmp_dir}/sockets/puma.sock&quot;
+state_path &quot;#{project_tmp_dir}/sockets/puma.state&quot;
+    
+quiet
+threads 0, 16
+workers 2
+</code></pre></li>
+
+<li><p>macOS开发环境下，如果要根据不同的运行环境，配置不同的puma.rb文件的话，可以将[项目目录]/config/puma.rb文件转移到<code>config/puma/</code>目录下，分别命名为development.rb, production.rb，例如：</p>
+
+<pre><code>[项目目录]\config\puma\
+    development.rb
+    production.rb
+    test.rb
+</code></pre></li>
+</ol>
+
+<h2 id="六-使用mina发布服务的方法">六、使用mina发布服务的方法</h2>
 
 <p>mina可以自由定制不同的任务。以上文的mina配置样本为例，说明在<strong>macOS开发环境中</strong>的使用方法。</p>
 
@@ -763,7 +813,7 @@ mina scpconfig
 <pre><code>mina deploy
 </code></pre></li>
 
-<li><p>执行puma的相关任务</p>
+<li><p>手工执行puma的相关任务</p>
 
 <p>puma的运行环境(development, test, production)，如果在<code>rails_env</code>环境变量中获取不到，则默认启动production环境。</p>
 
@@ -989,7 +1039,7 @@ mina puma:status
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP MySQL配置</a></p>
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>

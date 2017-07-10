@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>使用acme.sh脚本及DNS API方式申请及更新let&#39;s encrypt证书</title>
+      <title>使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书</title>
       <link>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
       <pubDate>Mon, 26 Dec 2016 19:14:40 +0000</pubDate>
       

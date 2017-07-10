@@ -5,741 +5,951 @@
   <url>
     <loc>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</loc>
     <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/06/20/macos-xampp-mysql/</loc>
     <lastmod>2017-06-20T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</loc>
     <lastmod>2017-06-08T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/06/05/centos7-change-sshd-port/</loc>
     <lastmod>2017-06-05T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/about/</loc>
     <lastmod>2017-05-19T21:49:20+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/05/02/centos7-firewalld-tips/</loc>
     <lastmod>2017-05-02T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</loc>
     <lastmod>2017-04-01T15:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2017/03/02/centos7-install-freeradius/</loc>
     <lastmod>2017-03-02T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</loc>
     <lastmod>2016-12-26T19:14:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</loc>
     <lastmod>2016-12-19T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</loc>
     <lastmod>2016-12-18T15:11:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</loc>
     <lastmod>2016-05-03T09:02:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</loc>
     <lastmod>2016-04-02T16:46:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/03/12/upload-file-with-rails-and-ajax/</loc>
     <lastmod>2016-03-12T20:21:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</loc>
     <lastmod>2016-03-01T21:08:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2016/02/18/to-be-a-modern-web-developer/</loc>
     <lastmod>2016-02-18T20:08:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</loc>
     <lastmod>2014-11-04T21:58:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/10/15/install-macos-packagemaker/</loc>
     <lastmod>2014-10-15T21:51:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/05/14/python-script-to-change-pictures-filenames/</loc>
     <lastmod>2014-05-14T21:51:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/</loc>
     <lastmod>2014-05-13T21:44:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/05/12/replace-ssd-for-macpro2012/</loc>
     <lastmod>2014-05-12T21:39:20+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/09/diy-python-mysql-class/</loc>
     <lastmod>2014-04-09T21:35:20+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</loc>
     <lastmod>2014-04-09T21:30:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/08/iptables-script-for-web-service/</loc>
     <lastmod>2014-04-08T20:56:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</loc>
     <lastmod>2014-04-06T17:08:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</loc>
     <lastmod>2014-04-05T17:23:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</loc>
     <lastmod>2014-04-05T15:27:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</loc>
     <lastmod>2014-04-04T15:27:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</loc>
     <lastmod>2014-04-03T15:17:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</loc>
     <lastmod>2014-03-26T15:11:46+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/02/01/how-to-disable-searching-spider/</loc>
     <lastmod>2014-02-01T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2014/01/01/php-fetch-gmail/</loc>
     <lastmod>2014-01-01T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/09/28/squid-reverse-proxy/</loc>
     <lastmod>2013-09-28T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/09/10/some-dsp-cases-in-china/</loc>
     <lastmod>2013-09-10T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/09/09/some-resource-of-dsp-and-rtb/</loc>
     <lastmod>2013-09-09T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/09/03/mobile-location-technology/</loc>
     <lastmod>2013-09-03T10:39:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/09/02/getting-client-isp-with-php/</loc>
     <lastmod>2013-09-02T10:39:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/09/01/getting-ip-location-with-php/</loc>
     <lastmod>2013-09-01T10:39:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/08/10/getting-client-real-ip-address-in-php-request/</loc>
     <lastmod>2013-08-10T10:06:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/08/09/good-php-script-to-judge-ip-range/</loc>
     <lastmod>2013-08-09T10:35:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/08/06/using-ping-with-php/</loc>
     <lastmod>2013-08-06T10:06:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/08/03/dnspod-api-resource/</loc>
     <lastmod>2013-08-03T10:06:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2013/08/01/decode-password-with-whmcs-api/</loc>
     <lastmod>2013-08-01T10:06:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/26/py2exe-error-of-msvcp90-dll/</loc>
     <lastmod>2012-09-26T09:58:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/25/linux-commands-to-use-mysql/</loc>
     <lastmod>2012-09-25T09:49:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</loc>
     <lastmod>2012-09-24T09:49:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</loc>
     <lastmod>2012-09-23T09:49:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</loc>
     <lastmod>2012-09-22T09:41:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/21/py2exe-get-current-directory/</loc>
     <lastmod>2012-09-21T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/</loc>
     <lastmod>2012-09-20T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</loc>
     <lastmod>2012-09-01T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/</loc>
     <lastmod>2012-03-21T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</loc>
     <lastmod>2011-12-09T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</loc>
     <lastmod>2011-12-02T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</loc>
     <lastmod>2011-11-21T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</loc>
     <lastmod>2011-11-20T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</loc>
     <lastmod>2011-11-03T21:33:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</loc>
     <lastmod>2011-11-02T21:04:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</loc>
     <lastmod>2011-11-01T21:04:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/</loc>
     <lastmod>2011-10-09T18:53:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</loc>
     <lastmod>2011-09-02T19:52:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/10/centos-vncserver-setup/</loc>
     <lastmod>2011-06-10T19:43:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/09/extend-linux-lvm/</loc>
     <lastmod>2011-06-09T18:53:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/09/mysql-backup-shell-script/</loc>
     <lastmod>2011-06-09T18:07:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/09/import-and-export-mysql-database/</loc>
     <lastmod>2011-06-09T17:45:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</loc>
     <lastmod>2011-06-09T17:17:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/08/create-mysql-database-and-users/</loc>
     <lastmod>2011-06-08T14:50:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</loc>
     <lastmod>2011-06-08T14:22:13+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/2011/06/07/how-to-disable-table-name-case-sensitive/</loc>
     <lastmod>2011-06-07T13:10:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/ajax/</loc>
     <lastmod>2016-03-12T20:21:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/android/</loc>
     <lastmod>2014-11-04T21:58:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/centos/</loc>
     <lastmod>2017-06-05T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/computer/</loc>
     <lastmod>2014-10-15T21:51:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/cordova/</loc>
     <lastmod>2014-11-04T21:58:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/dd-wrt/</loc>
     <lastmod>2011-12-09T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/dns/</loc>
     <lastmod>2014-04-09T21:30:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/dnspod/</loc>
     <lastmod>2013-08-03T10:06:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/dsp/</loc>
     <lastmod>2013-09-10T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/dsp/</loc>
     <lastmod>2013-09-10T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/firewalld/</loc>
     <lastmod>2017-05-02T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/freeradius/</loc>
     <lastmod>2017-04-01T15:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/freeradius/</loc>
     <lastmod>2017-04-01T15:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/gmail/</loc>
     <lastmod>2014-01-01T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/java/</loc>
     <lastmod>2011-06-08T14:22:13+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/linux/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/linux/</loc>
     <lastmod>2017-06-08T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/mac/</loc>
     <lastmod>2014-11-04T21:58:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/macos/</loc>
     <lastmod>2017-06-20T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/mina/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/mobile/</loc>
     <lastmod>2013-09-03T10:39:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/mobile/</loc>
     <lastmod>2013-09-03T10:39:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/mysql/</loc>
     <lastmod>2012-09-25T09:49:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/mysql/</loc>
     <lastmod>2011-06-09T18:07:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/network/</loc>
     <lastmod>2012-09-22T09:41:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/nginx/</loc>
     <lastmod>2017-06-08T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/ngrok/</loc>
     <lastmod>2016-12-18T15:11:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/oracle/</loc>
     <lastmod>2011-10-09T18:53:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/php/</loc>
     <lastmod>2014-04-04T15:27:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/php/</loc>
     <lastmod>2014-04-05T17:23:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/phonegap/</loc>
     <lastmod>2014-11-04T21:58:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/php/</loc>
     <lastmod>2014-04-04T15:27:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/postgresql/</loc>
     <lastmod>2016-05-03T09:02:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/postgresql/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/post/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/protobuf/</loc>
     <lastmod>2014-04-06T17:08:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/puma/</loc>
     <lastmod>2016-03-01T21:08:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/python/</loc>
     <lastmod>2014-05-14T21:51:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/python/</loc>
     <lastmod>2014-05-14T21:51:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/rails/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/rails/</loc>
     <lastmod>2016-05-03T09:02:30+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/rsync/</loc>
     <lastmod>2012-03-21T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/ruby/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/ruby/</loc>
     <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/seo/</loc>
     <lastmod>2014-02-01T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/ssl/</loc>
     <lastmod>2016-12-26T19:14:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/shellscript/</loc>
     <lastmod>2012-09-25T09:49:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/shellscript/</loc>
     <lastmod>2014-04-08T20:56:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/squid/</loc>
     <lastmod>2013-09-28T10:59:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/ssh/</loc>
     <lastmod>2017-06-05T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/</loc>
     <lastmod>2016-03-12T20:21:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/vpn/</loc>
     <lastmod>2017-04-01T15:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/web/</loc>
     <lastmod>2016-02-18T20:08:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/website/</loc>
     <lastmod>2014-04-05T15:27:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/wget/</loc>
     <lastmod>2012-09-01T21:43:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/whmcs/</loc>
     <lastmod>2013-08-01T10:06:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/wordpress/</loc>
     <lastmod>2011-11-02T21:04:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/xampp/</loc>
     <lastmod>2017-06-20T19:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2016-02-18T20:08:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/%E6%A2%AF%E5%AD%90/</loc>
     <lastmod>2016-12-19T21:00:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
