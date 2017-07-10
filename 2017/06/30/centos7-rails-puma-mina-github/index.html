@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>CentOS7使用mina &#43; github发布Rails项目 &middot; Racksam</title>
+    <meta name="generator" content="Hugo 0.24" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Rack Sam">
+    
+      <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
+    
+    
+    <link rel="canonical" href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/"/>
+    <link rel="icon" href="http://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="CentOS7使用mina &#43; github发布Rails项目" />
+<meta property="og:description" content="php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：
+
+
+git导致了很多额外的工作量:
+
+由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。
+
+Ruby on Rails的安装要比php复杂:
+
+原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。
+
+puma等ruby应用服务器的启动参数太复杂：
+
+表面看起来是这样。[rails项目]/config/puma.rb文件里配置，或者直接在puma命令行启动时的参数，有很多不熟悉的参数。稍微用错了参数，就会导致puma不启动或者出现各种问题，让新手精疲力尽。
+
+其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置/etc/php-fpm.d/www.conf文件，有时候还需要修改/etc/php.ini文件。
+
+
+所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" />
+
+
+
+<meta property="article:published_time" content="2017-06-30T13:31:41&#43;00:00"/>
+<meta property="article:modified_time" content="2017-06-30T13:31:41&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta itemprop="name" content="CentOS7使用mina &#43; github发布Rails项目">
+<meta itemprop="description" content="php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：
+
+
+git导致了很多额外的工作量:
+
+由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。
+
+Ruby on Rails的安装要比php复杂:
+
+原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。
+
+puma等ruby应用服务器的启动参数太复杂：
+
+表面看起来是这样。[rails项目]/config/puma.rb文件里配置，或者直接在puma命令行启动时的参数，有很多不熟悉的参数。稍微用错了参数，就会导致puma不启动或者出现各种问题，让新手精疲力尽。
+
+其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置/etc/php-fpm.d/www.conf文件，有时候还需要修改/etc/php.ini文件。
+
+
+所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
+
+">
+
+
+<meta itemprop="dateModified" content="2017-06-30T13:31:41&#43;00:00" />
+<meta itemprop="wordCount" content="3100">
+
+
+
+<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
+
+    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="CentOS7使用mina &#43; github发布Rails项目"/>
+<meta name="twitter:title" content="CentOS7使用mina &#43; github发布Rails项目"/>
+<meta name="twitter:description" content="php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：
+
+
+git导致了很多额外的工作量:
+
+由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。
+
+Ruby on Rails的安装要比php复杂:
+
+原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。
+
+puma等ruby应用服务器的启动参数太复杂：
+
+表面看起来是这样。[rails项目]/config/puma.rb文件里配置，或者直接在puma命令行启动时的参数，有很多不熟悉的参数。稍微用错了参数，就会导致puma不启动或者出现各种问题，让新手精疲力尽。
+
+其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置/etc/php-fpm.d/www.conf文件，有时候还需要修改/etc/php.ini文件。
+
+
+所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
+
+"/>
+
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="http://www.racksam.com" id="logo">
+          
+          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          
+          <span class="site-title">Racksam</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="Search">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      
+      <h2 id="name">Rack Sam</h2>
+      <h3 id="title">Programmer - Freelancer - Father</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Earth</span>
+      
+          <a id="follow" href="https://github.com/racksam">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        73
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          43
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/racksam" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//facebook.com/howard2stone" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></td>
+
+
+
+
+          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="ads-sidebar"> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:285px;height:600px"
+     data-ad-client="ca-pub-2935823567059327"
+     data-ad-slot="4741316290"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  	</div>
+  
+  </div>
+  
+</aside>
+
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <img src="http://www.racksam.com/banners/ruby-github-puma.jpg" class="article-banner">
+        
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/">
+    <h1 class="article-title" itemprop="name">
+        CentOS7使用mina &#43; github发布Rails项目
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
+            &middot;
+            3100
+            words
+            &middot;
+            7
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/ruby">Ruby</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/ruby">Ruby</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/rails">Rails</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/mina">mina</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：</p>
+
+<ol>
+<li><p>git导致了很多额外的工作量:</p>
+
+<p>由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上团队开发的php开发项目也应该这么做。</p></li>
+
+<li><p>Ruby on Rails的安装要比php复杂:</p>
+
+<p>原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。</p></li>
+
+<li><p>puma等ruby应用服务器的启动参数太复杂：</p>
+
+<p>表面看起来是这样。[rails项目]/config/puma.rb文件里配置，或者直接在puma命令行启动时的参数，有很多不熟悉的参数。稍微用错了参数，就会导致puma不启动或者出现各种问题，让新手精疲力尽。</p>
+
+<p>其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置<code>/etc/php-fpm.d/www.conf</code>文件，有时候还需要修改<code>/etc/php.ini</code>文件。</p></li>
+</ol>
+
+<p>所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。</p>
+
+<p></p>
+
+<h2 id="一-centos服务器主机上的renv-ruby环境准备">一、CentOS服务器主机上的renv+ruby环境准备</h2>
+
+<ol>
+<li><p>创建ruby项目专用的用户，在该用户下配置ruby及rails环境。</p>
+
+<p>参考文档：<a href="/2017/06/28/centos7-install-rbenv-ruby-rails">CentOS7安装最新版rbenv+ruby+rails</a></p></li>
+
+<li><p>确保CentOS系统已经安装git</p>
+
+<pre><code># yum -y install git
+</code></pre></li>
+
+<li><p>如果开发的项目是托管在github私有账号下的，那么需要将应用服务器的ssh公钥加到github的信任白名单中，否则无法获取github授权。</p>
+
+<pre><code>#在CentOS服务器的deploy专用账号下，使用ssh-keygen命令在本地主机生成密钥对：
+cd ~/.ssh
+ssh-keygen -t rsa
+</code></pre>
+
+<p>登陆到github账号，打开需要访问的<code>repository</code>,在<code>Settings-&gt;Deploy keys</code>页面，创建ssh key记录。</p>
+
+<p><img src="/attachments/centos7-rails-puma-mina-github/github-sshkey-repository.jpg" alt="" /></p>
+
+<p>也可以为所有项目创建ssh key。<code>Settings-&gt;SSH and GPG keys</code>页面，新创建一个ssh key，将<code>id_rsa.pub</code>的字符串(注意没有换行)复制到key文本框内，保存。</p>
+
+<p><img src="/attachments/centos7-rails-puma-mina-github/github-sshkey.jpg" alt="" /></p></li>
+</ol>
+
+<h2 id="二-macos开发环境的环境准备">二、macOS开发环境的环境准备</h2>
+
+<ol>
+<li><p>如果还没有创建ssh秘钥对，则在开发机生成ssh秘钥对。</p>
+
+<pre><code>cd ~/.ssh
+ssh-keygen -t rsa
+</code></pre></li>
+
+<li><p>登陆github账号，将开发机的<code>id_rsa.pub</code>的内容保存到<code>Settings-&gt;SSH and GPG keys</code>的一条记录里。</p></li>
+
+<li><p>将公钥添加到远程CentOS服务器deploy用户名下的authorized_keys文件中, 使用命令：</p>
+
+<pre><code># 例如服务器地址是xxx.xxx.xxx.xxx
+ssh-copy-id -i ~/.ssh/id_rsa.pub deploy@xxx.xxx.xxx.xxx
+
+# 服务器SSH的端口需要指定时的用法
+ssh-copy-id -i ~/.ssh/id_rsa.pub deploy@xxx.xxx.xxx.xxx -p 2233
+</code></pre>
+
+<p>参考：<a href="/2016/12/19/centos7-setup-ssh-pubrsa">SSH免密码登录Linux服务器</a></p></li>
+</ol>
+
+<h2 id="三-ruby项目里安装-mina-gem">三、ruby项目里安装<code>mina</code>gem</h2>
+
+<ol>
+<li><p>在<code>Gemfile</code>里添加mina。</p>
+
+<pre><code>gem 'mina'
+</code></pre></li>
+
+<li><p>安装gem</p>
+
+<pre><code>bundle install
+</code></pre></li>
+</ol>
+
+<h2 id="四-编辑-rail项目-config-deploy-rb脚本">四、编辑[rail项目]/config/deploy.rb脚本</h2>
+
+<ol>
+<li><p>参考文档：<a href="https://github.com/mina-deploy/mina/tree/master/docs">https://github.com/mina-deploy/mina/tree/master/docs</a></p></li>
+
+<li><p>mina增加了对puma的控制任务。这部分的代码主要来源于<a href="https://github.com/untitledkingdom/mina-puma">mina-puma</a>。考虑到学习及更个性化的定制的需求，这里将mina-puma的源代码直接复制到这里。除了将&rsquo;pumactl_socket&rsquo;改成了&rsquo;puma_socket&rsquo;以外，以及去掉了端口方式启动才有的<code>--control</code>启动参数，其它未做改动。</p></li>
+
+<li><p>这里没有使用config/puma.rb配置文件，而是mina在命令行中指定启动参数。也可以根据需要，将puma.rb配置文件放到shared/config目录里面，使用配置文件方式来启动puma。</p></li>
+
+<li><p>[rail项目]/config/deploy.rb脚本的内容：</p>
+
+<pre><code># For help in making your deploy script, see the Mina documentation:
+#  - https://github.com/mina-deploy/mina/tree/master/docs
+#
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+require 'mina/rbenv' # for rbenv support. (https://rbenv.org)
+# require 'mina/rvm'    # for rvm support. (https://rvm.io)
+    
+# Basic settings:
+set :domain, 'my_server_host' # The hostname to SSH to.
+set :deploy_to, '/home/deploy/[my_project]' #Path to deploy into.
+set :repository, 'git@github.com:[myusename]/[my_project].git' # Git repo to clone from. (needed by mina/git)
+set :branch, 'master' #Branch name to deploy. (needed by mina/git)
+    
+# Optional settings:
+set :port, '22' # SSH port number.
+set :forward_agent, true # SSH forward_agent.
+set :user, 'deploy' # Username in the server to SSH to.
+    
+# shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
+# set :shared_dirs, fetch(:shared_dirs, []).push('somedir')
+# set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/secrets.yml')
+# set :shared_paths, ['config/database.yml', 'log', 'config/secrets.yml']
+set :shared_dirs, ['log', 'tmp', 'public/assets']
+set :shared_files, ['config/database.yml', '.env', 'config/secrets.yml']
+    
+# 将几个set参数简化成ruby变量
+deploy_to = fetch(:deploy_to)
+current_path = fetch(:current_path)
+shared_path = fetch(:shared_path)
+    
+# This task is the environment that is loaded for all remote run commands, such as
+# `mina deploy` or `mina rake`.
+task :environment do
+  # If you're using rbenv, use this to load the rbenv environment.
+  # Be sure to commit your .ruby-version or .rbenv-version to your repository.
+  invoke :'rbenv:load'
+    
+  # For those using RVM, use this to load an RVM version@gemset.
+  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
+end
+    
+# Put any custom commands you need to run at setup
+# All paths in `shared_dirs` and `shared_paths` will be created on their own.
+task :setup do
+  # command %{rbenv install 2.3.0}
+  command %[mkdir -p &quot;#{shared_path}/public/assets&quot;]
+  command %[chmod g+rx,u+rwx &quot;#{shared_path}/public/assets&quot;]
+    
+  # 在服务器项目目录的shared中创建log文件夹
+  command %[mkdir -p &quot;#{shared_path}/log&quot;]
+  command %[chmod g+rx,u+rwx &quot;#{shared_path}/log&quot;]
+    
+  # 在服务器项目目录的shared中创建config文件夹 下同
+  command %[mkdir -p &quot;#{shared_path}/config&quot;]
+  command %[chmod g+rx,u+rwx &quot;#{shared_path}/config&quot;]
+    
+  command %[touch &quot;#{shared_path}/config/database.yml&quot;]
+  command %[touch &quot;#{shared_path}/config/secrets.yml&quot;]
+    
+  # puma.rb 配置puma必须得文件夹及文件
+  command %[mkdir -p &quot;#{shared_path}/tmp/pids&quot;]
+  command %[chmod g+rx,u+rwx &quot;#{shared_path}/tmp/pids&quot;]
+    
+  command %[mkdir -p &quot;#{shared_path}/tmp/sockets&quot;]
+  command %[chmod g+rx,u+rwx &quot;#{shared_path}/tmp/sockets&quot;]
+    
+  command %[touch &quot;#{shared_path}/config/puma.rb&quot;]
+  command %[echo &quot;-----&gt; Be sure to edit 'shared/config/puma.rb'.&quot;]
+    
+  # tmp/sockets/puma.state
+  command %[touch &quot;#{shared_path}/tmp/sockets/puma.state&quot;]
+  command %[echo &quot;-----&gt; Be sure to edit 'shared/tmp/sockets/puma.state'.&quot;]
+    
+  # log/puma.stdout.log
+  command %[touch &quot;#{shared_path}/log/puma.stdout.log&quot;]
+  command %[echo &quot;-----&gt; Be sure to edit 'shared/log/puma.stdout.log'.&quot;]
+    
+  # log/puma.stdout.log
+  command %[touch &quot;#{shared_path}/log/puma.stderr.log&quot;]
+  command %[echo &quot;-----&gt; Be sure to edit 'shared/log/puma.stderr.log'.&quot;]
+  command %[echo &quot;-----&gt; Be sure to edit '#{shared_path}/config/database.yml'.&quot;]
+end
+    
+    
+desc &quot;SCP local config files to remote shared config folders.&quot;
+task :scpconfig do
+  comment 'scp local config files'
+    
+  ssh_port = fetch(:port)
+  ssh_host = fetch(:domain)
+  ssh_user = fetch(:user)
+    
+  run :local do
+    command &quot;scp -P #{ssh_port} config/database.yml #{ssh_user}@#{ssh_host}:#{shared_path}/config/&quot;
+    command &quot;scp -P #{ssh_port} config/puma.rb #{ssh_user}@#{ssh_host}:#{shared_path}/config/&quot;
+    command &quot;scp -P #{ssh_port} config/secrets.yml #{ssh_user}@#{ssh_host}:#{shared_path}/config/&quot;
+    # command &quot;scp -P #{ssh_port} .env #{ssh_user}@#{ssh_host}:#{shared_path}/&quot;
+  end
+    
+end
+    
+    
+desc &quot;Deploys the current version to the server.&quot;
+task :deploy do
+  # uncomment this line to make sure you pushed your local branch to the remote origin
+  # invoke :'git:ensure_pushed'
+  deploy do
+    # Put things that will set up an empty directory into a fully set-up
+    # instance of your project.
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
+    invoke :'deploy:cleanup'
+    
+    on :launch do
+      command &quot;mkdir -p #{deploy_to}/#{current_path}/tmp/&quot;
+      # command &quot;chown -R www-data #{deploy_to}&quot;
+      command &quot;touch #{deploy_to}/#{current_path}/tmp/restart.txt&quot;
+      # invoke :'puma:phased_restart'
+    
+      # in_path(fetch(:current_path)) do
+      #   command %{mkdir -p tmp/}
+      #   command %{touch tmp/restart.txt}
+      # end
+    end
+  end
+    
+  # you can use `run :local` to run tasks on local machine before of after the deploy scripts
+  # run :local { say 'done' }
+end
+    
+
+# mina-puma的gem引用方式可以参照作者网站：https://github.com/untitledkingdom/mina-puma    
+# 考虑到学习及更个性化定制的需求，这里将mina-puma的源代码直接复制到这里。
+# 除了将'pumactl_socket'改成了'puma_socket'以外，其它未做改动
+
+namespace :puma do
+  set :web_server, :puma
+    
+  set :puma_role, -&gt; { fetch(:user) }
+  set :puma_env, -&gt; { fetch(:rails_env, 'production') }
+  set :puma_config, -&gt; { &quot;#{fetch(:shared_path)}/config/puma.rb&quot; }
+  set :puma_socket, -&gt; { &quot;#{fetch(:shared_path)}/tmp/sockets/puma.sock&quot; }
+  set :puma_state, -&gt; { &quot;#{fetch(:shared_path)}/tmp/sockets/puma.state&quot; }
+  set :puma_pid, -&gt; { &quot;#{fetch(:shared_path)}/tmp/pids/puma.pid&quot; }
+  set :puma_cmd, -&gt; { &quot;#{fetch(:bundle_prefix)} puma&quot; }
+  set :pumactl_cmd, -&gt; { &quot;#{fetch(:bundle_prefix)} pumactl&quot; }
+  # set :pumactl_socket, -&gt; { &quot;#{fetch(:shared_path)}/tmp/sockets/puma.sock&quot; }
+  set :puma_root_path, -&gt; { fetch(:current_path) }
+    
+    
+  desc 'Start puma'
+  task :start =&gt; :environment do
+    puma_port_option = &quot;-p #{fetch(:puma_port)}&quot; if set?(:puma_port)
+    
+    comment &quot;Starting Puma...&quot;
+    command %[
+      if [ -e '#{fetch(:puma_socket)}' ]; then
+        echo 'Puma is already running!';
+      else
+        if [ -e '#{fetch(:puma_config)}' ]; then
+          cd #{fetch(:puma_root_path)} &amp;&amp; #{fetch(:puma_cmd)} -q -d -e #{fetch(:puma_env)} -C #{fetch(:puma_config)}
+        else
+          cd #{fetch(:puma_root_path)} &amp;&amp; #{fetch(:puma_cmd)} -q -d -e #{fetch(:puma_env)} -b 'unix://#{fetch(:puma_socket)}' #{puma_port_option} -S #{fetch(:puma_state)} --pidfile #{fetch(:puma_pid)}
+        fi
+      fi
+    ]
+  end
+    
+  desc 'Stop puma'
+  task stop: :environment do
+    comment &quot;Stopping Puma...&quot;
+    pumactl_command 'stop'
+    command %[rm -f '#{fetch(:puma_socket)}']
+  end
+    
+  desc 'Restart puma'
+  task restart: :environment do
+    comment &quot;Restart Puma....&quot;
+    pumactl_command 'restart'
+  end
+    
+  desc 'Restart puma (phased restart)'
+  task phased_restart: :environment do
+    comment &quot;Restart Puma -- phased...&quot;
+    pumactl_command 'phased-restart'
+  end
+    
+  desc 'Restart puma (hard restart)'
+  task hard_restart: :environment do
+    comment &quot;Restart Puma -- hard...&quot;
+    invoke 'puma:stop'
+    invoke 'puma:start'
+  end
+    
+  desc 'Get status of puma'
+  task status: :environment do
+    comment &quot;Puma status...&quot;
+    pumactl_command 'status'
+  end
+    
+  def pumactl_command(command)
+    cmd = %{
+      if [ -e &quot;#{fetch(:puma_socket)}&quot; ]; then
+        if [ -e &quot;#{fetch(:puma_config)}&quot; ]; then
+          cd #{fetch(:puma_root_path)} &amp;&amp; #{fetch(:pumactl_cmd)} -F #{fetch(:puma_config)} #{command}
+        else
+          cd #{fetch(:puma_root_path)} &amp;&amp; #{fetch(:pumactl_cmd)} -S #{fetch(:puma_state)} -C 'unix://#{fetch(:puma_socket)}' --pidfile #{fetch(:puma_pid)} #{command}
+        fi
+      else
+        echo 'Puma is not running!';
+      fi
+    }
+    command cmd
+  end
+end
+    
+</code></pre></li>
+</ol>
+
+<h2 id="五-使用mina发布服务的方法">五、使用mina发布服务的方法</h2>
+
+<p>mina可以自由定制不同的任务。以上文的mina配置样本为例，说明在<strong>macOS开发环境中</strong>的使用方法。</p>
+
+<ol>
+<li><p>将需要发布的代码push到github服务器上。例如：</p>
+
+<pre><code>git status
+git add .
+git commit -am &quot;make a deploy version&quot;
+git push
+</code></pre></li>
+
+<li><p>如果是首次在CentOS远程服务器端布置应用，那么需要执行mina setup任务，初始化服务端的目录结构。</p>
+
+<pre><code># 初始化远程服务器端的目录结构
+mina setup
+    
+# 将共享的配置文件scp到远端服务器
+mina scpconfig
+</code></pre></li>
+
+<li><p>执行发布任务。(指示远程服务器下载最新版本的项目代码作为服务器上的当前代码)</p>
+
+<pre><code>mina deploy
+</code></pre></li>
+
+<li><p>执行puma的相关任务</p>
+
+<p>puma的运行环境(development, test, production)，如果在<code>rails_env</code>环境变量中获取不到，则默认启动production环境。</p>
+
+<pre><code># 启动puma服务
+mina puma:start
+
+# 停止puma服务
+mina puma:stop
+    
+# 重启
+mina puma:start
+    
+# 软重启(加载)
+mina puma:phased_restart
+    
+# 硬重启
+mina puma:hard_restart
+    
+# 获取状态
+mina puma:status
+
+</code></pre></li>
+</ol>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" data-id="e11b999ca7d7549313d5fe2d24dd6427" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</div>
+    </a>
+    
+
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'racksam';
+    var disqus_identifier = 'http:\/\/www.racksam.com\/2017\/06\/30\/centos7-rails-puma-mina-github\/';
+    var disqus_title = 'CentOS7使用mina \x2b github发布Rails项目';
+    var disqus_url = 'http:\/\/www.racksam.com\/2017\/06\/30\/centos7-rails-puma-mina-github\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Recents
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github发布Rails项目</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        macos
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP MySQL配置</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/linux_php_msyql_wp.jpg)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
+                        Linux
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    <div class="widget-wrap">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:280px"
+     data-ad-client="ca-pub-2935823567059327"
+     data-ad-slot="9171515892"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
+                    DD-WRT
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
+                    DSP
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
+                    FreeRadius
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
+                    Linux
+                </a>
+                <span class="category-list-count">25</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
+                    Mac
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
+                    Mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
+                    MySQL
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/php">
+                    PHP
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
+                    PostgreSQL
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/python">
+                    Python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
+                    Rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
+                    Ruby
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
+                    ShellScript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                    macos
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                    充电学习
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+    
+    
+    
+    
+ 
+    
+    
+ 
+    
+    
+ 
+    
+    
+ 
+        
+    
+    
+         
+            
+            
+            
+            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+         
+            
+            
+            
+            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+         
+            
+            
+            
+            <a href="/tags/centos" style="font-size:0.8315789473684211rem">CentOS</a></li>
+         
+            
+            
+            
+            <a href="/tags/computer" style="font-size:0.8631578947368421rem">Computer</a></li>
+         
+            
+            
+            
+            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+         
+            
+            
+            
+            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+         
+            
+            
+            
+            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+         
+            
+            
+            
+            <a href="/tags/dsp" style="font-size:0.8315789473684211rem">DSP</a></li>
+         
+            
+            
+            
+            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+         
+            
+            
+            
+            <a href="/tags/freeradius" style="font-size:0.8315789473684211rem">FreeRadius</a></li>
+         
+            
+            
+            
+            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+         
+            
+            
+            
+            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+         
+            
+            
+            
+            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.9894736842105264rem">MySQL</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9263157894736842rem">Nginx</a></li>
+         
+            
+            
+            
+            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.9263157894736842rem">PHP</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8315789473684211rem">PostgreSQL</a></li>
+         
+            
+            
+            
+            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.9894736842105264rem">Python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.9578947368421054rem">Rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9263157894736842rem">Ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8315789473684211rem">VPN</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8631578947368421rem">Website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+         
+            
+            
+            
+            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/ngrok" style="font-size:0.8rem">ngrok</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.8315789473684211rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/protobuf" style="font-size:0.8rem">protobuf</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8315789473684211rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/xampp" style="font-size:0.8rem">xampp</a></li>
+         
+            
+            
+            
+            <a href="/tags/%E6%A2%AF%E5%AD%90" style="font-size:0.8rem">梯子</a></li>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017
+      Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+    <div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2935823567059327"
+     data-ad-slot="7694782694"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-101079844-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

@@ -21,7 +21,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="macOS XAMPP MySQL配置" />
-<meta property="og:description" content="在macos开发mysql&#43;php类应用开发的话，首选安装集成包XAMPP。不推荐使用brew分别安装。在安装完XAMPP以后，可以通过修改" />
+<meta property="og:description" content="在macos开发mysql&#43;php类应用开发的话，首选安装集成包XAMPP，不推荐使用brew分别安装mysql及php。在安装完XAMPP" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" />
 
@@ -43,15 +43,15 @@
     
     
 <meta itemprop="name" content="macOS XAMPP MySQL配置">
-<meta itemprop="description" content="在macos开发mysql&#43;php类应用开发的话，首选安装集成包XAMPP。不推荐使用brew分别安装。在安装完XAMPP以后，可以通过修改">
+<meta itemprop="description" content="在macos开发mysql&#43;php类应用开发的话，首选安装集成包XAMPP，不推荐使用brew分别安装mysql及php。在安装完XAMPP">
 
 
 <meta itemprop="dateModified" content="2017-06-20T19:00:18&#43;00:00" />
-<meta itemprop="wordCount" content="912">
+<meta itemprop="wordCount" content="913">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,ngrok,php,protobuf,ssh,xampp,梯子," />
+<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
 
     
 
@@ -61,7 +61,7 @@
 
 <meta name="twitter:text:title" content="macOS XAMPP MySQL配置"/>
 <meta name="twitter:title" content="macOS XAMPP MySQL配置"/>
-<meta name="twitter:description" content="在macos开发mysql&#43;php类应用开发的话，首选安装集成包XAMPP。不推荐使用brew分别安装。在安装完XAMPP以后，可以通过修改"/>
+<meta name="twitter:description" content="在macos开发mysql&#43;php类应用开发的话，首选安装集成包XAMPP，不推荐使用brew分别安装mysql及php。在安装完XAMPP"/>
 
 
     
@@ -188,12 +188,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        72
+        73
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          42
+          43
         
         <span>
             Tags
@@ -304,7 +304,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
             &middot;
-            912
+            913
             words
             &middot;
             2
@@ -344,7 +344,7 @@
         <div class="article-entry" itemprop="articleBody">
             
 
-<p>在macos开发mysql+php类应用开发的话，首选安装集成包<a href="https://www.apachefriends.org">XAMPP</a>。不推荐使用brew分别安装。在安装完XAMPP以后，可以通过修改环境的PATH变量，达到实现mysql，php等命令在Terminal里的使用。</p>
+<p>在macos开发mysql+php类应用开发的话，首选安装集成包<a href="https://www.apachefriends.org">XAMPP</a>，不推荐使用brew分别安装mysql及php。在安装完XAMPP以后，可以通过修改环境的PATH变量，达到实现mysql，php等命令在Terminal里的使用。</p>
 
 <h2 id="一-下载并安装xampp">一、下载并安装XAMPP</h2>
 
@@ -414,10 +414,10 @@ mysql&gt; use mysql;
 
 <li><p>停止mysql临时服务，然后正常启动mysql服务</p>
 
-<pre><code> sudo mysql.server stop
+<pre><code>sudo mysql.server stop
 </code></pre>
 
-<p>使用以下命令启动mysql数据库。(也可以使用manger-osx图形界面启动)</p>
+<p>使用以下命令启动mysql数据库。(也可以使用manager-osx图形界面启动)</p>
 
 <pre><code>sudo mysql.server start
 </code></pre></li>
@@ -431,21 +431,18 @@ mysql&gt; use mysql;
 <pre><code>mysql -u root -p
 </code></pre></li>
 
-<li><p>切换数据库的命令, 例如切换到<code>test</code>数据库</p></li>
-</ol>
+<li><p>切换数据库的命令, 例如切换到<code>test</code>数据库</p>
 
-<pre><code>   use test
-</code></pre>
+<pre><code>use test
+</code></pre></li>
 
-<ol>
-<li>创建新数据库以及设置对应的账号
-<br /></li>
-</ol>
+<li><p>创建新数据库以及设置对应的账号</p>
 
-<pre><code>   CREATE DATABASE `my_db` DEFAULT CHARACTER SET UTF8 COLLATE UTF8_GENERAL_CI;
+<pre><code>CREATE DATABASE `my_db` DEFAULT CHARACTER SET UTF8 COLLATE UTF8_GENERAL_CI;
    
-    GRANT ALL PRIVILEGES ON my_db.* TO my_user@'localhost' IDENTIFIED BY 'my_pass';
-</code></pre>
+GRANT ALL PRIVILEGES ON my_db.* TO my_user@'localhost' IDENTIFIED BY 'my_pass';
+</code></pre></li>
+</ol>
 
 <h2 id="一点见解">一点见解</h2>
 
@@ -591,6 +588,32 @@ mysql&gt; use mysql;
             
             <li>
                 <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="macOS XAMPP MySQL配置" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github发布Rails项目</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
                         <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="macOS XAMPP MySQL配置" class="thumbnail-image"></span>
@@ -689,32 +712,6 @@ mysql&gt; use mysql;
                     <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/05/02/centos7-firewalld-tips/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/centos7-firewalld.jpg)" alt="macOS XAMPP MySQL配置" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/05/02/centos7-firewalld-tips/" class="title">CentOS7下使用Firewalld</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
                     </p>
                 </div>
             </li>
@@ -836,7 +833,7 @@ mysql&gt; use mysql;
                 <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
                     Ruby
                 </a>
-                <span class="category-list-count">4</span>
+                <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
@@ -911,12 +908,12 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/centos" style="font-size:0.8324324324324325rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8315789473684211rem">CentOS</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8648648648648649rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8631578947368421rem">Computer</a></li>
          
             
             
@@ -936,7 +933,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8324324324324325rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8315789473684211rem">DSP</a></li>
          
             
             
@@ -946,7 +943,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8324324324324325rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8315789473684211rem">FreeRadius</a></li>
          
             
             
@@ -971,7 +968,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9945945945945946rem">MySQL</a></li>
+            <a href="/tags/mysql" style="font-size:0.9894736842105264rem">MySQL</a></li>
          
             
             
@@ -981,7 +978,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9297297297297298rem">Nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9263157894736842rem">Nginx</a></li>
          
             
             
@@ -991,7 +988,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/php" style="font-size:0.9297297297297298rem">PHP</a></li>
+            <a href="/tags/php" style="font-size:0.9263157894736842rem">PHP</a></li>
          
             
             
@@ -1001,7 +998,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8324324324324325rem">PostgreSQL</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8315789473684211rem">PostgreSQL</a></li>
          
             
             
@@ -1011,12 +1008,12 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/python" style="font-size:0.9945945945945946rem">Python</a></li>
+            <a href="/tags/python" style="font-size:0.9894736842105264rem">Python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9297297297297298rem">Rails</a></li>
+            <a href="/tags/rails" style="font-size:0.9578947368421054rem">Rails</a></li>
          
             
             
@@ -1026,7 +1023,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/ruby" style="font-size:0.8972972972972973rem">Ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9263157894736842rem">Ruby</a></li>
          
             
             
@@ -1051,7 +1048,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8324324324324325rem">VPN</a></li>
+            <a href="/tags/vpn" style="font-size:0.8315789473684211rem">VPN</a></li>
          
             
             
@@ -1061,7 +1058,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/website" style="font-size:0.8648648648648649rem">Website</a></li>
+            <a href="/tags/website" style="font-size:0.8631578947368421rem">Website</a></li>
          
             
             
@@ -1081,12 +1078,17 @@ mysql&gt; use mysql;
             
             
             
+            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+         
+            
+            
+            
             <a href="/tags/ngrok" style="font-size:0.8rem">ngrok</a></li>
          
             
             
             
-            <a href="/tags/php" style="font-size:0.8324324324324325rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.8315789473684211rem">php</a></li>
          
             
             
@@ -1096,7 +1098,7 @@ mysql&gt; use mysql;
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8324324324324325rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8315789473684211rem">ssh</a></li>
          
             
             

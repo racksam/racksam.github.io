@@ -18,7 +18,7 @@
       <pubDate>Tue, 20 Jun 2017 19:00:18 +0000</pubDate>
       
       <guid>http://www.racksam.com/2017/06/20/macos-xampp-mysql/</guid>
-      <description>在macos开发mysql+php类应用开发的话，首选安装集成包XAMPP。不推荐使用brew分别安装。在安装完XAMPP以后，可以通过修改</description>
+      <description>在macos开发mysql+php类应用开发的话，首选安装集成包XAMPP，不推荐使用brew分别安装mysql及php。在安装完XAMPP</description>
     </item>
     
   </channel>

@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2012-09-22T09:41:23&#43;00:00"/>
+<meta property="og:updated_time" content="2012-09-23T09:49:14&#43;00:00"/>
 
 
 
@@ -172,12 +172,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        72
+        73
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          42
+          43
         
         <span>
             Tags
@@ -270,6 +270,151 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/">
+    <h1 class="article-title" itemprop="name">
+        Linux删除某日以前旧文件的命令
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2012-09-23 09:49:14 &#43;0000 UTC" itemprop="datePublished">2012-09-23</time>
+            &middot;
+            137
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                删除某日以前的且文件名满足一定条件的旧文件 #在使用-exec参数时，必须以“\;”结尾,否则命令将无法执行 # #删除10天以前文件结尾为.lo
+            </p>
+            <p class="article-more-link">
+                <a href="http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/" data-id="a2c64856f457d93a33a3febd9b859576" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1637,155 +1782,6 @@ SSID: MasterWiFi
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/">
-    <h1 class="article-title" itemprop="name">
-        快速克隆MySQL数据库的方法
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2011-11-03 21:33:53 &#43;0000 UTC" itemprop="datePublished">2011-11-03</time>
-            &middot;
-            283
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/mysql">MySQL</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                某些时候，例如为了搭建一个测试环境，或者克隆一个网站，需要复制一个已存在的mysql数据库。使用以下方法，可以非常简单地实现。 假设已经存在的
-            </p>
-            <p class="article-more-link">
-                <a href="http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/" data-id="664f7ce3e80b8a6727d5b16b84f704f2" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1814,6 +1810,32 @@ SSID: MasterWiFi
     </h3>
     <div class="widget">
         <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="Racksam" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github发布Rails项目</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -1915,32 +1937,6 @@ SSID: MasterWiFi
                     <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/05/02/centos7-firewalld-tips/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/centos7-firewalld.jpg)" alt="Racksam" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/05/02/centos7-firewalld-tips/" class="title">CentOS7下使用Firewalld</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-05-02 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-05-02</time>
                     </p>
                 </div>
             </li>
@@ -2062,7 +2058,7 @@ SSID: MasterWiFi
                 <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
                     Ruby
                 </a>
-                <span class="category-list-count">4</span>
+                <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
@@ -2137,12 +2133,12 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/centos" style="font-size:0.8324324324324325rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8315789473684211rem">CentOS</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8648648648648649rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8631578947368421rem">Computer</a></li>
          
             
             
@@ -2162,7 +2158,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8324324324324325rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8315789473684211rem">DSP</a></li>
          
             
             
@@ -2172,7 +2168,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8324324324324325rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8315789473684211rem">FreeRadius</a></li>
          
             
             
@@ -2197,7 +2193,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9945945945945946rem">MySQL</a></li>
+            <a href="/tags/mysql" style="font-size:0.9894736842105264rem">MySQL</a></li>
          
             
             
@@ -2207,7 +2203,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9297297297297298rem">Nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9263157894736842rem">Nginx</a></li>
          
             
             
@@ -2217,7 +2213,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/php" style="font-size:0.9297297297297298rem">PHP</a></li>
+            <a href="/tags/php" style="font-size:0.9263157894736842rem">PHP</a></li>
          
             
             
@@ -2227,7 +2223,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8324324324324325rem">PostgreSQL</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8315789473684211rem">PostgreSQL</a></li>
          
             
             
@@ -2237,12 +2233,12 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/python" style="font-size:0.9945945945945946rem">Python</a></li>
+            <a href="/tags/python" style="font-size:0.9894736842105264rem">Python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9297297297297298rem">Rails</a></li>
+            <a href="/tags/rails" style="font-size:0.9578947368421054rem">Rails</a></li>
          
             
             
@@ -2252,7 +2248,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/ruby" style="font-size:0.8972972972972973rem">Ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9263157894736842rem">Ruby</a></li>
          
             
             
@@ -2277,7 +2273,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8324324324324325rem">VPN</a></li>
+            <a href="/tags/vpn" style="font-size:0.8315789473684211rem">VPN</a></li>
          
             
             
@@ -2287,7 +2283,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/website" style="font-size:0.8648648648648649rem">Website</a></li>
+            <a href="/tags/website" style="font-size:0.8631578947368421rem">Website</a></li>
          
             
             
@@ -2307,12 +2303,17 @@ SSID: MasterWiFi
             
             
             
+            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+         
+            
+            
+            
             <a href="/tags/ngrok" style="font-size:0.8rem">ngrok</a></li>
          
             
             
             
-            <a href="/tags/php" style="font-size:0.8324324324324325rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.8315789473684211rem">php</a></li>
          
             
             
@@ -2322,7 +2323,7 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8324324324324325rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8315789473684211rem">ssh</a></li>
          
             
             

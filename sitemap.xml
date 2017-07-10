@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</loc>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</loc>
     <lastmod>2017-06-28T21:00:18+00:00</lastmod>
   </url>
@@ -464,7 +469,7 @@
   
   <url>
     <loc>http://www.racksam.com/tags/linux/</loc>
-    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -483,6 +488,12 @@
   <url>
     <loc>http://www.racksam.com/categories/macos/</loc>
     <lastmod>2017-06-20T19:00:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.racksam.com/tags/mina/</loc>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -572,7 +583,7 @@
   
   <url>
     <loc>http://www.racksam.com/post/</loc>
-    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -602,13 +613,13 @@
   
   <url>
     <loc>http://www.racksam.com/</loc>
-    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/tags/rails/</loc>
-    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -626,13 +637,13 @@
   
   <url>
     <loc>http://www.racksam.com/tags/ruby/</loc>
-    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.racksam.com/categories/ruby/</loc>
-    <lastmod>2017-06-28T21:00:18+00:00</lastmod>
+    <lastmod>2017-06-30T13:31:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
