@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>CentOS7使用mina &#43; github发布Rails项目</title>
+      <title>CentOS7使用mina &#43; github部署Rails项目</title>
       <link>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
       <pubDate>Fri, 30 Jun 2017 13:31:41 +0000</pubDate>
       
@@ -38,7 +38,9 @@
 
 &lt;p&gt;所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。&lt;/p&gt;
 
-&lt;p&gt;这里记录的是配置ruby + puma + github + mina发布工具的方法。&lt;/p&gt;
+&lt;p&gt;mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。&lt;/p&gt;
+
+&lt;p&gt;这里记录的是配置ruby + puma + github + mina 发布工具的方法。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

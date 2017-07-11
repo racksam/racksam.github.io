@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>CentOS7使用mina &#43; github发布Rails项目 &middot; Racksam</title>
+    <title>CentOS7使用mina &#43; github部署Rails项目 &middot; Racksam</title>
     <meta name="generator" content="Hugo 0.24" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -20,7 +20,7 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="CentOS7使用mina &#43; github发布Rails项目" />
+    <meta property="og:title" content="CentOS7使用mina &#43; github部署Rails项目" />
 <meta property="og:description" content="php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：
 
 
@@ -41,7 +41,9 @@ puma等ruby应用服务器的启动参数太复杂：
 
 所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
 
-这里记录的是配置ruby &#43; puma &#43; github &#43; mina发布工具的方法。
+mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。
+
+这里记录的是配置ruby &#43; puma &#43; github &#43; mina 发布工具的方法。
 
 " />
 <meta property="og:type" content="article" />
@@ -64,7 +66,7 @@ puma等ruby应用服务器的启动参数太复杂：
 
     
     
-<meta itemprop="name" content="CentOS7使用mina &#43; github发布Rails项目">
+<meta itemprop="name" content="CentOS7使用mina &#43; github部署Rails项目">
 <meta itemprop="description" content="php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：
 
 
@@ -85,13 +87,15 @@ puma等ruby应用服务器的启动参数太复杂：
 
 所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
 
-这里记录的是配置ruby &#43; puma &#43; github &#43; mina发布工具的方法。
+mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。
+
+这里记录的是配置ruby &#43; puma &#43; github &#43; mina 发布工具的方法。
 
 ">
 
 
 <meta itemprop="dateModified" content="2017-06-30T13:31:41&#43;00:00" />
-<meta itemprop="wordCount" content="3738">
+<meta itemprop="wordCount" content="4079">
 
 
 
@@ -103,8 +107,8 @@ puma等ruby应用服务器的启动参数太复杂：
 
 
 
-<meta name="twitter:text:title" content="CentOS7使用mina &#43; github发布Rails项目"/>
-<meta name="twitter:title" content="CentOS7使用mina &#43; github发布Rails项目"/>
+<meta name="twitter:text:title" content="CentOS7使用mina &#43; github部署Rails项目"/>
+<meta name="twitter:title" content="CentOS7使用mina &#43; github部署Rails项目"/>
 <meta name="twitter:description" content="php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：
 
 
@@ -125,7 +129,9 @@ puma等ruby应用服务器的启动参数太复杂：
 
 所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。
 
-这里记录的是配置ruby &#43; puma &#43; github &#43; mina发布工具的方法。
+mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。
+
+这里记录的是配置ruby &#43; puma &#43; github &#43; mina 发布工具的方法。
 
 "/>
 
@@ -360,7 +366,7 @@ puma等ruby应用服务器的启动参数太复杂：
         <header class="article-header">
     <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/">
     <h1 class="article-title" itemprop="name">
-        CentOS7使用mina &#43; github发布Rails项目
+        CentOS7使用mina &#43; github部署Rails项目
     </h1>
     </a>
     <div class="article-meta">
@@ -370,10 +376,10 @@ puma等ruby应用服务器的启动参数太复杂：
             <i class="fa fa-calendar"></i>
             <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
             &middot;
-            3738
+            4079
             words
             &middot;
-            8
+            9
             minute read
         </div>
         
@@ -440,7 +446,9 @@ puma等ruby应用服务器的启动参数太复杂：
 
 <p>所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。</p>
 
-<p>这里记录的是配置ruby + puma + github + mina发布工具的方法。</p>
+<p>mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。</p>
+
+<p>这里记录的是配置ruby + puma + github + mina 发布工具的方法。</p>
 
 <p></p>
 
@@ -837,6 +845,85 @@ mina puma:status
 
 </code></pre></li>
 </ol>
+
+<h2 id="七-使用systemd自动启动puma项目">七、使用systemd自动启动puma项目</h2>
+
+<ol>
+<li><p>编辑service脚本(如果有多个ruby项目，需要为每一个puma项目编辑不同的脚本)</p>
+
+<pre><code>vi /usr/lib/systemd/system/puma_myproject.service
+</code></pre>
+
+<p>内容样例：</p>
+
+<pre><code>Unit]
+Description=Puma HTTP Server
+After=network.target
+After=mariadb.service
+    
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/opt/ruby/myproject/current
+Environment=RAILS_ENV=production
+#Environment=SECRET_KEY_BASE=xxxxxxxxxxx
+ExecStart=/home/deploy/.rbenv/shims/bundle exec &quot;puma -C /opt/ruby/myproject/shared/config/puma.rb&quot;
+TimeoutSec=300
+#Restart=always
+    
+[Install]
+WantedBy=multi-user.target
+</code></pre></li>
+
+<li><p>启动脚本，并设置脚本自启动</p>
+
+<pre><code>systemctl start puma_myproject.service
+systemctl enable puma_myproject.service
+</code></pre></li>
+</ol>
+
+<h2 id="八-配置nginx站点">八、配置Nginx站点</h2>
+
+<ol>
+<li><p>编辑/etc/nginx/conf.d/mysite.conf，样例内容如下：</p>
+
+<pre><code>upstream app {
+  server unix:///opt/ruby/myproject/shared/tmp/sockets/puma.sock;
+}
+        
+server {
+        listen 80;
+        server_name www.mydomain.com;
+        root /opt/ruby/myproject/current/public;
+            
+        access_log  /var/log/nginx/www.mydomain.com_access.log;
+        error_log  /var/log/nginx/www.mydomain.com_error.log;
+    
+        # The rest of your server block
+            
+        index index.html index.htm;
+    
+        # if a file, which is not found in the root folder is requested,
+        # then the proxy pass the request to the upsteam (myproject unicorn)
+        location / {
+            proxy_pass http://app;
+            proxy_redirect     off;
+            proxy_pass_request_headers      on;
+            proxy_set_header   X-Forwarded-Proto $scheme;
+            #proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header   Host              $http_host;
+            proxy_set_header   X-Real-IP         $remote_addr;
+    }
+}
+    
+</code></pre></li>
+
+<li><p>启动脚本，并设置脚本自启动</p>
+
+<pre><code>systemctl start nginx.service
+systemctl enable nginx.service
+</code></pre></li>
+</ol>
         </div>
         <footer class="article-footer">
     <a data-url="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" data-id="e11b999ca7d7549313d5fe2d24dd6427" class="article-share-link">
@@ -941,7 +1028,7 @@ mina puma:status
 <script type="text/javascript">
     var disqus_shortname = 'racksam';
     var disqus_identifier = 'http:\/\/www.racksam.com\/2017\/06\/30\/centos7-rails-puma-mina-github\/';
-    var disqus_title = 'CentOS7使用mina \x2b github发布Rails项目';
+    var disqus_title = 'CentOS7使用mina \x2b github部署Rails项目';
     var disqus_url = 'http:\/\/www.racksam.com\/2017\/06\/30\/centos7-rails-puma-mina-github\/';
 
     (function() {
@@ -972,7 +1059,7 @@ mina puma:status
                 <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS7使用mina &#43; github部署Rails项目" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -987,7 +1074,7 @@ mina puma:status
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github发布Rails项目</a></p>
+                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -998,7 +1085,7 @@ mina puma:status
                 <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="CentOS7使用mina &#43; github部署Rails项目" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1024,7 +1111,7 @@ mina puma:status
                 <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS7使用mina &#43; github部署Rails项目" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1050,7 +1137,7 @@ mina puma:status
                 <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_php_msyql_wp.jpg)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                        <span style="background-image:url(http://www.racksam.com/banners/linux_php_msyql_wp.jpg)" alt="CentOS7使用mina &#43; github部署Rails项目" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -1076,7 +1163,7 @@ mina puma:status
                 <div class="item-thumbnail">
                     <a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="CentOS7使用mina &#43; github发布Rails项目" class="thumbnail-image"></span>
+                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="CentOS7使用mina &#43; github部署Rails项目" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
