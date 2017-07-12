@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2012-09-23T09:49:14&#43;00:00"/>
+<meta property="og:updated_time" content="2012-09-24T09:49:14&#43;00:00"/>
 
 
 
@@ -172,12 +172,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        73
+        74
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          43
+          44
         
         <span>
             Tags
@@ -270,6 +270,151 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/">
+    <h1 class="article-title" itemprop="name">
+        Linux下查看硬件信息
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2012-09-24 09:49:14 &#43;0000 UTC" itemprop="datePublished">2012-09-24</time>
+            &middot;
+            190
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Linux下多数硬件信息都可以通过命令行查看。 尤其对于远程管理服务器特别有用，例如查询Dell服务器的序列号。 #查看产品信息： dmidecode | grep &quot;Product&quot; #查看
+            </p>
+            <p class="article-more-link">
+                <a href="http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/" data-id="e44ed2fdfc20d76ef6b3610d5c0f454f" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1630,158 +1775,6 @@ SSID: MasterWiFi
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/">
-    <h1 class="article-title" itemprop="name">
-        DD-WRT的六种无线模式
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2011-11-20 21:43:08 &#43;0000 UTC" itemprop="datePublished">2011-11-20</time>
-            &middot;
-            1256
-            words
-            &middot;
-            3
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/categories/dd-wrt">DD-WRT</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>为了设置无线路由器的中继功能，兔哥仔细学习了一下dd-wrt的六种无线模式，再也不会稀里糊涂了。</p>
-
-<p><img src="/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png" alt="DD-WRT的六种无线模式" /></p>
-
-<ol>
-<li><p>访问点 (AP)</p>
-
-<p>该模式下路由器的无线网卡就像一个”无线HUB”，负责建立无线路由器和电脑之间的数据链路（相当于无形的网线）。正常情况下，家用的无线路由器的无线连接都默认工作在此模式下。</p>
-            </p>
-            <p class="article-more-link">
-                <a href="http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/" data-id="6bed326dda749db6a9482237516515fd" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1810,6 +1803,32 @@ SSID: MasterWiFi
     </h3>
     <div class="widget">
         <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        macos
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -1911,32 +1930,6 @@ SSID: MasterWiFi
                     <p class="item-title"><a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/centos-logo-light.png)" alt="Racksam" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/05/centos7-change-sshd-port/" class="title">CentOS 7 修改SSH端口</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-05 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-05</time>
                     </p>
                 </div>
             </li>
@@ -2074,7 +2067,7 @@ SSID: MasterWiFi
                 <a class="category-list-link" href="http://www.racksam.com/categories/macos">
                     macos
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -2299,6 +2292,11 @@ SSID: MasterWiFi
             
             
             <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+         
+            
+            
+            
+            <a href="/tags/macos" style="font-size:0.8rem">macos</a></li>
          
             
             
