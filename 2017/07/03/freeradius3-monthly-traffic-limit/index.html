@@ -47,7 +47,7 @@
 
 
 <meta itemprop="dateModified" content="2017-07-03T19:00:18&#43;00:00" />
-<meta itemprop="wordCount" content="1056">
+<meta itemprop="wordCount" content="1224">
 
 
 
@@ -304,7 +304,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
             &middot;
-            1056
+            1224
             words
             &middot;
             3
@@ -499,6 +499,17 @@ Received Access-Reject Id 219 from 127.0.0.1:1812 to 127.0.0.1:40100 length 70
 (0) -: Expected Access-Accept got Access-Reject
 </code></pre></li>
 </ol>
+
+<h2 id="六-可选-为daloradius系统添加dictionary辅助定义">六、【可选】为daloRadius系统添加dictionary辅助定义</h2>
+
+<p>使用daloRadius管理界面管理为用户或组添加属性时，选择<code>Vendor</code>的下拉框可以很方便的选择属性。对于自定义的属性，也可以使用SQL语句添加到dictionary表里使其出现在下拉列表里。</p>
+
+<pre><code>
+INSERT INTO `dictionary` (`Type`, `Attribute`, `Vendor`, `RecommendedOP`, `RecommendedTable`, `RecommendedHelper`, `RecommendedTooltip`) VALUES ('integer','Max-Monthly-Traffic','MySpec', ':=', 'check', 'volumebytes', 'max monthly traffic');
+
+INSERT INTO `dictionary` (`Type`, `Attribute`, `Vendor`, `RecommendedOP`, `RecommendedTable`, `RecommendedHelper`, `RecommendedTooltip`) VALUES ('integer','Monthly-Traffic-Limit','MySpec', ':=', 'reply', 'volumebytes', 'monthly traffic limit');
+
+</code></pre>
 
         </div>
         <footer class="article-footer">
