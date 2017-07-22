@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
-    <lastBuildDate>Sat, 01 Apr 2017 15:00:18 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jul 2017 19:00:18 +0000</lastBuildDate>
     
 	<atom:link href="http://www.racksam.com/categories/freeradius/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Freeradius3 限制每个月最大流量</title>
+      <link>http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</link>
+      <pubDate>Mon, 03 Jul 2017 19:00:18 +0000</pubDate>
+      
+      <guid>http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</guid>
+      <description>Freeradius没有内置限制用户每个月最大流量的功能，只能自己定制。网上有很多类似的文章，但是都是针对freeradius版本2的文档。</description>
+    </item>
     
     <item>
       <title>从FreeRadius 2 迁移到 3</title>

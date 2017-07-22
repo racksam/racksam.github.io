@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2011-11-20T21:43:08&#43;00:00"/>
+<meta property="og:updated_time" content="2011-11-21T21:43:08&#43;00:00"/>
 
 
 
@@ -172,7 +172,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        74
+        75
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -270,6 +270,164 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/">
+    <h1 class="article-title" itemprop="name">
+        使用DD-WRT无线路由器增强无线信号（使用新网段）
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2011-11-21 21:43:08 &#43;0000 UTC" itemprop="datePublished">2011-11-21</time>
+            &middot;
+            707
+            words
+            &middot;
+            2
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/dd-wrt">DD-WRT</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                <p>当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。</p>
+
+<h3 id="一-主力无线路由器-接宽带猫的那一台-的设置方法">一、主力无线路由器（接宽带猫的那一台）的设置方法</h3>
+
+<p>主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。</p>
+
+<pre><code>这里假设主无线路由器的配置信息如下：
+SSID: MasterWiFi
+密码：123456
+加密方法：WPA Personal TKIP
+内网地址段：192.168.0.1/24
+</code></pre>
+
+<p></p>
+            </p>
+            <p class="article-more-link">
+                <a href="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/" data-id="64498a9af362a15c97ab4cc1c70a5f74" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1235,7 +1393,7 @@
             </p>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/06/10/centos-vncserver-setup/" data-id="b545726bb0ebb2170e55ea88db11fa57" class="article-share-link">
+    <a data-url="http://www.racksam.com/2011/06/10/centos-vncserver-setup/" data-id="298996a8e165c16b03022738b39b02fe" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
@@ -1610,163 +1768,6 @@
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://www.racksam.com/2011/06/09/import-and-export-mysql-database/">
-    <h1 class="article-title" itemprop="name">
-        MySQL导入导出的简单命令
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2011-06-09 17:45:15 &#43;0000 UTC" itemprop="datePublished">2011-06-09</time>
-            &middot;
-            300
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/categories/mysql">MySQL</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/mysql">MySQL</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>备忘一下常用的MySQL导入导出命令。使用mysqldump工具及mysql终端里的source命令。</p>
-
-<h3 id="导出整个数据库">导出整个数据库</h3>
-
-<pre><code>$mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名
-$mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
-</code></pre>
-
-<p></p>
-            </p>
-            <p class="article-more-link">
-                <a href="http://www.racksam.com/2011/06/09/import-and-export-mysql-database/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/06/09/import-and-export-mysql-database/" data-id="96de35f3323801291563da551448e93b" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://www.racksam.com/2011/06/09/import-and-export-mysql-database/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1795,6 +1796,32 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
     </h3>
     <div class="widget">
         <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="Racksam" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        FreeRadius
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -1900,32 +1927,6 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
                 </div>
             </li>
             
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_php_msyql_wp.jpg)" alt="Racksam" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
-                    </p>
-                </div>
-            </li>
-            
         </ul>
     </div>
 </div>
@@ -1971,7 +1972,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
                 <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
                     FreeRadius
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">3</span>
             </li>
             
             <li class="category-list-item">
@@ -2118,12 +2119,12 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/centos" style="font-size:0.8315789473684211rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8631578947368421rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
          
             
             
@@ -2143,7 +2144,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8315789473684211rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
          
             
             
@@ -2153,7 +2154,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8315789473684211rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
          
             
             
@@ -2178,7 +2179,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9894736842105264rem">MySQL</a></li>
+            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
          
             
             
@@ -2188,7 +2189,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9263157894736842rem">Nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
          
             
             
@@ -2198,7 +2199,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/php" style="font-size:0.9263157894736842rem">PHP</a></li>
+            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
          
             
             
@@ -2208,7 +2209,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8315789473684211rem">PostgreSQL</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
          
             
             
@@ -2218,12 +2219,12 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/python" style="font-size:0.9894736842105264rem">Python</a></li>
+            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9578947368421054rem">Rails</a></li>
+            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
          
             
             
@@ -2233,7 +2234,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/ruby" style="font-size:0.9263157894736842rem">Ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
          
             
             
@@ -2258,7 +2259,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8315789473684211rem">VPN</a></li>
+            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
          
             
             
@@ -2268,7 +2269,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/website" style="font-size:0.8631578947368421rem">Website</a></li>
+            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
          
             
             
@@ -2303,7 +2304,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/php" style="font-size:0.8315789473684211rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
          
             
             
@@ -2313,7 +2314,7 @@ $mysqldump -u wcnc -p smgp_apps_wcnc &gt; wcnc.sql
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8315789473684211rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
          
             
             

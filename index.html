@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:updated_time" content="2017-07-02T13:31:41&#43;00:00"/>
+<meta property="og:updated_time" content="2017-07-03T19:00:18&#43;00:00"/>
 
 
 
@@ -172,7 +172,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        74
+        75
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -270,6 +270,158 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" itemprop="url">
+            <img src="http://www.racksam.com/banners/linux_freeradius.png" class="article-banner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/">
+    <h1 class="article-title" itemprop="name">
+        Freeradius3 限制每个月最大流量
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
+            &middot;
+            1056
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">FreeRadius</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/freeradius">FreeRadius</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Freeradius没有内置限制用户每个月最大流量的功能，只能自己定制。网上有很多类似的文章，但是都是针对freeradius版本2的文档。
+            </p>
+            <p class="article-more-link">
+                <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" data-id="9c87c54c4907560888e9640c66ef8a6d" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1698,184 +1850,6 @@ passwd deploy
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" itemprop="url">
-            <img src="http://www.racksam.com/banners/le-logo-wide.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/">
-    <h1 class="article-title" itemprop="name">
-        使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2016-12-26 19:14:40 &#43;0000 UTC" itemprop="datePublished">2016-12-26</time>
-            &middot;
-            1390
-            words
-            &middot;
-            3
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/nginx">Nginx</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="http://www.racksam.com/tags/ssl">SSL</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                <p>Linux服务器下使用acme.sh脚本是申请let&rsquo;s encrypt证书最便捷的方式，比官方推荐的<code>certbot</code>脚本工具要强大的多。</p>
-
-<p>安装文档：
-<a href="https://github.com/Neilpang/acme.sh/wiki/说明">https://github.com/Neilpang/acme.sh/wiki/说明</a></p>
-
-<h2 id="前提条件">前提条件</h2>
-
-<ul>
-<li>拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)</li>
-<li>确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址</li>
-<li>要等到新创建的域名解析能在公网上被解析到。</li>
-<li>据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。</li>
-</ul>
-
-<h2 id="一-安装acme-sh脚本">一、安装acme.sh脚本</h2>
-
-<pre><code class="language-sh">curl  https://get.acme.sh | sh
-
-# 重新登录ssh，或者使用source命令重新加载环境变量
-source . 
-</code></pre>
-
-<p></p>
-            </p>
-            <p class="article-more-link">
-                <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" data-id="584602a890894cd351afbdb3f3a3d69f" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1900,6 +1874,32 @@ source .
     </h3>
     <div class="widget">
         <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    
+                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="Racksam" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        FreeRadius
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
+                    </p>
+                </div>
+            </li>
             
             <li>
                 <div class="item-thumbnail">
@@ -2005,32 +2005,6 @@ source .
                 </div>
             </li>
             
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_php_msyql_wp.jpg)" alt="Racksam" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/linux">
-                        Linux
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/" class="title">CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-08 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-08</time>
-                    </p>
-                </div>
-            </li>
-            
         </ul>
     </div>
 </div>
@@ -2076,7 +2050,7 @@ source .
                 <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
                     FreeRadius
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">3</span>
             </li>
             
             <li class="category-list-item">
@@ -2223,12 +2197,12 @@ source .
             
             
             
-            <a href="/tags/centos" style="font-size:0.8315789473684211rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8631578947368421rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
          
             
             
@@ -2248,7 +2222,7 @@ source .
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8315789473684211rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
          
             
             
@@ -2258,7 +2232,7 @@ source .
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8315789473684211rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
          
             
             
@@ -2283,7 +2257,7 @@ source .
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9894736842105264rem">MySQL</a></li>
+            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
          
             
             
@@ -2293,7 +2267,7 @@ source .
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9263157894736842rem">Nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
          
             
             
@@ -2303,7 +2277,7 @@ source .
             
             
             
-            <a href="/tags/php" style="font-size:0.9263157894736842rem">PHP</a></li>
+            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
          
             
             
@@ -2313,7 +2287,7 @@ source .
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8315789473684211rem">PostgreSQL</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
          
             
             
@@ -2323,12 +2297,12 @@ source .
             
             
             
-            <a href="/tags/python" style="font-size:0.9894736842105264rem">Python</a></li>
+            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9578947368421054rem">Rails</a></li>
+            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
          
             
             
@@ -2338,7 +2312,7 @@ source .
             
             
             
-            <a href="/tags/ruby" style="font-size:0.9263157894736842rem">Ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
          
             
             
@@ -2363,7 +2337,7 @@ source .
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8315789473684211rem">VPN</a></li>
+            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
          
             
             
@@ -2373,7 +2347,7 @@ source .
             
             
             
-            <a href="/tags/website" style="font-size:0.8631578947368421rem">Website</a></li>
+            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
          
             
             
@@ -2408,7 +2382,7 @@ source .
             
             
             
-            <a href="/tags/php" style="font-size:0.8315789473684211rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
          
             
             
@@ -2418,7 +2392,7 @@ source .
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8315789473684211rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
          
             
             
