@@ -81,7 +81,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
 
 
 <meta itemprop="dateModified" content="2016-12-18T15:11:59&#43;00:00" />
-<meta itemprop="wordCount" content="3118">
+<meta itemprop="wordCount" content="3132">
 
 
 
@@ -353,7 +353,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
             <i class="fa fa-calendar"></i>
             <time datetime="2016-12-18 15:11:59 &#43;0000 UTC" itemprop="datePublished">2016-12-18</time>
             &middot;
-            3118
+            3132
             words
             &middot;
             7
@@ -462,6 +462,7 @@ openssl genrsa -out base.key 2048
 openssl req -new -x509 -nodes -key base.key -days 10000 -subj &quot;/CN=dev.mydomain.com&quot; -out base.pem
 openssl genrsa -out server.key 2048
 openssl req -new -key server.key -subj &quot;/CN=dev.mydomain.com&quot; -out server.csr
+openssl x509 -req -in server.csr -CA base.pem -CAkey base.key -CAcreateserial -out server.crt -days 5000
 </code></pre></li>
 
 <li><p>将生成的秘钥复制到编译目录中</p>
