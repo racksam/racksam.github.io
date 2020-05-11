@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>CentOS 7 安装最新版PostgreSQL &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,131 +10,93 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2016/12/19/centos7-install-postgresql/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2016/12/19/centos7-install-postgresql/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="CentOS 7 安装最新版PostgreSQL" />
 <meta property="og:description" content="以下操作均在root账号下操作.
-
 一、安装
 
 
 查看本机CentOS的版本: cat /etc/redhat-release
 
-查看最新版本的postgresql yum源
 
+查看最新版本的postgresql yum源
 在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。https://yum.postgresql.org/
 
-导入yum源文件
 
+导入yum源文件
 rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 
 
 通过yum安装最新版的postgresql
-
 yum -y install postgresql96*
-
-
 安装后的目录在/usr/pgsql-9.6/
-
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2016/12/19/centos7-install-postgresql/" />
-
-
-
-<meta property="article:published_time" content="2016-12-19T21:00:18&#43;00:00"/>
-<meta property="article:modified_time" content="2016-12-19T21:00:18&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2016/12/19/centos7-install-postgresql/" />
+<meta property="article:published_time" content="2016-12-19T21:00:18+00:00" />
+<meta property="article:modified_time" content="2016-12-19T21:00:18+00:00" />
 
     
-    
-<meta itemprop="name" content="CentOS 7 安装最新版PostgreSQL">
+    <meta itemprop="name" content="CentOS 7 安装最新版PostgreSQL">
 <meta itemprop="description" content="以下操作均在root账号下操作.
-
 一、安装
 
 
 查看本机CentOS的版本: cat /etc/redhat-release
 
-查看最新版本的postgresql yum源
 
+查看最新版本的postgresql yum源
 在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。https://yum.postgresql.org/
 
-导入yum源文件
 
+导入yum源文件
 rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 
 
 通过yum安装最新版的postgresql
-
 yum -y install postgresql96*
-
-
 安装后的目录在/usr/pgsql-9.6/
 
-
 ">
-
-
+<meta itemprop="datePublished" content="2016-12-19T21:00:18&#43;00:00" />
 <meta itemprop="dateModified" content="2016-12-19T21:00:18&#43;00:00" />
 <meta itemprop="wordCount" content="966">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="CentOS 7 安装最新版PostgreSQL"/>
+<meta itemprop="keywords" content="Rails,Linux,Ruby,Nginx," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS 7 安装最新版PostgreSQL"/>
 <meta name="twitter:description" content="以下操作均在root账号下操作.
-
 一、安装
 
 
 查看本机CentOS的版本: cat /etc/redhat-release
 
-查看最新版本的postgresql yum源
 
+查看最新版本的postgresql yum源
 在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。https://yum.postgresql.org/
 
-导入yum源文件
 
+导入yum源文件
 rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 
 
 通过yum安装最新版的postgresql
-
 yum -y install postgresql96*
-
-
 安装后的目录在/usr/pgsql-9.6/
 
-
 "/>
-
 
     
 
@@ -151,16 +113,16 @@ yum -y install postgresql96*
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -176,17 +138,17 @@ yum -y install postgresql96*
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -194,7 +156,7 @@ yum -y install postgresql96*
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -205,7 +167,7 @@ yum -y install postgresql96*
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -221,17 +183,17 @@ yum -y install postgresql96*
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -247,7 +209,7 @@ yum -y install postgresql96*
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -260,12 +222,12 @@ yum -y install postgresql96*
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -331,7 +293,7 @@ yum -y install postgresql96*
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -362,7 +324,7 @@ yum -y install postgresql96*
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2016/12/19/centos7-install-postgresql/">
+    <a href="https://www.racksam.com/2016/12/19/centos7-install-postgresql/">
     <h1 class="article-title" itemprop="name">
         CentOS 7 安装最新版PostgreSQL
     </h1>
@@ -388,7 +350,7 @@ yum -y install postgresql96*
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/postgresql">PostgreSQL</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/postgresql">PostgreSQL</a>
                 
                 
             </div>
@@ -402,19 +364,19 @@ yum -y install postgresql96*
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/rails">Rails</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/rails">Rails</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/ruby">Ruby</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/ruby">Ruby</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/nginx">Nginx</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/nginx">Nginx</a>
                 
                 
             </div>
@@ -425,172 +387,135 @@ yum -y install postgresql96*
 
         <div class="article-entry" itemprop="articleBody">
             <p>以下操作均在root账号下操作.</p>
-
-<h2 id="一-安装">一、安装</h2>
-
+<h2 id="一安装">一、安装</h2>
 <ol>
-<li><p>查看本机CentOS的版本: <code>cat /etc/redhat-release</code></p></li>
-
-<li><p>查看最新版本的postgresql yum源</p>
-
-<p>在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。<a href="https://yum.postgresql.org/">https://yum.postgresql.org/</a></p></li>
-
-<li><p>导入yum源文件</p>
-
+<li>
+<p>查看本机CentOS的版本: <code>cat /etc/redhat-release</code></p>
+</li>
+<li>
+<p>查看最新版本的postgresql yum源</p>
+<p>在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。<a href="https://yum.postgresql.org/">https://yum.postgresql.org/</a></p>
+</li>
+<li>
+<p>导入yum源文件</p>
 <pre><code>rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 </code></pre></li>
-
-<li><p>通过yum安装最新版的postgresql</p>
-
-<pre><code class="language-sh">yum -y install postgresql96*
-</code></pre>
-
-<p>安装后的目录在<code>/usr/pgsql-9.6/</code></p></li>
+<li>
+<p>通过yum安装最新版的postgresql</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum -y install postgresql96*
+</code></pre></div><p>安装后的目录在<code>/usr/pgsql-9.6/</code></p>
+</li>
 </ol>
-
-<p></p>
-
-<h2 id="二-配置">二、配置</h2>
-
+<h2 id="二配置">二、配置</h2>
 <ol>
-<li><p>数据库初始化</p>
-
+<li>
+<p>数据库初始化</p>
 <pre><code>/usr/pgsql-9.6/bin/postgresql96-setup initdb
-</code></pre>
-
-<p>初始化后的数据库目录在<code>/var/lib/pgsql/9.6/data/</code></p></li>
-
-<li><p>修改服务设置 (根据实际需要去修改)，例如修改成监听所有IP地址</p>
-
-<pre><code class="language-sh">vi /var/lib/pgsql/9.6/data/postgresql.conf
-</code></pre>
-
-<pre><code>#59行: 表示监听所有IP地址(强烈建议通过防火墙IP白名单控制, 否则有安全隐患) 
+</code></pre><p>初始化后的数据库目录在<code>/var/lib/pgsql/9.6/data/</code></p>
+</li>
+<li>
+<p>修改服务设置 (根据实际需要去修改)，例如修改成监听所有IP地址</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vi /var/lib/pgsql/9.6/data/postgresql.conf
+</code></pre></div><pre><code>#59行: 表示监听所有IP地址(强烈建议通过防火墙IP白名单控制, 否则有安全隐患) 
 listen_addresses = '*' 
-    
+   
 #347行: 指定日志文件的格式为2016-04-01.log这样的日期格式。
 log_filename = 'postgresql-%Y%m%d.log'
-    
+   
 #433行: 修改日志输出的格式
 log_line_prefix = '&lt;%t %u %d&gt;'
 </code></pre></li>
-
-<li><p>修改数据库认证模式为md5</p>
-
-<pre><code class="language-sh">vi /var/lib/pgsql/9.6/data/pg_hba.conf
-</code></pre>
-
-<p>将原有的设置全部注释掉，然后增加以下三行内容：</p>
-
+<li>
+<p>修改数据库认证模式为md5</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vi /var/lib/pgsql/9.6/data/pg_hba.conf
+</code></pre></div><p>将原有的设置全部注释掉，然后增加以下三行内容：</p>
 <pre><code>local   all             postgres                                peer
 local   all             all                                     md5
 host    all             all             0.0.0.0/0               md5
 host    all             all             ::1/128                 md5   
 </code></pre></li>
-
-<li><p>启动服务</p>
-
+<li>
+<p>启动服务</p>
 <pre><code>systemctl start postgresql-9.6
 </code></pre></li>
-
-<li><p>设置服务自动启动</p>
-
+<li>
+<p>设置服务自动启动</p>
 <pre><code>systemctl enable postgresql-9.6
 </code></pre></li>
 </ol>
-
-<h2 id="三-postgresql的基本使用">三、PostgreSQL的基本使用</h2>
-
+<h2 id="三postgresql的基本使用">三、PostgreSQL的基本使用</h2>
 <p>切换到postgres账号终端下</p>
-
 <pre><code>su - postgres
-</code></pre>
-
-<ol>
-<li><p>createdb命令：创建数据库</p>
-
-<pre><code class="language-sh"># postgres账号的终端下
+</code></pre><ol>
+<li>
+<p>createdb命令：创建数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># postgres账号的终端下</span>
 createdb dbtest
-</code></pre></li>
-
-<li><p>createuser命令：创建账号</p>
-
-<pre><code class="language-sh"># postgres账号的终端下
+</code></pre></div></li>
+<li>
+<p>createuser命令：创建账号</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># postgres账号的终端下</span>
 $ createuser dbuser1
-</code></pre></li>
-
-<li><p>设置/修改DB用户的密码</p>
-
-<pre><code class="language-sh"># 以postgres账号身份登陆psql终端
+</code></pre></div></li>
+<li>
+<p>设置/修改DB用户的密码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 以postgres账号身份登陆psql终端</span>
 $ psql -U postgres
-</code></pre>
-
-<p>在psql终端下，通过以下命令修改密码</p>
-
-<pre><code class="language-sh">postgres=#  ALTER USER dbuser1 encrypted password 'mypass';
-</code></pre></li>
-
-<li><p>psql终端下查看数据库</p>
-
+</code></pre></div><p>在psql终端下，通过以下命令修改密码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">postgres<span style="color:#f92672">=</span><span style="color:#75715e">#  ALTER USER dbuser1 encrypted password &#39;mypass&#39;;</span>
+</code></pre></div></li>
+<li>
+<p>psql终端下查看数据库</p>
 <pre><code>postgres=# \l
 </code></pre></li>
-
-<li><p>切换数据库</p>
-
+<li>
+<p>切换数据库</p>
 <pre><code>postgres=# \c 数据库名
 </code></pre></li>
-
-<li><p>修改数据库的拥有者</p>
-
+<li>
+<p>修改数据库的拥有者</p>
 <pre><code>postgres=# ALTER DATABASE dbtest OWNER TO dbuser1;
 </code></pre></li>
-
-<li><p>退出psql终端</p>
-
+<li>
+<p>退出psql终端</p>
 <pre><code>postgres=# \q
 </code></pre></li>
-
-<li><p>指定用户名及数据库登陆psql</p>
-
+<li>
+<p>指定用户名及数据库登陆psql</p>
 <pre><code>$ psql -U dbuser1 dbtest
 </code></pre></li>
-
-<li><p>在其它linux用户下，可以通过sudo命令使用postgres的psql</p>
-
-<pre><code class="language-sh">#例如，当前登陆的linux账号为deploy，想执行psql
+<li>
+<p>在其它linux用户下，可以通过sudo命令使用postgres的psql</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#例如，当前登陆的linux账号为deploy，想执行psql</span>
 sudo -u postgres psql -U postgres
-</code></pre></li>
+</code></pre></div></li>
 </ol>
-
-<h2 id="四-其它设置">四、其它设置</h2>
-
+<h2 id="四其它设置">四、其它设置</h2>
 <ol>
-<li><p>防火墙的设置样例（使用firewalld的情况下）：</p>
-
-<pre><code class="language-sh">#样例一：对指定IP地址完全开放
-firewall-cmd --zone=public --add-rich-rule='rule family=&quot;ipv4&quot; source address=&quot;xxx.xxx.xxx.xxx&quot; accept' --permanent
-    
-#样例二：对指定IP地址开放指定服务(使用自定义zone的方式)
-firewall-cmd --permanent --add-source=xxx.xxx.xxx.0/24 --zone=my_group
-firewall-cmd --permanent --add-service=postgresql --zone=my_group
+<li>
+<p>防火墙的设置样例（使用firewalld的情况下）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#样例一：对指定IP地址完全开放</span>
+firewall-cmd --zone<span style="color:#f92672">=</span>public --add-rich-rule<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rule family=&#34;ipv4&#34; source address=&#34;xxx.xxx.xxx.xxx&#34; accept&#39;</span> --permanent
+   
+<span style="color:#75715e">#样例二：对指定IP地址开放指定服务(使用自定义zone的方式)</span>
+firewall-cmd --permanent --add-source<span style="color:#f92672">=</span>xxx.xxx.xxx.0/24 --zone<span style="color:#f92672">=</span>my_group
+firewall-cmd --permanent --add-service<span style="color:#f92672">=</span>postgresql --zone<span style="color:#f92672">=</span>my_group
 firewall-cmd --reload
-    
-#样例三：对指定IP地址开放指定端口
-firewall-cmd --permanent --zone=public --add-rich-rule=' \
-  rule family=&quot;ipv4&quot; \
-  source address=&quot;xxx.xxx.xxx.xxx/32&quot; \
-  port protocol=&quot;tcp&quot; port=&quot;5432&quot; accept'
-      
-#样例四：对所有IP地址开放(危险，不推荐)
-firewall-cmd --zone=public --add-service=postgresql --permanent
-    
-#重启firewalld服务
+   
+<span style="color:#75715e">#样例三：对指定IP地址开放指定端口</span>
+firewall-cmd --permanent --zone<span style="color:#f92672">=</span>public --add-rich-rule<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; \
+</span><span style="color:#e6db74">  rule family=&#34;ipv4&#34; \
+</span><span style="color:#e6db74">  source address=&#34;xxx.xxx.xxx.xxx/32&#34; \
+</span><span style="color:#e6db74">  port protocol=&#34;tcp&#34; port=&#34;5432&#34; accept&#39;</span>
+     
+<span style="color:#75715e">#样例四：对所有IP地址开放(危险，不推荐)</span>
+firewall-cmd --zone<span style="color:#f92672">=</span>public --add-service<span style="color:#f92672">=</span>postgresql --permanent
+   
+<span style="color:#75715e">#重启firewalld服务</span>
 systemctl restart firewalld
-</code></pre></li>
+</code></pre></div></li>
 </ol>
-
-<h2 id="五-postgres的参考资料">五、Postgres的参考资料</h2>
-
+<h2 id="五postgres的参考资料">五、Postgres的参考资料</h2>
 <ul>
 <li><a href="https://www.postgresql.org">英文官网</a></li>
 <li><a href="https://wiki.postgresql.org/wiki/YUM_Installation">YUM Installation</a></li>
@@ -598,12 +523,12 @@ systemctl restart firewalld
 </ul>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2016/12/19/centos7-install-postgresql/" data-id="11117b8b55ac4b0c8812b00ffc041d24" class="article-share-link">
+    <a data-url="https://www.racksam.com/2016/12/19/centos7-install-postgresql/" data-id="11117b8b55ac4b0c8812b00ffc041d24" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2016/12/19/centos7-install-postgresql/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2016/12/19/centos7-install-postgresql/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -679,7 +604,7 @@ systemctl restart firewalld
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -688,7 +613,7 @@ systemctl restart firewalld
     
 
     
-    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -704,20 +629,25 @@ systemctl restart firewalld
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2016\/12\/19\/centos7-install-postgresql\/';
-    var disqus_title = 'CentOS 7 安装最新版PostgreSQL';
-    var disqus_url = 'http:\/\/www.racksam.com\/2016\/12\/19\/centos7-install-postgresql\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -736,9 +666,9 @@ systemctl restart firewalld
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -747,13 +677,13 @@ systemctl restart firewalld
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -762,7 +692,7 @@ systemctl restart firewalld
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -773,13 +703,13 @@ systemctl restart firewalld
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -788,9 +718,9 @@ systemctl restart firewalld
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -799,13 +729,39 @@ systemctl restart firewalld
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -814,9 +770,9 @@ systemctl restart firewalld
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -825,41 +781,15 @@ systemctl restart firewalld
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS 7 安装最新版PostgreSQL" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -890,111 +820,63 @@ systemctl restart firewalld
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -1002,7 +884,71 @@ systemctl restart firewalld
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -1046,182 +992,77 @@ systemctl restart firewalld
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1231,7 +1072,27 @@ systemctl restart firewalld
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1241,7 +1102,22 @@ systemctl restart firewalld
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1251,7 +1127,82 @@ systemctl restart firewalld
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1282,7 +1233,7 @@ systemctl restart firewalld
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1300,18 +1251,21 @@ systemctl restart firewalld
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

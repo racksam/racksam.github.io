@@ -1,82 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on Racksam</title>
-    <link>http://www.racksam.com/categories/mysql/</link>
+    <link>https://www.racksam.com/categories/mysql/</link>
     <description>Recent content in MySQL on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Thu, 09 Jun 2011 18:07:42 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux下备份MySQL所有数据库的脚本</title>
-      <link>http://www.racksam.com/2011/06/09/mysql-backup-shell-script/</link>
+      <link>https://www.racksam.com/2011/06/09/mysql-backup-shell-script/</link>
       <pubDate>Thu, 09 Jun 2011 18:07:42 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/mysql-backup-shell-script/</guid>
-      <description>&lt;p&gt;该脚本的目的是备份MySQL下除系统信息以外的所有的用户创建的数据库。每个数据库单独一个gz文件存放于指定目录里。执行备份操作完毕以后，删除15日以前创建的备份文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://www.racksam.com/2011/06/09/mysql-backup-shell-script/</guid>
+      <description>&lt;p&gt;该脚本的目的是备份MySQL下除系统信息以外的所有的用户创建的数据库。每个数据库单独一个gz文件存放于指定目录里。执行备份操作完毕以后，删除15日以前创建的备份文件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL导入导出的简单命令</title>
-      <link>http://www.racksam.com/2011/06/09/import-and-export-mysql-database/</link>
+      <link>https://www.racksam.com/2011/06/09/import-and-export-mysql-database/</link>
       <pubDate>Thu, 09 Jun 2011 17:45:15 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/import-and-export-mysql-database/</guid>
+      <guid>https://www.racksam.com/2011/06/09/import-and-export-mysql-database/</guid>
       <description>&lt;p&gt;备忘一下常用的MySQL导入导出命令。使用mysqldump工具及mysql终端里的source命令。&lt;/p&gt;
-
 &lt;h3 id=&#34;导出整个数据库&#34;&gt;导出整个数据库&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;$mysqldump -u 用户名 -p 数据库名 &amp;gt; 导出的文件名
 $mysqldump -u wcnc -p smgp_apps_wcnc &amp;gt; wcnc.sql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>MySQL最大连接数调整</title>
-      <link>http://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</link>
+      <link>https://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</link>
       <pubDate>Thu, 09 Jun 2011 17:17:15 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</guid>
+      <guid>https://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</guid>
       <description>&lt;p&gt;CentOS默认安装MySQL的路径&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;配置文件：/etc/my.cnf&lt;/li&gt;
 &lt;li&gt;在配置文件中，指定了数据的存储路径。一般默认为: datadir=/var/lib/mysql&lt;/li&gt;
-&lt;li&gt;默认日志文件: /var/log/mysqld.log
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;mysql性能调优&#34;&gt;MySQL性能调优&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看MySQL版本等信息&lt;/p&gt;</description>
+&lt;li&gt;默认日志文件: /var/log/mysqld.log&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
       <title>MySQL数据库创建及帐号管理</title>
-      <link>http://www.racksam.com/2011/06/08/create-mysql-database-and-users/</link>
+      <link>https://www.racksam.com/2011/06/08/create-mysql-database-and-users/</link>
       <pubDate>Wed, 08 Jun 2011 14:50:27 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/08/create-mysql-database-and-users/</guid>
-      <description>&lt;p&gt;整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。
-&lt;/p&gt;</description>
+      <guid>https://www.racksam.com/2011/06/08/create-mysql-database-and-users/</guid>
+      <description>&lt;p&gt;整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>让MySQL不区分大小写表名</title>
-      <link>http://www.racksam.com/2011/06/07/how-to-disable-table-name-case-sensitive/</link>
+      <link>https://www.racksam.com/2011/06/07/how-to-disable-table-name-case-sensitive/</link>
       <pubDate>Tue, 07 Jun 2011 13:10:23 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/07/how-to-disable-table-name-case-sensitive/</guid>
+      <guid>https://www.racksam.com/2011/06/07/how-to-disable-table-name-case-sensitive/</guid>
       <description>MySQL默认是区别大小表名的，这与很多习惯于其它数据库的程序员很不适应。如果想关闭大小写敏感，可以采用以下步骤。 在CentOS中的my.c</description>
     </item>
     

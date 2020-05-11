@@ -1,28 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Puma on Racksam</title>
-    <link>http://www.racksam.com/tags/puma/</link>
+    <link>https://www.racksam.com/tags/puma/</link>
     <description>Recent content in Puma on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Tue, 01 Mar 2016 21:08:16 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/puma/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/puma/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Centos6 下安装rbenv &#43; ruby &#43; rails &#43; puma &#43; ngnix</title>
-      <link>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
+      <link>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
       <pubDate>Tue, 01 Mar 2016 21:08:16 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
+      <guid>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
       <description>&lt;p&gt;Rails项目在生产环境上线时，可以选择的ruby服务器比较多，例如：Rainbows、Unicorn、Passenger、Puma。其中Puma是近年来口碑比较不错的一个。&lt;/p&gt;
-
-&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,103 +1,91 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Racksam</title>
-    <link>http://www.racksam.com/tags/python/</link>
+    <link>https://www.racksam.com/tags/python/</link>
     <description>Recent content in Python on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Wed, 14 May 2014 21:51:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>根据拍照时间批量修改照片文件名的Python脚本</title>
-      <link>http://www.racksam.com/2014/05/14/python-script-to-change-pictures-filenames/</link>
+      <link>https://www.racksam.com/2014/05/14/python-script-to-change-pictures-filenames/</link>
       <pubDate>Wed, 14 May 2014 21:51:00 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/05/14/python-script-to-change-pictures-filenames/</guid>
+      <guid>https://www.racksam.com/2014/05/14/python-script-to-change-pictures-filenames/</guid>
       <description>&lt;p&gt;辛辛苦苦把电脑里好几年的照片上传到云盘以后，发现在云盘里照片文件的创建时间都变成了存入云盘的时间。另外，云盘网页上也无法看到照片的拍照时间（EXIF属性），整理照片时特别不方便。&lt;/p&gt;
-
 &lt;p&gt;考虑到多数照片的文件名是由相机自动生成的，例如：IMG_3153.JPG。这样的文件名其实对我们也没有什么实际用处，不如干脆将文件名修改为拍照时间。这样的话，即使照片上传到云盘，也能够很方便的判断照片的时间。&lt;/p&gt;
-
 &lt;p&gt;使用Python写了以下脚本，在Mac OS X下验证通过，处理速度非常快。
-&lt;em&gt;注：由于拍照时间可以精确到秒，所以这个脚本产生的重名文件名的概率应该是很低的。&lt;/em&gt;
-&lt;/p&gt;</description>
+&lt;em&gt;注：由于拍照时间可以精确到秒，所以这个脚本产生的重名文件名的概率应该是很低的。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQLdb Python封装类</title>
-      <link>http://www.racksam.com/2014/04/09/diy-python-mysql-class/</link>
+      <link>https://www.racksam.com/2014/04/09/diy-python-mysql-class/</link>
       <pubDate>Wed, 09 Apr 2014 21:35:20 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/09/diy-python-mysql-class/</guid>
+      <guid>https://www.racksam.com/2014/04/09/diy-python-mysql-class/</guid>
       <description>&lt;p&gt;我一直没弄明白一件事情，Python语言已经这么流行和成熟了，为什么使用MySQL的方式却如此原始。Python 2下大家推崇的依旧是使用MySQLdb这个第三方的模块，而其使用方式还是手写方法，没有一个比较权威的封装类。或许是我孤陋寡闻？&lt;/p&gt;
-
 &lt;p&gt;根据官方文档及一些网上的样例，兔哥整理了一个MySQLdb的封装类。基本上涵盖了常用的函数，一般开发应该够用了。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux下安装protobuf python版本</title>
-      <link>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
+      <link>https://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
       <pubDate>Sun, 06 Apr 2014 17:08:10 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
-      <description>&lt;h2 id=&#34;protobuf简介-google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
+      <description>&lt;h2 id=&#34;protobuf简介google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
 &lt;p&gt;当前分布式Web系统之间交换数据的所用数据格式的类型中，最常见的依然是json与XML。不过Google的技术大牛们认为json/XML这些文本类型的数据格式传输效率太差，于是他们发明了一种全新的数据格式：&lt;a href=&#34;https://github.com/google/protobuf&#34;&gt;https://github.com/google/protobuf&lt;/a&gt;。&lt;/p&gt;
-
 &lt;p&gt;protobuf是一种序列化结构数据（serializing structured data）。数据在保存及传输过程中以二进制编码形态存在，相对于文本格式的数据形式，大大提高了效率。同时，由于protobuf的数据中不携带数据结构定义的信息（Schema以及类似xml中标签名称），又进一步减少了数据里的冗余信息。&lt;/p&gt;
-
 &lt;p&gt;据统计，一条消息数据，用protobuf序列化后的数据大小是json的10分之一，xml格式的20分之一，是传统的二进制序列化的10分之一，所以protobuf的性能优势还是很明显的。事实上这种技术早已在Google的服务中大量被应用。另外，Google也将此技术开源化来促进推广。&lt;/p&gt;
-
 &lt;p&gt;对于一般的开发者来说，有可能需要用到protobuf的情况：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;对接Google的某种服务，例如开发DSP广告系统，需要对接Google的广告RTB交易平台。&lt;/li&gt;
 &lt;li&gt;在分布式Web系统之间交换数据时，对传输效率有非常高的要求。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;官方目前多种编程语言的实现: C++、Java、Python、Objective-C、JavaScript、Ruby、Go。暂时没有PHP版本。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS下编译安装Python2.7</title>
-      <link>http://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</link>
+      <link>https://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</link>
       <pubDate>Thu, 03 Apr 2014 15:17:40 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</guid>
+      <guid>https://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</guid>
       <description>&lt;p&gt;CentOS 6自带的python版本仍然是2.6.x。
 如果需要安装python2.7版本，推荐的方法还是传统的编译安装。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>error: MSVCP90.dll: No such file or directory</title>
-      <link>http://www.racksam.com/2012/09/26/py2exe-error-of-msvcp90-dll/</link>
+      <link>https://www.racksam.com/2012/09/26/py2exe-error-of-msvcp90-dll/</link>
       <pubDate>Wed, 26 Sep 2012 09:58:58 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2012/09/26/py2exe-error-of-msvcp90-dll/</guid>
+      <guid>https://www.racksam.com/2012/09/26/py2exe-error-of-msvcp90-dll/</guid>
       <description>&lt;p&gt;Windows下使用py2exe编译wxPython程序时，碰到报错&lt;code&gt;error: MSVCP90.dll: No such file or directory&lt;/code&gt;，到万能的Google上一查，解决方法是在py2exe的编译选项中增加&lt;code&gt;&amp;quot;dll_excludes&amp;quot;: [&amp;quot;MSVCP90.dll&amp;quot;]&lt;/code&gt;，代码如下：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>py2exe编译后的python程序中，取得当前所在目录的方法</title>
-      <link>http://www.racksam.com/2012/09/21/py2exe-get-current-directory/</link>
+      <link>https://www.racksam.com/2012/09/21/py2exe-get-current-directory/</link>
       <pubDate>Fri, 21 Sep 2012 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2012/09/21/py2exe-get-current-directory/</guid>
+      <guid>https://www.racksam.com/2012/09/21/py2exe-get-current-directory/</guid>
       <description>python脚本程序中如果需要获取程序自身所在的目录，一般会使用以下方法： os.path.dirname(__file__) __file__变量是Python内置的全局变量，代表当前程序文</description>
     </item>
     
     <item>
       <title>将Python脚本程序发布成一个exe可执行文件</title>
-      <link>http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/</link>
+      <link>https://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/</link>
       <pubDate>Thu, 20 Sep 2012 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/</guid>
+      <guid>https://www.racksam.com/2012/09/20/compile-a-python-script-to-exe/</guid>
       <description>&lt;h2 id=&#34;目的&#34;&gt;目的&lt;/h2&gt;
-
 &lt;p&gt;Python脚本如果需要发布给Windows客户运行，可以使用py2exe来编译成exe可执行文件,
 这样用户就不用安装Python运行环境。
 顺便还保护了源代码。（不过要注意，还是可以反编译的）&lt;/p&gt;</description>

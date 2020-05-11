@@ -1,26 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>梯子 on Racksam</title>
-    <link>http://www.racksam.com/tags/%E6%A2%AF%E5%AD%90/</link>
+    <link>https://www.racksam.com/tags/%E6%A2%AF%E5%AD%90/</link>
     <description>Recent content in 梯子 on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Mon, 19 Dec 2016 21:00:18 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/%E6%A2%AF%E5%AD%90/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/%E6%A2%AF%E5%AD%90/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>阿里云主机安装Shadowsocks客户端 &#43; proxychains4</title>
-      <link>http://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</link>
+      <link>https://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</guid>
-      <description>&lt;p&gt;对于技术人员PC端上科学上网可以选择的手段太多了，但是如果在国内的VPS服务器科学上网并不那么容易。这里简单介绍服务器上安装Shadowsocks客户端 + proxychains4的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</guid>
+      <description>&lt;p&gt;对于技术人员PC端上科学上网可以选择的手段太多了，但是如果在国内的VPS服务器科学上网并不那么容易。这里简单介绍服务器上安装Shadowsocks客户端 + proxychains4的方法。&lt;/p&gt;</description>
     </item>
     
   </channel>

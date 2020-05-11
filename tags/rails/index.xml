@@ -1,164 +1,146 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rails on Racksam</title>
-    <link>http://www.racksam.com/tags/rails/</link>
+    <link>https://www.racksam.com/tags/rails/</link>
     <description>Recent content in Rails on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
-    <lastBuildDate>Fri, 30 Jun 2017 13:31:41 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jul 2017 13:31:41 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/rails/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>CentOS7配置rails&#43;nginx服务器&#43;mina发布</title>
+      <link>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</link>
+      <pubDate>Sat, 01 Jul 2017 13:31:41 +0000</pubDate>
+      
+      <guid>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</guid>
+      <description>一、准备环境 安装Fedora第三方源 yum -y update yum -y install epel-release 二、安装nginx yum -y install nginx 三、根据需要安装所需要的数据库 根据项目的实际需要，选择需要安装的</description>
+    </item>
+    
+    <item>
       <title>CentOS7使用mina &#43; github部署Rails项目</title>
-      <link>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
+      <link>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
       <pubDate>Fri, 30 Jun 2017 13:31:41 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</guid>
+      <guid>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</guid>
       <description>&lt;p&gt;php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;git导致了很多额外的工作量:&lt;/p&gt;
-
-&lt;p&gt;由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Ruby on Rails的安装要比php复杂:&lt;/p&gt;
-
-&lt;p&gt;原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;puma等ruby应用服务器的启动参数太复杂：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;git导致了很多额外的工作量:&lt;/p&gt;
+&lt;p&gt;由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ruby on Rails的安装要比php复杂:&lt;/p&gt;
+&lt;p&gt;原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;puma等ruby应用服务器的启动参数太复杂：&lt;/p&gt;
 &lt;p&gt;表面看起来是这样。[rails项目]/config/puma.rb文件里配置，或者直接在puma命令行启动时的参数，有很多不熟悉的参数。稍微用错了参数，就会导致puma不启动或者出现各种问题，让新手精疲力尽。&lt;/p&gt;
-
-&lt;p&gt;其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置&lt;code&gt;/etc/php-fpm.d/www.conf&lt;/code&gt;文件，有时候还需要修改&lt;code&gt;/etc/php.ini&lt;/code&gt;文件。&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置&lt;code&gt;/etc/php-fpm.d/www.conf&lt;/code&gt;文件，有时候还需要修改&lt;code&gt;/etc/php.ini&lt;/code&gt;文件。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。&lt;/p&gt;
-
 &lt;p&gt;mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。&lt;/p&gt;
-
-&lt;p&gt;这里记录的是配置ruby + puma + github + mina 发布工具的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里记录的是配置ruby + puma + github + mina 发布工具的方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS7安装最新版rbenv&#43;ruby&#43;rails</title>
-      <link>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</link>
+      <link>https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</link>
       <pubDate>Wed, 28 Jun 2017 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</guid>
-      <description>&lt;p&gt;这篇文章记录的是在一般国外的云服务器的安装过程，因此使用默认的gem源即可。 如果是在阿里云等国内的服务器上安装，需要考虑天朝的特殊网络问题。可以参考这篇文章：&lt;a href=&#34;http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails&#34;&gt;阿里云主机安装最新版rbenv+ruby+rails&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装编译环境-root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</guid>
+      <description>&lt;p&gt;这篇文章记录的是在一般国外的云服务器的安装过程，因此使用默认的gem源即可。 如果是在阿里云等国内的服务器上安装，需要考虑天朝的特殊网络问题。可以参考这篇文章：&lt;a href=&#34;https://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails&#34;&gt;阿里云主机安装最新版rbenv+ruby+rails&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一安装编译环境root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum update -y
+&lt;li&gt;
+&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum update -y
 yum install -y git bzip2 openssl-devel readline-devel zlib-devel sqlite sqlite-devel gcc-c++  
-yum install --enablerepo=epel nodejs
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;useradd deploy -G wheel
+yum install --enablerepo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;epel nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;useradd deploy -G wheel
 passwd deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
-&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
+&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>CentOS 7 安装最新版PostgreSQL</title>
-      <link>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
+      <link>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
+      <guid>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
       <description>&lt;p&gt;以下操作均在root账号下操作.&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装&#34;&gt;一、安装&lt;/h2&gt;
-
+&lt;h2 id=&#34;一安装&#34;&gt;一、安装&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
-
-&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;导入yum源文件&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
+&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导入yum源文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum -y install postgresql96*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum -y install postgresql96*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>阿里云主机安装最新版rbenv&#43;ruby&#43;rails</title>
-      <link>http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</link>
+      <link>https://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</guid>
-      <description>&lt;h2 id=&#34;一-安装编译环境-root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</guid>
+      <description>&lt;h2 id=&#34;一安装编译环境root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum update -y
+&lt;li&gt;
+&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum update -y
 yum install -y git bzip2 openssl-devel readline-devel zlib-devel sqlite sqlite-devel gcc-c++
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;useradd deploy -G wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;useradd deploy -G wheel
 passwd deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
-&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
+&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>阿里云主机CentOS7配置rails服务器的葵花宝典</title>
-      <link>http://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</link>
+      <link>https://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</link>
       <pubDate>Mon, 19 Dec 2016 13:31:41 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</guid>
+      <guid>https://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</guid>
       <description>&lt;p&gt;以本地为macos为例
-服务器端为CentOS7.3 64位
-&lt;/p&gt;</description>
+服务器端为CentOS7.3 64位&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Centos6 下安装rbenv &#43; ruby &#43; rails &#43; puma &#43; ngnix</title>
-      <link>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
+      <link>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
       <pubDate>Tue, 01 Mar 2016 21:08:16 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
+      <guid>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
       <description>&lt;p&gt;Rails项目在生产环境上线时，可以选择的ruby服务器比较多，例如：Rainbows、Unicorn、Passenger、Puma。其中Puma是近年来口碑比较不错的一个。&lt;/p&gt;
-
-&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;</description>
     </item>
     
   </channel>

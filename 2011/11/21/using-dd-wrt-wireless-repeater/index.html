@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>使用DD-WRT无线路由器增强无线信号（使用新网段） &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,98 +10,60 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="使用DD-WRT无线路由器增强无线信号（使用新网段）" />
 <meta property="og:description" content="当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。
-
 一、主力无线路由器（接宽带猫的那一台）的设置方法
-
 主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。
-
 这里假设主无线路由器的配置信息如下：
 SSID: MasterWiFi
 密码：123456
 加密方法：WPA Personal TKIP
 内网地址段：192.168.0.1/24
-
-
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/" />
-
-
-
-<meta property="article:published_time" content="2011-11-21T21:43:08&#43;00:00"/>
-<meta property="article:modified_time" content="2011-11-21T21:43:08&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/" />
+<meta property="article:published_time" content="2011-11-21T21:43:08+00:00" />
+<meta property="article:modified_time" content="2011-11-21T21:43:08+00:00" />
 
     
-    
-<meta itemprop="name" content="使用DD-WRT无线路由器增强无线信号（使用新网段）">
+    <meta itemprop="name" content="使用DD-WRT无线路由器增强无线信号（使用新网段）">
 <meta itemprop="description" content="当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。
-
 一、主力无线路由器（接宽带猫的那一台）的设置方法
-
 主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。
-
 这里假设主无线路由器的配置信息如下：
 SSID: MasterWiFi
 密码：123456
 加密方法：WPA Personal TKIP
 内网地址段：192.168.0.1/24
-
-
 ">
-
-
+<meta itemprop="datePublished" content="2011-11-21T21:43:08&#43;00:00" />
 <meta itemprop="dateModified" content="2011-11-21T21:43:08&#43;00:00" />
 <meta itemprop="wordCount" content="707">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="使用DD-WRT无线路由器增强无线信号（使用新网段）"/>
+<meta itemprop="keywords" content="Linux," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用DD-WRT无线路由器增强无线信号（使用新网段）"/>
 <meta name="twitter:description" content="当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。
-
 一、主力无线路由器（接宽带猫的那一台）的设置方法
-
 主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。
-
 这里假设主无线路由器的配置信息如下：
 SSID: MasterWiFi
 密码：123456
 加密方法：WPA Personal TKIP
 内网地址段：192.168.0.1/24
-
-
 "/>
-
 
     
 
@@ -118,16 +80,16 @@ SSID: MasterWiFi
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -143,17 +105,17 @@ SSID: MasterWiFi
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -161,7 +123,7 @@ SSID: MasterWiFi
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -172,7 +134,7 @@ SSID: MasterWiFi
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -188,17 +150,17 @@ SSID: MasterWiFi
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -214,7 +176,7 @@ SSID: MasterWiFi
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -227,12 +189,12 @@ SSID: MasterWiFi
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -298,7 +260,7 @@ SSID: MasterWiFi
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -329,7 +291,7 @@ SSID: MasterWiFi
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/">
+    <a href="https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/">
     <h1 class="article-title" itemprop="name">
         使用DD-WRT无线路由器增强无线信号（使用新网段）
     </h1>
@@ -355,7 +317,7 @@ SSID: MasterWiFi
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/dd-wrt">DD-WRT</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/dd-wrt">DD-WRT</a>
                 
                 
             </div>
@@ -369,7 +331,7 @@ SSID: MasterWiFi
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
                 
                 
             </div>
@@ -380,47 +342,40 @@ SSID: MasterWiFi
 
         <div class="article-entry" itemprop="articleBody">
             <p>当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。</p>
-
-<h3 id="一-主力无线路由器-接宽带猫的那一台-的设置方法">一、主力无线路由器（接宽带猫的那一台）的设置方法</h3>
-
+<h3 id="一主力无线路由器接宽带猫的那一台的设置方法">一、主力无线路由器（接宽带猫的那一台）的设置方法</h3>
 <p>主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。</p>
-
 <pre><code>这里假设主无线路由器的配置信息如下：
 SSID: MasterWiFi
 密码：123456
 加密方法：WPA Personal TKIP
 内网地址段：192.168.0.1/24
-</code></pre>
-
-<p></p>
-
-<h3 id="二-中继无线路由器的配置方法">二、中继无线路由器的配置方法</h3>
-
+</code></pre><h3 id="二中继无线路由器的配置方法">二、中继无线路由器的配置方法</h3>
 <p>使用dd-wrt Web操作界面进行设置。</p>
-
 <ol>
-<li><p>首先在[设置]-&gt;[基本设置]界面上，设置WAN的连接类型为DHCP，然后将路由器的内网地址配置成不同于“主力网段”的另一个网段。比如以上的主力网段为192.168.0.1/24，将中继后的网段设置为10.20.20.1/24。如图：</p>
-
-<p><img src="/attachments/using-dd-wrt-wireless-repeater/wifi_child3.png" alt="网段设置" /></p></li>
-
-<li><p>在[无线]-&gt;[基本设置]中，指定“中继”模式，并配置接入点的SSID，即被中继的SSID。例如以上的MasterWiFi。然后增加一个虚拟无线接口，设置一个新的中继后的无线SSID，比如“ChildWiFi”。如图：</p>
-
-<p><img src="/attachments/using-dd-wrt-wireless-repeater/wifi_child1.png" alt="SSID设置" /></p></li>
-
-<li><p>在[无线]-&gt;[无线安全]中，配置接入点SSID的密码，同时设置自己的SSID的密码。如图：</p>
-
-<p><img src="/attachments/using-dd-wrt-wireless-repeater/wifi_child2.png" alt="SSID密码设置" /></p></li>
-
-<li><p>保存设置，并使之生效。用笔记本电脑连接新的无线SSID，就可以获取新内网的地址，可以正常访问互联网。中继后的网段能够连通主力无线路由器的内网网段，但是反之不行，道理很容易想通的。</p></li>
+<li>
+<p>首先在[设置]-&gt;[基本设置]界面上，设置WAN的连接类型为DHCP，然后将路由器的内网地址配置成不同于“主力网段”的另一个网段。比如以上的主力网段为192.168.0.1/24，将中继后的网段设置为10.20.20.1/24。如图：</p>
+<p><img src="/attachments/using-dd-wrt-wireless-repeater/wifi_child3.png" alt="网段设置"></p>
+</li>
+<li>
+<p>在[无线]-&gt;[基本设置]中，指定“中继”模式，并配置接入点的SSID，即被中继的SSID。例如以上的MasterWiFi。然后增加一个虚拟无线接口，设置一个新的中继后的无线SSID，比如“ChildWiFi”。如图：</p>
+<p><img src="/attachments/using-dd-wrt-wireless-repeater/wifi_child1.png" alt="SSID设置"></p>
+</li>
+<li>
+<p>在[无线]-&gt;[无线安全]中，配置接入点SSID的密码，同时设置自己的SSID的密码。如图：</p>
+<p><img src="/attachments/using-dd-wrt-wireless-repeater/wifi_child2.png" alt="SSID密码设置"></p>
+</li>
+<li>
+<p>保存设置，并使之生效。用笔记本电脑连接新的无线SSID，就可以获取新内网的地址，可以正常访问互联网。中继后的网段能够连通主力无线路由器的内网网段，但是反之不行，道理很容易想通的。</p>
+</li>
 </ol>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/" data-id="64498a9af362a15c97ab4cc1c70a5f74" class="article-share-link">
+    <a data-url="https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/" data-id="64498a9af362a15c97ab4cc1c70a5f74" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -496,7 +451,7 @@ SSID: MasterWiFi
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -505,7 +460,7 @@ SSID: MasterWiFi
     
 
     
-    <a href="http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -521,20 +476,25 @@ SSID: MasterWiFi
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2011\/11\/21\/using-dd-wrt-wireless-repeater\/';
-    var disqus_title = '使用DD-WRT无线路由器增强无线信号（使用新网段）';
-    var disqus_url = 'http:\/\/www.racksam.com\/2011\/11\/21\/using-dd-wrt-wireless-repeater\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -553,9 +513,9 @@ SSID: MasterWiFi
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -564,13 +524,13 @@ SSID: MasterWiFi
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -579,7 +539,7 @@ SSID: MasterWiFi
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -590,13 +550,13 @@ SSID: MasterWiFi
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -605,9 +565,9 @@ SSID: MasterWiFi
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -616,13 +576,39 @@ SSID: MasterWiFi
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -631,9 +617,9 @@ SSID: MasterWiFi
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -642,41 +628,15 @@ SSID: MasterWiFi
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="使用DD-WRT无线路由器增强无线信号（使用新网段）" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -707,111 +667,63 @@ SSID: MasterWiFi
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -819,7 +731,71 @@ SSID: MasterWiFi
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -863,182 +839,77 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1048,7 +919,27 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1058,7 +949,22 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1068,7 +974,82 @@ SSID: MasterWiFi
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1099,7 +1080,7 @@ SSID: MasterWiFi
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1117,18 +1098,21 @@ SSID: MasterWiFi
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

@@ -1,82 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on Racksam</title>
-    <link>http://www.racksam.com/categories/mac/</link>
+    <link>https://www.racksam.com/categories/mac/</link>
     <description>Recent content in Mac on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
-    <lastBuildDate>Tue, 04 Nov 2014 21:58:11 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jul 2017 13:31:41 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/categories/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac OS下安装cordova开发编译环境</title>
-      <link>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</link>
+      <link>https://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</link>
       <pubDate>Tue, 04 Nov 2014 21:58:11 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</guid>
+      <guid>https://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</guid>
       <description>&lt;p&gt;PhoneGap/cordova为代表的基于HTML5开发iOS/Android应用的技术，大大降低了手机App的开发门槛。虽然目前与原生的Object-C/Java开发的应用在性能上还有差距，但是对于一些网站客户端类的APP来说已经足够实用了。另外随着技术的进步，未来HTML5也许成为开发app的主流技术。&lt;/p&gt;
-
 &lt;p&gt;将html5打包成ios app，既可以选择appcan, build.phonegap.com这类的在线编译工具，也可以自己配置本地的xcode开发环境。虽然配置本地环境比较繁琐，但是灵活性更大，不会受制于人（很多在线打包网站，免费的服务有很多限制）。简单整理一下配置一个ios项目的步骤。&lt;/p&gt;
-
-&lt;p&gt;※很多人使用黑苹果作为ios的开发环境，不过不建议这样做。将时间耗费在研究黑苹果上没什么意义。*
-&lt;/p&gt;</description>
+&lt;p&gt;※很多人使用黑苹果作为ios的开发环境，不过不建议这样做。将时间耗费在研究黑苹果上没什么意义。*&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>OS X PackageMaker工具的下载位置</title>
-      <link>http://www.racksam.com/2014/10/15/install-macos-packagemaker/</link>
+      <link>https://www.racksam.com/2014/10/15/install-macos-packagemaker/</link>
       <pubDate>Wed, 15 Oct 2014 21:51:00 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/10/15/install-macos-packagemaker/</guid>
+      <guid>https://www.racksam.com/2014/10/15/install-macos-packagemaker/</guid>
       <description>PackageMaker是苹果OS X系统上非常有用的安装程序打包器，用它可以轻松生成自己的pkg安装包。 真不知道苹果是怎么想的，Packag</description>
     </item>
     
     <item>
       <title>OS X 锁屏幕的快捷键</title>
-      <link>http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/</link>
+      <link>https://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/</link>
       <pubDate>Tue, 13 May 2014 21:44:28 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/</guid>
+      <guid>https://www.racksam.com/2014/05/13/mac-shortcuts-for-locking-screen/</guid>
       <description>Mac OS X下锁住屏幕的快捷键： ⌃ + ⇧ + ⏏ (Control + Shift + Eject) 其它的一些快捷键： http://support.apple.com/kb/ht1343</description>
     </item>
     
     <item>
       <title>Macbook Pro 2012 更换SSD硬盘的奋斗记</title>
-      <link>http://www.racksam.com/2014/05/12/replace-ssd-for-macpro2012/</link>
+      <link>https://www.racksam.com/2014/05/12/replace-ssd-for-macpro2012/</link>
       <pubDate>Mon, 12 May 2014 21:39:20 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/05/12/replace-ssd-for-macpro2012/</guid>
+      <guid>https://www.racksam.com/2014/05/12/replace-ssd-for-macpro2012/</guid>
       <description>&lt;p&gt;我的MBP (13-inch, Mid 2012,  Model: A1278，港行)，由于安装的软件太多变得越来越慢。最终决定干脆更换SSD硬盘，重装安装系统。没想到新买的SSD硬盘折腾了我好几天。&lt;/p&gt;
-
 &lt;p&gt;根据很多国内网站的评测以及一些国外网站上的MBP更换SSD的介绍，直接就在京东上选购了“三星840 Pro系列 256G 2.5英寸 SATA3固态硬盘”。三星840pro系列的价格明显高于同等容量的其它品牌，外表做工以及包装确实也不错。开始的时候用usb外置方式给新硬盘安装了Mavericks系统，启动和使用都没有问题。可是等安装到sata盘位，发现启动不起来，启动后屏幕上的灰色小圆圈一直在转。&lt;/p&gt;
-
 &lt;p&gt;怀疑是用USB外置方式安装的问题。于是就用USB外置方式启动原装的硬盘上的恢复分区，然后用磁盘工具对内置的三星SSD进行抹去和分区。节外生枝的是抹去和分区时候都报失败，SSD硬盘下莫名其妙地自动出现一个disk0S2的神秘分区，怎么也删除不掉。只好把SSD拿下来接上USB转接线，在Windows下使用diskpart命令行工具，将该硬盘做了初始化。最后又把SSD放回苹果笔记本的硬盘盘位，使用原装硬盘的恢复分区引导进行网络安装。安装过程大概耗费了2个半小时，安装过程没什么问题，重启后发现依然不能启动SATA盘位上的SSD硬盘，晕倒。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.racksam.com/attachments/replace-ssd-for-macpro2012/ssd_boot_error.png.jpg&#34; alt=&#34;MBP无法识别SSD&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://www.racksam.com/attachments/replace-ssd-for-macpro2012/ssd_boot_error.png.jpg&#34; alt=&#34;MBP无法识别SSD&#34;&gt;&lt;/p&gt;
 &lt;p&gt;思考半天，猜想也许是三星840 pro系列的SSD太新了，配不上两年前的笔记本？于是联系京东办理了退货。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>电脑清除DNS缓存的方法</title>
-      <link>http://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</link>
+      <link>https://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</link>
       <pubDate>Wed, 09 Apr 2014 21:30:01 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</guid>
+      <guid>https://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</guid>
       <description>&lt;p&gt;MacOS及Windows不同版本下清除DNS缓存的方法不同。&lt;/p&gt;
-
-&lt;h3 id=&#34;mac-os-x-10-5-10-6&#34;&gt;Mac OS X 10.5, 10.6+&lt;/h3&gt;
-
+&lt;h3 id=&#34;mac-os-x-105-106&#34;&gt;Mac OS X 10.5, 10.6+&lt;/h3&gt;
 &lt;p&gt;终端窗口下执行以下命令：&lt;code&gt;#sudo dscacheutil -flushcache&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;mac-os-x-10-7-10-8-10-9&#34;&gt;Mac OS X 10.7, 10.8, 10.9&lt;/h3&gt;
-
-&lt;p&gt;终端窗口下执行以下命令：&lt;code&gt;#sudo killall -HUP mDNSResponder&lt;/code&gt;
-&lt;/p&gt;</description>
+&lt;h3 id=&#34;mac-os-x-107-108-109&#34;&gt;Mac OS X 10.7, 10.8, 10.9&lt;/h3&gt;
+&lt;p&gt;终端窗口下执行以下命令：&lt;code&gt;#sudo killall -HUP mDNSResponder&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

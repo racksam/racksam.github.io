@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书 &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,125 +10,81 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" />
 <meta property="og:description" content="Linux服务器下使用acme.sh脚本是申请let&rsquo;s encrypt证书最便捷的方式，比官方推荐的certbot脚本工具要强大的多。
-
 安装文档：
 https://github.com/Neilpang/acme.sh/wiki/说明
-
 前提条件
-
 
 拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)
 确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址
 要等到新创建的域名解析能在公网上被解析到。
 据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。
 
-
 一、安装acme.sh脚本
-
 curl  https://get.acme.sh | sh
 
 # 重新登录ssh，或者使用source命令重新加载环境变量
 source . 
-
-
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" />
-
-
-
-<meta property="article:published_time" content="2016-12-26T19:14:40&#43;00:00"/>
-<meta property="article:modified_time" content="2016-12-26T19:14:40&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" />
+<meta property="article:published_time" content="2016-12-26T19:14:40+00:00" />
+<meta property="article:modified_time" content="2016-12-26T19:14:40+00:00" />
 
     
-    
-<meta itemprop="name" content="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书">
+    <meta itemprop="name" content="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书">
 <meta itemprop="description" content="Linux服务器下使用acme.sh脚本是申请let&rsquo;s encrypt证书最便捷的方式，比官方推荐的certbot脚本工具要强大的多。
-
 安装文档：
 https://github.com/Neilpang/acme.sh/wiki/说明
-
 前提条件
-
 
 拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)
 确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址
 要等到新创建的域名解析能在公网上被解析到。
 据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。
 
-
 一、安装acme.sh脚本
-
 curl  https://get.acme.sh | sh
 
 # 重新登录ssh，或者使用source命令重新加载环境变量
 source . 
-
-
 ">
-
-
+<meta itemprop="datePublished" content="2016-12-26T19:14:40&#43;00:00" />
 <meta itemprop="dateModified" content="2016-12-26T19:14:40&#43;00:00" />
 <meta itemprop="wordCount" content="1390">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书"/>
+<meta itemprop="keywords" content="Linux,Nginx,SSL," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书"/>
 <meta name="twitter:description" content="Linux服务器下使用acme.sh脚本是申请let&rsquo;s encrypt证书最便捷的方式，比官方推荐的certbot脚本工具要强大的多。
-
 安装文档：
 https://github.com/Neilpang/acme.sh/wiki/说明
-
 前提条件
-
 
 拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)
 确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址
 要等到新创建的域名解析能在公网上被解析到。
 据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。
 
-
 一、安装acme.sh脚本
-
 curl  https://get.acme.sh | sh
 
 # 重新登录ssh，或者使用source命令重新加载环境变量
 source . 
-
-
 "/>
-
 
     
 
@@ -145,16 +101,16 @@ source .
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -170,17 +126,17 @@ source .
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -188,7 +144,7 @@ source .
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -199,7 +155,7 @@ source .
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -215,17 +171,17 @@ source .
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -241,7 +197,7 @@ source .
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -254,12 +210,12 @@ source .
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -325,7 +281,7 @@ source .
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -354,11 +310,11 @@ source .
     <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
-            <img src="http://www.racksam.com/banners/le-logo-wide.png" class="article-banner">
+            <img src="https://www.racksam.com/banners/le-logo-wide.png" class="article-banner">
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/">
+    <a href="https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/">
     <h1 class="article-title" itemprop="name">
         使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书
     </h1>
@@ -384,7 +340,7 @@ source .
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/linux">Linux</a>
                 
                 
             </div>
@@ -398,15 +354,15 @@ source .
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/nginx">Nginx</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/nginx">Nginx</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/ssl">SSL</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/ssl">SSL</a>
                 
                 
             </div>
@@ -417,163 +373,131 @@ source .
 
         <div class="article-entry" itemprop="articleBody">
             <p>Linux服务器下使用acme.sh脚本是申请let&rsquo;s encrypt证书最便捷的方式，比官方推荐的<code>certbot</code>脚本工具要强大的多。</p>
-
 <p>安装文档：
-<a href="https://github.com/Neilpang/acme.sh/wiki/说明">https://github.com/Neilpang/acme.sh/wiki/说明</a></p>
-
+<a href="https://github.com/Neilpang/acme.sh/wiki/">https://github.com/Neilpang/acme.sh/wiki/</a>说明</p>
 <h2 id="前提条件">前提条件</h2>
-
 <ul>
 <li>拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)</li>
 <li>确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址</li>
 <li>要等到新创建的域名解析能在公网上被解析到。</li>
 <li>据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。</li>
 </ul>
+<h2 id="一安装acmesh脚本">一、安装acme.sh脚本</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl  https://get.acme.sh | sh
 
-<h2 id="一-安装acme-sh脚本">一、安装acme.sh脚本</h2>
-
-<pre><code class="language-sh">curl  https://get.acme.sh | sh
-
-# 重新登录ssh，或者使用source命令重新加载环境变量
+<span style="color:#75715e"># 重新登录ssh，或者使用source命令重新加载环境变量</span>
 source . 
-</code></pre>
-
-<p></p>
-
-<h2 id="二-使用dns-api申请证书">二、使用DNS API申请证书</h2>
-
+</code></pre></div><h2 id="二使用dns-api申请证书">二、使用DNS API申请证书</h2>
 <p>(推荐配置使用API的方式，否则每隔三个月，仍然需要重新验证DNS TXT记录)</p>
-
 <p>创建DNS API的Key及Secret</p>
-
 <p>参考：<a href="https://github.com/Neilpang/acme.sh/tree/master/dnsapi">https://github.com/Neilpang/acme.sh/tree/master/dnsapi</a></p>
-
 <p>【例子一】域名由DNSPod提供解析</p>
-
 <ol>
-<li><p>使用DNSPod域名服务的话，首先需要在DNSPod网站上获取API Key以及ID
-<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/dnspod0.png" alt="DNSPod申请API-1" />
-<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/dnspod1.png" alt="DNSPod申请API-2" /></p></li>
-
-<li><p>Linux下使用acme.sh命令申请证书</p>
-
-<pre><code class="language-sh">export DP_Id=&quot;xxxxx&quot;
-export DP_Key=&quot;xxxxx&quot;
-    
-# 注：-d参数可以多次使用，来实现同时为多个域名创建同一个证书
+<li>
+<p>使用DNSPod域名服务的话，首先需要在DNSPod网站上获取API Key以及ID
+<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/dnspod0.png" alt="DNSPod申请API-1">
+<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/dnspod1.png" alt="DNSPod申请API-2"></p>
+</li>
+<li>
+<p>Linux下使用acme.sh命令申请证书</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export DP_Id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxxx&#34;</span>
+export DP_Key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxxx&#34;</span>
+   
+<span style="color:#75715e"># 注：-d参数可以多次使用，来实现同时为多个域名创建同一个证书</span>
 acme.sh --issue --dns dns_dp -d mydomain.com -d www.mydomain.com -d blog.mydomain.com --accountemail my@email.com
-#等2分钟
-</code></pre></li>
+<span style="color:#75715e">#等2分钟</span>
+</code></pre></div></li>
 </ol>
-
 <p>【例子二】域名由GoDaddy域名解析的情况</p>
-
 <ol>
-<li><p>首先在godday的开发者页面获取API的key
+<li>
+<p>首先在godday的开发者页面获取API的key
 <a href="https://developer.godaddy.com/keys">https://developer.godaddy.com/keys</a></p>
-
 <p>创建API的Key以及Secret
-<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/godaddy0.png" alt="Godday申请API-1" />
-<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/godaddy1.png" alt="Godday申请API-2" /></p></li>
-
-<li><p>Linux下使用acme.sh命令申请证书</p>
-
-<pre><code class="language-sh">export GD_Key=&quot;xxxxx&quot;
-export GD_Secret=&quot;xxxxx&quot;
+<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/godaddy0.png" alt="Godday申请API-1">
+<img src="/attachments/centos-nginx-setup-lets-encrypt-with-acme-sh/godaddy1.png" alt="Godday申请API-2"></p>
+</li>
+<li>
+<p>Linux下使用acme.sh命令申请证书</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export GD_Key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxxx&#34;</span>
+export GD_Secret<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxxx&#34;</span>
 acme.sh --issue --dns dns_gd -d mydomain.com --accountemail query@goodsrv.com
-#等2分钟
-</code></pre></li>
+<span style="color:#75715e">#等2分钟</span>
+</code></pre></div></li>
 </ol>
-
-<h2 id="三-安装证书">三、安装证书</h2>
-
-<pre><code class="language-sh"># 创建安装目录
+<h2 id="三安装证书">三、安装证书</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 创建安装目录</span>
 mkdir /etc/ssl/mydomain.com/ -p
 
-# reloadcmd参数里面填写的是在更新证书后需要重新启动的服务，例如重启nginx或者apache或者其它脚本。
-acme.sh --installcert -d mydomain.com   \
-        --keypath /etc/ssl/mydomain.com/privkey.pem \
-        --fullchainpath /etc/ssl/mydomain.com/fullchain.pem \
-        --reloadcmd &quot;systemctl reload nginx&quot;
-</code></pre>
-
-<h2 id="四-应用实例-配置nginx使用证书开通https站点">四、应用实例：配置nginx使用证书开通https站点</h2>
-
+<span style="color:#75715e"># reloadcmd参数里面填写的是在更新证书后需要重新启动的服务，例如重启nginx或者apache或者其它脚本。</span>
+acme.sh --installcert -d mydomain.com   <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --keypath /etc/ssl/mydomain.com/privkey.pem <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --fullchainpath /etc/ssl/mydomain.com/fullchain.pem <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --reloadcmd <span style="color:#e6db74">&#34;systemctl reload nginx&#34;</span>
+</code></pre></div><h2 id="四应用实例配置nginx使用证书开通https站点">四、应用实例：配置nginx使用证书开通https站点</h2>
 <ol>
-<li><p>生成Perfect Forward Security（PFS）键值</p>
-
+<li>
+<p>生成Perfect Forward Security（PFS）键值</p>
 <p>Perfect Forward Security（PFS)是个什么东西，中文翻译成<code>完美前向保密</code>，一两句话也说不清楚，反正是这几年才提倡的加强安全性的技术。如果本地还没有生成这个键值，需要先执行生成的命令。</p>
-
-<pre><code class="language-sh">mkdir /etc/ssl/private/ -p
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir /etc/ssl/private/ -p
 cd /etc/ssl/private/
-openssl dhparam 2048 -out dhparam.pem
-</code></pre>
-
-<p>生成的过程还挺花时间的，喝杯咖啡歇会儿吧。</p></li>
-
-<li><p>配置使用证书。例如：Nginx配置SSL网站: <code>/etc/nginx/conf.d/www.mydomain.com.conf</code>，样例内容如下：</p>
-
+openssl dhparam <span style="color:#ae81ff">2048</span> -out dhparam.pem
+</code></pre></div><p>生成的过程还挺花时间的，喝杯咖啡歇会儿吧。</p>
+</li>
+<li>
+<p>配置使用证书。例如：Nginx配置SSL网站: <code>/etc/nginx/conf.d/www.mydomain.com.conf</code>，样例内容如下：</p>
 <pre><code>server {
   listen 80;
   server_name www.mydomain.com;
   rewrite ^ https://$server_name$request_uri? permanent;
 }
-    
+   
 server {
     listen 443 ssl;
     server_name www.mydomain.com;
-        
+       
     charset utf-8;
     root /opt/www/www.mydomain.com;
     index index.html index.htm;
-    
+   
     access_log  /var/log/nginx/www.mydomain.com_access.log;
     error_log  /var/log/nginx/www.mydomain.com_error.log;
-        
+       
     # letsencrypt生成的文件
     ssl_certificate /etc/ssl/mydomain.com/fullchain.pem;
     ssl_certificate_key /etc/ssl/mydomain.com/privkey.pem;
-        
+       
     ssl_session_timeout 1d;
     ssl_session_cache shared:SSL:50m;
     ssl_session_tickets on;
-    
+   
     ssl_dhparam /etc/ssl/private/dhparam.pem;
-    
+   
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     # 一般推荐使用的ssl_ciphers值: https://wiki.mozilla.org/Security/Server_Side_TLS
     ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128:AES256:AES:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK';
     ssl_prefer_server_ciphers on;
 </code></pre></li>
 </ol>
-
 <p>在浏览器打开<code>http://www.mydomain.com</code>, 如果正常跳转到<code>https://demo.mydomain.com</code>，就算成功了。
 如果是chrome浏览器，在地址栏点击小锁的图标，可以查看证书的详情。</p>
-
-<h2 id="五-测试证书">五、测试证书</h2>
-
-<p>如果是网站的话，可以使用第三方网站工具测试自己网站的HTTPS配置<br />
+<h2 id="五测试证书">五、测试证书</h2>
+<p>如果是网站的话，可以使用第三方网站工具测试自己网站的HTTPS配置     <br>
 <code>https://ssllabs.com/ssltest/analyze.html?d=mydomain.com</code></p>
-
 <p>也可以在Linux下使用openssl命令查看证书的过期时间</p>
-
-<pre><code class="language-sh">openssl x509 -noout -dates -in /etc/ssl/mydomain.com/privkey.pem      
-</code></pre>
-
-<h2 id="六-确认crontab自动更新脚本">六、确认crontab自动更新脚本</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">openssl x509 -noout -dates -in /etc/ssl/mydomain.com/privkey.pem      
+</code></pre></div><h2 id="六确认crontab自动更新脚本">六、确认crontab自动更新脚本</h2>
 <p>正常情况下acme.sh会自动安装以下定时任务，如果没有的话，需要手工添加</p>
-
 <pre><code>0 0 * * * &quot;/home/user/.acme.sh&quot;/acme.sh --cron --home &quot;/root/.acme.sh&quot; &gt; /dev/null
 </code></pre>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" data-id="584602a890894cd351afbdb3f3a3d69f" class="article-share-link">
+    <a data-url="https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/" data-id="584602a890894cd351afbdb3f3a3d69f" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -649,7 +573,7 @@ server {
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2016/12/19/centos7-install-postgresql/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2016/12/19/centos7-install-postgresql/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -658,7 +582,7 @@ server {
     
 
     
-    <a href="http://www.racksam.com/2017/03/02/centos7-install-freeradius/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2017/03/02/centos7-install-freeradius/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -674,20 +598,25 @@ server {
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2016\/12\/26\/centos-nginx-setup-lets-encrypt-with-acme-sh\/';
-    var disqus_title = '使用acme.sh脚本的DNS API方式申请及更新let\x27s encrypt证书';
-    var disqus_url = 'http:\/\/www.racksam.com\/2016\/12\/26\/centos-nginx-setup-lets-encrypt-with-acme-sh\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -706,9 +635,9 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -717,13 +646,13 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -732,7 +661,7 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -743,13 +672,13 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -758,9 +687,9 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -769,13 +698,39 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -784,9 +739,9 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -795,41 +750,15 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -860,111 +789,63 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -972,7 +853,71 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -1016,182 +961,77 @@ server {
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1201,7 +1041,27 @@ server {
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1211,7 +1071,22 @@ server {
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1221,7 +1096,82 @@ server {
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1252,7 +1202,7 @@ server {
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1270,18 +1220,21 @@ server {
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

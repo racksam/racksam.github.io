@@ -1,29 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cordova on Racksam</title>
-    <link>http://www.racksam.com/tags/cordova/</link>
+    <link>https://www.racksam.com/tags/cordova/</link>
     <description>Recent content in Cordova on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Tue, 04 Nov 2014 21:58:11 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/cordova/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/cordova/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac OS下安装cordova开发编译环境</title>
-      <link>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</link>
+      <link>https://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</link>
       <pubDate>Tue, 04 Nov 2014 21:58:11 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</guid>
+      <guid>https://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</guid>
       <description>&lt;p&gt;PhoneGap/cordova为代表的基于HTML5开发iOS/Android应用的技术，大大降低了手机App的开发门槛。虽然目前与原生的Object-C/Java开发的应用在性能上还有差距，但是对于一些网站客户端类的APP来说已经足够实用了。另外随着技术的进步，未来HTML5也许成为开发app的主流技术。&lt;/p&gt;
-
 &lt;p&gt;将html5打包成ios app，既可以选择appcan, build.phonegap.com这类的在线编译工具，也可以自己配置本地的xcode开发环境。虽然配置本地环境比较繁琐，但是灵活性更大，不会受制于人（很多在线打包网站，免费的服务有很多限制）。简单整理一下配置一个ios项目的步骤。&lt;/p&gt;
-
-&lt;p&gt;※很多人使用黑苹果作为ios的开发环境，不过不建议这样做。将时间耗费在研究黑苹果上没什么意义。*
-&lt;/p&gt;</description>
+&lt;p&gt;※很多人使用黑苹果作为ios的开发环境，不过不建议这样做。将时间耗费在研究黑苹果上没什么意义。*&lt;/p&gt;</description>
     </item>
     
   </channel>

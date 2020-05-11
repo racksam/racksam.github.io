@@ -1,542 +1,466 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Racksam</title>
-    <link>http://www.racksam.com/tags/linux/</link>
+    <link>https://www.racksam.com/tags/linux/</link>
     <description>Recent content in Linux on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Mon, 03 Jul 2017 19:00:18 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Freeradius3 限制每个月最大流量</title>
-      <link>http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</link>
+      <link>https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</link>
       <pubDate>Mon, 03 Jul 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</guid>
+      <guid>https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</guid>
       <description>Freeradius没有内置限制用户每个月最大流量的功能，只能自己定制。网上有很多类似的文章，但是都是针对freeradius版本2的文档。</description>
     </item>
     
     <item>
+      <title>CentOS7配置rails&#43;nginx服务器&#43;mina发布</title>
+      <link>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</link>
+      <pubDate>Sat, 01 Jul 2017 13:31:41 +0000</pubDate>
+      
+      <guid>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</guid>
+      <description>一、准备环境 安装Fedora第三方源 yum -y update yum -y install epel-release 二、安装nginx yum -y install nginx 三、根据需要安装所需要的数据库 根据项目的实际需要，选择需要安装的</description>
+    </item>
+    
+    <item>
       <title>CentOS7使用mina &#43; github部署Rails项目</title>
-      <link>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
+      <link>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
       <pubDate>Fri, 30 Jun 2017 13:31:41 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</guid>
+      <guid>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</guid>
       <description>&lt;p&gt;php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;git导致了很多额外的工作量:&lt;/p&gt;
-
-&lt;p&gt;由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Ruby on Rails的安装要比php复杂:&lt;/p&gt;
-
-&lt;p&gt;原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;puma等ruby应用服务器的启动参数太复杂：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;git导致了很多额外的工作量:&lt;/p&gt;
+&lt;p&gt;由于git已经被作为必备的版本控制工具，因此正式发布时也应该从git服务器上获取指定版本的代码。实际上正规团队开发的php开发项目也会这么做。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ruby on Rails的安装要比php复杂:&lt;/p&gt;
+&lt;p&gt;原因主要还是RoR太小众，所以没有大家对于php的安装那么熟悉。实际情况是工作量并没有比安装php多更多。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;puma等ruby应用服务器的启动参数太复杂：&lt;/p&gt;
 &lt;p&gt;表面看起来是这样。[rails项目]/config/puma.rb文件里配置，或者直接在puma命令行启动时的参数，有很多不熟悉的参数。稍微用错了参数，就会导致puma不启动或者出现各种问题，让新手精疲力尽。&lt;/p&gt;
-
-&lt;p&gt;其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置&lt;code&gt;/etc/php-fpm.d/www.conf&lt;/code&gt;文件，有时候还需要修改&lt;code&gt;/etc/php.ini&lt;/code&gt;文件。&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;其实我们都觉得简单的php应用的启动过程，一点不比puma简单多少。例如php-fpm也需要配置&lt;code&gt;/etc/php-fpm.d/www.conf&lt;/code&gt;文件，有时候还需要修改&lt;code&gt;/etc/php.ini&lt;/code&gt;文件。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;所以，本质上Ruby on Rails的发布及上线过程和php项目上线的工作量是一样的，而且ruby项目上线更有capistrano、mina等自动发布工具。前提是你首先得掌握这些工具，不然这些自动化工具除了省不了时间，还会增加额外的工作量。&lt;/p&gt;
-
 &lt;p&gt;mina是一款由ruby开发的自动化部署工具。使用mina以后，每次rails代码提交时的部署，一键完成部署，避免了提交到git服务器后，又去服务器上git pull的情况。&lt;/p&gt;
-
-&lt;p&gt;这里记录的是配置ruby + puma + github + mina 发布工具的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里记录的是配置ruby + puma + github + mina 发布工具的方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS7安装最新版rbenv&#43;ruby&#43;rails</title>
-      <link>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</link>
+      <link>https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</link>
       <pubDate>Wed, 28 Jun 2017 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</guid>
-      <description>&lt;p&gt;这篇文章记录的是在一般国外的云服务器的安装过程，因此使用默认的gem源即可。 如果是在阿里云等国内的服务器上安装，需要考虑天朝的特殊网络问题。可以参考这篇文章：&lt;a href=&#34;http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails&#34;&gt;阿里云主机安装最新版rbenv+ruby+rails&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装编译环境-root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/</guid>
+      <description>&lt;p&gt;这篇文章记录的是在一般国外的云服务器的安装过程，因此使用默认的gem源即可。 如果是在阿里云等国内的服务器上安装，需要考虑天朝的特殊网络问题。可以参考这篇文章：&lt;a href=&#34;https://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails&#34;&gt;阿里云主机安装最新版rbenv+ruby+rails&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一安装编译环境root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum update -y
+&lt;li&gt;
+&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum update -y
 yum install -y git bzip2 openssl-devel readline-devel zlib-devel sqlite sqlite-devel gcc-c++  
-yum install --enablerepo=epel nodejs
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;useradd deploy -G wheel
+yum install --enablerepo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;epel nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;useradd deploy -G wheel
 passwd deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
-&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
+&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>CentOS7下使用Firewalld</title>
-      <link>http://www.racksam.com/2017/05/02/centos7-firewalld-tips/</link>
+      <link>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</link>
       <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/05/02/centos7-firewalld-tips/</guid>
+      <guid>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</guid>
       <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 指定IP Source地址 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent</description>
     </item>
     
     <item>
+      <title>针对VPN服务的FreeRadius管理</title>
+      <link>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</link>
+      <pubDate>Sun, 02 Apr 2017 19:00:18 +0000</pubDate>
+      
+      <guid>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</guid>
+      <description>TODO: 定制FreeRadius的详细设置，修改一些sql脚本 TODO: 解决这个问题： Sun Jun 25 17:59:07 2017 : Warning: rlm_sql (sql): You probably need to lower &amp;quot;min&amp;quot; Sun Jun 25 17:59:08 2017 : Info: rlm_sql (sql): 0 of 3 connections in use. Need more spares Sun</description>
+    </item>
+    
+    <item>
       <title>从FreeRadius 2 迁移到 3</title>
-      <link>http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</link>
+      <link>https://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</link>
       <pubDate>Sat, 01 Apr 2017 15:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</guid>
+      <guid>https://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</guid>
       <description>目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。 数据库的差异与迁移 版本2与3的MySQL数据库定义大部分表是</description>
     </item>
     
     <item>
       <title>CentOS 7 安装FreeRadius</title>
-      <link>http://www.racksam.com/2017/03/02/centos7-install-freeradius/</link>
+      <link>https://www.racksam.com/2017/03/02/centos7-install-freeradius/</link>
       <pubDate>Thu, 02 Mar 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/03/02/centos7-install-freeradius/</guid>
+      <guid>https://www.racksam.com/2017/03/02/centos7-install-freeradius/</guid>
       <description>目前FreeRadius 2仍在大量被应用于生产环境，但官网推荐尽早采用版本3，并且宣布不再更新版本2。虽然版本2和3内部有很大的区别，但由于</description>
     </item>
     
     <item>
       <title>使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书</title>
-      <link>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
+      <link>https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
       <pubDate>Mon, 26 Dec 2016 19:14:40 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
+      <guid>https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
       <description>&lt;p&gt;Linux服务器下使用acme.sh脚本是申请let&amp;rsquo;s encrypt证书最便捷的方式，比官方推荐的&lt;code&gt;certbot&lt;/code&gt;脚本工具要强大的多。&lt;/p&gt;
-
 &lt;p&gt;安装文档：
-&lt;a href=&#34;https://github.com/Neilpang/acme.sh/wiki/说明&#34;&gt;https://github.com/Neilpang/acme.sh/wiki/说明&lt;/a&gt;&lt;/p&gt;
-
+&lt;a href=&#34;https://github.com/Neilpang/acme.sh/wiki/&#34;&gt;https://github.com/Neilpang/acme.sh/wiki/&lt;/a&gt;说明&lt;/p&gt;
 &lt;h2 id=&#34;前提条件&#34;&gt;前提条件&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)&lt;/li&gt;
 &lt;li&gt;确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址&lt;/li&gt;
 &lt;li&gt;要等到新创建的域名解析能在公网上被解析到。&lt;/li&gt;
 &lt;li&gt;据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;一安装acmesh脚本&#34;&gt;一、安装acme.sh脚本&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;curl  https://get.acme.sh | sh
 
-&lt;h2 id=&#34;一-安装acme-sh脚本&#34;&gt;一、安装acme.sh脚本&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl  https://get.acme.sh | sh
-
-# 重新登录ssh，或者使用source命令重新加载环境变量
+&lt;span style=&#34;color:#75715e&#34;&gt;# 重新登录ssh，或者使用source命令重新加载环境变量&lt;/span&gt;
 source . 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>CentOS 7 安装最新版PostgreSQL</title>
-      <link>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
+      <link>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
+      <guid>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
       <description>&lt;p&gt;以下操作均在root账号下操作.&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装&#34;&gt;一、安装&lt;/h2&gt;
-
+&lt;h2 id=&#34;一安装&#34;&gt;一、安装&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
-
-&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;导入yum源文件&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
+&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导入yum源文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum -y install postgresql96*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum -y install postgresql96*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>SSH免密码登录Linux服务器</title>
-      <link>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</link>
+      <link>https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
+      <guid>https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
       <description>一、如果本地没有创建ssh的秘钥对，则第一步需要先创建本地主机的ssh秘钥对 Linux或者MacOS可以直接用ssh-keygen命令在本地</description>
     </item>
     
     <item>
       <title>阿里云主机安装Shadowsocks客户端 &#43; proxychains4</title>
-      <link>http://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</link>
+      <link>https://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</guid>
-      <description>&lt;p&gt;对于技术人员PC端上科学上网可以选择的手段太多了，但是如果在国内的VPS服务器科学上网并不那么容易。这里简单介绍服务器上安装Shadowsocks客户端 + proxychains4的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</guid>
+      <description>&lt;p&gt;对于技术人员PC端上科学上网可以选择的手段太多了，但是如果在国内的VPS服务器科学上网并不那么容易。这里简单介绍服务器上安装Shadowsocks客户端 + proxychains4的方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>阿里云主机安装最新版rbenv&#43;ruby&#43;rails</title>
-      <link>http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</link>
+      <link>https://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</guid>
-      <description>&lt;h2 id=&#34;一-安装编译环境-root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2016/12/19/aliyun-centos7-install-rbenv-ruby-rails/</guid>
+      <description>&lt;h2 id=&#34;一安装编译环境root账号下&#34;&gt;一、安装编译环境【root账号下】&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum update -y
+&lt;li&gt;
+&lt;p&gt;使用yum工具安装必要的编译环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum update -y
 yum install -y git bzip2 openssl-devel readline-devel zlib-devel sqlite sqlite-devel gcc-c++
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;useradd deploy -G wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建发布用的ruby账号,例如: deploy&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;useradd deploy -G wheel
 passwd deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
-&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;为了使用sudo命令，需要将用户添加到wheel组去。对于已经创建的用户，可以使用以下命令添加用户的组&lt;/em&gt;
+&lt;code&gt;usermod -a -G wheel deploy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>阿里云主机CentOS7配置rails服务器的葵花宝典</title>
-      <link>http://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</link>
+      <link>https://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</link>
       <pubDate>Mon, 19 Dec 2016 13:31:41 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</guid>
+      <guid>https://www.racksam.com/2016/12/19/install-rbenv-ruby-rails-puma-ngnix-on-aiyun-centos7/</guid>
       <description>&lt;p&gt;以本地为macos为例
-服务器端为CentOS7.3 64位
-&lt;/p&gt;</description>
+服务器端为CentOS7.3 64位&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>阿里云主机CentOS 7下编译安装ngrok</title>
-      <link>http://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</link>
+      <link>https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</link>
       <pubDate>Sun, 18 Dec 2016 15:11:59 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</guid>
+      <guid>https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</guid>
       <description>&lt;p&gt;ngrok等隧道工具是Web程序员开发的神器！&lt;/p&gt;
-
 &lt;p&gt;配置微信及支付宝等接口，需要回调自己的公网服务器地址。开发过程中程序是跑在程序员自己的电脑上的，如果想在开发过程中调试接口的请求，必须想办法将本地应用穿透到公网上去，才能让微信或支付宝的服务器能访问到。&lt;/p&gt;
-
 &lt;p&gt;传统的硬派做法是在路由器上做端口映射，极其不便。有了ngrok这个神器，程序员可以很方便的将自己的应用临时公开在公网地上，然后在自己的电脑上观察和调试来自外界的访问。&lt;/p&gt;
-
 &lt;p&gt;ngrok的开源版本可以从github上获得。开源版本是老版本，该神器的作者已不再维护老版本，而将精力放在在线商业服务&lt;a href=&#34;https://ngrok.com&#34;&gt;ngrok.com&lt;/a&gt;上了。选择使用ngrok的在线服务，免掉了自己搭建服务器的辛苦，还有确保用到最新的ngrok软件，安全性比较高。理论上选择这种云隧道服务是最便捷的方式，但是在国内使用公开的云隧道，有以下几个明显的问题：&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;由于“你懂得”的存在，ngrok.com在国内的访问不稳定，时不时会访问不到。&lt;/li&gt;
 &lt;li&gt;微信及支付宝的接口在对接时，需要审查接口地址的域名是否ICP备案，是否是签约域名等，这就限制了无法随意使用一个第三方的域名地址做隧道的公网地址。&lt;/li&gt;
 &lt;li&gt;微信或者支付宝平台很容易封杀一些用户量比较大的隧道提供商的域名。&lt;/li&gt;
 &lt;li&gt;如果选择一些不知名的第三方隧道提供者，很难确保信息不会恶意截获。&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;因此我的观点是如果是国内开发团队的话，一定要搭建一个自己的隧道服务器。ngrok的开源版本(老版本)虽然据作者说存在安全隐患，但是如果仅作为调试用的话应该问题不大吧。期待作者能将最新版也开源化。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;因此我的观点是如果是国内开发团队的话，一定要搭建一个自己的隧道服务器。ngrok的开源版本(老版本)虽然据作者说存在安全隐患，但是如果仅作为调试用的话应该问题不大吧。期待作者能将最新版也开源化。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索</title>
-      <link>http://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</link>
+      <link>https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</link>
       <pubDate>Tue, 03 May 2016 09:02:30 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</guid>
+      <guid>https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言：&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;全文搜索的实现方式&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;全文搜索的实现方式&lt;/p&gt;
 &lt;p&gt;Web项目中如果要实现全文检索，最主流的做法是Web项目以外配置一个独立的搜索引擎，然后web程序通过API接口调用这些搜索引擎，实现建立索引以及搜索全文。目前常用的几个开源搜索引擎：&lt;a href=&#34;https://www.elastic.co/products/elasticsearch&#34;&gt;Elasticsearch&lt;/a&gt;、&lt;a href=&#34;https://lucene.apache.org/solr/&#34;&gt;Solr&lt;/a&gt;、&lt;a href=&#34;http://sphinxsearch.com/&#34;&gt;sphinx&lt;/a&gt;。&lt;/p&gt;
-
 &lt;p&gt;云服务大行其道的今天，当然也少不了调用云服务类型搜索引擎。使用有实力的云搜索引擎服务，应该也是一个不错的选择。例如：&lt;a href=&#34;http://aws.amazon.com/cloudsearch/&#34;&gt;Amazon CloudSearch&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;还有一种简易做法是直接调用谷歌或者百度的索引结果。（使用&lt;code&gt;site=mydomain&lt;/code&gt;，将搜索结果限制在自己的网站域名中）。这种比较适用于实时性要求不高的文章类网站，使用情景有限。&lt;/p&gt;
-
-&lt;p&gt;最后一种是原始的数据库查询方式&lt;code&gt;like &#39;%keywords%&#39;&lt;/code&gt;。这种方式对于text文章类的字段来说效率低下，一般不要考虑用来做全文检索。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;中文的全文搜索&lt;/p&gt;
-
-&lt;p&gt;英文、西班牙文等这些字母语言，对于实现全文搜索来说有一个巨大的先天优势：人家不用去考虑&lt;strong&gt;分词&lt;/strong&gt;的问题。英文文章中的单词本来就是用空格及标点符号分隔的。但是像中文和日文这种，一句话中所有的字符都是沾在一起的情况，要实现全文检索，首先要做到的是能够正确地将一句话正确拆分成词语。要达到这个目的，一是需要一个高效的分词处理算法，二是需要一个尽可能包含所有词语的词典。由于语言的进化，这个词典还需要随着时代不停的去更新。&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;最后一种是原始的数据库查询方式&lt;code&gt;like &#39;%keywords%&#39;&lt;/code&gt;。这种方式对于text文章类的字段来说效率低下，一般不要考虑用来做全文检索。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中文的全文搜索&lt;/p&gt;
+&lt;p&gt;英文、西班牙文等这些字母语言，对于实现全文搜索来说有一个巨大的先天优势：人家不用去考虑&lt;strong&gt;分词&lt;/strong&gt;的问题。英文文章中的单词本来就是用空格及标点符号分隔的。但是像中文和日文这种，一句话中所有的字符都是沾在一起的情况，要实现全文检索，首先要做到的是能够正确地将一句话正确拆分成词语。要达到这个目的，一是需要一个高效的分词处理算法，二是需要一个尽可能包含所有词语的词典。由于语言的进化，这个词典还需要随着时代不停的去更新。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&#34;一-为什么选择postgresql进行全文搜索&#34;&gt;一、为什么选择PostgreSQL进行全文搜索&lt;/h2&gt;
-
+&lt;h2 id=&#34;一为什么选择postgresql进行全文搜索&#34;&gt;一、为什么选择PostgreSQL进行全文搜索&lt;/h2&gt;
 &lt;p&gt;在用Rails4+PostgreSQL开发一个公司内部使用小系统时，对于全文搜索功能的实现让我陷入了选择的泥坑。&lt;/p&gt;
-
 &lt;p&gt;首先，配置一个Solr这样的第三方搜索引擎，看来是全文检索(主要是中文)的不二之选。但是我实在不甘心为了一个只有几千篇文章、用户数只有几百人的内部Web应用、让系统变得复杂化。这时候，这篇文章《&lt;a href=&#34;http://rachbelaid.com/postgres-full-text-search-is-good-enough/&#34;&gt;Postgres full-text search is Good Enough!&lt;/a&gt;》映入了我的眼帘。看起来PostgreSQL数据库在全文搜索方面的性能足以满足小规模系统的需求了。另外，&lt;a href=&#34;https://github.com/Casecommons/pg_search&#34;&gt;pg_search&lt;/a&gt;模块，为Rails应用提供了调用PostgreSQL搜索功能的优秀接口。如此看来，PostgreSQL+Rails4+pg_search能实现我的全文搜索功能。&lt;/p&gt;
-
 &lt;p&gt;但是经过一番测试，我发现这个方案默认只会对英语等那些字母语言有用，没有办法对中文进行全文检索。重新审视这个解决方案，原来我忘记了一个重要环节：那就是PostgreSQL默认没有中文分词功能。&lt;/p&gt;
-
 &lt;p&gt;通过网上的查找，发现了很多人都推荐的一个中文分词解决方案：&lt;a href=&#34;http://www.xunsearch.com/scws&#34;&gt;SCWS&lt;/a&gt;，以及实现调用这个分词引擎的PostgreSQL的扩展插件：&lt;a href=&#34;http://pgxn.org/dist/zhparser/&#34;&gt;zhparser&lt;/a&gt;。经过反复测试，终于实现了Rails4+pg_search来进行中文全文检索。&lt;/p&gt;
-
 &lt;p&gt;以下是CentOS6下SCWS+zhparser+rails4+pg_search+PostgreSQL的安装配置和开发的要点总结。另外，我也提供了一个完整的样例代码，以供参考&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS6下最新版PostgreSQL的安装及设置</title>
-      <link>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
+      <link>https://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
       <pubDate>Sat, 02 Apr 2016 16:46:37 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
+      <guid>https://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
       <description>&lt;p&gt;CentOS默认Yum源安装的PostgreSQL版本仍然停留在8.x。如果不想手工编译，又想安装使用最新版的PostgreSQL的话，可以通过引用PostgreSQL官方的Yum源进行安装。&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装postgresql&#34;&gt;一、安装PostgreSQL&lt;/h2&gt;
-
+&lt;h2 id=&#34;一安装postgresql&#34;&gt;一、安装PostgreSQL&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在CentOS默认的Yum源文件里屏蔽对PostgreSQL的获取&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;在CentOS默认的Yum源文件里屏蔽对PostgreSQL的获取&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# vi /etc/yum.repos.d/CentOS-Base.repo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在[base]以及[updates] 部分的最下方，各增加一行&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在[base]以及[updates] 部分的最下方，各增加一行&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;exclude=postgresql*
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>Centos6 下安装rbenv &#43; ruby &#43; rails &#43; puma &#43; ngnix</title>
-      <link>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
+      <link>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
       <pubDate>Tue, 01 Mar 2016 21:08:16 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
+      <guid>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
       <description>&lt;p&gt;Rails项目在生产环境上线时，可以选择的ruby服务器比较多，例如：Rainbows、Unicorn、Passenger、Puma。其中Puma是近年来口碑比较不错的一个。&lt;/p&gt;
-
-&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>一个Linux通用iptables脚本</title>
-      <link>http://www.racksam.com/2014/04/08/iptables-script-for-web-service/</link>
+      <link>https://www.racksam.com/2014/04/08/iptables-script-for-web-service/</link>
       <pubDate>Tue, 08 Apr 2014 20:56:47 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/08/iptables-script-for-web-service/</guid>
+      <guid>https://www.racksam.com/2014/04/08/iptables-script-for-web-service/</guid>
       <description>&lt;p&gt;最近为了上线一些Web服务器，整理了一个iptables的脚本。主要功能有：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;可以指定只有可信任主机及网段才能访问特定管理端口&lt;/li&gt;
 &lt;li&gt;可以防止几种常见的Dos攻击&lt;/li&gt;
 &lt;li&gt;非常容易修改和二次开发&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;样例代码：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux下安装protobuf python版本</title>
-      <link>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
+      <link>https://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
       <pubDate>Sun, 06 Apr 2014 17:08:10 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
-      <description>&lt;h2 id=&#34;protobuf简介-google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
+      <description>&lt;h2 id=&#34;protobuf简介google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
 &lt;p&gt;当前分布式Web系统之间交换数据的所用数据格式的类型中，最常见的依然是json与XML。不过Google的技术大牛们认为json/XML这些文本类型的数据格式传输效率太差，于是他们发明了一种全新的数据格式：&lt;a href=&#34;https://github.com/google/protobuf&#34;&gt;https://github.com/google/protobuf&lt;/a&gt;。&lt;/p&gt;
-
 &lt;p&gt;protobuf是一种序列化结构数据（serializing structured data）。数据在保存及传输过程中以二进制编码形态存在，相对于文本格式的数据形式，大大提高了效率。同时，由于protobuf的数据中不携带数据结构定义的信息（Schema以及类似xml中标签名称），又进一步减少了数据里的冗余信息。&lt;/p&gt;
-
 &lt;p&gt;据统计，一条消息数据，用protobuf序列化后的数据大小是json的10分之一，xml格式的20分之一，是传统的二进制序列化的10分之一，所以protobuf的性能优势还是很明显的。事实上这种技术早已在Google的服务中大量被应用。另外，Google也将此技术开源化来促进推广。&lt;/p&gt;
-
 &lt;p&gt;对于一般的开发者来说，有可能需要用到protobuf的情况：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;对接Google的某种服务，例如开发DSP广告系统，需要对接Google的广告RTB交易平台。&lt;/li&gt;
 &lt;li&gt;在分布式Web系统之间交换数据时，对传输效率有非常高的要求。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;官方目前多种编程语言的实现: C++、Java、Python、Objective-C、JavaScript、Ruby、Go。暂时没有PHP版本。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx上安装phpMyAdmin</title>
-      <link>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</link>
+      <link>https://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</link>
       <pubDate>Sat, 05 Apr 2014 17:23:26 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</guid>
-      <description>&lt;p&gt;前提：首先要完成安装 &lt;a href=&#34;http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;nginx+php+php-fpm+mysql&lt;/a&gt;&lt;/p&gt;
-
+      <guid>https://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</guid>
+      <description>&lt;p&gt;前提：首先要完成安装 &lt;a href=&#34;https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;nginx+php+php-fpm+mysql&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;一-准备工作&#34;&gt;一、 准备工作：&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-如果mysql的root账号为空-需要设置root密码&#34;&gt;1. 如果mysql的root账号为空，需要设置root密码&lt;/h3&gt;
-
+&lt;h3 id=&#34;1-如果mysql的root账号为空需要设置root密码&#34;&gt;1. 如果mysql的root账号为空，需要设置root密码&lt;/h3&gt;
 &lt;p&gt;CentOS下默认安装的mysql服务器，里面的root账号默认密码为空，首先为root设置一个密码&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;#mysqladmin -u root password yourpassword&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;注： 虽然通过一些特殊配置，可以使phpmyadmin允许空密码登录，但是不推荐这样做，尤其是公网的服务器。&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-设置php-ini正确配置-session-save-path&#34;&gt;2. 设置php.ini正确配置&lt;code&gt;session.save_path&lt;/code&gt;&lt;/h3&gt;
-
+&lt;h3 id=&#34;2-设置phpini正确配置sessionsave_path&#34;&gt;2. 设置php.ini正确配置&lt;code&gt;session.save_path&lt;/code&gt;&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;首先检查php.ini配置文件&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;首先检查php.ini配置文件&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;#grep session.save_path /etc/php.ini&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;如果不存在以下设置，增加该配置。如果被注释了话，去掉注释
-session.save_path = “/var/lib/php/session”&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;查看该目录是否存在：&lt;/p&gt;
-
+session.save_path = “/var/lib/php/session”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看该目录是否存在：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;#ls /var/lib/php/session&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;如果不存在，则手工创建&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;#mkdir /var/lib/php/session&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;修改目录属主为nginx&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;chown nginx:nginx session/ -R&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;重启启动php-fpm&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;service php-fpm restart&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;code&gt;service php-fpm restart&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>Linux下安装 Nginx &#43; uwsgi &#43; web.py &#43; MySQLdb</title>
-      <link>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</link>
+      <link>https://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</link>
       <pubDate>Sat, 05 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</guid>
+      <guid>https://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</guid>
       <description>&lt;p&gt;Web服务器上有多种方式运行Python：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;传统上的CGI方式：基本已被淘汰&lt;/li&gt;
 &lt;li&gt;mod_python的模块方式：仍在广泛使用，但生产环境中也被逐步淘汰&lt;/li&gt;
 &lt;li&gt;uwsgi方式：目前生产环境下最受推崇的方式，尤其是Nginx+uwsgi服务器组合是上线的首选。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Python与Web服务器的关系基本上和PHP与Web服务器的关系类似，可以参考该文：&lt;a href=&#34;http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;CentOS6下搭建 Nginx + PHP + MySQL服务器&lt;/a&gt;。&lt;/p&gt;
-
+&lt;p&gt;Python与Web服务器的关系基本上和PHP与Web服务器的关系类似，可以参考该文：&lt;a href=&#34;https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;CentOS6下搭建 Nginx + PHP + MySQL服务器&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;uwsgi服务器的作用类似于java里面的Tomcat服务器。至于在上面跑什么样的Python程序那可能性就太多了。例如：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;按照uwsgi的规范直接编写的python代码&lt;/li&gt;
 &lt;li&gt;Django编写的应用（重量级Web框架）&lt;/li&gt;
 &lt;li&gt;Flask编写的应用（轻量级Web框架）&lt;/li&gt;
 &lt;li&gt;web2py编写的应用（轻量级Web框架）&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Python下的Web框架种类非常多，很难说孰好孰坏。应该说没有最好的，只有最合适的。一个比较实用的选择原则是：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;如果是开发一个简单的web应用的话，推荐使用轻量级的。&lt;/li&gt;
 &lt;li&gt;如果是开发一个复杂的网站，Django可以提供很多成熟的模块，开发效率会非常高。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;这里选择web.py框架作为例子。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS下编译安装Python2.7</title>
-      <link>http://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</link>
+      <link>https://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</link>
       <pubDate>Thu, 03 Apr 2014 15:17:40 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</guid>
+      <guid>https://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/</guid>
       <description>&lt;p&gt;CentOS 6自带的python版本仍然是2.6.x。
 如果需要安装python2.7版本，推荐的方法还是传统的编译安装。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>PHP调用Linux Ping</title>
-      <link>http://www.racksam.com/2013/08/06/using-ping-with-php/</link>
+      <link>https://www.racksam.com/2013/08/06/using-ping-with-php/</link>
       <pubDate>Tue, 06 Aug 2013 10:06:57 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2013/08/06/using-ping-with-php/</guid>
-      <description>PHP中实现网络ping的功能，可以直接调用操作系统的ping命令。例如在Linux下，可以这样实现： &amp;lt;?php // 参照ping命令的参数 exec(&amp;quot;ping -c 2 www.tudaxia.com&amp;quot;, $output, $result);</description>
+      <guid>https://www.racksam.com/2013/08/06/using-ping-with-php/</guid>
+      <description>PHP中实现网络ping的功能，可以直接调用操作系统的ping命令。例如在Linux下，可以这样实现： &amp;lt;?php // 参照ping命令的参数 exec(&amp;#34;ping -c 2 www.tudaxia.com&amp;#34;, $output, $result);</description>
     </item>
     
     <item>
       <title>Linux下查看硬件信息</title>
-      <link>http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</link>
+      <link>https://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</link>
       <pubDate>Mon, 24 Sep 2012 09:49:14 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</guid>
-      <description>Linux下多数硬件信息都可以通过命令行查看。 尤其对于远程管理服务器特别有用，例如查询Dell服务器的序列号。 #查看产品信息： dmidecode | grep &amp;quot;Product&amp;quot; #查看</description>
+      <guid>https://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</guid>
+      <description>Linux下多数硬件信息都可以通过命令行查看。 尤其对于远程管理服务器特别有用，例如查询Dell服务器的序列号。 #查看产品信息： dmidecode | grep &amp;#34;Product&amp;#34; #查看</description>
     </item>
     
     <item>
       <title>Linux删除某日以前旧文件的命令</title>
-      <link>http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</link>
+      <link>https://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</link>
       <pubDate>Sun, 23 Sep 2012 09:49:14 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</guid>
+      <guid>https://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</guid>
       <description>删除某日以前的且文件名满足一定条件的旧文件 #在使用-exec参数时，必须以“\;”结尾,否则命令将无法执行 # #删除10天以前文件结尾为.lo</description>
     </item>
     
     <item>
       <title>Linux下使用wondershaper限制网速</title>
-      <link>http://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
+      <link>https://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
       <pubDate>Sat, 22 Sep 2012 09:41:23 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
+      <guid>https://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
       <description>&lt;p&gt;Linux下主要是使用tc工具来进行限速。不过tc用起来真是不容易，参数非常多且很难懂，要想用好的话很耗时间。&lt;/p&gt;
-
 &lt;p&gt;推荐一个老外写的脚本wondershaper，简单易用，也是很好的tc参考样例。
 虽然脚本早就不更新了，但是在CentOS6.2 64bit下验证仍可以用。
 网址：&lt;a href=&#34;http://lartc.org/wondershaper/&#34;&gt;http://lartc.org/wondershaper/&lt;/a&gt;
 下载：&lt;a href=&#34;http://lartc.org/wondershaper/wondershaper-1.1a.tar.gz&#34;&gt;http://lartc.org/wondershaper/wondershaper-1.1a.tar.gz&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;解压后，编辑wshaper脚本文件，修改开头的几个限速参数：
 下载，上传，网卡。速度的单位是kpbs。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>DD-WRT使用3G上网卡</title>
-      <link>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</link>
+      <link>https://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</link>
       <pubDate>Fri, 09 Dec 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</guid>
+      <guid>https://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</guid>
       <description>&lt;p&gt;具有USB接口，并能刷成DD-WRT无线路由器，一般都能支持使用3G上网卡上网。设置方法是在Web管理界面上[设置]-&amp;gt;[基本设置]界面上，WAN的连接方式选择”3G/UMTS”,然后输入拨号的用户名及密码，如下图所示。
-&lt;img src=&#34;http://www.racksam.com/attachments/connect-3G-on-dd-wrt/dd-wrt-3g-chinatel.png&#34; alt=&#34;连接3G上网卡&#34; /&gt;&lt;/p&gt;</description>
+&lt;img src=&#34;https://www.racksam.com/attachments/connect-3G-on-dd-wrt/dd-wrt-3g-chinatel.png&#34; alt=&#34;连接3G上网卡&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用DD-WRT无线路由器增强无线信号（同一网段）</title>
-      <link>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</link>
+      <link>https://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</link>
       <pubDate>Fri, 02 Dec 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</guid>
+      <guid>https://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</guid>
       <description>&lt;p&gt;上次写了一篇如何使用DD-WRT无线中继的文章。使用这种方式的话，扩展后的无线网络使用的是另外一个子网网段。如果想扩展无线网络的同时，还是想使用原有无线路由器的内网网段的话，就必须选择“中继桥接”的方式了。具体设置过程如下：&lt;/p&gt;
-
 &lt;h2 id=&#34;1-首先需要做好规划&#34;&gt;1. 首先需要做好规划&lt;/h2&gt;
-
 &lt;p&gt;假设主无线路由器的配置信息如下（举例）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;路由器内网地址：192.168.0.1
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;路由器内网地址：192.168.0.1
 内网地址段：192.168.0.1/24
 SSID: MasterWiFi
 密码：123456
@@ -548,181 +472,153 @@ SSID: MasterWiFi
 SSID: &amp;lt;strong&amp;gt;ChildWiFi&amp;lt;/strong&amp;gt;
 密码：123456
 加密方法：WPA Personal TKIP
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>使用DD-WRT无线路由器增强无线信号（使用新网段）</title>
-      <link>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</link>
+      <link>https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</link>
       <pubDate>Mon, 21 Nov 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</guid>
+      <guid>https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</guid>
       <description>&lt;p&gt;当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。&lt;/p&gt;
-
-&lt;h3 id=&#34;一-主力无线路由器-接宽带猫的那一台-的设置方法&#34;&gt;一、主力无线路由器（接宽带猫的那一台）的设置方法&lt;/h3&gt;
-
+&lt;h3 id=&#34;一主力无线路由器接宽带猫的那一台的设置方法&#34;&gt;一、主力无线路由器（接宽带猫的那一台）的设置方法&lt;/h3&gt;
 &lt;p&gt;主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;这里假设主无线路由器的配置信息如下：
 SSID: MasterWiFi
 密码：123456
 加密方法：WPA Personal TKIP
 内网地址段：192.168.0.1/24
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>DD-WRT的六种无线模式</title>
-      <link>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</link>
+      <link>https://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</link>
       <pubDate>Sun, 20 Nov 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</guid>
+      <guid>https://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</guid>
       <description>&lt;p&gt;为了设置无线路由器的中继功能，兔哥仔细学习了一下dd-wrt的六种无线模式，再也不会稀里糊涂了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.racksam.com/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png&#34; alt=&#34;DD-WRT的六种无线模式&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://www.racksam.com/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png&#34; alt=&#34;DD-WRT的六种无线模式&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;访问点 (AP)&lt;/p&gt;
-
-&lt;p&gt;该模式下路由器的无线网卡就像一个”无线HUB”，负责建立无线路由器和电脑之间的数据链路（相当于无形的网线）。正常情况下，家用的无线路由器的无线连接都默认工作在此模式下。&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;访问点 (AP)&lt;/p&gt;
+&lt;p&gt;该模式下路由器的无线网卡就像一个”无线HUB”，负责建立无线路由器和电脑之间的数据链路（相当于无形的网线）。正常情况下，家用的无线路由器的无线连接都默认工作在此模式下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>快速克隆MySQL数据库的方法</title>
-      <link>http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</link>
+      <link>https://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</link>
       <pubDate>Thu, 03 Nov 2011 21:33:53 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</guid>
+      <guid>https://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</guid>
       <description>某些时候，例如为了搭建一个测试环境，或者克隆一个网站，需要复制一个已存在的mysql数据库。使用以下方法，可以非常简单地实现。 假设已经存在的</description>
     </item>
     
     <item>
       <title>几个非常好用的WordPress插件</title>
-      <link>http://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</link>
+      <link>https://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</link>
       <pubDate>Wed, 02 Nov 2011 21:04:34 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</guid>
+      <guid>https://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</guid>
       <description>&lt;p&gt;无论是搭建中小企业的网站，还是创建个人博客，WordPress都可以轻松胜任。除了其本身优秀的设计，无数各种各样为WordPress编写的扩展插件也是大家选择用它的重要原因。&lt;/p&gt;
-
 &lt;p&gt;最近为了搭建网站，兔哥花了不少时间，仔细挑选了几个功能扩展、SEO、安全增强方面的WordPress插件。功能强大，超级好用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS下安装AWStats日志分析软件</title>
-      <link>http://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</link>
+      <link>https://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</link>
       <pubDate>Tue, 01 Nov 2011 21:04:34 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</guid>
+      <guid>https://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</guid>
       <description>&lt;p&gt;AWStats是一个Perl语言写的日志分析工具，最常见的是应用于Web日志分析。类似的软件还有更老牌的Webalizer，不过这几年AWStats似乎更强势一些。&lt;/p&gt;
-
 &lt;p&gt;虽然Google Analytics这样的网站访问分析服务可以非常有效地帮助站长掌握网站访问量，但是它的局限性也是显而易见的：由于Google Analytics这类服务的原理是客户在浏览页面的同时，触发页面里埋入的js代码来更新服务器上的计数程序，因此那些没有埋入该js计数代码的页面或者js没法执行的请求（如来自wget的请求、爬虫等），都无法被记录下来。这种依赖于客户行为的页面计数，更适合市场营销人员进行网站访问量分析。&lt;/p&gt;
-
 &lt;p&gt;而AWStats的原理是读取并计算web服务器所产生的access log文件，因此能够对所有的请求记录做彻底的分析。包括所有的文件下载，各类爬虫的访问都能毫无遗漏的被记录下来。如果要进行网站压力分析，网站调优，SEO分析等技术性的工作，AWStats之类的日志分析软件是不可缺少的。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>小公司慎用RedHat集群</title>
-      <link>http://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</link>
+      <link>https://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</link>
       <pubDate>Fri, 02 Sep 2011 19:52:53 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</guid>
+      <guid>https://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</guid>
       <description>&lt;p&gt;“小公司，别折腾什么集群了。。” –by 兔大侠&lt;/p&gt;
-
 &lt;p&gt;“集群就意味用高额的软硬件投入换来高可靠性”。随便到网上一搜，基本上都是这样的观点。很多系统管理员也理所当然的将集群等同于高可靠性。我一直以来也是这样被洗脑了，直到某个周日的夜里碰到一个严重的集群问题才让我清醒一些。那次差点就酿成核心数据的灾难性事故，也差点让我心脏崩溃。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS下配置vncserver</title>
-      <link>http://www.racksam.com/2011/06/10/centos-vncserver-setup/</link>
+      <link>https://www.racksam.com/2011/06/10/centos-vncserver-setup/</link>
       <pubDate>Fri, 10 Jun 2011 19:43:54 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/10/centos-vncserver-setup/</guid>
+      <guid>https://www.racksam.com/2011/06/10/centos-vncserver-setup/</guid>
       <description>&lt;p&gt;多数情况下远程管理Linux并不需要X-window界面，但是不排除也有特殊情况下需要登录到远程服务器的图形化界面。例如远程安装Oracle数据库服务器。&lt;/p&gt;
-
 &lt;p&gt;Linux下vncserver提供了一个很好的接入图形化界面的方式。它以服务进程的方式存在，因此服务器是否是以level5启动的，并不会影响vnc的使用。当然，前提是linux服务器上安装了必要的x-window及gnome或kde等图形化界面所需要软件包。&lt;/p&gt;
-
-&lt;p&gt;安装配置VNC服务器及客户端的步骤如下：
-&lt;/p&gt;</description>
+&lt;p&gt;安装配置VNC服务器及客户端的步骤如下：&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux 虚拟机 扩展空逻辑卷间（LVM）</title>
-      <link>http://www.racksam.com/2011/06/09/extend-linux-lvm/</link>
+      <link>https://www.racksam.com/2011/06/09/extend-linux-lvm/</link>
       <pubDate>Thu, 09 Jun 2011 18:53:24 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/extend-linux-lvm/</guid>
+      <guid>https://www.racksam.com/2011/06/09/extend-linux-lvm/</guid>
       <description>在VMware安装的虚拟机Linux，扩展LVM的操作过程如下。 虚拟机停机状态下，编辑虚拟机的硬盘设置，通过修改参数把原来硬盘加大 重启，进入</description>
     </item>
     
     <item>
       <title>Linux下备份MySQL所有数据库的脚本</title>
-      <link>http://www.racksam.com/2011/06/09/mysql-backup-shell-script/</link>
+      <link>https://www.racksam.com/2011/06/09/mysql-backup-shell-script/</link>
       <pubDate>Thu, 09 Jun 2011 18:07:42 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/mysql-backup-shell-script/</guid>
-      <description>&lt;p&gt;该脚本的目的是备份MySQL下除系统信息以外的所有的用户创建的数据库。每个数据库单独一个gz文件存放于指定目录里。执行备份操作完毕以后，删除15日以前创建的备份文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://www.racksam.com/2011/06/09/mysql-backup-shell-script/</guid>
+      <description>&lt;p&gt;该脚本的目的是备份MySQL下除系统信息以外的所有的用户创建的数据库。每个数据库单独一个gz文件存放于指定目录里。执行备份操作完毕以后，删除15日以前创建的备份文件。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>MySQL导入导出的简单命令</title>
-      <link>http://www.racksam.com/2011/06/09/import-and-export-mysql-database/</link>
+      <link>https://www.racksam.com/2011/06/09/import-and-export-mysql-database/</link>
       <pubDate>Thu, 09 Jun 2011 17:45:15 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/import-and-export-mysql-database/</guid>
+      <guid>https://www.racksam.com/2011/06/09/import-and-export-mysql-database/</guid>
       <description>&lt;p&gt;备忘一下常用的MySQL导入导出命令。使用mysqldump工具及mysql终端里的source命令。&lt;/p&gt;
-
 &lt;h3 id=&#34;导出整个数据库&#34;&gt;导出整个数据库&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;$mysqldump -u 用户名 -p 数据库名 &amp;gt; 导出的文件名
 $mysqldump -u wcnc -p smgp_apps_wcnc &amp;gt; wcnc.sql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>MySQL最大连接数调整</title>
-      <link>http://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</link>
+      <link>https://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</link>
       <pubDate>Thu, 09 Jun 2011 17:17:15 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</guid>
+      <guid>https://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/</guid>
       <description>&lt;p&gt;CentOS默认安装MySQL的路径&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;配置文件：/etc/my.cnf&lt;/li&gt;
 &lt;li&gt;在配置文件中，指定了数据的存储路径。一般默认为: datadir=/var/lib/mysql&lt;/li&gt;
-&lt;li&gt;默认日志文件: /var/log/mysqld.log
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;mysql性能调优&#34;&gt;MySQL性能调优&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看MySQL版本等信息&lt;/p&gt;</description>
+&lt;li&gt;默认日志文件: /var/log/mysqld.log&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
       <title>MySQL数据库创建及帐号管理</title>
-      <link>http://www.racksam.com/2011/06/08/create-mysql-database-and-users/</link>
+      <link>https://www.racksam.com/2011/06/08/create-mysql-database-and-users/</link>
       <pubDate>Wed, 08 Jun 2011 14:50:27 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/08/create-mysql-database-and-users/</guid>
-      <description>&lt;p&gt;整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。
-&lt;/p&gt;</description>
+      <guid>https://www.racksam.com/2011/06/08/create-mysql-database-and-users/</guid>
+      <description>&lt;p&gt;整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux下java程序启动脚本（可做开机自启动Service脚本）</title>
-      <link>http://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</link>
+      <link>https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</link>
       <pubDate>Wed, 08 Jun 2011 14:22:13 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</guid>
+      <guid>https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</guid>
       <description>Java项目开发过程中经常会碰到将Java应用程序布置到Linux下的需求，很多时候还有系统开机自动启动的要求。这里我整理了一个简单明了的版</description>
     </item>
     

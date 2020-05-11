@@ -1,40 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DD-WRT on Racksam</title>
-    <link>http://www.racksam.com/categories/dd-wrt/</link>
+    <link>https://www.racksam.com/categories/dd-wrt/</link>
     <description>Recent content in DD-WRT on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Fri, 09 Dec 2011 21:43:08 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/categories/dd-wrt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/categories/dd-wrt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DD-WRT使用3G上网卡</title>
-      <link>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</link>
+      <link>https://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</link>
       <pubDate>Fri, 09 Dec 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</guid>
+      <guid>https://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/</guid>
       <description>&lt;p&gt;具有USB接口，并能刷成DD-WRT无线路由器，一般都能支持使用3G上网卡上网。设置方法是在Web管理界面上[设置]-&amp;gt;[基本设置]界面上，WAN的连接方式选择”3G/UMTS”,然后输入拨号的用户名及密码，如下图所示。
-&lt;img src=&#34;http://www.racksam.com/attachments/connect-3G-on-dd-wrt/dd-wrt-3g-chinatel.png&#34; alt=&#34;连接3G上网卡&#34; /&gt;&lt;/p&gt;</description>
+&lt;img src=&#34;https://www.racksam.com/attachments/connect-3G-on-dd-wrt/dd-wrt-3g-chinatel.png&#34; alt=&#34;连接3G上网卡&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用DD-WRT无线路由器增强无线信号（同一网段）</title>
-      <link>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</link>
+      <link>https://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</link>
       <pubDate>Fri, 02 Dec 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</guid>
+      <guid>https://www.racksam.com/2011/12/02/using-dd-wrt-wireless-repeater-bridge/</guid>
       <description>&lt;p&gt;上次写了一篇如何使用DD-WRT无线中继的文章。使用这种方式的话，扩展后的无线网络使用的是另外一个子网网段。如果想扩展无线网络的同时，还是想使用原有无线路由器的内网网段的话，就必须选择“中继桥接”的方式了。具体设置过程如下：&lt;/p&gt;
-
 &lt;h2 id=&#34;1-首先需要做好规划&#34;&gt;1. 首先需要做好规划&lt;/h2&gt;
-
 &lt;p&gt;假设主无线路由器的配置信息如下（举例）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-plain&#34;&gt;路由器内网地址：192.168.0.1
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;路由器内网地址：192.168.0.1
 内网地址段：192.168.0.1/24
 SSID: MasterWiFi
 密码：123456
@@ -46,47 +42,40 @@ SSID: MasterWiFi
 SSID: &amp;lt;strong&amp;gt;ChildWiFi&amp;lt;/strong&amp;gt;
 密码：123456
 加密方法：WPA Personal TKIP
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>使用DD-WRT无线路由器增强无线信号（使用新网段）</title>
-      <link>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</link>
+      <link>https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</link>
       <pubDate>Mon, 21 Nov 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</guid>
+      <guid>https://www.racksam.com/2011/11/21/using-dd-wrt-wireless-repeater/</guid>
       <description>&lt;p&gt;当电脑距离无线路由器较远或者被多道墙隔着，无线信号会衰减得很弱以至于没法正常上网。假如直接拉一根网线不现实的话，那么可以在中间位置添置一台支持中继功能的无线路由器来中继信号（类似接力赛），使网络能够覆盖更大的区域。无线路由器刷dd-wrt后，能很好的支持无线中继功能。&lt;/p&gt;
-
-&lt;h3 id=&#34;一-主力无线路由器-接宽带猫的那一台-的设置方法&#34;&gt;一、主力无线路由器（接宽带猫的那一台）的设置方法&lt;/h3&gt;
-
+&lt;h3 id=&#34;一主力无线路由器接宽带猫的那一台的设置方法&#34;&gt;一、主力无线路由器（接宽带猫的那一台）的设置方法&lt;/h3&gt;
 &lt;p&gt;主力无线路由器没有什么品牌及型号方面的要求，配置方法也没有什么特别之处。只要配置好基本网络设置，以及无线SSID及密码，用笔记本电脑测试能正常无线上网的话，就算配置成功了。&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;这里假设主无线路由器的配置信息如下：
 SSID: MasterWiFi
 密码：123456
 加密方法：WPA Personal TKIP
 内网地址段：192.168.0.1/24
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
       <title>DD-WRT的六种无线模式</title>
-      <link>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</link>
+      <link>https://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</link>
       <pubDate>Sun, 20 Nov 2011 21:43:08 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</guid>
+      <guid>https://www.racksam.com/2011/11/20/introduce-dd-wrt-wireless-modes/</guid>
       <description>&lt;p&gt;为了设置无线路由器的中继功能，兔哥仔细学习了一下dd-wrt的六种无线模式，再也不会稀里糊涂了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.racksam.com/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png&#34; alt=&#34;DD-WRT的六种无线模式&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://www.racksam.com/attachments/introduce-dd-wrt-wireless-modes/wifi_mode.png&#34; alt=&#34;DD-WRT的六种无线模式&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;访问点 (AP)&lt;/p&gt;
-
-&lt;p&gt;该模式下路由器的无线网卡就像一个”无线HUB”，负责建立无线路由器和电脑之间的数据链路（相当于无形的网线）。正常情况下，家用的无线路由器的无线连接都默认工作在此模式下。&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;访问点 (AP)&lt;/p&gt;
+&lt;p&gt;该模式下路由器的无线网卡就像一个”无线HUB”，负责建立无线路由器和电脑之间的数据链路（相当于无形的网线）。正常情况下，家用的无线路由器的无线连接都默认工作在此模式下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
   </channel>

@@ -1,41 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FreeRadius on Racksam</title>
-    <link>http://www.racksam.com/tags/freeradius/</link>
+    <link>https://www.racksam.com/tags/freeradius/</link>
     <description>Recent content in FreeRadius on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Mon, 03 Jul 2017 19:00:18 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/freeradius/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/freeradius/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Freeradius3 限制每个月最大流量</title>
-      <link>http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</link>
+      <link>https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</link>
       <pubDate>Mon, 03 Jul 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</guid>
+      <guid>https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/</guid>
       <description>Freeradius没有内置限制用户每个月最大流量的功能，只能自己定制。网上有很多类似的文章，但是都是针对freeradius版本2的文档。</description>
     </item>
     
     <item>
+      <title>针对VPN服务的FreeRadius管理</title>
+      <link>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</link>
+      <pubDate>Sun, 02 Apr 2017 19:00:18 +0000</pubDate>
+      
+      <guid>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</guid>
+      <description>TODO: 定制FreeRadius的详细设置，修改一些sql脚本 TODO: 解决这个问题： Sun Jun 25 17:59:07 2017 : Warning: rlm_sql (sql): You probably need to lower &amp;quot;min&amp;quot; Sun Jun 25 17:59:08 2017 : Info: rlm_sql (sql): 0 of 3 connections in use. Need more spares Sun</description>
+    </item>
+    
+    <item>
       <title>从FreeRadius 2 迁移到 3</title>
-      <link>http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</link>
+      <link>https://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</link>
       <pubDate>Sat, 01 Apr 2017 15:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</guid>
+      <guid>https://www.racksam.com/2017/04/01/migration-of-freeradius-from-2-to-3/</guid>
       <description>目前FreeRadius官方主推的是3.x版本，生产环境也推荐尽快升级到新版本。 数据库的差异与迁移 版本2与3的MySQL数据库定义大部分表是</description>
     </item>
     
     <item>
       <title>CentOS 7 安装FreeRadius</title>
-      <link>http://www.racksam.com/2017/03/02/centos7-install-freeradius/</link>
+      <link>https://www.racksam.com/2017/03/02/centos7-install-freeradius/</link>
       <pubDate>Thu, 02 Mar 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/03/02/centos7-install-freeradius/</guid>
+      <guid>https://www.racksam.com/2017/03/02/centos7-install-freeradius/</guid>
       <description>目前FreeRadius 2仍在大量被应用于生产环境，但官网推荐尽早采用版本3，并且宣布不再更新版本2。虽然版本2和3内部有很大的区别，但由于</description>
     </item>
     

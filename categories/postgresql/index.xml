@@ -1,73 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PostgreSQL on Racksam</title>
-    <link>http://www.racksam.com/categories/postgresql/</link>
+    <link>https://www.racksam.com/categories/postgresql/</link>
     <description>Recent content in PostgreSQL on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Mon, 19 Dec 2016 21:00:18 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS 7 安装最新版PostgreSQL</title>
-      <link>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
+      <link>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
+      <guid>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
       <description>&lt;p&gt;以下操作均在root账号下操作.&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装&#34;&gt;一、安装&lt;/h2&gt;
-
+&lt;h2 id=&#34;一安装&#34;&gt;一、安装&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
-
-&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;导入yum源文件&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
+&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导入yum源文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum -y install postgresql96*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum -y install postgresql96*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>CentOS6下最新版PostgreSQL的安装及设置</title>
-      <link>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
+      <link>https://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</link>
       <pubDate>Sat, 02 Apr 2016 16:46:37 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
+      <guid>https://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/</guid>
       <description>&lt;p&gt;CentOS默认Yum源安装的PostgreSQL版本仍然停留在8.x。如果不想手工编译，又想安装使用最新版的PostgreSQL的话，可以通过引用PostgreSQL官方的Yum源进行安装。&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装postgresql&#34;&gt;一、安装PostgreSQL&lt;/h2&gt;
-
+&lt;h2 id=&#34;一安装postgresql&#34;&gt;一、安装PostgreSQL&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在CentOS默认的Yum源文件里屏蔽对PostgreSQL的获取&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;在CentOS默认的Yum源文件里屏蔽对PostgreSQL的获取&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# vi /etc/yum.repos.d/CentOS-Base.repo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在[base]以及[updates] 部分的最下方，各增加一行&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在[base]以及[updates] 部分的最下方，各增加一行&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;exclude=postgresql*
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ol&gt;</description>
     </item>
     
   </channel>

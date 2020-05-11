@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>CentOS 5.7 完美安装 Oracle 10g &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,59 +10,54 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="CentOS 5.7 完美安装 Oracle 10g" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。
+安装环境：
+
+VMware虚拟机 (这对Oracle安装并不重要)
+OS版本: CentOS 5.7 64Bit
+Oracle 10g版本: 10.2.0.1
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/" />
-
-
-
-<meta property="article:published_time" content="2011-10-09T18:53:24&#43;00:00"/>
-<meta property="article:modified_time" content="2011-10-09T18:53:24&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/" />
+<meta property="article:published_time" content="2011-10-09T18:53:24+00:00" />
+<meta property="article:modified_time" content="2011-10-09T18:53:24+00:00" />
 
     
-    
-<meta itemprop="name" content="CentOS 5.7 完美安装 Oracle 10g">
-<meta itemprop="description" content="">
+    <meta itemprop="name" content="CentOS 5.7 完美安装 Oracle 10g">
+<meta itemprop="description" content="虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。
+安装环境：
 
-
+VMware虚拟机 (这对Oracle安装并不重要)
+OS版本: CentOS 5.7 64Bit
+Oracle 10g版本: 10.2.0.1
+">
+<meta itemprop="datePublished" content="2011-10-09T18:53:24&#43;00:00" />
 <meta itemprop="dateModified" content="2011-10-09T18:53:24&#43;00:00" />
 <meta itemprop="wordCount" content="1958">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="CentOS 5.7 完美安装 Oracle 10g"/>
+<meta itemprop="keywords" content="Oracle," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS 5.7 完美安装 Oracle 10g"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。
+安装环境：
 
+VMware虚拟机 (这对Oracle安装并不重要)
+OS版本: CentOS 5.7 64Bit
+Oracle 10g版本: 10.2.0.1
+"/>
 
     
 
@@ -79,16 +74,16 @@
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -104,17 +99,17 @@
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -122,7 +117,7 @@
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -133,7 +128,7 @@
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -149,17 +144,17 @@
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -175,7 +170,7 @@
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -188,12 +183,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -259,7 +254,7 @@
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -290,7 +285,7 @@
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/">
+    <a href="https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/">
     <h1 class="article-title" itemprop="name">
         CentOS 5.7 完美安装 Oracle 10g
     </h1>
@@ -316,7 +311,7 @@
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/linux">Linux</a>
                 
                 
             </div>
@@ -330,7 +325,7 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/oracle">Oracle</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/oracle">Oracle</a>
                 
                 
             </div>
@@ -341,18 +336,13 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p>虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。</p>
-
 <h2 id="安装环境">安装环境：</h2>
-
 <ul>
 <li>VMware虚拟机 (这对Oracle安装并不重要)</li>
 <li>OS版本: CentOS 5.7 64Bit</li>
-<li>Oracle 10g版本: 10.2.0.1
-</li>
+<li>Oracle 10g版本: 10.2.0.1</li>
 </ul>
-
 <h2 id="安装规划">安装规划：</h2>
-
 <ul>
 <li>服务器主机名，IP地址</li>
 <li>Oracle安装目录</li>
@@ -361,51 +351,32 @@
 <li>数据库编码</li>
 <li>最大进程数</li>
 </ul>
-
 <h2 id="安装步骤">安装步骤：</h2>
-
-<h3 id="一-安装centos-5-7-64bit-操作系统">一、安装CentOS 5.7 64bit 操作系统</h3>
-
+<h3 id="一安装centos-57-64bit-操作系统">一、安装CentOS 5.7 64bit 操作系统</h3>
 <ul>
 <li>硬件要求：内存至少要大于1G，硬盘大小根据实际要求而定，建议最小也不要低于20G。</li>
 <li>安装要求：一定要安装图形界面X Window。不要启用SELinux。</li>
 <li>参考兔哥CentOS5.7服务器安装文档。</li>
 </ul>
-
-<h3 id="二-使用官方的-oracle-validated-软件自动安装所需软件包">二、使用官方的”oracle-validated”软件自动安装所需软件包</h3>
-
+<h3 id="二使用官方的oracle-validated软件自动安装所需软件包">二、使用官方的”oracle-validated”软件自动安装所需软件包</h3>
 <p>网上的大多数安装教程上都是说首先要检查并安装好Oracle 10g所需要的软件包，通常包括：</p>
-
-<p><code>binutils, compat-libstdc++, elfutils-libelf, elfutils-libelf-devel
-glibc, glibc-common, glibc-devel, gcc
-gcc-c++, libaio, libaio-devel, libgcc
-libstdc++, libstdc++-devel, make, sysstat
-unixODBC, unixODBC-devel</code></p>
-
+<p><code>binutils, compat-libstdc++, elfutils-libelf, elfutils-libelf-devel glibc, glibc-common, glibc-devel, gcc gcc-c++, libaio, libaio-devel, libgcc libstdc++, libstdc++-devel, make, sysstat unixODBC, unixODBC-devel</code></p>
 <p>一般这些软件的RPM安装包都能在安装光盘上找到。如果CentOS能连接互联网的话，也可以通过yum来进行安装会更方便些。</p>
-
 <p>不过，最近几年，Oracle官方开始提供”oracle-validated”软件，通过它可以自动检查并安装所需的软件包，并自动配置几个主要的系统环境设置文件。除了简化了系统工程师的工作，而且大幅提高了Oracle的安装成功率。</p>
-
 <p>*参考：</p>
-
 <ul>
 <li><a href="http://www.oracledatabase12g.com/archives/understand-oracle-validated-configurations.html">http://www.oracledatabase12g.com/archives/understand-oracle-validated-configurations.html</a></li>
 <li><a href="http://www.oracle.com/technetwork/server-storage/linux/validated-configurations-faq-090615.html">http://www.oracle.com/technetwork/server-storage/linux/validated-configurations-faq-090615.html</a></li>
 <li><a href="http://www.oracle.com/technetwork/topics/linux/validated-configurations-085828.html">http://www.oracle.com/technetwork/topics/linux/validated-configurations-085828.html</a>*</li>
 </ul>
-
 <p>安装和使用”oracle-validated”的过程：</p>
-
 <ol>
-<li><p>增加Oracle的repo文件</p>
-
+<li>
+<p>增加Oracle的repo文件</p>
 <pre><code>#cd /etc/yum.repos.d/
 #vi public-yum-el5.repo
-</code></pre>
-
-<p>将以下内容复制到该文件中：</p>
-
-<pre><code class="language-plain">[el5_ga_base]
+</code></pre><p>将以下内容复制到该文件中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plain" data-lang="plain">[el5_ga_base]
 name=Enterprise Linux $releasever GA - $basearch - base
 baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/0/base/$basearch/
 gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
@@ -453,68 +424,48 @@ baseurl=http://public-yum.oracle.com/repo/EnterpriseLinux/EL5/oracle_addons/$bas
 gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-el5
 gpgcheck=1
 enabled=1
-</code></pre></li>
-
-<li><p>运行<code>yum install oracle-validated</code>命令</p>
-
+</code></pre></div></li>
+<li>
+<p>运行<code>yum install oracle-validated</code>命令</p>
 <p>该命令除了安装oracle-validated，还会一同将所需的软件包安装。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/SNAG-0000.png" alt="oracle-validated安装提示信息" /></p></li>
-
-<li><p>oracle-validated会自动配置以下环境设置文件：</p>
-
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/SNAG-0000.png" alt="oracle-validated安装提示信息"></p>
+</li>
+<li>
+<p>oracle-validated会自动配置以下环境设置文件：</p>
 <pre><code>/etc/security/limits.conf
 /etc/sysctl.conf
-</code></pre>
-
-<p>需要注意的是，oracle-validated默认是按照Oracle 11g的要求进行配置，如果是安装10g，某些参数需要手工进行变更。使用 <code>vi /etc/sysctl.conf</code> 命令，修改以下参数</p>
-
+</code></pre><p>需要注意的是，oracle-validated默认是按照Oracle 11g的要求进行配置，如果是安装10g，某些参数需要手工进行变更。使用 <code>vi /etc/sysctl.conf</code> 命令，修改以下参数</p>
 <p><code>net.ipv4.ip_local_port_range=1024 65000</code></p>
-
-<p>修改后，使用/sbin/sysctl -p 命令操作来使所做的变更生效。</p></li>
-
-<li><p>（建议）禁用oracle-validated的自动升级。</p>
-
+<p>修改后，使用/sbin/sysctl -p 命令操作来使所做的变更生效。</p>
+</li>
+<li>
+<p>（建议）禁用oracle-validated的自动升级。</p>
 <p>由于增加了oracle的repo文件后，yum升级系统时，也会搜索很多Oracle的软件包，会导致一些软件包的冲突。建议完成oracle-validated的安装以后，不再同步Oralce的软件库。</p>
-
 <pre><code>#cd /etc/yum.repos.d/
 #mv public-yum-el5.repo public-yum-el5.repo_bak_only_for_oracle_installed
 </code></pre></li>
 </ol>
-
-<h3 id="三-检查主机hosts设置">三、检查主机hosts设置</h3>
-
+<h3 id="三检查主机hosts设置">三、检查主机hosts设置</h3>
 <p>兔哥曾在hosts文件中漏掉了本机主机名的记录，结果导致oracle安装失败。一定记得要检查一下/etc/hosts一下是否有“IP地址 主机名”的记录，如：</p>
-
 <p><code>192.168.120.203         demo.mydomain demo</code></p>
-
-<h3 id="四-修改-etc-redhat-release-里面只有一行">四、修改/etc/redhat-release（里面只有一行）</h3>
-
+<h3 id="四修改etcredhat-release里面只有一行">四、修改/etc/redhat-release（里面只有一行）</h3>
 <p><code>redhat-4</code></p>
-
-<h3 id="五-创建oracle用户及组">五、创建oracle用户及组</h3>
-
+<h3 id="五创建oracle用户及组">五、创建oracle用户及组</h3>
 <pre><code>#/usr/sbin/groupadd oinstall
 #/usr/sbin/groupadd dba
 #/usr/sbin/useradd -g oinstall -G dba oracle
 #passwd oracle
-</code></pre>
-
-<h3 id="六-创建oracle安装目录">六、创建oracle安装目录</h3>
-
+</code></pre><h3 id="六创建oracle安装目录">六、创建oracle安装目录</h3>
 <p>根据事先的规划，创建oracle的安装目录。这里是将所有的oracle文件及数据子目录集中放在/oracle下的。</p>
-
 <pre><code>#mkdir /oracle
 #chown -R oracle:oinstall /oracle
-</code></pre>
-
-<h3 id="七-修改用户环境变量">七、修改用户环境变量</h3>
-
+</code></pre><h3 id="七修改用户环境变量">七、修改用户环境变量</h3>
 <ol>
-<li>修改/etc/profile文件，在文件的最后追加以下几行。</li>
-
-<li><p>根据实际情况，在/home/oracle/.bash_profile的最下部追加所需的变量。这里的例子：</p>
-
+<li>
+<p>修改/etc/profile文件，在文件的最后追加以下几行。</p>
+</li>
+<li>
+<p>根据实际情况，在/home/oracle/.bash_profile的最下部追加所需的变量。这里的例子：</p>
 <pre><code>ORACLE_BASE=/oracle
 ORACLE_DATA=$ORACLE_BASE/oradata
 ORACLE_HOME=$ORACLE_BASE/product/10.2.0.1
@@ -524,67 +475,62 @@ NLS_LANG=american_america.zhs16GBK
 export ORACLE_BASE ORACLE_DATA ORACLE_HOME PATH ORACLE_SID NLS_LANG
 </code></pre></li>
 </ol>
-
-<h3 id="八-图形界面下-以oracle用户身份进行安装">八、图形界面下，以oracle用户身份进行安装</h3>
-
+<h3 id="八图形界面下以oracle用户身份进行安装">八、图形界面下，以oracle用户身份进行安装</h3>
 <p>在终端窗口中，执行解压缩命令</p>
-
 <p><code>$tar zxvf database_10201_linux_x86_64.tar.gz</code></p>
-
 <p>cd命令进入解开后的安装目录，进入安装流程</p>
-
 <ol>
-<li><p>设置终端显示语言为英文，否则oracle安装界面会显示乱码 <code>$export LANG=en_US</code></p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_1.png" alt="Oracle安装过程【图1】" /></p></li>
-
-<li><p>安装界面启动后，可以根据事先规划，设置oracle的安装路径。例子数据库，可以选择不安装。然后点击”Next”。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_2.png" alt="Oracle安装过程【图2】" /></p></li>
-
-<li><p>使用默认的Inventory目录即可，继续点击”Next”。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_3.png" alt="Oracle安装过程【图3】" /></p></li>
-
-<li><p>进行安装环境的一系列检查。这里是最容易出现问题。如果缺失了某些必要的软件包，或者环境配置有问题，都有可能导致警告甚至报错。可以在纠正后，再次点击”retry”，来重新检查，而不用重启启动安装程序。检查没有问题后，点击”Next”。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_4.png" alt="Oracle安装过程【图4】" /></p></li>
-
-<li><p>”Summary”显示所有的安装选项，如果需要修改，仍能点击”Back”回退到前面的界面进行配置。如没问题，则点击”Install”。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_5.png" alt="Oracle安装过程【图5】" /></p></li>
-
-<li><p>安装进行中。。。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_6.png" alt="Oracle安装过程【图6】" /></p></li>
-
-<li><p>在安装过程中，会提示手工执行两个root权限的脚本。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_7.png" alt="Oracle安装过程【图7】" /></p></li>
-
-<li><p>方法是新开一个终端窗口，su -c 切换到root身份下，运行这两个脚本文件。</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_8.png" alt="Oracle安装过程【图8】" /></p></li>
-
-<li><p>安装完成</p>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_9.png" alt="Oracle安装过程【图9】" /></p></li>
-
-<li><p>退出安装程序</p></li>
+<li>
+<p>设置终端显示语言为英文，否则oracle安装界面会显示乱码 <code>$export LANG=en_US</code></p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_1.png" alt="Oracle安装过程【图1】"></p>
+</li>
+<li>
+<p>安装界面启动后，可以根据事先规划，设置oracle的安装路径。例子数据库，可以选择不安装。然后点击”Next”。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_2.png" alt="Oracle安装过程【图2】"></p>
+</li>
+<li>
+<p>使用默认的Inventory目录即可，继续点击”Next”。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_3.png" alt="Oracle安装过程【图3】"></p>
+</li>
+<li>
+<p>进行安装环境的一系列检查。这里是最容易出现问题。如果缺失了某些必要的软件包，或者环境配置有问题，都有可能导致警告甚至报错。可以在纠正后，再次点击”retry”，来重新检查，而不用重启启动安装程序。检查没有问题后，点击”Next”。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_4.png" alt="Oracle安装过程【图4】"></p>
+</li>
+<li>
+<p>”Summary”显示所有的安装选项，如果需要修改，仍能点击”Back”回退到前面的界面进行配置。如没问题，则点击”Install”。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_5.png" alt="Oracle安装过程【图5】"></p>
+</li>
+<li>
+<p>安装进行中。。。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_6.png" alt="Oracle安装过程【图6】"></p>
+</li>
+<li>
+<p>在安装过程中，会提示手工执行两个root权限的脚本。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_7.png" alt="Oracle安装过程【图7】"></p>
+</li>
+<li>
+<p>方法是新开一个终端窗口，su -c 切换到root身份下，运行这两个脚本文件。</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_8.png" alt="Oracle安装过程【图8】"></p>
+</li>
+<li>
+<p>安装完成</p>
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_9.png" alt="Oracle安装过程【图9】"></p>
+</li>
+<li>
+<p>退出安装程序</p>
+</li>
 </ol>
-
-<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_10.png" alt="Oracle安装过程【图10】" /></p>
-
+<p><img src="/attachments/oracle-db-10g-installation-on-centos-5/orainst_10.png" alt="Oracle安装过程【图10】"></p>
 <p>以上就是所有的安装过程。如果安装过程中出现问题，想重新来安装的话，可以先将指定的安装目录整个删除，然后再重新执行安装程序。
 The End.</p>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/" data-id="b02fc74e6d48ea28aba4fa624b88a935" class="article-share-link">
+    <a data-url="https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/" data-id="b02fc74e6d48ea28aba4fa624b88a935" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -660,7 +606,7 @@ The End.</p>
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -669,7 +615,7 @@ The End.</p>
     
 
     
-    <a href="http://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -685,20 +631,25 @@ The End.</p>
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2011\/10\/09\/oracle-db-10g-installation-on-centos-5\/';
-    var disqus_title = 'CentOS 5.7 完美安装 Oracle 10g';
-    var disqus_url = 'http:\/\/www.racksam.com\/2011\/10\/09\/oracle-db-10g-installation-on-centos-5\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -717,9 +668,9 @@ The End.</p>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -728,13 +679,13 @@ The End.</p>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -743,7 +694,7 @@ The End.</p>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -754,13 +705,13 @@ The End.</p>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -769,9 +720,9 @@ The End.</p>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -780,13 +731,39 @@ The End.</p>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -795,9 +772,9 @@ The End.</p>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -806,41 +783,15 @@ The End.</p>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS 5.7 完美安装 Oracle 10g" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -871,111 +822,63 @@ The End.</p>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -983,7 +886,71 @@ The End.</p>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -1027,182 +994,77 @@ The End.</p>
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1212,7 +1074,27 @@ The End.</p>
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1222,7 +1104,22 @@ The End.</p>
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1232,7 +1129,82 @@ The End.</p>
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1263,7 +1235,7 @@ The End.</p>
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1281,18 +1253,21 @@ The End.</p>
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

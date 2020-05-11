@@ -1,32 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ssh on Racksam</title>
-    <link>http://www.racksam.com/tags/ssh/</link>
-    <description>Recent content in Ssh on Racksam</description>
+    <title>ssh on Racksam</title>
+    <link>https://www.racksam.com/tags/ssh/</link>
+    <description>Recent content in ssh on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Mon, 05 Jun 2017 19:00:18 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS 7 修改SSH端口</title>
-      <link>http://www.racksam.com/2017/06/05/centos7-change-sshd-port/</link>
+      <link>https://www.racksam.com/2017/06/05/centos7-change-sshd-port/</link>
       <pubDate>Mon, 05 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/06/05/centos7-change-sshd-port/</guid>
+      <guid>https://www.racksam.com/2017/06/05/centos7-change-sshd-port/</guid>
       <description>增强Linux安全的措施很多，将ssh默认端口22修改成其它端口也是重要的一个方法。这里介绍CentOS7下修改sshd端口以及相关防火墙的</description>
     </item>
     
     <item>
       <title>SSH免密码登录Linux服务器</title>
-      <link>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</link>
+      <link>https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
+      <guid>https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
       <description>一、如果本地没有创建ssh的秘钥对，则第一步需要先创建本地主机的ssh秘钥对 Linux或者MacOS可以直接用ssh-keygen命令在本地</description>
     </item>
     

@@ -1,77 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on Racksam</title>
-    <link>http://www.racksam.com/tags/website/</link>
+    <link>https://www.racksam.com/tags/website/</link>
     <description>Recent content in Website on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Sat, 05 Apr 2014 15:27:09 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux下安装 Nginx &#43; uwsgi &#43; web.py &#43; MySQLdb</title>
-      <link>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</link>
+      <link>https://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</link>
       <pubDate>Sat, 05 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</guid>
+      <guid>https://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/</guid>
       <description>&lt;p&gt;Web服务器上有多种方式运行Python：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;传统上的CGI方式：基本已被淘汰&lt;/li&gt;
 &lt;li&gt;mod_python的模块方式：仍在广泛使用，但生产环境中也被逐步淘汰&lt;/li&gt;
 &lt;li&gt;uwsgi方式：目前生产环境下最受推崇的方式，尤其是Nginx+uwsgi服务器组合是上线的首选。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Python与Web服务器的关系基本上和PHP与Web服务器的关系类似，可以参考该文：&lt;a href=&#34;http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;CentOS6下搭建 Nginx + PHP + MySQL服务器&lt;/a&gt;。&lt;/p&gt;
-
+&lt;p&gt;Python与Web服务器的关系基本上和PHP与Web服务器的关系类似，可以参考该文：&lt;a href=&#34;https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;CentOS6下搭建 Nginx + PHP + MySQL服务器&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;uwsgi服务器的作用类似于java里面的Tomcat服务器。至于在上面跑什么样的Python程序那可能性就太多了。例如：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;按照uwsgi的规范直接编写的python代码&lt;/li&gt;
 &lt;li&gt;Django编写的应用（重量级Web框架）&lt;/li&gt;
 &lt;li&gt;Flask编写的应用（轻量级Web框架）&lt;/li&gt;
 &lt;li&gt;web2py编写的应用（轻量级Web框架）&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Python下的Web框架种类非常多，很难说孰好孰坏。应该说没有最好的，只有最合适的。一个比较实用的选择原则是：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;如果是开发一个简单的web应用的话，推荐使用轻量级的。&lt;/li&gt;
 &lt;li&gt;如果是开发一个复杂的网站，Django可以提供很多成熟的模块，开发效率会非常高。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;这里选择web.py框架作为例子。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器</title>
-      <link>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</link>
+      <link>https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</link>
       <pubDate>Fri, 04 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
+      <guid>https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
       <description>&lt;p&gt;Nginx+PHP-FPM的组合是目前生产环境中最主流的php网站的选择。&lt;/p&gt;
-
 &lt;p&gt;PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器+后端php-fpm）的组合技术有如下的描述：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;FastCGI是一个可伸缩的，高速地在web server和脚本语言间交互的接口。&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;FastCGI的主要优点是把动态语言和web server分离开来。这种技术允许把web server和动态语言运行在不同的主机上，以大规模扩展和改进安全性而不损失生产效率。&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;php-fpm可以和任何支持远端FastCGI的web server工作。&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
       <title>强制浏览器刷新网站的favicon.ico</title>
-      <link>http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</link>
+      <link>https://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</link>
       <pubDate>Wed, 26 Mar 2014 15:11:46 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</guid>
+      <guid>https://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</guid>
       <description>网站更新了favicon.ico以后，很多浏览器里都无法立刻刷新。特别是Firefox，Chrome之类的浏览器，有时候即使清空缓存并重启以</description>
     </item>
     

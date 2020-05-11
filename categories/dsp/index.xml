@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DSP on Racksam</title>
-    <link>http://www.racksam.com/categories/dsp/</link>
+    <link>https://www.racksam.com/categories/dsp/</link>
     <description>Recent content in DSP on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Tue, 10 Sep 2013 10:59:22 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/categories/dsp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/categories/dsp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>国内常见的广告管理系统</title>
-      <link>http://www.racksam.com/2013/09/10/some-dsp-cases-in-china/</link>
+      <link>https://www.racksam.com/2013/09/10/some-dsp-cases-in-china/</link>
       <pubDate>Tue, 10 Sep 2013 10:59:22 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2013/09/10/some-dsp-cases-in-china/</guid>
+      <guid>https://www.racksam.com/2013/09/10/some-dsp-cases-in-china/</guid>
       <description>&lt;p&gt;网络广告的直接参与者主要是三方：广告主，广告发行者（网站等平台提供商）和受众。广告管理系统是广告业务自动化的最重要的支撑。&lt;/p&gt;
-
-&lt;h2 id=&#34;一-专业的广告管理系统&#34;&gt;一、专业的广告管理系统&lt;/h2&gt;
-
+&lt;h2 id=&#34;一专业的广告管理系统&#34;&gt;一、专业的广告管理系统&lt;/h2&gt;
 &lt;p&gt;广告管理系统基本上可以分为两大类，一类是面向广告主(Advertisers)以及代理商（Agencies）的，另一类是面向广告发行者(Publishers)的，例如某门户网站。&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;面向网站运营商(Publishers)的广告管理系统：&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;面向网站运营商(Publishers)的广告管理系统：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;</description>
+&lt;li&gt;DoubleClick：Google旗下的广告管理系统，业界的老大。
+DoubleClick针对不同的需求，提供多个产品。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>关于网络广告DSP的一些文章链接</title>
-      <link>http://www.racksam.com/2013/09/09/some-resource-of-dsp-and-rtb/</link>
+      <link>https://www.racksam.com/2013/09/09/some-resource-of-dsp-and-rtb/</link>
       <pubDate>Mon, 09 Sep 2013 10:59:22 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2013/09/09/some-resource-of-dsp-and-rtb/</guid>
+      <guid>https://www.racksam.com/2013/09/09/some-resource-of-dsp-and-rtb/</guid>
       <description>广告的完美境界显然应该是广告的精准投放，即在恰当的时间将恰当的内容展示给恰当的受众。只有这样才能让广告主，发布商和广告受众这三方均获得最满意</description>
     </item>
     

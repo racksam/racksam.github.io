@@ -1,149 +1,118 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Racksam</title>
-    <link>http://www.racksam.com/tags/nginx/</link>
+    <link>https://www.racksam.com/tags/nginx/</link>
     <description>Recent content in Nginx on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Thu, 08 Jun 2017 19:00:18 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</title>
-      <link>http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</link>
+      <link>https://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</link>
       <pubDate>Thu, 08 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</guid>
+      <guid>https://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</guid>
       <description>一、安装Fedora第三方源 安装Fedora第三方源 yum -y update yum -y install epel-release 修改epel为默认不启用 vi /etc/yum.repos.d/epel.repo 将[epel]部分的enabled=1修改成e</description>
     </item>
     
     <item>
       <title>使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书</title>
-      <link>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
+      <link>https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
       <pubDate>Mon, 26 Dec 2016 19:14:40 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
+      <guid>https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
       <description>&lt;p&gt;Linux服务器下使用acme.sh脚本是申请let&amp;rsquo;s encrypt证书最便捷的方式，比官方推荐的&lt;code&gt;certbot&lt;/code&gt;脚本工具要强大的多。&lt;/p&gt;
-
 &lt;p&gt;安装文档：
-&lt;a href=&#34;https://github.com/Neilpang/acme.sh/wiki/说明&#34;&gt;https://github.com/Neilpang/acme.sh/wiki/说明&lt;/a&gt;&lt;/p&gt;
-
+&lt;a href=&#34;https://github.com/Neilpang/acme.sh/wiki/&#34;&gt;https://github.com/Neilpang/acme.sh/wiki/&lt;/a&gt;说明&lt;/p&gt;
 &lt;h2 id=&#34;前提条件&#34;&gt;前提条件&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;拥有一个域名，例如mydomain.com (在国内主机的用的话，还需要通过ICP备案)&lt;/li&gt;
 &lt;li&gt;确定二级域名，并且在域名服务器创建一条A记录，执行云主机的公网IP地址。www.mydomain.com指向xxx.xxx.xxx.xxx的IP地址&lt;/li&gt;
 &lt;li&gt;要等到新创建的域名解析能在公网上被解析到。&lt;/li&gt;
 &lt;li&gt;据说国内的域名提供商对letsencrypt的支持非常差，但是现阶段用dnspod解析的域名还没碰到问题。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;一安装acmesh脚本&#34;&gt;一、安装acme.sh脚本&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;curl  https://get.acme.sh | sh
 
-&lt;h2 id=&#34;一-安装acme-sh脚本&#34;&gt;一、安装acme.sh脚本&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;curl  https://get.acme.sh | sh
-
-# 重新登录ssh，或者使用source命令重新加载环境变量
+&lt;span style=&#34;color:#75715e&#34;&gt;# 重新登录ssh，或者使用source命令重新加载环境变量&lt;/span&gt;
 source . 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
       <title>CentOS 7 安装最新版PostgreSQL</title>
-      <link>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
+      <link>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
+      <guid>https://www.racksam.com/2016/12/19/centos7-install-postgresql/</guid>
       <description>&lt;p&gt;以下操作均在root账号下操作.&lt;/p&gt;
-
-&lt;h2 id=&#34;一-安装&#34;&gt;一、安装&lt;/h2&gt;
-
+&lt;h2 id=&#34;一安装&#34;&gt;一、安装&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
-
-&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;导入yum源文件&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;查看本机CentOS的版本: &lt;code&gt;cat /etc/redhat-release&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看最新版本的postgresql yum源&lt;/p&gt;
+&lt;p&gt;在PostgreSQL官方的yum找到最新稳定版的yum源，复制rpm的链接。当前的最新版本为9.6。&lt;a href=&#34;https://yum.postgresql.org/&#34;&gt;https://yum.postgresql.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;导入yum源文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;rpm -ivh https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-centos96-9.6-3.noarch.rpm
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;yum -y install postgresql96*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;li&gt;
+&lt;p&gt;通过yum安装最新版的postgresql&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yum -y install postgresql96*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装后的目录在&lt;code&gt;/usr/pgsql-9.6/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
       <title>Centos6 下安装rbenv &#43; ruby &#43; rails &#43; puma &#43; ngnix</title>
-      <link>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
+      <link>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</link>
       <pubDate>Tue, 01 Mar 2016 21:08:16 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
+      <guid>https://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/</guid>
       <description>&lt;p&gt;Rails项目在生产环境上线时，可以选择的ruby服务器比较多，例如：Rainbows、Unicorn、Passenger、Puma。其中Puma是近年来口碑比较不错的一个。&lt;/p&gt;
-
-&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;这里总结整理CentOS6环境下安装配置rbenv、Ruby 2.3、rails 4、puma以及ngnix的集成环境。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx上安装phpMyAdmin</title>
-      <link>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</link>
+      <link>https://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</link>
       <pubDate>Sat, 05 Apr 2014 17:23:26 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</guid>
-      <description>&lt;p&gt;前提：首先要完成安装 &lt;a href=&#34;http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;nginx+php+php-fpm+mysql&lt;/a&gt;&lt;/p&gt;
-
+      <guid>https://www.racksam.com/2014/04/05/how-to-install-phpmyadmin-on-nginx/</guid>
+      <description>&lt;p&gt;前提：首先要完成安装 &lt;a href=&#34;https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/&#34;&gt;nginx+php+php-fpm+mysql&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;一-准备工作&#34;&gt;一、 准备工作：&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-如果mysql的root账号为空-需要设置root密码&#34;&gt;1. 如果mysql的root账号为空，需要设置root密码&lt;/h3&gt;
-
+&lt;h3 id=&#34;1-如果mysql的root账号为空需要设置root密码&#34;&gt;1. 如果mysql的root账号为空，需要设置root密码&lt;/h3&gt;
 &lt;p&gt;CentOS下默认安装的mysql服务器，里面的root账号默认密码为空，首先为root设置一个密码&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;#mysqladmin -u root password yourpassword&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;注： 虽然通过一些特殊配置，可以使phpmyadmin允许空密码登录，但是不推荐这样做，尤其是公网的服务器。&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-设置php-ini正确配置-session-save-path&#34;&gt;2. 设置php.ini正确配置&lt;code&gt;session.save_path&lt;/code&gt;&lt;/h3&gt;
-
+&lt;h3 id=&#34;2-设置phpini正确配置sessionsave_path&#34;&gt;2. 设置php.ini正确配置&lt;code&gt;session.save_path&lt;/code&gt;&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;首先检查php.ini配置文件&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;首先检查php.ini配置文件&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;#grep session.save_path /etc/php.ini&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;如果不存在以下设置，增加该配置。如果被注释了话，去掉注释
-session.save_path = “/var/lib/php/session”&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;查看该目录是否存在：&lt;/p&gt;
-
+session.save_path = “/var/lib/php/session”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看该目录是否存在：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;#ls /var/lib/php/session&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;如果不存在，则手工创建&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;#mkdir /var/lib/php/session&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;修改目录属主为nginx&lt;/p&gt;
-
 &lt;p&gt;&lt;code&gt;chown nginx:nginx session/ -R&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;重启启动php-fpm&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;service php-fpm restart&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;code&gt;service php-fpm restart&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
   </channel>

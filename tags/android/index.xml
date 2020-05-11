@@ -1,29 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Racksam</title>
-    <link>http://www.racksam.com/tags/android/</link>
+    <link>https://www.racksam.com/tags/android/</link>
     <description>Recent content in Android on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
-    <lastBuildDate>Tue, 04 Nov 2014 21:58:11 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Dec 2016 15:11:59 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Android Study Resources</title>
+      <link>https://www.racksam.com/2016/12/18/android-study-resources/</link>
+      <pubDate>Sun, 18 Dec 2016 15:11:59 +0000</pubDate>
+      
+      <guid>https://www.racksam.com/2016/12/18/android-study-resources/</guid>
+      <description>&lt;p&gt;收集整理一些常用的Android开发资源&lt;/p&gt;
+&lt;h2 id=&#34;入门&#34;&gt;入门&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://code.tutsplus.com/series/learn-android-sdk-development-from-scratch--mobile-14542&#34;&gt;http://code.tutsplus.com/series/learn-android-sdk-development-from-scratch--mobile-14542&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://code.tutsplus.com/tutorials/android-ui-workshop-build-an-interactive-quiz-app--mobile-14208&#34;&gt;http://code.tutsplus.com/tutorials/android-ui-workshop-build-an-interactive-quiz-app--mobile-14208&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/search?utf8=%E2%9C%93&amp;amp;q=android+quiz+app+&amp;amp;type=Repositories&amp;amp;ref=searchresults&#34;&gt;https://github.com/search?utf8=%E2%9C%93&amp;amp;q=android+quiz+app+&amp;amp;type=Repositories&amp;amp;ref=searchresults&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=U352YOfelWs&#34;&gt;https://www.youtube.com/watch?v=U352YOfelWs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android Activity的生命周期
+&lt;a href=&#34;http://www.javadrive.jp/android/activity/index2.html&#34;&gt;http://www.javadrive.jp/android/activity/index2.html&lt;/a&gt;
+&lt;a href=&#34;http://blog.csdn.net/liuhe688/article/details/6754323&#34;&gt;http://blog.csdn.net/liuhe688/article/details/6754323&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android自身更新功能的实现
+&lt;a href=&#34;http://www.notice.co.jp/archives/1844&#34;&gt;http://www.notice.co.jp/archives/1844&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/4308473/auto-update-for-private-android-apps&#34;&gt;http://stackoverflow.com/questions/4308473/auto-update-for-private-android-apps&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考代码：
+&lt;a href=&#34;https://github.com/natuan241/Android-Updater&#34;&gt;https://github.com/natuan241/Android-Updater&lt;/a&gt;
+&lt;a href=&#34;https://gitlab.com/SnowdreamFramework/android-autoupdater&#34;&gt;https://gitlab.com/SnowdreamFramework/android-autoupdater&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用AsyncTask实现下载
+&lt;a href=&#34;https://akira-watson.com/android/asynctask-2.html&#34;&gt;https://akira-watson.com/android/asynctask-2.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android服务器Ping的实现&lt;/p&gt;
+&lt;p&gt;看起来代码应该可以用
+&lt;a href=&#34;https://sites.google.com/site/mobiperfdev/&#34;&gt;https://sites.google.com/site/mobiperfdev/&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/9062182/android-icmp-ping&#34;&gt;http://stackoverflow.com/questions/9062182/android-icmp-ping&lt;/a&gt;
+&lt;a href=&#34;http://stackoverflow.com/questions/3905358/how-to-ping-external-ip-from-java-android&#34;&gt;http://stackoverflow.com/questions/3905358/how-to-ping-external-ip-from-java-android&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Mac OS下安装cordova开发编译环境</title>
-      <link>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</link>
+      <link>https://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</link>
       <pubDate>Tue, 04 Nov 2014 21:58:11 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</guid>
+      <guid>https://www.racksam.com/2014/11/04/install-cordova-on-mac-os/</guid>
       <description>&lt;p&gt;PhoneGap/cordova为代表的基于HTML5开发iOS/Android应用的技术，大大降低了手机App的开发门槛。虽然目前与原生的Object-C/Java开发的应用在性能上还有差距，但是对于一些网站客户端类的APP来说已经足够实用了。另外随着技术的进步，未来HTML5也许成为开发app的主流技术。&lt;/p&gt;
-
 &lt;p&gt;将html5打包成ios app，既可以选择appcan, build.phonegap.com这类的在线编译工具，也可以自己配置本地的xcode开发环境。虽然配置本地环境比较繁琐，但是灵活性更大，不会受制于人（很多在线打包网站，免费的服务有很多限制）。简单整理一下配置一个ios项目的步骤。&lt;/p&gt;
-
-&lt;p&gt;※很多人使用黑苹果作为ios的开发环境，不过不建议这样做。将时间耗费在研究黑苹果上没什么意义。*
-&lt;/p&gt;</description>
+&lt;p&gt;※很多人使用黑苹果作为ios的开发环境，不过不建议这样做。将时间耗费在研究黑苹果上没什么意义。*&lt;/p&gt;</description>
     </item>
     
   </channel>

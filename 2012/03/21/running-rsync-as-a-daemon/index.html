@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>rsync服务器配置 &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,71 +10,42 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="rsync服务器配置" />
 <meta property="og:description" content="rsync是Linux下小巧却非常高效的文件同步工具，常被用于文件备份。rsync既可以作为单个命令在本地两个目录之间进行文件同步，也可以应用于CS架构：即在服务器上用rsync的守候进程模式启动一个rsync服务，而其它的客户端主机使用rsync命令，与rsync服务器之间进行同步。
-
 虽然也可以通过samba或者nfs等服务将其它Linux需要同步的目录mount到本地的一个目录，然后使用rsync命令进行本地目录间的同步，但是从效率以及管理方便程度方面考虑，兔大侠并不推荐这种方式。如果是主机之间的同步，首选还是应该是用rsync的守候进程模式。
-
 rsync可以通过yum install rsync或者源代码编译方式来进行安装。不论哪种方式，都只是安装在系统上安装了rsync命令，服务器模式的相关配置只能自己动手。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/" />
-
-
-
-<meta property="article:published_time" content="2012-03-21T21:43:08&#43;00:00"/>
-<meta property="article:modified_time" content="2012-03-21T21:43:08&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/" />
+<meta property="article:published_time" content="2012-03-21T21:43:08+00:00" />
+<meta property="article:modified_time" content="2012-03-21T21:43:08+00:00" />
 
     
-    
-<meta itemprop="name" content="rsync服务器配置">
+    <meta itemprop="name" content="rsync服务器配置">
 <meta itemprop="description" content="rsync是Linux下小巧却非常高效的文件同步工具，常被用于文件备份。rsync既可以作为单个命令在本地两个目录之间进行文件同步，也可以应用于CS架构：即在服务器上用rsync的守候进程模式启动一个rsync服务，而其它的客户端主机使用rsync命令，与rsync服务器之间进行同步。
-
 虽然也可以通过samba或者nfs等服务将其它Linux需要同步的目录mount到本地的一个目录，然后使用rsync命令进行本地目录间的同步，但是从效率以及管理方便程度方面考虑，兔大侠并不推荐这种方式。如果是主机之间的同步，首选还是应该是用rsync的守候进程模式。
-
 rsync可以通过yum install rsync或者源代码编译方式来进行安装。不论哪种方式，都只是安装在系统上安装了rsync命令，服务器模式的相关配置只能自己动手。">
-
-
+<meta itemprop="datePublished" content="2012-03-21T21:43:08&#43;00:00" />
 <meta itemprop="dateModified" content="2012-03-21T21:43:08&#43;00:00" />
-<meta itemprop="wordCount" content="1164">
+<meta itemprop="wordCount" content="1163">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="rsync服务器配置"/>
+<meta itemprop="keywords" content="Rsync," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="rsync服务器配置"/>
 <meta name="twitter:description" content="rsync是Linux下小巧却非常高效的文件同步工具，常被用于文件备份。rsync既可以作为单个命令在本地两个目录之间进行文件同步，也可以应用于CS架构：即在服务器上用rsync的守候进程模式启动一个rsync服务，而其它的客户端主机使用rsync命令，与rsync服务器之间进行同步。
-
 虽然也可以通过samba或者nfs等服务将其它Linux需要同步的目录mount到本地的一个目录，然后使用rsync命令进行本地目录间的同步，但是从效率以及管理方便程度方面考虑，兔大侠并不推荐这种方式。如果是主机之间的同步，首选还是应该是用rsync的守候进程模式。
-
 rsync可以通过yum install rsync或者源代码编译方式来进行安装。不论哪种方式，都只是安装在系统上安装了rsync命令，服务器模式的相关配置只能自己动手。"/>
-
 
     
 
@@ -91,16 +62,16 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -116,17 +87,17 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -134,7 +105,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -145,7 +116,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -161,17 +132,17 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -187,7 +158,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -200,12 +171,12 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -271,7 +242,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -302,7 +273,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/">
+    <a href="https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/">
     <h1 class="article-title" itemprop="name">
         rsync服务器配置
     </h1>
@@ -314,7 +285,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
             <i class="fa fa-calendar"></i>
             <time datetime="2012-03-21 21:43:08 &#43;0000 UTC" itemprop="datePublished">2012-03-21</time>
             &middot;
-            1164
+            1163
             words
             &middot;
             3
@@ -328,7 +299,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/linux">Linux</a>
                 
                 
             </div>
@@ -342,7 +313,7 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/rsync">Rsync</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/rsync">Rsync</a>
                 
                 
             </div>
@@ -353,154 +324,143 @@ rsync可以通过yum install rsync或者源代码编译方式来进行安装。�
 
         <div class="article-entry" itemprop="articleBody">
             <p>rsync是Linux下小巧却非常高效的文件同步工具，常被用于文件备份。rsync既可以作为单个命令在本地两个目录之间进行文件同步，也可以应用于CS架构：即在服务器上用rsync的守候进程模式启动一个rsync服务，而其它的客户端主机使用rsync命令，与rsync服务器之间进行同步。</p>
-
 <p>虽然也可以通过samba或者nfs等服务将其它Linux需要同步的目录mount到本地的一个目录，然后使用rsync命令进行本地目录间的同步，但是从效率以及管理方便程度方面考虑，兔大侠并不推荐这种方式。如果是主机之间的同步，首选还是应该是用rsync的守候进程模式。</p>
-
 <p>rsync可以通过yum install rsync或者源代码编译方式来进行安装。不论哪种方式，都只是安装在系统上安装了rsync命令，服务器模式的相关配置只能自己动手。</p>
-
 <h2 id="服务器端配置">服务器端配置</h2>
-
 <p>需要事先做好文件同步或者备份的规划，准备好文件存贮目录，例如/opt/backup。</p>
-
 <ol>
-<li><p>主要配置文件：/etc/rsyncd.conf</p>
-
-<pre><code class="language-bash">#如果使用rsync默认端口（873），则不需要指定该参数
-port = 8082 
-    
-#密码文件，格式为id:passwd
-secrets file = /etc/rsyncd.secrets
-    
-#允许列表
-list = yes
-    
-#指定运行rsync守候进程的系统帐号
-uid = root
-gid = root
-    
-#不允许访问指定目录的上级目录
-use chroot = no
-    
-#限制连接数, 0为不限制
-max connections = 10
-    
-#日志文件等临时文件，推荐以下配置
-log file = /var/log/rsyncd.log
-pid file = /var/run/rsyncd.pid
-lock file = /var/run/rsync.lock
-    
-#控制允许访问的客户端地址,可以指定单个地址或者地址段
-hosts allow=192.168.1.1,10.0.0.0/8
-#如果是公网正式服务器，推荐默认禁止所有非允许的主机
-hosts deny=*
-    
-#设置超时时间
-timeout = 300
-    
-#设置服务器端同步的目录
-#指定ID
-[bak]
-#允许客户端写操作
-read only = no
-comment = Backup Storage
-#指定目录
-path = /opt/backup
-#指定允许操作的用户（是在rsync密码文件中指定的用于认证的用户，并非系统用户，）
-auth users = rsyncman
-</code></pre></li>
-
-<li><p>密码文件：/etc/rsyncd.secrets</p>
-
+<li>
+<p>主要配置文件：/etc/rsyncd.conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#如果使用rsync默认端口（873），则不需要指定该参数</span>
+port <span style="color:#f92672">=</span> <span style="color:#ae81ff">8082</span> 
+   
+<span style="color:#75715e">#密码文件，格式为id:passwd</span>
+secrets file <span style="color:#f92672">=</span> /etc/rsyncd.secrets
+   
+<span style="color:#75715e">#允许列表</span>
+list <span style="color:#f92672">=</span> yes
+   
+<span style="color:#75715e">#指定运行rsync守候进程的系统帐号</span>
+uid <span style="color:#f92672">=</span> root
+gid <span style="color:#f92672">=</span> root
+   
+<span style="color:#75715e">#不允许访问指定目录的上级目录</span>
+use chroot <span style="color:#f92672">=</span> no
+   
+<span style="color:#75715e">#限制连接数, 0为不限制</span>
+max connections <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+   
+<span style="color:#75715e">#日志文件等临时文件，推荐以下配置</span>
+log file <span style="color:#f92672">=</span> /var/log/rsyncd.log
+pid file <span style="color:#f92672">=</span> /var/run/rsyncd.pid
+lock file <span style="color:#f92672">=</span> /var/run/rsync.lock
+   
+<span style="color:#75715e">#控制允许访问的客户端地址,可以指定单个地址或者地址段</span>
+hosts allow<span style="color:#f92672">=</span>192.168.1.1,10.0.0.0/8
+<span style="color:#75715e">#如果是公网正式服务器，推荐默认禁止所有非允许的主机</span>
+hosts deny<span style="color:#f92672">=</span>*
+   
+<span style="color:#75715e">#设置超时时间</span>
+timeout <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+   
+<span style="color:#75715e">#设置服务器端同步的目录</span>
+<span style="color:#75715e">#指定ID</span>
+<span style="color:#f92672">[</span>bak<span style="color:#f92672">]</span>
+<span style="color:#75715e">#允许客户端写操作</span>
+read only <span style="color:#f92672">=</span> no
+comment <span style="color:#f92672">=</span> Backup Storage
+<span style="color:#75715e">#指定目录</span>
+path <span style="color:#f92672">=</span> /opt/backup
+<span style="color:#75715e">#指定允许操作的用户（是在rsync密码文件中指定的用于认证的用户，并非系统用户，）</span>
+auth users <span style="color:#f92672">=</span> rsyncman
+</code></pre></div></li>
+<li>
+<p>密码文件：/etc/rsyncd.secrets</p>
 <p>每一行的格式为id:passwd，例如：rsyncman:123</p>
-
-<p>注意，该文件的权限属性一定要修改为600，否则启动时会报错</p></li>
-
-<li><p>开机自启动脚本：/etc/init.d/rsyncd</p>
-
-<pre><code class="language-bash">#!/bin/bash
+<p>注意，该文件的权限属性一定要修改为600，否则启动时会报错</p>
+</li>
+<li>
+<p>开机自启动脚本：/etc/init.d/rsyncd</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>#
+<span style="color:#75715e"># rsyncd      This shell script takes care of starting and stopping</span>
+<span style="color:#75715e">#             standalone rsync.</span>
 #
-# rsyncd      This shell script takes care of starting and stopping
-#             standalone rsync.
-#
-# chkconfig: - 99 50
-# description: rsync is a file transport daemon
-# processname: rsync
-# config: /etc/rsyncd.conf
-    
-# Source function library
+<span style="color:#75715e"># chkconfig: - 99 50</span>
+<span style="color:#75715e"># description: rsync is a file transport daemon</span>
+<span style="color:#75715e"># processname: rsync</span>
+<span style="color:#75715e"># config: /etc/rsyncd.conf</span>
+   
+<span style="color:#75715e"># Source function library</span>
 . /etc/rc.d/init.d/functions
-    
-RETVAL=0
-prog=&quot;rsync&quot;
-OPTIONS=&quot;--daemon -4&quot;
-PPATH=&quot;/usr/bin/&quot;
-CFILE=&quot;/etc/rsyncd.conf&quot;
-    
-start() {
-        # Start daemons.
-        [ -x $PPATH$prog ] || \
-            { echo &quot;FATAL: No such programme&quot;;exit 4; }
-        [ -f $CFILE ] || \
-            { echo &quot;FATAL: config file does not exist&quot;;exit 6; }
-        echo -n $&quot;Starting $prog: &quot;
+   
+RETVAL<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+prog<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rsync&#34;</span>
+OPTIONS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--daemon -4&#34;</span>
+PPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/bin/&#34;</span>
+CFILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/rsyncd.conf&#34;</span>
+   
+start<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e"># Start daemons.</span>
+        <span style="color:#f92672">[</span> -x $PPATH$prog <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            <span style="color:#f92672">{</span> echo <span style="color:#e6db74">&#34;FATAL: No such programme&#34;</span>;exit 4; <span style="color:#f92672">}</span>
+        <span style="color:#f92672">[</span> -f $CFILE <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            <span style="color:#f92672">{</span> echo <span style="color:#e6db74">&#34;FATAL: config file does not exist&#34;</span>;exit 6; <span style="color:#f92672">}</span>
+        echo -n $<span style="color:#e6db74">&#34;Starting </span>$prog<span style="color:#e6db74">: &#34;</span>
         daemon $PPATH$prog $OPTIONS
-        RETVAL=$?
-        [ $RETVAL -eq 0 ] &amp;&amp; touch /var/lock/subsys/$prog
+        RETVAL<span style="color:#f92672">=</span>$?
+        <span style="color:#f92672">[</span> $RETVAL -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> touch /var/lock/subsys/$prog
         echo
-        return $RETVAL
-}
-    
-stop() {
-        # Stop daemons.
-        echo -n $&quot;Shutting down $prog: &quot;
+        <span style="color:#66d9ef">return</span> $RETVAL
+<span style="color:#f92672">}</span>
+   
+stop<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e"># Stop daemons.</span>
+        echo -n $<span style="color:#e6db74">&#34;Shutting down </span>$prog<span style="color:#e6db74">: &#34;</span>
         killproc $prog
-        RETVAL=$?
+        RETVAL<span style="color:#f92672">=</span>$?
         echo
-        [ $RETVAL -eq 0 ] &amp;&amp; rm -f /var/lock/subsys/$prog
-        return $RETVAL
-}
-    
-# call the function we defined
-case &quot;$1&quot; in
-  start)
+        <span style="color:#f92672">[</span> $RETVAL -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> rm -f /var/lock/subsys/$prog
+        <span style="color:#66d9ef">return</span> $RETVAL
+<span style="color:#f92672">}</span>
+   
+<span style="color:#75715e"># call the function we defined</span>
+<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
+  start<span style="color:#f92672">)</span>
         start
         ;;
-  stop)
+  stop<span style="color:#f92672">)</span>
         stop
         ;;
-  restart|reload)
+  restart|reload<span style="color:#f92672">)</span>
         stop
         start
-        RETVAL=$?
+        RETVAL<span style="color:#f92672">=</span>$?
         ;;
-  status)
+  status<span style="color:#f92672">)</span>
         status $prog
-        RETVAL=$?
+        RETVAL<span style="color:#f92672">=</span>$?
         ;;
-  *)
-        echo $&quot;Usage: $0 {start|stop|restart|reload|status}&quot;
-        exit 2
-esac
-    
+  *<span style="color:#f92672">)</span>
+        echo $<span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> {start|stop|restart|reload|status}&#34;</span>
+        exit <span style="color:#ae81ff">2</span>
+<span style="color:#66d9ef">esac</span>
+   
 exit $RETVAL
-</code></pre>
-
-<p>使用<code>chmod 755 rsyncd</code> 命令，将以上脚本置为可执行。</p>
-
+</code></pre></div><p>使用<code>chmod 755 rsyncd</code> 命令，将以上脚本置为可执行。</p>
 <p><code>#/etc/init.d/rsyncd start</code>，即可以启动rsync服务。</p>
-
-<p>另外，如果系统启用了iptables防火墙，别忘了开放相应的端口。</p></li>
+<p>另外，如果系统启用了iptables防火墙，别忘了开放相应的端口。</p>
+</li>
 </ol>
-
 <p>客户端使用rsync命令与该服务器的指定目录进行同步。客户端使用rsync命令时，除了指定服务器的参数以外，其它的参数与同步两个目录时所用的参数并没有太大区别。</p>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/" data-id="cea969db90ed3da74d69994c7e7fc927" class="article-share-link">
+    <a data-url="https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/" data-id="cea969db90ed3da74d69994c7e7fc927" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -576,7 +536,7 @@ exit $RETVAL
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/12/09/connect-3g-on-dd-wrt/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -585,7 +545,7 @@ exit $RETVAL
     
 
     
-    <a href="http://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -601,20 +561,25 @@ exit $RETVAL
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2012\/03\/21\/running-rsync-as-a-daemon\/';
-    var disqus_title = 'rsync服务器配置';
-    var disqus_url = 'http:\/\/www.racksam.com\/2012\/03\/21\/running-rsync-as-a-daemon\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -633,9 +598,9 @@ exit $RETVAL
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="rsync服务器配置" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="rsync服务器配置" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -644,13 +609,13 @@ exit $RETVAL
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -659,7 +624,7 @@ exit $RETVAL
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -670,13 +635,13 @@ exit $RETVAL
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -685,9 +650,9 @@ exit $RETVAL
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="rsync服务器配置" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -696,13 +661,39 @@ exit $RETVAL
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="rsync服务器配置" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -711,9 +702,9 @@ exit $RETVAL
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="rsync服务器配置" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="rsync服务器配置" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -722,41 +713,15 @@ exit $RETVAL
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="rsync服务器配置" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -787,111 +752,63 @@ exit $RETVAL
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -899,7 +816,71 @@ exit $RETVAL
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -943,182 +924,77 @@ exit $RETVAL
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1128,7 +1004,27 @@ exit $RETVAL
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1138,7 +1034,22 @@ exit $RETVAL
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1148,7 +1059,82 @@ exit $RETVAL
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1179,7 +1165,7 @@ exit $RETVAL
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1197,18 +1183,21 @@ exit $RETVAL
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

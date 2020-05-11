@@ -1,38 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Protobuf on Racksam</title>
-    <link>http://www.racksam.com/tags/protobuf/</link>
-    <description>Recent content in Protobuf on Racksam</description>
+    <title>protobuf on Racksam</title>
+    <link>https://www.racksam.com/tags/protobuf/</link>
+    <description>Recent content in protobuf on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice).</copyright>
     <lastBuildDate>Sun, 06 Apr 2014 17:08:10 +0000</lastBuildDate>
     
-	<atom:link href="http://www.racksam.com/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.racksam.com/tags/protobuf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux下安装protobuf python版本</title>
-      <link>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
+      <link>https://www.racksam.com/2014/04/06/protocol-buffers-in-python/</link>
       <pubDate>Sun, 06 Apr 2014 17:08:10 +0000</pubDate>
       
-      <guid>http://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
-      <description>&lt;h2 id=&#34;protobuf简介-google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
-
+      <guid>https://www.racksam.com/2014/04/06/protocol-buffers-in-python/</guid>
+      <description>&lt;h2 id=&#34;protobuf简介google发明的一种全新的数据交换格式&#34;&gt;protobuf简介：Google发明的一种全新的数据交换格式&lt;/h2&gt;
 &lt;p&gt;当前分布式Web系统之间交换数据的所用数据格式的类型中，最常见的依然是json与XML。不过Google的技术大牛们认为json/XML这些文本类型的数据格式传输效率太差，于是他们发明了一种全新的数据格式：&lt;a href=&#34;https://github.com/google/protobuf&#34;&gt;https://github.com/google/protobuf&lt;/a&gt;。&lt;/p&gt;
-
 &lt;p&gt;protobuf是一种序列化结构数据（serializing structured data）。数据在保存及传输过程中以二进制编码形态存在，相对于文本格式的数据形式，大大提高了效率。同时，由于protobuf的数据中不携带数据结构定义的信息（Schema以及类似xml中标签名称），又进一步减少了数据里的冗余信息。&lt;/p&gt;
-
 &lt;p&gt;据统计，一条消息数据，用protobuf序列化后的数据大小是json的10分之一，xml格式的20分之一，是传统的二进制序列化的10分之一，所以protobuf的性能优势还是很明显的。事实上这种技术早已在Google的服务中大量被应用。另外，Google也将此技术开源化来促进推广。&lt;/p&gt;
-
 &lt;p&gt;对于一般的开发者来说，有可能需要用到protobuf的情况：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;对接Google的某种服务，例如开发DSP广告系统，需要对接Google的广告RTB交易平台。&lt;/li&gt;
 &lt;li&gt;在分布式Web系统之间交换数据时，对传输效率有非常高的要求。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;官方目前多种编程语言的实现: C++、Java、Python、Objective-C、JavaScript、Ruby、Go。暂时没有PHP版本。&lt;/p&gt;</description>
     </item>
     

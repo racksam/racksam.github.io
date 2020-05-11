@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>MySQL数据库创建及帐号管理 &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,62 +10,36 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2011/06/08/create-mysql-database-and-users/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2011/06/08/create-mysql-database-and-users/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="MySQL数据库创建及帐号管理" />
-<meta property="og:description" content="整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。
-" />
+<meta property="og:description" content="整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2011/06/08/create-mysql-database-and-users/" />
-
-
-
-<meta property="article:published_time" content="2011-06-08T14:50:27&#43;00:00"/>
-<meta property="article:modified_time" content="2011-06-08T14:50:27&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2011/06/08/create-mysql-database-and-users/" />
+<meta property="article:published_time" content="2011-06-08T14:50:27+00:00" />
+<meta property="article:modified_time" content="2011-06-08T14:50:27+00:00" />
 
     
-    
-<meta itemprop="name" content="MySQL数据库创建及帐号管理">
-<meta itemprop="description" content="整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。
-">
-
-
+    <meta itemprop="name" content="MySQL数据库创建及帐号管理">
+<meta itemprop="description" content="整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。">
+<meta itemprop="datePublished" content="2011-06-08T14:50:27&#43;00:00" />
 <meta itemprop="dateModified" content="2011-06-08T14:50:27&#43;00:00" />
-<meta itemprop="wordCount" content="868">
+<meta itemprop="wordCount" content="825">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="MySQL数据库创建及帐号管理"/>
+<meta itemprop="keywords" content="MySQL,Linux," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL数据库创建及帐号管理"/>
-<meta name="twitter:description" content="整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。
-"/>
-
+<meta name="twitter:description" content="整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。"/>
 
     
 
@@ -82,16 +56,16 @@
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -107,17 +81,17 @@
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -125,7 +99,7 @@
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -136,7 +110,7 @@
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -152,17 +126,17 @@
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -178,7 +152,7 @@
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -191,12 +165,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -262,7 +236,7 @@
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -293,7 +267,7 @@
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2011/06/08/create-mysql-database-and-users/">
+    <a href="https://www.racksam.com/2011/06/08/create-mysql-database-and-users/">
     <h1 class="article-title" itemprop="name">
         MySQL数据库创建及帐号管理
     </h1>
@@ -305,7 +279,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2011-06-08 14:50:27 &#43;0000 UTC" itemprop="datePublished">2011-06-08</time>
             &middot;
-            868
+            825
             words
             &middot;
             2
@@ -319,7 +293,7 @@
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/mysql">MySQL</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/mysql">MySQL</a>
                 
                 
             </div>
@@ -333,11 +307,11 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/mysql">MySQL</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/mysql">MySQL</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
                 
                 
             </div>
@@ -347,146 +321,130 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <p>整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。
-</p>
-
+            <p>整理了一下菜鸟级MySQL常用操作。主要是数据库创建，帐号创建及修改密码等。</p>
 <h3 id="登录mysql命令行">登录MySQL命令行</h3>
-
 <ul>
-<li><p>mysql命令可以指定用户名及密码</p>
-
-<p><code>$mysql -u username -p password</code></p></li>
-
-<li><p>CentOS或Redhat也可以用root身份登录</p></li>
+<li>
+<p>mysql命令可以指定用户名及密码</p>
+<p><code>$mysql -u username -p password</code></p>
+</li>
+<li>
+<p>CentOS或Redhat也可以用root身份登录</p>
+</li>
 </ul>
-
 <h3 id="数据库管理">数据库管理</h3>
-
 <ul>
-<li><p>创建新的UTF8编码的数据库</p>
-
+<li>
+<p>创建新的UTF8编码的数据库</p>
 <pre><code>mysql&gt; CREATE DATABASE `testdb1` DEFAULT CHARACTER SET UTF8 COLLATE UTF8_GENERAL_CI;
 </code></pre></li>
-
-<li><p>修改已有数据库的默认字符集</p>
-
+<li>
+<p>修改已有数据库的默认字符集</p>
 <pre><code>mysql&gt; use testdb1;
 mysql&gt; alter database testdb1 character set utf-8;
 </code></pre></li>
-
-<li><p>选择需要操作的数据库</p>
-
+<li>
+<p>选择需要操作的数据库</p>
 <pre><code>mysql&gt; USE testdb1;
 </code></pre></li>
-
-<li><p>删除数据库（慎用）</p>
-
+<li>
+<p>删除数据库（慎用）</p>
 <pre><code>mysql&gt; SHOW DATABASES;
 </code></pre></li>
-
-<li><p>列出所有表</p>
-
+<li>
+<p>列出所有表</p>
 <pre><code>mysql&gt; show tables;
 </code></pre></li>
-
-<li><p>显示数据表结构</p>
-
+<li>
+<p>显示数据表结构</p>
 <pre><code>mysql&gt; describe 表名;
 </code></pre></li>
-
-<li><p>修改表名</p>
-
+<li>
+<p>修改表名</p>
 <pre><code>mysql&gt; ALTER TABLE table_name RENAME TO new_table_name;
 </code></pre></li>
-
-<li><p>删除数据表 （慎用）</p>
-
+<li>
+<p>删除数据表 （慎用）</p>
 <pre><code>mysql&gt; drop table 表名;
 </code></pre></li>
 </ul>
-
 <h3 id="数据库用户帐号管理">数据库用户帐号管理</h3>
-
 <ol>
-<li><p>使用GRANT命令创建新帐号，允许操作指定数据库的所有权限</p>
-
-<p><code>GRANT 权限(操作，可以以逗号隔开) ON 数据库名.表名 TO 用户名@’客户端主机IP’ IDENTIFIED BY '密码';
-</code></p>
-
-<ul>
-<li>权限可以包括：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP, 也可以用ALL PRIVILEGES代表所有操作权限，关键字 “PRIVILEGES” 可以省略</li>
-<li>数据库名及表名都可以用通配符*，分别代表所有数据库及所有表。但是一般不推荐创建能操作所有数据库的超级用户。</li>
-<li>客户端主机IP可以是localhost，也可以是ip地址、机器名字、域名。也可以用’%’表示从任何地址连接。</li>
-
-<li><p>例如：</p>
-
+<li>
+<p>使用GRANT命令创建新帐号，允许操作指定数据库的所有权限</p>
+<pre><code class="language-GRANT" data-lang="GRANT"></code></pre><ul>
+<li>
+<p>权限可以包括：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP, 也可以用ALL PRIVILEGES代表所有操作权限，关键字 “PRIVILEGES” 可以省略</p>
+</li>
+<li>
+<p>数据库名及表名都可以用通配符*，分别代表所有数据库及所有表。但是一般不推荐创建能操作所有数据库的超级用户。</p>
+</li>
+<li>
+<p>客户端主机IP可以是localhost，也可以是ip地址、机器名字、域名。也可以用’%’表示从任何地址连接。</p>
+</li>
+<li>
+<p>例如：</p>
 <pre><code>mysql&gt; GRANT SELECT,UPDATE ON testdb1.table1 TO myuser@'localhost' IDENTIFIED BY 'mypassword';
 mysql&gt; GRANT ALL PRIVILEGES ON testdb1.* TO myuser@'%' IDENTIFIED BY 'mypassword';`
 mysql&gt; GRANT ALL PRIVILEGES ON testdb1.* TO myuser@'192.168.0.0/255.255.0.0' IDENTIFIED BY 'mypassword';
 </code></pre></li>
-</ul></li>
-
-<li><p>查看数据库用户权限</p>
-
+</ul>
+</li>
+<li>
+<p>查看数据库用户权限</p>
 <ul>
 <li>查看当前用户的权限: <code>mysql&gt; SHOW GRANTS;</code></li>
 <li>查看其他用户的权限: <code>mysql&gt; SHOW GRANTS FOR otheruser@'%';</code></li>
-</ul></li>
-
-<li><p>撤销已经赋予给 MySQL 用户的权限</p>
-
+</ul>
+</li>
+<li>
+<p>撤销已经赋予给 MySQL 用户的权限</p>
 <p>REVOKE 跟 GRANT 的语法差不多，只需要把关键字 “TO” 换成 “FROM” 即可：</p>
-
 <pre><code>mysql&gt; REVOKE ALL ON *.* FROM myuser@localhost;
 </code></pre></li>
-
-<li><p>查看所有的用户</p>
-
+<li>
+<p>查看所有的用户</p>
 <pre><code>mysql&gt; SELECT USER,HOST,PASSWORD FROM mysql.user;
 </code></pre></li>
-
-<li><p>查看所有用户的所有权限</p>
-
+<li>
+<p>查看所有用户的所有权限</p>
 <p>首先生成所需要的SQL语句，然后分别执行</p>
-
 <pre><code>mysql&gt; SELECT DISTINCT CONCAT('SHOW GRANTS FOR ''',user,'''@''',host,''';') AS query FROM user;
 </code></pre></li>
-
-<li><p>删除用户</p>
-
+<li>
+<p>删除用户</p>
 <p>直接使用SQL语句，对user表进行数据删除。如：</p>
-
 <pre><code>mysql&gt; DELETE FROM mysql.user WHERE User=&quot;phplamp&quot; AND Host=&quot;localhost&quot;;
 mysql&gt; flush privileges;
-</code></pre></li>
-</ol>
-
-<p><em>注意该表的为‘User’和‘Host’的组合主键。通过指定这两个字段的值，确认一条唯一数据。</em></p>
-
-<ol>
-<li><p>修改某用户密码</p>
-
+</code></pre><p><em>注意该表的为‘User’和‘Host’的组合主键。通过指定这两个字段的值，确认一条唯一数据。</em></p>
+</li>
+<li>
+<p>修改某用户密码</p>
 <ul>
-<li><p>方法一：通过set password这条SQL语句设置</p>
-
+<li>
+<p>方法一：通过set password这条SQL语句设置</p>
 <pre><code>mysql&gt; set password for 'myuser'@'localhost' = password('新密码');
 </code></pre></li>
-
-<li><p>方法二：直接更新user表的数据</p>
-
-<pre><code>mysql&gt;update mysql.user set password=password('新密码') where User=&quot;myuser&quot; and Host=&quot;localhost&quot;;
-mysql&gt; flush privileges;
-</code></pre></li>
-</ul></li>
+</ul>
+</li>
 </ol>
+<ul>
+<li>
+<p>方法二：直接更新user表的数据</p>
+<pre><code>```
+mysql&gt;update mysql.user set password=password('新密码') where User=&quot;myuser&quot; and Host=&quot;localhost&quot;;
+mysql&gt; flush privileges;
+</code></pre>
+<pre><code>		</code></pre></li>
+</ul>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2011/06/08/create-mysql-database-and-users/" data-id="dc16e98412ab5d0aa7c3f1e43df9d000" class="article-share-link">
+    <a data-url="https://www.racksam.com/2011/06/08/create-mysql-database-and-users/" data-id="dc16e98412ab5d0aa7c3f1e43df9d000" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2011/06/08/create-mysql-database-and-users/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2011/06/08/create-mysql-database-and-users/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -562,7 +520,7 @@ mysql&gt; flush privileges;
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -571,7 +529,7 @@ mysql&gt; flush privileges;
     
 
     
-    <a href="http://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2011/06/09/increase-maximum-connections-of-mysql/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -587,20 +545,25 @@ mysql&gt; flush privileges;
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2011\/06\/08\/create-mysql-database-and-users\/';
-    var disqus_title = 'MySQL数据库创建及帐号管理';
-    var disqus_url = 'http:\/\/www.racksam.com\/2011\/06\/08\/create-mysql-database-and-users\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -619,9 +582,9 @@ mysql&gt; flush privileges;
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -630,13 +593,13 @@ mysql&gt; flush privileges;
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -645,7 +608,7 @@ mysql&gt; flush privileges;
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -656,13 +619,13 @@ mysql&gt; flush privileges;
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -671,9 +634,9 @@ mysql&gt; flush privileges;
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -682,13 +645,39 @@ mysql&gt; flush privileges;
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -697,9 +686,9 @@ mysql&gt; flush privileges;
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -708,41 +697,15 @@ mysql&gt; flush privileges;
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="MySQL数据库创建及帐号管理" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -773,111 +736,63 @@ mysql&gt; flush privileges;
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -885,7 +800,71 @@ mysql&gt; flush privileges;
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -929,182 +908,77 @@ mysql&gt; flush privileges;
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1114,7 +988,27 @@ mysql&gt; flush privileges;
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1124,7 +1018,22 @@ mysql&gt; flush privileges;
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1134,7 +1043,82 @@ mysql&gt; flush privileges;
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1165,7 +1149,7 @@ mysql&gt; flush privileges;
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1183,18 +1167,21 @@ mysql&gt; flush privileges;
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

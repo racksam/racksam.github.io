@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器 &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.24" />
+    <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,89 +10,54 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/"/>
-    <link rel="icon" href="http://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="http://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="http://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="http://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/"/>
+    <link rel="icon" href="https://www.racksam.com/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
+    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" />
 <meta property="og:description" content="Nginx&#43;PHP-FPM的组合是目前生产环境中最主流的php网站的选择。
-
 PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器&#43;后端php-fpm）的组合技术有如下的描述：
-
 
 FastCGI是一个可伸缩的，高速地在web server和脚本语言间交互的接口。
 FastCGI的主要优点是把动态语言和web server分离开来。这种技术允许把web server和动态语言运行在不同的主机上，以大规模扩展和改进安全性而不损失生产效率。
 php-fpm可以和任何支持远端FastCGI的web server工作。
-
-
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/" />
-
-
-
-<meta property="article:published_time" content="2014-04-04T15:27:09&#43;00:00"/>
-<meta property="article:modified_time" content="2014-04-04T15:27:09&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="og:url" content="https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/" />
+<meta property="article:published_time" content="2014-04-04T15:27:09+00:00" />
+<meta property="article:modified_time" content="2014-04-04T15:27:09+00:00" />
 
     
-    
-<meta itemprop="name" content="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器">
+    <meta itemprop="name" content="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器">
 <meta itemprop="description" content="Nginx&#43;PHP-FPM的组合是目前生产环境中最主流的php网站的选择。
-
 PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器&#43;后端php-fpm）的组合技术有如下的描述：
-
 
 FastCGI是一个可伸缩的，高速地在web server和脚本语言间交互的接口。
 FastCGI的主要优点是把动态语言和web server分离开来。这种技术允许把web server和动态语言运行在不同的主机上，以大规模扩展和改进安全性而不损失生产效率。
 php-fpm可以和任何支持远端FastCGI的web server工作。
-
-
 ">
-
-
+<meta itemprop="datePublished" content="2014-04-04T15:27:09&#43;00:00" />
 <meta itemprop="dateModified" content="2014-04-04T15:27:09&#43;00:00" />
 <meta itemprop="wordCount" content="1166">
 
 
 
-<meta itemprop="keywords" content="DD-WRT,DSP,FreeRadius,Linux,Mac,Mobile,MySQL,PHP,PostgreSQL,Python,Rails,Ruby,ShellScript,macos,充电学习,Ajax,Android,CentOS,Computer,Cordova,DNS,DNSPod,DSP,Firewalld,FreeRadius,Gmail,Java,Linux,Mobile,MySQL,Network,Nginx,Oracle,PHP,PhoneGap,PostgreSQL,Puma,Python,Rails,Rsync,Ruby,SEO,SSL,ShellScript,Squid,VPN,Web,Website,Wget,Whmcs,WordPress,macos,mina,ngrok,php,protobuf,ssh,xampp,梯子," />
-
-    
-
-  <meta name="twitter:card" content="summary"/>
-
-
-
-<meta name="twitter:text:title" content="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器"/>
+<meta itemprop="keywords" content="PHP,Website," />
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器"/>
 <meta name="twitter:description" content="Nginx&#43;PHP-FPM的组合是目前生产环境中最主流的php网站的选择。
-
 PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器&#43;后端php-fpm）的组合技术有如下的描述：
-
 
 FastCGI是一个可伸缩的，高速地在web server和脚本语言间交互的接口。
 FastCGI的主要优点是把动态语言和web server分离开来。这种技术允许把web server和动态语言运行在不同的主机上，以大规模扩展和改进安全性而不损失生产效率。
 php-fpm可以和任何支持远端FastCGI的web server工作。
-
-
 "/>
-
 
     
 
@@ -109,16 +74,16 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="http://www.racksam.com" id="logo">
+      <a href="https://www.racksam.com" id="logo">
           
-          <i class="logo" style="background-image: url('http://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
           
           
           
@@ -134,17 +99,17 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -152,7 +117,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
          </form>
         </div>
     </div>
@@ -163,7 +128,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
           <tr>
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
           
           
           
@@ -179,17 +144,17 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="http://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="http://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
           </form>
         </td>
       </tr>
@@ -205,7 +170,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="http://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -218,12 +183,12 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        75
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          44
+          45
         
         <span>
             Tags
@@ -289,7 +254,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
 
 
 
-          <td><a href="http://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -320,7 +285,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
         
 
         <header class="article-header">
-    <a href="http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/">
+    <a href="https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/">
     <h1 class="article-title" itemprop="name">
         CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器
     </h1>
@@ -346,7 +311,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/categories/linux">Linux</a>
+                <a class="article-category-link" href="https://www.racksam.com/categories/linux">Linux</a>
                 
                 
             </div>
@@ -360,11 +325,11 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/php">PHP</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/php">PHP</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="http://www.racksam.com/tags/website">Website</a>
+                <a class="article-category-link" href="https://www.racksam.com/tags/website">Website</a>
                 
                 
             </div>
@@ -375,71 +340,40 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
 
         <div class="article-entry" itemprop="articleBody">
             <p>Nginx+PHP-FPM的组合是目前生产环境中最主流的php网站的选择。</p>
-
 <p>PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器+后端php-fpm）的组合技术有如下的描述：</p>
-
 <ul>
 <li><em>FastCGI是一个可伸缩的，高速地在web server和脚本语言间交互的接口。</em></li>
 <li><em>FastCGI的主要优点是把动态语言和web server分离开来。这种技术允许把web server和动态语言运行在不同的主机上，以大规模扩展和改进安全性而不损失生产效率。</em></li>
 <li><em>php-fpm可以和任何支持远端FastCGI的web server工作。</em></li>
 </ul>
-
-<p></p>
-
 <p>这种架构下，对前端负责静态内容的Web服务器的要求就变成越轻量越好。自从nginx出现以后，很快在生产环境下取代功能丰富的Apache服务器而成为流行的Web服务器。其中的主要原因应该是Apache的多数功能都用不上，反而在性能上成了累赘。</p>
-
 <p>其他的php应用方式：</p>
-
 <ul>
 <li>Apache+CGI方式：最古老的方式，基本上没有什么人在用了。</li>
 <li>Apache+mod_php：php模块方式，仍然是目前常见的方式，也是很多应用的默认安装方式。推荐开发环境使用该方式，简单可靠。</li>
 <li>Lighttp+Spawn-fcgi：原理和类似Nginx+php-fpm类似，很多网站管理员也比较喜欢这个组合。</li>
 </ul>
-
 <p>以下整理一下CentOS下Nginx+PHP-FPM的安装过程。</p>
-
-<h3 id="一-使用yum方式安装nginx服务">一、使用Yum方式安装nginx服务</h3>
-
+<h3 id="一使用yum方式安装nginx服务">一、使用Yum方式安装nginx服务</h3>
 <p><em>如果有特殊需求的话，推荐使用源代码编译安装的方式</em></p>
-
 <p>由于ngix不包含在默认的软件仓库里，需要接入nginx的rpm库。</p>
-
 <pre><code>#rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
 #yum install nginx
-</code></pre>
-
-<h3 id="二-yum方式安装php-mysql数据库以及常用php模块">二、Yum方式安装PHP, MySQL数据库以及常用php模块</h3>
-
+</code></pre><h3 id="二yum方式安装php-mysql数据库以及常用php模块">二、Yum方式安装PHP, MySQL数据库以及常用php模块</h3>
 <pre><code>#yum -y install mysql mysql-server php-mysql php-mcrypt php-gd php-xml php-mbstring php-ldap php-pear php-xmlrpc mysql-connector-odbc mysql-devel libdbi-dbd-mysql
-</code></pre>
-
-<h3 id="三-安装php-fpm服务器">三、安装php-fpm服务器</h3>
-
+</code></pre><h3 id="三安装php-fpm服务器">三、安装php-fpm服务器</h3>
 <pre><code>#yum -y install php-fpm
-</code></pre>
-
-<p>修改php-fpm的启动用户及组</p>
-
+</code></pre><p>修改php-fpm的启动用户及组</p>
 <pre><code>#vi /etc/php-fpm.d/www.conf`
-</code></pre>
-
-<p>第39及41行,修改用户和组为nginx。(原来为apache)</p>
-
+</code></pre><p>第39及41行,修改用户和组为nginx。(原来为apache)</p>
 <p>修改服务器端口为Unix Socket。
 <code>listen = /var/run/php-fpm/php-fpm.sock</code></p>
-
-<h3 id="四-启动php-fpm服务">四、启动php-fpm服务</h3>
-
+<h3 id="四启动php-fpm服务">四、启动php-fpm服务</h3>
 <p><code>#service php-fpm start</code></p>
-
 <p>设置php-fpm服务自动启动</p>
-
 <p><code>#chkconfig php-fpm on</code></p>
-
-<h3 id="五-在nginx下配置一个php网站">五、在nginx下配置一个php网站：</h3>
-
+<h3 id="五在nginx下配置一个php网站">五、在nginx下配置一个php网站：</h3>
 <p>编辑文件：<code>vi /etc/nginx/conf.d/mywebsite.conf</code></p>
-
 <pre><code>server {
     listen       80;
     server_name  www.mywebsite.com;
@@ -486,34 +420,24 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
         deny  all;
     }
 }
-</code></pre>
-
-<h3 id="六-启动nginx服务器">六、启动nginx服务器</h3>
-
+</code></pre><h3 id="六启动nginx服务器">六、启动nginx服务器</h3>
 <p><code>#service nginx start</code></p>
-
 <p>设置自动启动</p>
-
 <p><code>#chkconfig nginx on</code></p>
-
 <h3 id="七-测试php网站">七、 测试php网站</h3>
-
 <p>在/www/mywebsite/目录下创建test.php</p>
-
 <pre><code>&lt;?php
    phpinfo();
 ?&gt;
-</code></pre>
-
-<p>在浏览器里查看是否正确执行。</p>
+</code></pre><p>在浏览器里查看是否正确执行。</p>
         </div>
         <footer class="article-footer">
-    <a data-url="http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/" data-id="b7818b3e8d78af5ce69981257d71d39e" class="article-share-link">
+    <a data-url="https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/" data-id="b7818b3e8d78af5ce69981257d71d39e" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="http://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/#disqus_thread" class="article-comment-link">
+    <a href="https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -589,7 +513,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
     
 <nav id="article-nav">
     
-    <a href="http://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2014/04/03/installing-python-2-7-on-centos-6/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -598,7 +522,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
     
 
     
-    <a href="http://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://www.racksam.com/2014/04/05/setting-nginx-uwsgi-webpy-mysqldb/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -614,20 +538,25 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
 <section id="comments">
     <div id="disqus_thread">
         <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'racksam';
-    var disqus_identifier = 'http:\/\/www.racksam.com\/2014\/04\/04\/setting-nginx-php-fpm-mysql\/';
-    var disqus_title = 'CentOS6下搭建 Nginx \x2b PHP \x2b MySQL服务器';
-    var disqus_url = 'http:\/\/www.racksam.com\/2014\/04\/04\/setting-nginx-php-fpm-mysql\/';
-
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "racksam" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </section>
 
@@ -646,9 +575,9 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -657,13 +586,13 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -672,7 +601,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -683,13 +612,13 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -698,9 +627,9 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -709,13 +638,39 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -724,9 +679,9 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(http://www.racksam.com/banners/rails.png)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -735,41 +690,15 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="http://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(http://www.racksam.com/banners/xampp.png)" alt="CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="http://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="http://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -800,111 +729,63 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dd-wrt">
-                    DD-WRT
+                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                    android
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                    dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/dsp">
-                    DSP
+                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                    dsp
                 </a>
                 <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/freeradius">
-                    FreeRadius
+                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                    freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/linux">
-                    Linux
-                </a>
-                <span class="category-list-count">25</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mac">
-                    Mac
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/mobile">
-                    Mobile
+                <a class="category-list-link" href="https://www.racksam.com/categories/git">
+                    git
                 </a>
                 <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/mysql">
-                    MySQL
+                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                    linux
+                </a>
+                <span class="category-list-count">26</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                    mac
                 </a>
                 <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/php">
-                    PHP
-                </a>
-                <span class="category-list-count">9</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/postgresql">
-                    PostgreSQL
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/python">
-                    Python
-                </a>
-                <span class="category-list-count">8</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/rails">
-                    Rails
-                </a>
-                <span class="category-list-count">2</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/ruby">
-                    Ruby
-                </a>
-                <span class="category-list-count">5</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/shellscript">
-                    ShellScript
-                </a>
-                <span class="category-list-count">1</span>
-            </li>
-            
-            <li class="category-list-item">
-                
-                <a class="category-list-link" href="http://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -912,7 +793,71 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="http://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                    mobile
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                    mysql
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                    php
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                    postgresql
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">8</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                    rails
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                    ruby
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                    shellscript
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -956,182 +901,77 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             
             
-            <a href="/tags/ajax" style="font-size:0.8rem">Ajax</a></li>
+            <a href="/tags/ajax" style="font-size:0.8rem">ajax</a></li>
          
             
             
             
-            <a href="/tags/android" style="font-size:0.8rem">Android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">CentOS</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">Computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
             
-            <a href="/tags/cordova" style="font-size:0.8rem">Cordova</a></li>
+            <a href="/tags/cordova" style="font-size:0.8rem">cordova</a></li>
          
             
             
             
-            <a href="/tags/dns" style="font-size:0.8rem">DNS</a></li>
+            <a href="/tags/dns" style="font-size:0.8rem">dns</a></li>
          
             
             
             
-            <a href="/tags/dnspod" style="font-size:0.8rem">DNSPod</a></li>
+            <a href="/tags/dnspod" style="font-size:0.8rem">dnspod</a></li>
          
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">DSP</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
             
-            <a href="/tags/firewalld" style="font-size:0.8rem">Firewalld</a></li>
+            <a href="/tags/firewalld" style="font-size:0.8rem">firewalld</a></li>
          
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">FreeRadius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
          
             
             
             
-            <a href="/tags/gmail" style="font-size:0.8rem">Gmail</a></li>
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
-            <a href="/tags/java" style="font-size:0.8rem">Java</a></li>
+            <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
          
             
             
             
-            <a href="/tags/linux" style="font-size:2rem">Linux</a></li>
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
             
-            <a href="/tags/mobile" style="font-size:0.8rem">Mobile</a></li>
+            <a href="/tags/java" style="font-size:0.8rem">java</a></li>
          
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">MySQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/network" style="font-size:0.8rem">Network</a></li>
-         
-            
-            
-            
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">Nginx</a></li>
-         
-            
-            
-            
-            <a href="/tags/oracle" style="font-size:0.8rem">Oracle</a></li>
-         
-            
-            
-            
-            <a href="/tags/php" style="font-size:0.9230769230769231rem">PHP</a></li>
-         
-            
-            
-            
-            <a href="/tags/phonegap" style="font-size:0.8rem">PhoneGap</a></li>
-         
-            
-            
-            
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">PostgreSQL</a></li>
-         
-            
-            
-            
-            <a href="/tags/puma" style="font-size:0.8rem">Puma</a></li>
-         
-            
-            
-            
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">Python</a></li>
-         
-            
-            
-            
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">Rails</a></li>
-         
-            
-            
-            
-            <a href="/tags/rsync" style="font-size:0.8rem">Rsync</a></li>
-         
-            
-            
-            
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">Ruby</a></li>
-         
-            
-            
-            
-            <a href="/tags/seo" style="font-size:0.8rem">SEO</a></li>
-         
-            
-            
-            
-            <a href="/tags/ssl" style="font-size:0.8rem">SSL</a></li>
-         
-            
-            
-            
-            <a href="/tags/shellscript" style="font-size:0.8rem">ShellScript</a></li>
-         
-            
-            
-            
-            <a href="/tags/squid" style="font-size:0.8rem">Squid</a></li>
-         
-            
-            
-            
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">VPN</a></li>
-         
-            
-            
-            
-            <a href="/tags/web" style="font-size:0.8rem">Web</a></li>
-         
-            
-            
-            
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">Website</a></li>
-         
-            
-            
-            
-            <a href="/tags/wget" style="font-size:0.8rem">Wget</a></li>
-         
-            
-            
-            
-            <a href="/tags/whmcs" style="font-size:0.8rem">Whmcs</a></li>
-         
-            
-            
-            
-            <a href="/tags/wordpress" style="font-size:0.8rem">WordPress</a></li>
+            <a href="/tags/linux" style="font-size:2rem">linux</a></li>
          
             
             
@@ -1141,7 +981,27 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
+         
+            
+            
+            
+            <a href="/tags/mobile" style="font-size:0.8rem">mobile</a></li>
+         
+            
+            
+            
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
+         
+            
+            
+            
+            <a href="/tags/network" style="font-size:0.8rem">network</a></li>
+         
+            
+            
+            
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1151,7 +1011,22 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             
             
-            <a href="/tags/php" style="font-size:0.8307692307692308rem">php</a></li>
+            <a href="/tags/oracle" style="font-size:0.8rem">oracle</a></li>
+         
+            
+            
+            
+            <a href="/tags/phonegap" style="font-size:0.8rem">phonegap</a></li>
+         
+            
+            
+            
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
+         
+            
+            
+            
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1161,7 +1036,82 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/puma" style="font-size:0.8rem">puma</a></li>
+         
+            
+            
+            
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
+         
+            
+            
+            
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
+         
+            
+            
+            
+            <a href="/tags/rsync" style="font-size:0.8rem">rsync</a></li>
+         
+            
+            
+            
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
+         
+            
+            
+            
+            <a href="/tags/seo" style="font-size:0.8rem">seo</a></li>
+         
+            
+            
+            
+            <a href="/tags/shellscript" style="font-size:0.8rem">shellscript</a></li>
+         
+            
+            
+            
+            <a href="/tags/squid" style="font-size:0.8rem">squid</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
+         
+            
+            
+            
+            <a href="/tags/ssl" style="font-size:0.8rem">ssl</a></li>
+         
+            
+            
+            
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
+         
+            
+            
+            
+            <a href="/tags/web" style="font-size:0.8rem">web</a></li>
+         
+            
+            
+            
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
+         
+            
+            
+            
+            <a href="/tags/wget" style="font-size:0.8rem">wget</a></li>
+         
+            
+            
+            
+            <a href="/tags/whmcs" style="font-size:0.8rem">whmcs</a></li>
+         
+            
+            
+            
+            <a href="/tags/wordpress" style="font-size:0.8rem">wordpress</a></li>
          
             
             
@@ -1192,7 +1142,7 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1210,18 +1160,21 @@ php-fpm可以和任何支持远端FastCGI的web server工作。
 </footer>
 
 
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-101079844-3', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-101079844-3', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
-<script src="http://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="http://www.racksam.com/js/script.js"></script>
+<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://www.racksam.com/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 
