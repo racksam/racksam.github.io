@@ -6,19 +6,10 @@
     <description>Recent content in VPN on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Apr 2017 19:00:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Apr 2017 15:00:18 +0000</lastBuildDate>
     
 	<atom:link href="https://www.racksam.com/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>针对VPN服务的FreeRadius管理</title>
-      <link>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</link>
-      <pubDate>Sun, 02 Apr 2017 19:00:18 +0000</pubDate>
-      
-      <guid>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</guid>
-      <description>TODO: 定制FreeRadius的详细设置，修改一些sql脚本 TODO: 解决这个问题： Sun Jun 25 17:59:07 2017 : Warning: rlm_sql (sql): You probably need to lower &amp;quot;min&amp;quot; Sun Jun 25 17:59:08 2017 : Info: rlm_sql (sql): 0 of 3 connections in use. Need more spares Sun</description>
-    </item>
     
     <item>
       <title>从FreeRadius 2 迁移到 3</title>

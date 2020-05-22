@@ -6,19 +6,10 @@
     <description>Recent content in Ruby on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jul 2017 13:31:41 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jun 2017 13:31:41 +0000</lastBuildDate>
     
 	<atom:link href="https://www.racksam.com/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>CentOS7配置rails&#43;nginx服务器&#43;mina发布</title>
-      <link>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</link>
-      <pubDate>Sat, 01 Jul 2017 13:31:41 +0000</pubDate>
-      
-      <guid>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</guid>
-      <description>一、准备环境 安装Fedora第三方源 yum -y update yum -y install epel-release 二、安装nginx yum -y install nginx 三、根据需要安装所需要的数据库 根据项目的实际需要，选择需要安装的</description>
-    </item>
     
     <item>
       <title>CentOS7使用mina &#43; github部署Rails项目</title>

@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>CentOS7配置rails&#43;nginx服务器&#43;mina发布</title>
-      <link>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</link>
-      <pubDate>Sat, 01 Jul 2017 13:31:41 +0000</pubDate>
-      
-      <guid>https://www.racksam.com/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</guid>
-      <description>一、准备环境 安装Fedora第三方源 yum -y update yum -y install epel-release 二、安装nginx yum -y install nginx 三、根据需要安装所需要的数据库 根据项目的实际需要，选择需要安装的</description>
-    </item>
-    
-    <item>
       <title>CentOS7使用mina &#43; github部署Rails项目</title>
       <link>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
       <pubDate>Fri, 30 Jun 2017 13:31:41 +0000</pubDate>
@@ -88,15 +79,6 @@ passwd deploy
       
       <guid>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</guid>
       <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 指定IP Source地址 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent</description>
-    </item>
-    
-    <item>
-      <title>针对VPN服务的FreeRadius管理</title>
-      <link>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</link>
-      <pubDate>Sun, 02 Apr 2017 19:00:18 +0000</pubDate>
-      
-      <guid>https://www.racksam.com/2017/04/02/freeradius-tips-for-vpn/</guid>
-      <description>TODO: 定制FreeRadius的详细设置，修改一些sql脚本 TODO: 解决这个问题： Sun Jun 25 17:59:07 2017 : Warning: rlm_sql (sql): You probably need to lower &amp;quot;min&amp;quot; Sun Jun 25 17:59:08 2017 : Info: rlm_sql (sql): 0 of 3 connections in use. Need more spares Sun</description>
     </item>
     
     <item>

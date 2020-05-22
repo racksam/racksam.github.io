@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>hugo 静态页面博客工具学习笔记</title>
-      <link>https://www.racksam.com/2017/06/02/hugo-blog-study-notes/</link>
-      <pubDate>Fri, 02 Jun 2017 19:00:18 +0000</pubDate>
-      
-      <guid>https://www.racksam.com/2017/06/02/hugo-blog-study-notes/</guid>
-      <description>链接： Hugoでgh-pagesにブログを作ってみた WordpressからHugoへ移行しました 解决Hugo Tag Could Weighted tag cloud Marking Up a Tag Cloud Hugoを使</description>
-    </item>
-    
-    <item>
       <title>CentOS7下使用Firewalld</title>
       <link>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</link>
       <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
