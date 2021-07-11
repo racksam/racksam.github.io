@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ngrok on Racksam</title>
-    <link>https://www.racksam.com/tags/ngrok/</link>
+    <link>https://racksam.github.io/tags/ngrok/</link>
     <description>Recent content in ngrok on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2016 15:11:59 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 18 Dec 2016 15:11:59 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>阿里云主机CentOS 7下编译安装ngrok</title>
-      <link>https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</link>
+      <link>https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/</link>
       <pubDate>Sun, 18 Dec 2016 15:11:59 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</guid>
+      <guid>https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/</guid>
       <description>&lt;p&gt;ngrok等隧道工具是Web程序员开发的神器！&lt;/p&gt;
 &lt;p&gt;配置微信及支付宝等接口，需要回调自己的公网服务器地址。开发过程中程序是跑在程序员自己的电脑上的，如果想在开发过程中调试接口的请求，必须想办法将本地应用穿透到公网上去，才能让微信或支付宝的服务器能访问到。&lt;/p&gt;
 &lt;p&gt;传统的硬派做法是在路由器上做端口映射，极其不便。有了ngrok这个神器，程序员可以很方便的将自己的应用临时公开在公网地上，然后在自己的电脑上观察和调试来自外界的访问。&lt;/p&gt;

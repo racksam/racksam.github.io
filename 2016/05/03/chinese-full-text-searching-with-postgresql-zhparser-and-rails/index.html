@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索 &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.67.1" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,13 +10,13 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/"/>
-    <link rel="icon" href="https://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/"/>
+    <link rel="icon" href="https://racksam.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://racksam.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://racksam.github.io/css/style.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://racksam.github.io/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -42,9 +42,10 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
 通过网上的查找，发现了很多人都推荐的一个中文分词解决方案：SCWS，以及实现调用这个分词引擎的PostgreSQL的扩展插件：zhparser。经过反复测试，终于实现了Rails4&#43;pg_search来进行中文全文检索。
 以下是CentOS6下SCWS&#43;zhparser&#43;rails4&#43;pg_search&#43;PostgreSQL的安装配置和开发的要点总结。另外，我也提供了一个完整的样例代码，以供参考" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/" />
+<meta property="og:url" content="https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-05-03T09:02:30+00:00" />
 <meta property="article:modified_time" content="2016-05-03T09:02:30+00:00" />
+
 
     
     <meta itemprop="name" content="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索">
@@ -67,13 +68,9 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
 首先，配置一个Solr这样的第三方搜索引擎，看来是全文检索(主要是中文)的不二之选。但是我实在不甘心为了一个只有几千篇文章、用户数只有几百人的内部Web应用、让系统变得复杂化。这时候，这篇文章《Postgres full-text search is Good Enough!》映入了我的眼帘。看起来PostgreSQL数据库在全文搜索方面的性能足以满足小规模系统的需求了。另外，pg_search模块，为Rails应用提供了调用PostgreSQL搜索功能的优秀接口。如此看来，PostgreSQL&#43;Rails4&#43;pg_search能实现我的全文搜索功能。
 但是经过一番测试，我发现这个方案默认只会对英语等那些字母语言有用，没有办法对中文进行全文检索。重新审视这个解决方案，原来我忘记了一个重要环节：那就是PostgreSQL默认没有中文分词功能。
 通过网上的查找，发现了很多人都推荐的一个中文分词解决方案：SCWS，以及实现调用这个分词引擎的PostgreSQL的扩展插件：zhparser。经过反复测试，终于实现了Rails4&#43;pg_search来进行中文全文检索。
-以下是CentOS6下SCWS&#43;zhparser&#43;rails4&#43;pg_search&#43;PostgreSQL的安装配置和开发的要点总结。另外，我也提供了一个完整的样例代码，以供参考">
-<meta itemprop="datePublished" content="2016-05-03T09:02:30&#43;00:00" />
-<meta itemprop="dateModified" content="2016-05-03T09:02:30&#43;00:00" />
+以下是CentOS6下SCWS&#43;zhparser&#43;rails4&#43;pg_search&#43;PostgreSQL的安装配置和开发的要点总结。另外，我也提供了一个完整的样例代码，以供参考"><meta itemprop="datePublished" content="2016-05-03T09:02:30+00:00" />
+<meta itemprop="dateModified" content="2016-05-03T09:02:30+00:00" />
 <meta itemprop="wordCount" content="3103">
-
-
-
 <meta itemprop="keywords" content="Linux,PostgreSQL," />
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索"/>
@@ -113,16 +110,16 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="https://www.racksam.com" id="logo">
+      <a href="https://racksam.github.io" id="logo">
           
-          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://racksam.github.io/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://racksam.github.io/">Home</a>
           
           
           
@@ -138,17 +135,17 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
           
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://racksam.github.io/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -156,7 +153,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://racksam.github.io" />
          </form>
         </div>
     </div>
@@ -167,7 +164,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
           <tr>
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/">Home</a></td>
           
           
           
@@ -183,17 +180,17 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
           
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://racksam.github.io" />
           </form>
         </td>
       </tr>
@@ -209,7 +206,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://racksam.github.io/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -222,12 +219,12 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        76
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          43
+          45
         
         <span>
             Tags
@@ -293,7 +290,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
 
 
 
-          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://racksam.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -324,7 +321,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
         
 
         <header class="article-header">
-    <a href="https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/">
+    <a href="https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/">
     <h1 class="article-title" itemprop="name">
         PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索
     </h1>
@@ -350,7 +347,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/categories/rails">Rails</a>
+                <a class="article-category-link" href="https://racksam.github.io/categories/rails">Rails</a>
                 
                 
             </div>
@@ -364,11 +361,11 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://racksam.github.io/tags/linux">Linux</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/tags/postgresql">PostgreSQL</a>
+                <a class="article-category-link" href="https://racksam.github.io/tags/postgresql">PostgreSQL</a>
                 
                 
             </div>
@@ -450,7 +447,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
 # git clone https://github.com/amutu/zhparser.git
 # cd zhparser
 # SCWS_HOME=/usr/local make &amp;&amp; make install
-   
+
 </code></pre><p><em>如果出现以下错误：<code>make: pg_config: Command not found</code>，说明需要增加root账号环境变量里关于postgresql的路径。例如9.4版本，默认安装路径的情况下：</em></p>
 <pre><code># echo 'export PATH=$PATH:/usr/pgsql-9.4/bin' &gt;&gt; /root/.bash_profile
 # source /root/.bash_profile 
@@ -502,11 +499,11 @@ end
 <p>在Controller的方法中，调用Model的搜索方法。</p>
 <pre><code>class ArticlesController &lt; ApplicationController
 ...
-   
+
 def index
   # 获取页面传过来的检索关键词 （多个检索关键词时用半角空格隔开）
   content_include = params[:content_include]
-   
+
   @articles = Article.all
   # 调用model里定义的pg_search_scope，和scope的用法相同
   @articles = Article.chinese_search(content_include) if content_include.present? 
@@ -535,12 +532,12 @@ end
 </ul>
         </div>
         <footer class="article-footer">
-    <a data-url="https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/" data-id="53cccb331115c50aeb88a66874da1641" class="article-share-link">
+    <a data-url="https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/" data-id="53cccb331115c50aeb88a66874da1641" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/#disqus_thread" class="article-comment-link">
+    <a href="https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -616,7 +613,7 @@ end
     
 <nav id="article-nav">
     
-    <a href="https://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -625,7 +622,7 @@ end
     
 
     
-    <a href="https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -678,9 +675,9 @@ end
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_freeradius.png)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -689,13 +686,13 @@ end
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -704,7 +701,7 @@ end
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -715,13 +712,13 @@ end
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -730,9 +727,9 @@ end
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -741,13 +738,39 @@ end
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/ruby-github-puma.jpg)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -756,9 +779,9 @@ end
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://racksam.github.io/banners/rails.png)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -767,41 +790,15 @@ end
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(https://www.racksam.com/banners/xampp.png)" alt="PostgreSQL &#43; SCWS &#43; zhparser &#43; Rails4 &#43; pg_search 实现中文全文检索" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -832,7 +829,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                <a class="category-list-link" href="https://racksam.github.io/categories/android">
                     android
                 </a>
                 <span class="category-list-count">1</span>
@@ -840,7 +837,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                <a class="category-list-link" href="https://racksam.github.io/categories/dd-wrt">
                     dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
@@ -848,7 +845,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                <a class="category-list-link" href="https://racksam.github.io/categories/dsp">
                     dsp
                 </a>
                 <span class="category-list-count">2</span>
@@ -856,23 +853,31 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                <a class="category-list-link" href="https://racksam.github.io/categories/freeradius">
                     freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                <a class="category-list-link" href="https://racksam.github.io/categories/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/linux">
                     linux
                 </a>
-                <span class="category-list-count">25</span>
+                <span class="category-list-count">26</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mac">
                     mac
                 </a>
                 <span class="category-list-count">5</span>
@@ -880,7 +885,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://racksam.github.io/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -888,7 +893,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mobile">
                     mobile
                 </a>
                 <span class="category-list-count">1</span>
@@ -896,7 +901,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mysql">
                     mysql
                 </a>
                 <span class="category-list-count">5</span>
@@ -904,7 +909,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                <a class="category-list-link" href="https://racksam.github.io/categories/php">
                     php
                 </a>
                 <span class="category-list-count">9</span>
@@ -912,7 +917,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                <a class="category-list-link" href="https://racksam.github.io/categories/postgresql">
                     postgresql
                 </a>
                 <span class="category-list-count">2</span>
@@ -920,7 +925,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                <a class="category-list-link" href="https://racksam.github.io/categories/python">
                     python
                 </a>
                 <span class="category-list-count">8</span>
@@ -928,7 +933,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                <a class="category-list-link" href="https://racksam.github.io/categories/rails">
                     rails
                 </a>
                 <span class="category-list-count">2</span>
@@ -936,15 +941,15 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                <a class="category-list-link" href="https://racksam.github.io/categories/ruby">
                     ruby
                 </a>
-                <span class="category-list-count">5</span>
+                <span class="category-list-count">6</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                <a class="category-list-link" href="https://racksam.github.io/categories/shellscript">
                     shellscript
                 </a>
                 <span class="category-list-count">1</span>
@@ -952,7 +957,7 @@ end
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -1001,17 +1006,17 @@ end
             
             
             
-            <a href="/tags/android" style="font-size:0.8307692307692308rem">android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">centos</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
@@ -1031,7 +1036,7 @@ end
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">dsp</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
@@ -1041,12 +1046,22 @@ end
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">freeradius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
+         
+            
+            
+            
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
             <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
+         
+            
+            
+            
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
@@ -1066,7 +1081,7 @@ end
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
          
             
             
@@ -1076,7 +1091,7 @@ end
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">mysql</a></li>
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
          
             
             
@@ -1086,7 +1101,7 @@ end
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1106,12 +1121,12 @@ end
             
             
             
-            <a href="/tags/php" style="font-size:0.9846153846153847rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
          
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">postgresql</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1126,12 +1141,12 @@ end
             
             
             
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">python</a></li>
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">rails</a></li>
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
          
             
             
@@ -1141,7 +1156,7 @@ end
             
             
             
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
          
             
             
@@ -1161,7 +1176,7 @@ end
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
          
             
             
@@ -1171,7 +1186,7 @@ end
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">vpn</a></li>
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
          
             
             
@@ -1181,7 +1196,7 @@ end
             
             
             
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">website</a></li>
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
          
             
             
@@ -1227,7 +1242,7 @@ end
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020
+      &copy; 2021
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1257,9 +1272,8 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
-<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="https://www.racksam.com/js/script.js"></script>
+<script src="https://racksam.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://racksam.github.io/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

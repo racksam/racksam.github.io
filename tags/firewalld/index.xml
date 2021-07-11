@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firewalld on Racksam</title>
-    <link>https://www.racksam.com/tags/firewalld/</link>
+    <link>https://racksam.github.io/tags/firewalld/</link>
     <description>Recent content in Firewalld on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2017 19:00:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/firewalld/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 02 May 2017 19:00:18 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/firewalld/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS7下使用Firewalld</title>
-      <link>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</link>
+      <link>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</link>
       <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</guid>
+      <guid>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</guid>
       <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 指定IP Source地址 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent</description>
     </item>
     

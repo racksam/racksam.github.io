@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xampp on Racksam</title>
-    <link>https://www.racksam.com/tags/xampp/</link>
+    <link>https://racksam.github.io/tags/xampp/</link>
     <description>Recent content in xampp on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jun 2017 19:00:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/xampp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 20 Jun 2017 19:00:18 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/xampp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>macOS XAMPP使用mysql命令行</title>
-      <link>https://www.racksam.com/2017/06/20/macos-xampp-mysql/</link>
+      <link>https://racksam.github.io/2017/06/20/macos-xampp-mysql/</link>
       <pubDate>Tue, 20 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/20/macos-xampp-mysql/</guid>
+      <guid>https://racksam.github.io/2017/06/20/macos-xampp-mysql/</guid>
       <description>在macos开发mysql+php类应用开发的话，首选安装集成包XAMPP，不推荐使用brew分别安装mysql及php。在安装完XAMPP</description>
     </item>
     

@@ -2,30 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CentOS on Racksam</title>
-    <link>https://www.racksam.com/tags/centos/</link>
+    <link>https://racksam.github.io/tags/centos/</link>
     <description>Recent content in CentOS on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2017 19:00:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 05 Jun 2017 19:00:18 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 7 修改SSH端口</title>
-      <link>https://www.racksam.com/2017/06/05/centos7-change-sshd-port/</link>
+      <link>https://racksam.github.io/2017/06/05/centos7-change-sshd-port/</link>
       <pubDate>Mon, 05 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/05/centos7-change-sshd-port/</guid>
+      <guid>https://racksam.github.io/2017/06/05/centos7-change-sshd-port/</guid>
       <description>增强Linux安全的措施很多，将ssh默认端口22修改成其它端口也是重要的一个方法。这里介绍CentOS7下修改sshd端口以及相关防火墙的</description>
     </item>
     
     <item>
       <title>CentOS7下使用Firewalld</title>
-      <link>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</link>
+      <link>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</link>
       <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</guid>
+      <guid>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</guid>
       <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 指定IP Source地址 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent</description>
     </item>
     

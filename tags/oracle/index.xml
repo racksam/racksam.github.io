@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Oracle on Racksam</title>
-    <link>https://www.racksam.com/tags/oracle/</link>
+    <link>https://racksam.github.io/tags/oracle/</link>
     <description>Recent content in Oracle on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Oct 2011 18:53:24 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 09 Oct 2011 18:53:24 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 5.7 完美安装 Oracle 10g</title>
-      <link>https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/</link>
+      <link>https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/</link>
       <pubDate>Sun, 09 Oct 2011 18:53:24 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/</guid>
+      <guid>https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/</guid>
       <description>&lt;p&gt;虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。&lt;/p&gt;
 &lt;h2 id=&#34;安装环境&#34;&gt;安装环境：&lt;/h2&gt;
 &lt;ul&gt;

@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wget on Racksam</title>
-    <link>https://www.racksam.com/tags/wget/</link>
+    <link>https://racksam.github.io/tags/wget/</link>
     <description>Recent content in Wget on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Sep 2012 21:43:08 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/wget/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 01 Sep 2012 21:43:08 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/wget/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux下wget下载整个FTP目录</title>
-      <link>https://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</link>
+      <link>https://racksam.github.io/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</link>
       <pubDate>Sat, 01 Sep 2012 21:43:08 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</guid>
+      <guid>https://racksam.github.io/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</guid>
       <description>Linux下可以使用以下命令，下载远端FTP目录下所有的文件，递归所有子目录。对服务器迁移很有用。 wget -nH -m --ftp-user=your_username --ftp-password=your_password ftp://your_ftp_host/* 解释： -nH：不创建以主机名命</description>
     </item>
     

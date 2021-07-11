@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DNS on Racksam</title>
-    <link>https://www.racksam.com/tags/dns/</link>
+    <link>https://racksam.github.io/tags/dns/</link>
     <description>Recent content in DNS on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Apr 2014 21:30:01 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/dns/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 09 Apr 2014 21:30:01 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>电脑清除DNS缓存的方法</title>
-      <link>https://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</link>
+      <link>https://racksam.github.io/2014/04/09/clear-dns-cache-in-pc/</link>
       <pubDate>Wed, 09 Apr 2014 21:30:01 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2014/04/09/clear-dns-cache-in-pc/</guid>
+      <guid>https://racksam.github.io/2014/04/09/clear-dns-cache-in-pc/</guid>
       <description>&lt;p&gt;MacOS及Windows不同版本下清除DNS缓存的方法不同。&lt;/p&gt;
 &lt;h3 id=&#34;mac-os-x-105-106&#34;&gt;Mac OS X 10.5, 10.6+&lt;/h3&gt;
 &lt;p&gt;终端窗口下执行以下命令：&lt;code&gt;#sudo dscacheutil -flushcache&lt;/code&gt;&lt;/p&gt;

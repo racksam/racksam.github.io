@@ -2,21 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mina on Racksam</title>
-    <link>https://www.racksam.com/tags/mina/</link>
+    <link>https://racksam.github.io/tags/mina/</link>
     <description>Recent content in mina on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Jun 2017 13:31:41 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/mina/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 01 Jul 2017 13:31:41 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/mina/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS7配置rails&#43;nginx服务器&#43;mina发布</title>
+      <link>https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</link>
+      <pubDate>Sat, 01 Jul 2017 13:31:41 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/</guid>
+      <description>一、准备环境 安装Fedora第三方源 yum -y update yum -y install epel-release 二、安装nginx yum -y install nginx 三、根据需要安装所需要的数据库 根据项目的实际需要，选择需要安装的</description>
+    </item>
     
     <item>
       <title>CentOS7使用mina &#43; github部署Rails项目</title>
-      <link>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</link>
+      <link>https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/</link>
       <pubDate>Fri, 30 Jun 2017 13:31:41 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/</guid>
+      <guid>https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/</guid>
       <description>&lt;p&gt;php程序员习惯了将程序直接上传到服务器上，简单编辑一下php-fpm以及nginx/apache的配置文件就完成上线了。而Ruby的Web项目在上线发布时，给人感觉要复杂的多。这种感觉来自于错误的直觉：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

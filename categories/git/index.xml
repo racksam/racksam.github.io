@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Racksam</title>
-    <link>https://www.racksam.com/categories/git/</link>
+    <link>https://racksam.github.io/categories/git/</link>
     <description>Recent content in Git on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Jun 2017 19:00:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/categories/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 10 Jun 2017 19:00:18 +0000</lastBuildDate><atom:link href="https://racksam.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github学习笔记</title>
-      <link>https://www.racksam.com/2017/06/10/github-study-notes/</link>
+      <link>https://racksam.github.io/2017/06/10/github-study-notes/</link>
       <pubDate>Sat, 10 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/10/github-study-notes/</guid>
+      <guid>https://racksam.github.io/2017/06/10/github-study-notes/</guid>
       <description>解决多个github在同一台mac电脑上共存的问题 目前已经解决了racksam-go/public目录下git使用stoneport账号的问</description>
     </item>
     

@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on Racksam</title>
-    <link>https://www.racksam.com/tags/hugo/</link>
+    <link>https://racksam.github.io/tags/hugo/</link>
     <description>Recent content in hugo on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Jun 2017 19:00:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 02 Jun 2017 19:00:18 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 静态页面博客工具学习笔记</title>
-      <link>https://www.racksam.com/2017/06/02/hugo-blog-study-notes/</link>
+      <link>https://racksam.github.io/2017/06/02/hugo-blog-study-notes/</link>
       <pubDate>Fri, 02 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/02/hugo-blog-study-notes/</guid>
+      <guid>https://racksam.github.io/2017/06/02/hugo-blog-study-notes/</guid>
       <description>链接： Hugoでgh-pagesにブログを作ってみた WordpressからHugoへ移行しました 解决Hugo Tag Could Weighted tag cloud Marking Up a Tag Cloud Hugoを使</description>
     </item>
     

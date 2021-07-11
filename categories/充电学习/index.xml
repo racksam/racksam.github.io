@@ -2,23 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>充电学习 on Racksam</title>
-    <link>https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 充电学习 on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Feb 2016 20:08:24 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Feb 2016 20:08:24 +0000</lastBuildDate><atom:link href="https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如梦初醒：尽快转型成为一名Web全栈工程师</title>
-      <link>https://www.racksam.com/2016/02/18/to-be-a-modern-web-developer/</link>
+      <link>https://racksam.github.io/2016/02/18/to-be-a-modern-web-developer/</link>
       <pubDate>Thu, 18 Feb 2016 20:08:24 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/02/18/to-be-a-modern-web-developer/</guid>
+      <guid>https://racksam.github.io/2016/02/18/to-be-a-modern-web-developer/</guid>
       <description>&lt;p&gt;最近10年，Web软件的设计思想和开发技术都发生了巨大的变化。特别是iPhone等智能手机成为移动端的主流以后，传统的浏览器-网站这种BS架构，逐渐演变成前后端分离的架构。后端将展示功能剥离出去，按照json以及RESTful接口规范，统一提供数据给APP、Web网页，HTML5网页前端。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.racksam.com/attachments/to-be-a-modern-web-developer/logos.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://racksam.github.io/attachments/to-be-a-modern-web-developer/logos.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这几年PHP、Java、Python、Ruby等语言的各种Web开发框架层出不穷。与过去的一种框架提供完整的技术实现不同，现代的框架都放弃了所有的轮子都自己开发的做法，转为主动吸纳优秀的开源模块。框架本身慢慢演变成各种开源模块的集成方案。连Web软件最主流的php语言，也开始使用composer这一模块管理工具，大量引用Github上面的优秀资源。这方面最典型的PHP框架代表就是Laravel框架。&lt;/p&gt;
 &lt;p&gt;与此同时，Web UI相关的技术也有了突飞猛进的发展。UI也已经走向框架化。自从Bootstrap引领了网页响应式布局的潮流以后，Material、Foundation等各种UI框架前仆后继。另外，jQuery的持续发展以及Angular等新JavaScript框架的发展，也极大提升了单页面应用（SPA）的开发效率和性能。这些前端框架的出现，以及互联网上大量免费的网页模板，使得后端的程序员能够在一些UI标准化比较高的Web项目中摆脱对专业美工设计以及前端工程师的依赖，短时间内就能开发出来外观看起来比较专业网站。&lt;/p&gt;
 &lt;p&gt;作为在传统公司中工作多年的Java开发人员，尤其是开发商用系统的Java程序员，由于工作中很少用到这么多新的技术，很容易忽视对这些新技术的学习和运用。再加上国内封闭的网络环境，以及英语的语言障碍，可以说很多在商业软件公司工作的Java程序员正在被新技术边缘化。&lt;/p&gt;

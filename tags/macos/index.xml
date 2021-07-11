@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>macos on Racksam</title>
-    <link>https://www.racksam.com/tags/macos/</link>
+    <link>https://racksam.github.io/tags/macos/</link>
     <description>Recent content in macos on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jul 2017 13:31:41 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Jul 2017 13:31:41 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>macOS下测试json post rest api的方法</title>
-      <link>https://www.racksam.com/2017/07/02/test-post-json/</link>
+      <link>https://racksam.github.io/2017/07/02/test-post-json/</link>
       <pubDate>Sun, 02 Jul 2017 13:31:41 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/07/02/test-post-json/</guid>
+      <guid>https://racksam.github.io/2017/07/02/test-post-json/</guid>
       <description>最近经常需要开发Web API，其中JSON格式的POST请求最为常见。由于普通的浏览器无法直接测试，所以需要借助命令行或者其他工具。 除了可以</description>
     </item>
     

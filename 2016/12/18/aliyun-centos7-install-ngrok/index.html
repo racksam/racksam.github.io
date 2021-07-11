@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>阿里云主机CentOS 7下编译安装ngrok &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.67.1" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,13 +10,13 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/"/>
-    <link rel="icon" href="https://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/"/>
+    <link rel="icon" href="https://racksam.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://racksam.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://racksam.github.io/css/style.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://racksam.github.io/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -33,9 +33,10 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
 
 因此我的观点是如果是国内开发团队的话，一定要搭建一个自己的隧道服务器。ngrok的开源版本(老版本)虽然据作者说存在安全隐患，但是如果仅作为调试用的话应该问题不大吧。期待作者能将最新版也开源化。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/" />
+<meta property="og:url" content="https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-12-18T15:11:59+00:00" />
 <meta property="article:modified_time" content="2016-12-18T15:11:59+00:00" />
+
 
     
     <meta itemprop="name" content="阿里云主机CentOS 7下编译安装ngrok">
@@ -49,13 +50,9 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
 微信或者支付宝平台很容易封杀一些用户量比较大的隧道提供商的域名。
 如果选择一些不知名的第三方隧道提供者，很难确保信息不会恶意截获。
 
-因此我的观点是如果是国内开发团队的话，一定要搭建一个自己的隧道服务器。ngrok的开源版本(老版本)虽然据作者说存在安全隐患，但是如果仅作为调试用的话应该问题不大吧。期待作者能将最新版也开源化。">
-<meta itemprop="datePublished" content="2016-12-18T15:11:59&#43;00:00" />
-<meta itemprop="dateModified" content="2016-12-18T15:11:59&#43;00:00" />
+因此我的观点是如果是国内开发团队的话，一定要搭建一个自己的隧道服务器。ngrok的开源版本(老版本)虽然据作者说存在安全隐患，但是如果仅作为调试用的话应该问题不大吧。期待作者能将最新版也开源化。"><meta itemprop="datePublished" content="2016-12-18T15:11:59+00:00" />
+<meta itemprop="dateModified" content="2016-12-18T15:11:59+00:00" />
 <meta itemprop="wordCount" content="3131">
-
-
-
 <meta itemprop="keywords" content="Linux,ngrok," />
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="阿里云主机CentOS 7下编译安装ngrok"/>
@@ -86,16 +83,16 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="https://www.racksam.com" id="logo">
+      <a href="https://racksam.github.io" id="logo">
           
-          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://racksam.github.io/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://racksam.github.io/">Home</a>
           
           
           
@@ -111,17 +108,17 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
           
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://racksam.github.io/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -129,7 +126,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://racksam.github.io" />
          </form>
         </div>
     </div>
@@ -140,7 +137,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
           <tr>
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/">Home</a></td>
           
           
           
@@ -156,17 +153,17 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
           
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://racksam.github.io" />
           </form>
         </td>
       </tr>
@@ -182,7 +179,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://racksam.github.io/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -195,12 +192,12 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        76
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          43
+          45
         
         <span>
             Tags
@@ -266,7 +263,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
 
 
 
-          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://racksam.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -297,7 +294,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
         
 
         <header class="article-header">
-    <a href="https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/">
+    <a href="https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/">
     <h1 class="article-title" itemprop="name">
         阿里云主机CentOS 7下编译安装ngrok
     </h1>
@@ -323,7 +320,7 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/categories/linux">Linux</a>
+                <a class="article-category-link" href="https://racksam.github.io/categories/linux">Linux</a>
                 
                 
             </div>
@@ -337,11 +334,11 @@ ngrok的开源版本可以从github上获得。开源版本是老版本，该神
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://racksam.github.io/tags/linux">Linux</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/tags/ngrok">ngrok</a>
+                <a class="article-category-link" href="https://racksam.github.io/tags/ngrok">ngrok</a>
                 
                 
             </div>
@@ -407,7 +404,7 @@ openssl x509 -req -in server.csr -CA base.pem -CAkey base.key -CAcreateserial -o
 <p>将生成的秘钥复制到编译目录中</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp server.crt assets/server/tls/snakeoil.crt
 cp server.key assets/server/tls/snakeoil.key
-   
+
 cp base.pem assets/client/tls/ngrokroot.crt
 </code></pre></div></li>
 <li>
@@ -429,13 +426,13 @@ make release-server
 <p>编译不同平台的客户端</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 编译Linux64位版（生成：/opt/ngrok/bin/ngrok）</span>
 make release-client
-   
+
 <span style="color:#75715e"># 编译Mac版 (生成：/opt/ngrok/bin/darwin_amd64/ngrok)</span>
 GOOS<span style="color:#f92672">=</span>darwin GOARCH<span style="color:#f92672">=</span>amd64 make release-client
-   
+
 <span style="color:#75715e"># 编译Windows64位版 (生成：/opt/ngrok/bin/windows_amd64/ngrok.exe)</span>
 GOOS<span style="color:#f92672">=</span>windows GOARCH<span style="color:#f92672">=</span>amd64 make release-client
-   
+
 <span style="color:#75715e"># 编译Windows32位版 (生成：/opt/ngrok/bin/windows_386/ngrok.exe)</span>
 GOOS<span style="color:#f92672">=</span>windows GOARCH<span style="color:#f92672">=</span><span style="color:#ae81ff">386</span> make release-client
 </code></pre></div></li>
@@ -448,19 +445,19 @@ GOOS<span style="color:#f92672">=</span>windows GOARCH<span style="color:#f92672
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 启动防火墙</span>
 systemctl start firewalld
 systemctl enable firewalld
-   
+
 <span style="color:#75715e"># 放行ngrok需要的4443端口</span>
 firewall-cmd --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>4443/tcp --permanent
-   
+
 <span style="color:#75715e"># 放行80及443端口</span>
 firewall-cmd --add-service<span style="color:#f92672">=</span>http --permanent
 firewall-cmd --add-service<span style="color:#f92672">=</span>https --permanent
-   
+
 <span style="color:#75715e"># 放行自定义端口，例如：TCP 7070及7071端口</span>
 firewall-cmd --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>7070/tcp --permanent
 firewall-cmd --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>7071/tcp --permanent
 firewall-cmd --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>7443/tcp --permanent
-   
+
 <span style="color:#75715e"># 重新加载防火墙规则</span>
 firewall-cmd --reload  
 </code></pre></div></li>
@@ -468,7 +465,7 @@ firewall-cmd --reload
 <p>服务器端启动ngrok</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 样例1：监听80口及443端口 (请将dev.mydomain.com修改成自己的域名)</span>
 /opt/ngrok/bin/ngrokd -tlsKey<span style="color:#f92672">=</span>/opt/ngrok/server.key -tlsCrt<span style="color:#f92672">=</span>/opt/ngrok/server.crt -domain<span style="color:#f92672">=</span>dev.mydomain.com -httpAddr<span style="color:#f92672">=</span>:80 -httpsAddr<span style="color:#f92672">=</span>:443 -tunnelAddr<span style="color:#f92672">=</span>:4443 &gt; /opt/ngrok/ngrok.log &amp;
-   
+
 <span style="color:#75715e"># 样例2：监听7070口及7071端口 (请将dev.mydomain.com修改成自己的域名)</span>
 /opt/ngrok/bin/ngrokd -tlsKey<span style="color:#f92672">=</span>/opt/ngrok/server.key -tlsCrt<span style="color:#f92672">=</span>/opt/ngrok/server.crt -domain<span style="color:#f92672">=</span>dev.mydomain.com -httpAddr<span style="color:#f92672">=</span>:7070 -httpsAddr<span style="color:#f92672">=</span>:7071 -tunnelAddr<span style="color:#f92672">=</span>:7443 &gt; /opt/ngrok/ngrok.log &amp;
 </code></pre></div></li>
@@ -578,12 +575,12 @@ server {
 </ul>
         </div>
         <footer class="article-footer">
-    <a data-url="https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/" data-id="c84a935d31dcfbebfb4ec398d02edc58" class="article-share-link">
+    <a data-url="https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/" data-id="c84a935d31dcfbebfb4ec398d02edc58" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/#disqus_thread" class="article-comment-link">
+    <a href="https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -659,7 +656,7 @@ server {
     
 <nav id="article-nav">
     
-    <a href="https://www.racksam.com/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://racksam.github.io/2016/05/03/chinese-full-text-searching-with-postgresql-zhparser-and-rails/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -668,7 +665,7 @@ server {
     
 
     
-    <a href="https://www.racksam.com/2016/12/18/android-study-resources/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://racksam.github.io/2016/12/18/android-study-resources/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -721,9 +718,9 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_freeradius.png)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -732,13 +729,13 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -747,7 +744,7 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -758,13 +755,13 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -773,9 +770,9 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -784,13 +781,39 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/ruby-github-puma.jpg)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -799,9 +822,9 @@ server {
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://racksam.github.io/banners/rails.png)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -810,41 +833,15 @@ server {
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(https://www.racksam.com/banners/xampp.png)" alt="阿里云主机CentOS 7下编译安装ngrok" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -875,7 +872,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                <a class="category-list-link" href="https://racksam.github.io/categories/android">
                     android
                 </a>
                 <span class="category-list-count">1</span>
@@ -883,7 +880,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                <a class="category-list-link" href="https://racksam.github.io/categories/dd-wrt">
                     dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
@@ -891,7 +888,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                <a class="category-list-link" href="https://racksam.github.io/categories/dsp">
                     dsp
                 </a>
                 <span class="category-list-count">2</span>
@@ -899,23 +896,31 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                <a class="category-list-link" href="https://racksam.github.io/categories/freeradius">
                     freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                <a class="category-list-link" href="https://racksam.github.io/categories/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/linux">
                     linux
                 </a>
-                <span class="category-list-count">25</span>
+                <span class="category-list-count">26</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mac">
                     mac
                 </a>
                 <span class="category-list-count">5</span>
@@ -923,7 +928,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://racksam.github.io/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -931,7 +936,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mobile">
                     mobile
                 </a>
                 <span class="category-list-count">1</span>
@@ -939,7 +944,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mysql">
                     mysql
                 </a>
                 <span class="category-list-count">5</span>
@@ -947,7 +952,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                <a class="category-list-link" href="https://racksam.github.io/categories/php">
                     php
                 </a>
                 <span class="category-list-count">9</span>
@@ -955,7 +960,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                <a class="category-list-link" href="https://racksam.github.io/categories/postgresql">
                     postgresql
                 </a>
                 <span class="category-list-count">2</span>
@@ -963,7 +968,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                <a class="category-list-link" href="https://racksam.github.io/categories/python">
                     python
                 </a>
                 <span class="category-list-count">8</span>
@@ -971,7 +976,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                <a class="category-list-link" href="https://racksam.github.io/categories/rails">
                     rails
                 </a>
                 <span class="category-list-count">2</span>
@@ -979,15 +984,15 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                <a class="category-list-link" href="https://racksam.github.io/categories/ruby">
                     ruby
                 </a>
-                <span class="category-list-count">5</span>
+                <span class="category-list-count">6</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                <a class="category-list-link" href="https://racksam.github.io/categories/shellscript">
                     shellscript
                 </a>
                 <span class="category-list-count">1</span>
@@ -995,7 +1000,7 @@ server {
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -1044,17 +1049,17 @@ server {
             
             
             
-            <a href="/tags/android" style="font-size:0.8307692307692308rem">android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">centos</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
@@ -1074,7 +1079,7 @@ server {
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">dsp</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
@@ -1084,12 +1089,22 @@ server {
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">freeradius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
+         
+            
+            
+            
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
             <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
+         
+            
+            
+            
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
@@ -1109,7 +1124,7 @@ server {
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
          
             
             
@@ -1119,7 +1134,7 @@ server {
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">mysql</a></li>
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
          
             
             
@@ -1129,7 +1144,7 @@ server {
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1149,12 +1164,12 @@ server {
             
             
             
-            <a href="/tags/php" style="font-size:0.9846153846153847rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
          
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">postgresql</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1169,12 +1184,12 @@ server {
             
             
             
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">python</a></li>
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">rails</a></li>
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
          
             
             
@@ -1184,7 +1199,7 @@ server {
             
             
             
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
          
             
             
@@ -1204,7 +1219,7 @@ server {
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
          
             
             
@@ -1214,7 +1229,7 @@ server {
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">vpn</a></li>
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
          
             
             
@@ -1224,7 +1239,7 @@ server {
             
             
             
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">website</a></li>
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
          
             
             
@@ -1270,7 +1285,7 @@ server {
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020
+      &copy; 2021
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1300,9 +1315,8 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
-<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="https://www.racksam.com/js/script.js"></script>
+<script src="https://racksam.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://racksam.github.io/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

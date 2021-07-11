@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DNSPod on Racksam</title>
-    <link>https://www.racksam.com/tags/dnspod/</link>
+    <link>https://racksam.github.io/tags/dnspod/</link>
     <description>Recent content in DNSPod on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Aug 2013 10:06:57 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/dnspod/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 03 Aug 2013 10:06:57 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/dnspod/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DNSPod API</title>
-      <link>https://www.racksam.com/2013/08/03/dnspod-api-resource/</link>
+      <link>https://racksam.github.io/2013/08/03/dnspod-api-resource/</link>
       <pubDate>Sat, 03 Aug 2013 10:06:57 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2013/08/03/dnspod-api-resource/</guid>
+      <guid>https://racksam.github.io/2013/08/03/dnspod-api-resource/</guid>
       <description>发现dnspod.cn的API越来越丰富了，除了官方的API，第三方封装的各种语言的库函数也很丰富。灵活应用这些API，可以很方便的开发出来</description>
     </item>
     

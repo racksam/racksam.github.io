@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
     <title>Linux下java程序启动脚本（可做开机自启动Service脚本） &middot; Racksam</title>
-    <meta name="generator" content="Hugo 0.67.1" />
+    <meta name="generator" content="Hugo 0.85.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Rack Sam">
@@ -10,32 +10,29 @@
       <meta name="description" content="Notes about Linux, Ruby on Rails and so on">
     
     
-    <link rel="canonical" href="https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/"/>
-    <link rel="icon" href="https://www.racksam.com/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.racksam.com/apple-touch-icon.png"/>
-    <link rel="stylesheet" href="https://www.racksam.com/css/style.css">
-    <link rel="stylesheet" href="https://www.racksam.com/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.racksam.com/css/monokai.css">
-    <link rel="stylesheet" href="https://www.racksam.com/fancybox/jquery.fancybox.css">
+    <link rel="canonical" href="https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/"/>
+    <link rel="icon" href="https://racksam.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://racksam.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://racksam.github.io/css/style.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://racksam.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://racksam.github.io/fancybox/jquery.fancybox.css">
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     <meta property="og:title" content="Linux下java程序启动脚本（可做开机自启动Service脚本）" />
 <meta property="og:description" content="Java项目开发过程中经常会碰到将Java应用程序布置到Linux下的需求，很多时候还有系统开机自动启动的要求。这里我整理了一个简单明了的版" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/" />
+<meta property="og:url" content="https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2011-06-08T14:22:13+00:00" />
 <meta property="article:modified_time" content="2011-06-08T14:22:13+00:00" />
 
+
     
     <meta itemprop="name" content="Linux下java程序启动脚本（可做开机自启动Service脚本）">
-<meta itemprop="description" content="Java项目开发过程中经常会碰到将Java应用程序布置到Linux下的需求，很多时候还有系统开机自动启动的要求。这里我整理了一个简单明了的版">
-<meta itemprop="datePublished" content="2011-06-08T14:22:13&#43;00:00" />
-<meta itemprop="dateModified" content="2011-06-08T14:22:13&#43;00:00" />
+<meta itemprop="description" content="Java项目开发过程中经常会碰到将Java应用程序布置到Linux下的需求，很多时候还有系统开机自动启动的要求。这里我整理了一个简单明了的版"><meta itemprop="datePublished" content="2011-06-08T14:22:13+00:00" />
+<meta itemprop="dateModified" content="2011-06-08T14:22:13+00:00" />
 <meta itemprop="wordCount" content="1559">
-
-
-
 <meta itemprop="keywords" content="Linux,Java," />
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux下java程序启动脚本（可做开机自启动Service脚本）"/>
@@ -56,16 +53,16 @@
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="https://www.racksam.com" id="logo">
+      <a href="https://racksam.github.io" id="logo">
           
-          <i class="logo" style="background-image: url('https://www.racksam.com/profile/ruby_logo.png')"></i>
+          <i class="logo" style="background-image: url('https://racksam.github.io/profile/ruby_logo.png')"></i>
           
           <span class="site-title">Racksam</span>
       </a>
       <nav id="main-nav">
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/">Home</a>
+          <a class="main-nav-link" href="https://racksam.github.io/">Home</a>
           
           
           
@@ -81,17 +78,17 @@
           
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a>
+          <a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a>
           
           
           
-          <a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a>
+          <a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a>
           
           
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://www.racksam.com/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://racksam.github.io/profile/avatar.png"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -99,7 +96,7 @@
               <input type="search" name="q" class="search-form-input" placeholder="Search">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
+              <input type="hidden" name="sitesearch" value="https://racksam.github.io" />
          </form>
         </div>
     </div>
@@ -110,7 +107,7 @@
           <tr>
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/">Home</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/">Home</a></td>
           
           
           
@@ -126,17 +123,17 @@
           
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/tags/">Tags</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/tags/">Tags</a></td>
           
           
           
-          <td><a class="main-nav-link" href="https://www.racksam.com/categories/">Categories</a></td>
+          <td><a class="main-nav-link" href="https://racksam.github.io/categories/">Categories</a></td>
           
           
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="https://www.racksam.com" />
+          <input type="hidden" name="sitesearch" value="https://racksam.github.io" />
           </form>
         </td>
       </tr>
@@ -152,7 +149,7 @@
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       
-      <img id="avatar" src="https://www.racksam.com/profile/avatar.png">
+      <img id="avatar" src="https://racksam.github.io/profile/avatar.png">
       
       <h2 id="name">Rack Sam</h2>
       <h3 id="title">Programmer - Freelancer - Father</h3>
@@ -165,12 +162,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        76
+        80
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          43
+          45
         
         <span>
             Tags
@@ -236,7 +233,7 @@
 
 
 
-          <td><a href="https://www.racksam.com/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="https://racksam.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
         </tr>
       </table>
     </div>
@@ -267,7 +264,7 @@
         
 
         <header class="article-header">
-    <a href="https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/">
+    <a href="https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/">
     <h1 class="article-title" itemprop="name">
         Linux下java程序启动脚本（可做开机自启动Service脚本）
     </h1>
@@ -293,7 +290,7 @@
                 <i class="fa fa-folder"></i>
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/categories/linux">Linux</a>
+                <a class="article-category-link" href="https://racksam.github.io/categories/linux">Linux</a>
                 
                 
             </div>
@@ -307,11 +304,11 @@
                 <i class="fa fa-tags"></i>
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/tags/linux">Linux</a>
+                <a class="article-category-link" href="https://racksam.github.io/tags/linux">Linux</a>
                 &middot;
                 
                 
-                <a class="article-category-link" href="https://www.racksam.com/tags/java">Java</a>
+                <a class="article-category-link" href="https://racksam.github.io/tags/java">Java</a>
                 
                 
             </div>
@@ -323,25 +320,25 @@
         <div class="article-entry" itemprop="articleBody">
             <p>Java项目开发过程中经常会碰到将Java应用程序布置到Linux下的需求，很多时候还有系统开机自动启动的要求。这里我整理了一个简单明了的版本，大家可以在此基础上做二次开发。<!-- raw HTML omitted --></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>#
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
 <span style="color:#75715e">#该脚本为Linux下启动java程序的通用脚本。即可以作为开机自启动service脚本被调用，</span>
 <span style="color:#75715e">#也可以作为启动java程序的独立脚本来使用。</span>
-#
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">#Author: tudaxia.com, Date: 2011/6/7</span>
-#
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">#警告!!!：该脚本stop部分使用系统kill命令来强制终止指定的java程序进程。</span>
 <span style="color:#75715e">#在杀死进程前，未作任何条件检查。在某些情况下，如程序正在进行文件或数据库写操作，</span>
 <span style="color:#75715e">#可能会造成数据丢失或数据不完整。如果必须要考虑到这类情况，则需要改写此脚本，</span>
 <span style="color:#75715e">#增加在执行kill命令前的一系列检查。</span>
-# 
+<span style="color:#75715e"># </span>
 <span style="color:#75715e">###################################</span>
-<span style="color:#75715e"># 以下这些注释设置可以被chkconfig命令读取</span> 
-<span style="color:#75715e"># chkconfig: - 99 50</span> 
-<span style="color:#75715e"># description: Java程序启动脚本</span> 
-<span style="color:#75715e"># processname: test</span> 
-<span style="color:#75715e"># config: 如果需要的话，可以配置</span> 
-<span style="color:#75715e">###################################</span> 
-#
+<span style="color:#75715e"># 以下这些注释设置可以被chkconfig命令读取 </span>
+<span style="color:#75715e"># chkconfig: - 99 50 </span>
+<span style="color:#75715e"># description: Java程序启动脚本 </span>
+<span style="color:#75715e"># processname: test </span>
+<span style="color:#75715e"># config: 如果需要的话，可以配置 </span>
+<span style="color:#75715e">################################### </span>
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">###################################</span>
 <span style="color:#75715e">#环境变量及程序执行参数</span>
 <span style="color:#75715e">#需要根据实际环境以及Java程序名称来修改这些参数</span>
@@ -369,7 +366,7 @@ JAVA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-m
 
 <span style="color:#75715e">###################################</span>
 <span style="color:#75715e">#(函数)判断程序是否已启动</span>
-#
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">#说明：</span>
 <span style="color:#75715e">#使用JDK自带的JPS命令及grep命令组合，准确查找pid</span>
 <span style="color:#75715e">#jps 加 l 参数，表示显示java的完整包路径</span>
@@ -390,7 +387,7 @@ checkpid<span style="color:#f92672">()</span> <span style="color:#f92672">{</spa
 
 <span style="color:#75715e">###################################</span>
 <span style="color:#75715e">#(函数)启动程序</span>
-#
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">#说明：</span>
 <span style="color:#75715e">#1. 首先调用checkpid函数，刷新$psid全局变量</span>
 <span style="color:#75715e">#2. 如果程序已经启动（$psid不等于0），则提示程序已启动</span>
@@ -422,7 +419,7 @@ start<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
 <span style="color:#75715e">###################################</span>
 <span style="color:#75715e">#(函数)停止程序</span>
-#
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">#说明：</span>
 <span style="color:#75715e">#1. 首先调用checkpid函数，刷新$psid全局变量</span>
 <span style="color:#75715e">#2. 如果程序已经启动（$psid不等于0），则开始执行停止，否则，提示程序未运行</span>
@@ -458,7 +455,7 @@ stop<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
 
 <span style="color:#75715e">###################################</span>
 <span style="color:#75715e">#(函数)检查程序运行状态</span>
-#
+<span style="color:#75715e">#</span>
 <span style="color:#75715e">#说明：</span>
 <span style="color:#75715e">#1. 首先调用checkpid函数，刷新$psid全局变量</span>
 <span style="color:#75715e">#2. 如果程序已经启动（$psid不等于0），则提示正在运行并表示出pid</span>
@@ -521,12 +518,12 @@ exit <span style="color:#ae81ff">0</span>
 </code></pre></div>
         </div>
         <footer class="article-footer">
-    <a data-url="https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/" data-id="d26e8d7dd0282d70dee5cfd7922226e8" class="article-share-link">
+    <a data-url="https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/" data-id="d26e8d7dd0282d70dee5cfd7922226e8" class="article-share-link">
         <i class="fa fa-share"></i>
         Share
     </a>
     
-    <a href="https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/#disqus_thread" class="article-comment-link">
+    <a href="https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/#disqus_thread" class="article-comment-link">
         Comments
     </a>
     
@@ -602,7 +599,7 @@ exit <span style="color:#ae81ff">0</span>
     
 <nav id="article-nav">
     
-    <a href="https://www.racksam.com/2011/06/07/how-to-disable-table-name-case-sensitive/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://racksam.github.io/2011/06/07/how-to-disable-table-name-case-sensitive/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Older
       </strong>
@@ -611,7 +608,7 @@ exit <span style="color:#ae81ff">0</span>
     
 
     
-    <a href="https://www.racksam.com/2011/06/08/create-mysql-database-and-users/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://racksam.github.io/2011/06/08/create-mysql-database-and-users/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           Newer
       </strong>
@@ -664,9 +661,9 @@ exit <span style="color:#ae81ff">0</span>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/03/freeradius3-monthly-traffic-limit/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/linux_freeradius.png)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://racksam.github.io/banners/linux_freeradius.png)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -675,13 +672,13 @@ exit <span style="color:#ae81ff">0</span>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/freeradius">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/freeradius">
                         FreeRadius
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/03/freeradius3-monthly-traffic-limit/" class="title">Freeradius3 限制每个月最大流量</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-03 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-07-03</time>
                     </p>
@@ -690,7 +687,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/07/02/test-post-json/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/02/test-post-json/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
                     
@@ -701,13 +698,13 @@ exit <span style="color:#ae81ff">0</span>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/macos">
                         macos
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/02/test-post-json/" class="title">macOS下测试json post rest api的方法</a></p>
                     <p class="item-date">
                         <time datetime="2017-07-02 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-02</time>
                     </p>
@@ -716,9 +713,9 @@ exit <span style="color:#ae81ff">0</span>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/ruby-github-puma.jpg)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
+                        <span class="thumbnail-image thumbnail-none"></span>
                     
                     </a>
                 </div>
@@ -727,13 +724,39 @@ exit <span style="color:#ae81ff">0</span>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/07/01/centos7-ruby-rails-puma-mina-nginx/" class="title">CentOS7配置rails&#43;nginx服务器&#43;mina发布</a></p>
+                    <p class="item-date">
+                        <time datetime="2017-07-01 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-07-01</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/" class="thumbnail">
+                    
+                        <span style="background-image:url(https://racksam.github.io/banners/ruby-github-puma.jpg)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    
+                    <p class="item-category">
+                        
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
+                        Ruby
+                        </a>
+                    </p>
+                    
+                    
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/30/centos7-rails-puma-mina-github/" class="title">CentOS7使用mina &#43; github部署Rails项目</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-30 13:31:41 &#43;0000 UTC" itemprop="datePublished">2017-06-30</time>
                     </p>
@@ -742,9 +765,9 @@ exit <span style="color:#ae81ff">0</span>
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
+                    <a href="https://racksam.github.io/2017/06/28/centos7-install-rbenv-ruby-rails/" class="thumbnail">
                     
-                        <span style="background-image:url(https://www.racksam.com/banners/rails.png)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
+                        <span style="background-image:url(https://racksam.github.io/banners/rails.png)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
                     
                     </a>
                 </div>
@@ -753,41 +776,15 @@ exit <span style="color:#ae81ff">0</span>
                     
                     <p class="item-category">
                         
-                        <a class="article-category-link" href="https://www.racksam.com/categories/ruby">
+                        <a class="article-category-link" href="https://racksam.github.io/categories/ruby">
                         Ruby
                         </a>
                     </p>
                     
                     
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
+                    <p class="item-title"><a href="https://racksam.github.io/2017/06/28/centos7-install-rbenv-ruby-rails/" class="title">CentOS7安装最新版rbenv&#43;ruby&#43;rails</a></p>
                     <p class="item-date">
                         <time datetime="2017-06-28 21:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-28</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
-                    <a href="https://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="thumbnail">
-                    
-                        <span style="background-image:url(https://www.racksam.com/banners/xampp.png)" alt="Linux下java程序启动脚本（可做开机自启动Service脚本）" class="thumbnail-image"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    
-                    <p class="item-category">
-                        
-                        <a class="article-category-link" href="https://www.racksam.com/categories/macos">
-                        macos
-                        </a>
-                    </p>
-                    
-                    
-                    <p class="item-title"><a href="https://www.racksam.com/2017/06/20/macos-xampp-mysql/" class="title">macOS XAMPP使用mysql命令行</a></p>
-                    <p class="item-date">
-                        <time datetime="2017-06-20 19:00:18 &#43;0000 UTC" itemprop="datePublished">2017-06-20</time>
                     </p>
                 </div>
             </li>
@@ -818,7 +815,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/android">
+                <a class="category-list-link" href="https://racksam.github.io/categories/android">
                     android
                 </a>
                 <span class="category-list-count">1</span>
@@ -826,7 +823,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/dd-wrt">
+                <a class="category-list-link" href="https://racksam.github.io/categories/dd-wrt">
                     dd-wrt
                 </a>
                 <span class="category-list-count">4</span>
@@ -834,7 +831,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/dsp">
+                <a class="category-list-link" href="https://racksam.github.io/categories/dsp">
                     dsp
                 </a>
                 <span class="category-list-count">2</span>
@@ -842,23 +839,31 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/freeradius">
+                <a class="category-list-link" href="https://racksam.github.io/categories/freeradius">
                     freeradius
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/linux">
+                <a class="category-list-link" href="https://racksam.github.io/categories/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://racksam.github.io/categories/linux">
                     linux
                 </a>
-                <span class="category-list-count">25</span>
+                <span class="category-list-count">26</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mac">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mac">
                     mac
                 </a>
                 <span class="category-list-count">5</span>
@@ -866,7 +871,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/macos">
+                <a class="category-list-link" href="https://racksam.github.io/categories/macos">
                     macos
                 </a>
                 <span class="category-list-count">2</span>
@@ -874,7 +879,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mobile">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mobile">
                     mobile
                 </a>
                 <span class="category-list-count">1</span>
@@ -882,7 +887,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/mysql">
+                <a class="category-list-link" href="https://racksam.github.io/categories/mysql">
                     mysql
                 </a>
                 <span class="category-list-count">5</span>
@@ -890,7 +895,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/php">
+                <a class="category-list-link" href="https://racksam.github.io/categories/php">
                     php
                 </a>
                 <span class="category-list-count">9</span>
@@ -898,7 +903,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/postgresql">
+                <a class="category-list-link" href="https://racksam.github.io/categories/postgresql">
                     postgresql
                 </a>
                 <span class="category-list-count">2</span>
@@ -906,7 +911,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/python">
+                <a class="category-list-link" href="https://racksam.github.io/categories/python">
                     python
                 </a>
                 <span class="category-list-count">8</span>
@@ -914,7 +919,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/rails">
+                <a class="category-list-link" href="https://racksam.github.io/categories/rails">
                     rails
                 </a>
                 <span class="category-list-count">2</span>
@@ -922,15 +927,15 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/ruby">
+                <a class="category-list-link" href="https://racksam.github.io/categories/ruby">
                     ruby
                 </a>
-                <span class="category-list-count">5</span>
+                <span class="category-list-count">6</span>
             </li>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/shellscript">
+                <a class="category-list-link" href="https://racksam.github.io/categories/shellscript">
                     shellscript
                 </a>
                 <span class="category-list-count">1</span>
@@ -938,7 +943,7 @@ exit <span style="color:#ae81ff">0</span>
             
             <li class="category-list-item">
                 
-                <a class="category-list-link" href="https://www.racksam.com/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
+                <a class="category-list-link" href="https://racksam.github.io/categories/%E5%85%85%E7%94%B5%E5%AD%A6%E4%B9%A0">
                     充电学习
                 </a>
                 <span class="category-list-count">1</span>
@@ -987,17 +992,17 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/android" style="font-size:0.8307692307692308rem">android</a></li>
+            <a href="/tags/android" style="font-size:0.8292682926829269rem">android</a></li>
          
             
             
             
-            <a href="/tags/centos" style="font-size:0.8307692307692308rem">centos</a></li>
+            <a href="/tags/centos" style="font-size:0.8292682926829269rem">centos</a></li>
          
             
             
             
-            <a href="/tags/computer" style="font-size:0.8615384615384616rem">computer</a></li>
+            <a href="/tags/computer" style="font-size:0.8585365853658538rem">computer</a></li>
          
             
             
@@ -1017,7 +1022,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/dsp" style="font-size:0.8307692307692308rem">dsp</a></li>
+            <a href="/tags/dsp" style="font-size:0.8292682926829269rem">dsp</a></li>
          
             
             
@@ -1027,12 +1032,22 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/freeradius" style="font-size:0.8615384615384616rem">freeradius</a></li>
+            <a href="/tags/freeradius" style="font-size:0.8878048780487805rem">freeradius</a></li>
+         
+            
+            
+            
+            <a href="/tags/git" style="font-size:0.8rem">git</a></li>
          
             
             
             
             <a href="/tags/gmail" style="font-size:0.8rem">gmail</a></li>
+         
+            
+            
+            
+            <a href="/tags/hugo" style="font-size:0.8rem">hugo</a></li>
          
             
             
@@ -1052,7 +1067,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/mina" style="font-size:0.8rem">mina</a></li>
+            <a href="/tags/mina" style="font-size:0.8292682926829269rem">mina</a></li>
          
             
             
@@ -1062,7 +1077,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/mysql" style="font-size:0.9846153846153847rem">mysql</a></li>
+            <a href="/tags/mysql" style="font-size:0.975609756097561rem">mysql</a></li>
          
             
             
@@ -1072,7 +1087,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/nginx" style="font-size:0.9230769230769231rem">nginx</a></li>
+            <a href="/tags/nginx" style="font-size:0.9170731707317074rem">nginx</a></li>
          
             
             
@@ -1092,12 +1107,12 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/php" style="font-size:0.9846153846153847rem">php</a></li>
+            <a href="/tags/php" style="font-size:0.975609756097561rem">php</a></li>
          
             
             
             
-            <a href="/tags/postgresql" style="font-size:0.8307692307692308rem">postgresql</a></li>
+            <a href="/tags/postgresql" style="font-size:0.8292682926829269rem">postgresql</a></li>
          
             
             
@@ -1112,12 +1127,12 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/python" style="font-size:0.9846153846153847rem">python</a></li>
+            <a href="/tags/python" style="font-size:0.975609756097561rem">python</a></li>
          
             
             
             
-            <a href="/tags/rails" style="font-size:0.9538461538461539rem">rails</a></li>
+            <a href="/tags/rails" style="font-size:0.975609756097561rem">rails</a></li>
          
             
             
@@ -1127,7 +1142,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/ruby" style="font-size:0.9230769230769231rem">ruby</a></li>
+            <a href="/tags/ruby" style="font-size:0.9463414634146342rem">ruby</a></li>
          
             
             
@@ -1147,7 +1162,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/ssh" style="font-size:0.8307692307692308rem">ssh</a></li>
+            <a href="/tags/ssh" style="font-size:0.8292682926829269rem">ssh</a></li>
          
             
             
@@ -1157,7 +1172,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/vpn" style="font-size:0.8307692307692308rem">vpn</a></li>
+            <a href="/tags/vpn" style="font-size:0.8585365853658538rem">vpn</a></li>
          
             
             
@@ -1167,7 +1182,7 @@ exit <span style="color:#ae81ff">0</span>
             
             
             
-            <a href="/tags/website" style="font-size:0.8615384615384616rem">website</a></li>
+            <a href="/tags/website" style="font-size:0.8585365853658538rem">website</a></li>
          
             
             
@@ -1213,7 +1228,7 @@ exit <span style="color:#ae81ff">0</span>
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020
+      &copy; 2021
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
     <div>
@@ -1243,9 +1258,8 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
-<script src="https://www.racksam.com/fancybox/jquery.fancybox.pack.js"></script>
-<script src="https://www.racksam.com/js/script.js"></script>
+<script src="https://racksam.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://racksam.github.io/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
 

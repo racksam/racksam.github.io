@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rsync on Racksam</title>
-    <link>https://www.racksam.com/tags/rsync/</link>
+    <link>https://racksam.github.io/tags/rsync/</link>
     <description>Recent content in Rsync on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Mar 2012 21:43:08 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Mar 2012 21:43:08 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rsync服务器配置</title>
-      <link>https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/</link>
+      <link>https://racksam.github.io/2012/03/21/running-rsync-as-a-daemon/</link>
       <pubDate>Wed, 21 Mar 2012 21:43:08 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/</guid>
+      <guid>https://racksam.github.io/2012/03/21/running-rsync-as-a-daemon/</guid>
       <description>&lt;p&gt;rsync是Linux下小巧却非常高效的文件同步工具，常被用于文件备份。rsync既可以作为单个命令在本地两个目录之间进行文件同步，也可以应用于CS架构：即在服务器上用rsync的守候进程模式启动一个rsync服务，而其它的客户端主机使用rsync命令，与rsync服务器之间进行同步。&lt;/p&gt;
 &lt;p&gt;虽然也可以通过samba或者nfs等服务将其它Linux需要同步的目录mount到本地的一个目录，然后使用rsync命令进行本地目录间的同步，但是从效率以及管理方便程度方面考虑，兔大侠并不推荐这种方式。如果是主机之间的同步，首选还是应该是用rsync的守候进程模式。&lt;/p&gt;
 &lt;p&gt;rsync可以通过yum install rsync或者源代码编译方式来进行安装。不论哪种方式，都只是安装在系统上安装了rsync命令，服务器模式的相关配置只能自己动手。&lt;/p&gt;</description>

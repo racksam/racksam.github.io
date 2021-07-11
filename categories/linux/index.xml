@@ -2,48 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Racksam</title>
-    <link>https://www.racksam.com/categories/linux/</link>
+    <link>https://racksam.github.io/categories/linux/</link>
     <description>Recent content in Linux on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Jun 2017 19:00:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 08 Jun 2017 19:00:18 +0000</lastBuildDate><atom:link href="https://racksam.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 7 安装php7 &#43; MariaDB &#43; Nginx &#43; Wordpress</title>
-      <link>https://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</link>
+      <link>https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</link>
       <pubDate>Thu, 08 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</guid>
+      <guid>https://racksam.github.io/2017/06/08/centos7-php7-nginx-mariadb-wordpress/</guid>
       <description>一、安装Fedora第三方源 安装Fedora第三方源 yum -y update yum -y install epel-release 修改epel为默认不启用 vi /etc/yum.repos.d/epel.repo 将[epel]部分的enabled=1修改成e</description>
     </item>
     
     <item>
       <title>CentOS 7 修改SSH端口</title>
-      <link>https://www.racksam.com/2017/06/05/centos7-change-sshd-port/</link>
+      <link>https://racksam.github.io/2017/06/05/centos7-change-sshd-port/</link>
       <pubDate>Mon, 05 Jun 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/06/05/centos7-change-sshd-port/</guid>
+      <guid>https://racksam.github.io/2017/06/05/centos7-change-sshd-port/</guid>
       <description>增强Linux安全的措施很多，将ssh默认端口22修改成其它端口也是重要的一个方法。这里介绍CentOS7下修改sshd端口以及相关防火墙的</description>
     </item>
     
     <item>
+      <title>hugo 静态页面博客工具学习笔记</title>
+      <link>https://racksam.github.io/2017/06/02/hugo-blog-study-notes/</link>
+      <pubDate>Fri, 02 Jun 2017 19:00:18 +0000</pubDate>
+      
+      <guid>https://racksam.github.io/2017/06/02/hugo-blog-study-notes/</guid>
+      <description>链接： Hugoでgh-pagesにブログを作ってみた WordpressからHugoへ移行しました 解决Hugo Tag Could Weighted tag cloud Marking Up a Tag Cloud Hugoを使</description>
+    </item>
+    
+    <item>
       <title>CentOS7下使用Firewalld</title>
-      <link>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</link>
+      <link>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</link>
       <pubDate>Tue, 02 May 2017 19:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2017/05/02/centos7-firewalld-tips/</guid>
+      <guid>https://racksam.github.io/2017/05/02/centos7-firewalld-tips/</guid>
       <description>从iptables转到firewalld需要一段时间去适应。慢慢学习吧。 指定IP Source地址 为特定IP打开数据库访问端口： firewall-cmd --permanent --new-zone=mysql firewall-cmd --reload firewall-cmd --permanent</description>
     </item>
     
     <item>
       <title>使用acme.sh脚本的DNS API方式申请及更新let&#39;s encrypt证书</title>
-      <link>https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
+      <link>https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</link>
       <pubDate>Mon, 26 Dec 2016 19:14:40 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
+      <guid>https://racksam.github.io/2016/12/26/centos-nginx-setup-lets-encrypt-with-acme-sh/</guid>
       <description>&lt;p&gt;Linux服务器下使用acme.sh脚本是申请let&amp;rsquo;s encrypt证书最便捷的方式，比官方推荐的&lt;code&gt;certbot&lt;/code&gt;脚本工具要强大的多。&lt;/p&gt;
 &lt;p&gt;安装文档：
 &lt;a href=&#34;https://github.com/Neilpang/acme.sh/wiki/&#34;&gt;https://github.com/Neilpang/acme.sh/wiki/&lt;/a&gt;说明&lt;/p&gt;
@@ -64,28 +69,28 @@ source .
     
     <item>
       <title>SSH免密码登录Linux服务器</title>
-      <link>https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</link>
+      <link>https://racksam.github.io/2016/12/19/centos7-setup-ssh-pubrsa/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
+      <guid>https://racksam.github.io/2016/12/19/centos7-setup-ssh-pubrsa/</guid>
       <description>一、如果本地没有创建ssh的秘钥对，则第一步需要先创建本地主机的ssh秘钥对 Linux或者MacOS可以直接用ssh-keygen命令在本地</description>
     </item>
     
     <item>
       <title>阿里云主机安装Shadowsocks客户端 &#43; proxychains4</title>
-      <link>https://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</link>
+      <link>https://racksam.github.io/2016/12/19/aliyun-centos7-install-ss-client/</link>
       <pubDate>Mon, 19 Dec 2016 21:00:18 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/12/19/aliyun-centos7-install-ss-client/</guid>
+      <guid>https://racksam.github.io/2016/12/19/aliyun-centos7-install-ss-client/</guid>
       <description>&lt;p&gt;对于技术人员PC端上科学上网可以选择的手段太多了，但是如果在国内的VPS服务器科学上网并不那么容易。这里简单介绍服务器上安装Shadowsocks客户端 + proxychains4的方法。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>阿里云主机CentOS 7下编译安装ngrok</title>
-      <link>https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</link>
+      <link>https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/</link>
       <pubDate>Sun, 18 Dec 2016 15:11:59 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/12/18/aliyun-centos7-install-ngrok/</guid>
+      <guid>https://racksam.github.io/2016/12/18/aliyun-centos7-install-ngrok/</guid>
       <description>&lt;p&gt;ngrok等隧道工具是Web程序员开发的神器！&lt;/p&gt;
 &lt;p&gt;配置微信及支付宝等接口，需要回调自己的公网服务器地址。开发过程中程序是跑在程序员自己的电脑上的，如果想在开发过程中调试接口的请求，必须想办法将本地应用穿透到公网上去，才能让微信或支付宝的服务器能访问到。&lt;/p&gt;
 &lt;p&gt;传统的硬派做法是在路由器上做端口映射，极其不便。有了ngrok这个神器，程序员可以很方便的将自己的应用临时公开在公网地上，然后在自己的电脑上观察和调试来自外界的访问。&lt;/p&gt;
@@ -101,10 +106,10 @@ source .
     
     <item>
       <title>CentOS6下搭建 Nginx &#43; PHP &#43; MySQL服务器</title>
-      <link>https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</link>
+      <link>https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/</link>
       <pubDate>Fri, 04 Apr 2014 15:27:09 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
+      <guid>https://racksam.github.io/2014/04/04/setting-nginx-php-fpm-mysql/</guid>
       <description>&lt;p&gt;Nginx+PHP-FPM的组合是目前生产环境中最主流的php网站的选择。&lt;/p&gt;
 &lt;p&gt;PHP-FPM是一个PHP FastCGI进程管理器。对于熟悉Java的人来说，可以把php-fpm想象成php程序的容器，就像Tomcat是servlet的容器一样。网上对这种（前端静态web服务器+后端php-fpm）的组合技术有如下的描述：&lt;/p&gt;
 &lt;ul&gt;
@@ -116,19 +121,19 @@ source .
     
     <item>
       <title>强制浏览器刷新网站的favicon.ico</title>
-      <link>https://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</link>
+      <link>https://racksam.github.io/2014/03/26/how-to-force-refresh-favicon-ico/</link>
       <pubDate>Wed, 26 Mar 2014 15:11:46 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2014/03/26/how-to-force-refresh-favicon-ico/</guid>
+      <guid>https://racksam.github.io/2014/03/26/how-to-force-refresh-favicon-ico/</guid>
       <description>网站更新了favicon.ico以后，很多浏览器里都无法立刻刷新。特别是Firefox，Chrome之类的浏览器，有时候即使清空缓存并重启以</description>
     </item>
     
     <item>
       <title>屏蔽Baidu等搜索引擎的爬虫</title>
-      <link>https://www.racksam.com/2014/02/01/how-to-disable-searching-spider/</link>
+      <link>https://racksam.github.io/2014/02/01/how-to-disable-searching-spider/</link>
       <pubDate>Sat, 01 Feb 2014 10:59:22 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2014/02/01/how-to-disable-searching-spider/</guid>
+      <guid>https://racksam.github.io/2014/02/01/how-to-disable-searching-spider/</guid>
       <description>&lt;p&gt;正当我为SEO忧心重重的时候，有朋友竟然问我如何做到禁止Baidu等爬虫来收录网站，也就是说反SEO。真是林子大了什么鸟都有啊~&lt;/p&gt;
 &lt;p&gt;最简单的手段主要是通过robots.txt以及.htaccess文件，来禁止某些spider的User-Agent标识。当然前提是这些Spider都是正规的搜索引擎，不会耍流氓去伪装别的User-Agent标识。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;※对付那些经常伪装User-Agent的恶意爬虫，这些正规套路并不管用，一般需要采用封堵IP地址等更严厉的办法。&lt;/em&gt;&lt;/p&gt;</description>
@@ -136,47 +141,47 @@ source .
     
     <item>
       <title>使用squid做网站的反向代理服务器</title>
-      <link>https://www.racksam.com/2013/09/28/squid-reverse-proxy/</link>
+      <link>https://racksam.github.io/2013/09/28/squid-reverse-proxy/</link>
       <pubDate>Sat, 28 Sep 2013 10:59:22 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2013/09/28/squid-reverse-proxy/</guid>
+      <guid>https://racksam.github.io/2013/09/28/squid-reverse-proxy/</guid>
       <description>&lt;p&gt;Squid就是Web服务器的大神。Squid的用途和用法实在是太丰富了。可以说如果有Squid做不到的，那一定是自己不会用而已。&lt;/p&gt;
 &lt;p&gt;草根站长们也许会碰到这样的某国特色的遭遇：由于自己的疏忽忘了提前重新备案，网站的ICP备案失效了。接着麻烦就来了：IDC机房根据某些政策将该域名劫持到了一个警示页面，提示该网站在备案重新完成之前无法访问。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>ShellScript读写MySQL数据库</title>
-      <link>https://www.racksam.com/2012/09/25/linux-commands-to-use-mysql/</link>
+      <link>https://racksam.github.io/2012/09/25/linux-commands-to-use-mysql/</link>
       <pubDate>Tue, 25 Sep 2012 09:49:14 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/25/linux-commands-to-use-mysql/</guid>
+      <guid>https://racksam.github.io/2012/09/25/linux-commands-to-use-mysql/</guid>
       <description>Linux使用shell命令，也可以查询MySQL数据库。某些时候比用php、perl等语言还要方便，在编写一些shell脚本程序时非常有用</description>
     </item>
     
     <item>
       <title>Linux下查看硬件信息</title>
-      <link>https://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</link>
+      <link>https://racksam.github.io/2012/09/24/linux-command-to-check-hardware-information/</link>
       <pubDate>Mon, 24 Sep 2012 09:49:14 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/24/linux-command-to-check-hardware-information/</guid>
+      <guid>https://racksam.github.io/2012/09/24/linux-command-to-check-hardware-information/</guid>
       <description>Linux下多数硬件信息都可以通过命令行查看。 尤其对于远程管理服务器特别有用，例如查询Dell服务器的序列号。 #查看产品信息： dmidecode | grep &amp;#34;Product&amp;#34; #查看</description>
     </item>
     
     <item>
       <title>Linux删除某日以前旧文件的命令</title>
-      <link>https://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</link>
+      <link>https://racksam.github.io/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</link>
       <pubDate>Sun, 23 Sep 2012 09:49:14 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</guid>
+      <guid>https://racksam.github.io/2012/09/23/linux-command-to-delete-the-files-before-n-days-ago/</guid>
       <description>删除某日以前的且文件名满足一定条件的旧文件 #在使用-exec参数时，必须以“\;”结尾,否则命令将无法执行 # #删除10天以前文件结尾为.lo</description>
     </item>
     
     <item>
       <title>Linux下使用wondershaper限制网速</title>
-      <link>https://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
+      <link>https://racksam.github.io/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
       <pubDate>Sat, 22 Sep 2012 09:41:23 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
+      <guid>https://racksam.github.io/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
       <description>&lt;p&gt;Linux下主要是使用tc工具来进行限速。不过tc用起来真是不容易，参数非常多且很难懂，要想用好的话很耗时间。&lt;/p&gt;
 &lt;p&gt;推荐一个老外写的脚本wondershaper，简单易用，也是很好的tc参考样例。
 虽然脚本早就不更新了，但是在CentOS6.2 64bit下验证仍可以用。
@@ -188,19 +193,19 @@ source .
     
     <item>
       <title>Linux下wget下载整个FTP目录</title>
-      <link>https://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</link>
+      <link>https://racksam.github.io/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</link>
       <pubDate>Sat, 01 Sep 2012 21:43:08 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</guid>
+      <guid>https://racksam.github.io/2012/09/01/using-wget-to-recursively-download-whole-ftp-directories/</guid>
       <description>Linux下可以使用以下命令，下载远端FTP目录下所有的文件，递归所有子目录。对服务器迁移很有用。 wget -nH -m --ftp-user=your_username --ftp-password=your_password ftp://your_ftp_host/* 解释： -nH：不创建以主机名命</description>
     </item>
     
     <item>
       <title>rsync服务器配置</title>
-      <link>https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/</link>
+      <link>https://racksam.github.io/2012/03/21/running-rsync-as-a-daemon/</link>
       <pubDate>Wed, 21 Mar 2012 21:43:08 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/03/21/running-rsync-as-a-daemon/</guid>
+      <guid>https://racksam.github.io/2012/03/21/running-rsync-as-a-daemon/</guid>
       <description>&lt;p&gt;rsync是Linux下小巧却非常高效的文件同步工具，常被用于文件备份。rsync既可以作为单个命令在本地两个目录之间进行文件同步，也可以应用于CS架构：即在服务器上用rsync的守候进程模式启动一个rsync服务，而其它的客户端主机使用rsync命令，与rsync服务器之间进行同步。&lt;/p&gt;
 &lt;p&gt;虽然也可以通过samba或者nfs等服务将其它Linux需要同步的目录mount到本地的一个目录，然后使用rsync命令进行本地目录间的同步，但是从效率以及管理方便程度方面考虑，兔大侠并不推荐这种方式。如果是主机之间的同步，首选还是应该是用rsync的守候进程模式。&lt;/p&gt;
 &lt;p&gt;rsync可以通过yum install rsync或者源代码编译方式来进行安装。不论哪种方式，都只是安装在系统上安装了rsync命令，服务器模式的相关配置只能自己动手。&lt;/p&gt;</description>
@@ -208,29 +213,29 @@ source .
     
     <item>
       <title>快速克隆MySQL数据库的方法</title>
-      <link>https://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</link>
+      <link>https://racksam.github.io/2011/11/03/how-to-clone-mysql-database-on-linux/</link>
       <pubDate>Thu, 03 Nov 2011 21:33:53 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/11/03/how-to-clone-mysql-database-on-linux/</guid>
+      <guid>https://racksam.github.io/2011/11/03/how-to-clone-mysql-database-on-linux/</guid>
       <description>某些时候，例如为了搭建一个测试环境，或者克隆一个网站，需要复制一个已存在的mysql数据库。使用以下方法，可以非常简单地实现。 假设已经存在的</description>
     </item>
     
     <item>
       <title>几个非常好用的WordPress插件</title>
-      <link>https://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</link>
+      <link>https://racksam.github.io/2011/11/02/good-plugins-for-wordpress/</link>
       <pubDate>Wed, 02 Nov 2011 21:04:34 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/11/02/good-plugins-for-wordpress/</guid>
+      <guid>https://racksam.github.io/2011/11/02/good-plugins-for-wordpress/</guid>
       <description>&lt;p&gt;无论是搭建中小企业的网站，还是创建个人博客，WordPress都可以轻松胜任。除了其本身优秀的设计，无数各种各样为WordPress编写的扩展插件也是大家选择用它的重要原因。&lt;/p&gt;
 &lt;p&gt;最近为了搭建网站，兔哥花了不少时间，仔细挑选了几个功能扩展、SEO、安全增强方面的WordPress插件。功能强大，超级好用。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS下安装AWStats日志分析软件</title>
-      <link>https://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</link>
+      <link>https://racksam.github.io/2011/11/01/how-to-install-awstats-on-linux/</link>
       <pubDate>Tue, 01 Nov 2011 21:04:34 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/11/01/how-to-install-awstats-on-linux/</guid>
+      <guid>https://racksam.github.io/2011/11/01/how-to-install-awstats-on-linux/</guid>
       <description>&lt;p&gt;AWStats是一个Perl语言写的日志分析工具，最常见的是应用于Web日志分析。类似的软件还有更老牌的Webalizer，不过这几年AWStats似乎更强势一些。&lt;/p&gt;
 &lt;p&gt;虽然Google Analytics这样的网站访问分析服务可以非常有效地帮助站长掌握网站访问量，但是它的局限性也是显而易见的：由于Google Analytics这类服务的原理是客户在浏览页面的同时，触发页面里埋入的js代码来更新服务器上的计数程序，因此那些没有埋入该js计数代码的页面或者js没法执行的请求（如来自wget的请求、爬虫等），都无法被记录下来。这种依赖于客户行为的页面计数，更适合市场营销人员进行网站访问量分析。&lt;/p&gt;
 &lt;p&gt;而AWStats的原理是读取并计算web服务器所产生的access log文件，因此能够对所有的请求记录做彻底的分析。包括所有的文件下载，各类爬虫的访问都能毫无遗漏的被记录下来。如果要进行网站压力分析，网站调优，SEO分析等技术性的工作，AWStats之类的日志分析软件是不可缺少的。&lt;/p&gt;</description>
@@ -238,10 +243,10 @@ source .
     
     <item>
       <title>CentOS 5.7 完美安装 Oracle 10g</title>
-      <link>https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/</link>
+      <link>https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/</link>
       <pubDate>Sun, 09 Oct 2011 18:53:24 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/10/09/oracle-db-10g-installation-on-centos-5/</guid>
+      <guid>https://racksam.github.io/2011/10/09/oracle-db-10g-installation-on-centos-5/</guid>
       <description>&lt;p&gt;虽然CentOS 6已经推出，但如果是安装Oracle 10g，尤其是用于生产环境的话，还是推荐使用CentOS 5。毕竟Oracle 10g是比较老的一个软件版本，版本太高的Linux操作系统未必适合它。兔哥使用的是CentOS 5的最新版5.7。&lt;/p&gt;
 &lt;h2 id=&#34;安装环境&#34;&gt;安装环境：&lt;/h2&gt;
 &lt;ul&gt;
@@ -253,20 +258,20 @@ source .
     
     <item>
       <title>小公司慎用RedHat集群</title>
-      <link>https://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</link>
+      <link>https://racksam.github.io/2011/09/02/cluster-troubles-for-small-company/</link>
       <pubDate>Fri, 02 Sep 2011 19:52:53 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/09/02/cluster-troubles-for-small-company/</guid>
+      <guid>https://racksam.github.io/2011/09/02/cluster-troubles-for-small-company/</guid>
       <description>&lt;p&gt;“小公司，别折腾什么集群了。。” –by 兔大侠&lt;/p&gt;
 &lt;p&gt;“集群就意味用高额的软硬件投入换来高可靠性”。随便到网上一搜，基本上都是这样的观点。很多系统管理员也理所当然的将集群等同于高可靠性。我一直以来也是这样被洗脑了，直到某个周日的夜里碰到一个严重的集群问题才让我清醒一些。那次差点就酿成核心数据的灾难性事故，也差点让我心脏崩溃。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>CentOS下配置vncserver</title>
-      <link>https://www.racksam.com/2011/06/10/centos-vncserver-setup/</link>
+      <link>https://racksam.github.io/2011/06/10/centos-vncserver-setup/</link>
       <pubDate>Fri, 10 Jun 2011 19:43:54 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/06/10/centos-vncserver-setup/</guid>
+      <guid>https://racksam.github.io/2011/06/10/centos-vncserver-setup/</guid>
       <description>&lt;p&gt;多数情况下远程管理Linux并不需要X-window界面，但是不排除也有特殊情况下需要登录到远程服务器的图形化界面。例如远程安装Oracle数据库服务器。&lt;/p&gt;
 &lt;p&gt;Linux下vncserver提供了一个很好的接入图形化界面的方式。它以服务进程的方式存在，因此服务器是否是以level5启动的，并不会影响vnc的使用。当然，前提是linux服务器上安装了必要的x-window及gnome或kde等图形化界面所需要软件包。&lt;/p&gt;
 &lt;p&gt;安装配置VNC服务器及客户端的步骤如下：&lt;/p&gt;</description>
@@ -274,19 +279,19 @@ source .
     
     <item>
       <title>Linux 虚拟机 扩展空逻辑卷间（LVM）</title>
-      <link>https://www.racksam.com/2011/06/09/extend-linux-lvm/</link>
+      <link>https://racksam.github.io/2011/06/09/extend-linux-lvm/</link>
       <pubDate>Thu, 09 Jun 2011 18:53:24 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/06/09/extend-linux-lvm/</guid>
+      <guid>https://racksam.github.io/2011/06/09/extend-linux-lvm/</guid>
       <description>在VMware安装的虚拟机Linux，扩展LVM的操作过程如下。 虚拟机停机状态下，编辑虚拟机的硬盘设置，通过修改参数把原来硬盘加大 重启，进入</description>
     </item>
     
     <item>
       <title>Linux下java程序启动脚本（可做开机自启动Service脚本）</title>
-      <link>https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</link>
+      <link>https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/</link>
       <pubDate>Wed, 08 Jun 2011 14:22:13 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2011/06/08/linux-shell-script-run-java-service/</guid>
+      <guid>https://racksam.github.io/2011/06/08/linux-shell-script-run-java-service/</guid>
       <description>Java项目开发过程中经常会碰到将Java应用程序布置到Linux下的需求，很多时候还有系统开机自动启动的要求。这里我整理了一个简单明了的版</description>
     </item>
     

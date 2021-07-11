@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Racksam</title>
-    <link>https://www.racksam.com/categories/android/</link>
+    <link>https://racksam.github.io/categories/android/</link>
     <description>Recent content in Android on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2016 15:11:59 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/categories/android/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 18 Dec 2016 15:11:59 +0000</lastBuildDate><atom:link href="https://racksam.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android Study Resources</title>
-      <link>https://www.racksam.com/2016/12/18/android-study-resources/</link>
+      <link>https://racksam.github.io/2016/12/18/android-study-resources/</link>
       <pubDate>Sun, 18 Dec 2016 15:11:59 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2016/12/18/android-study-resources/</guid>
+      <guid>https://racksam.github.io/2016/12/18/android-study-resources/</guid>
       <description>&lt;p&gt;收集整理一些常用的Android开发资源&lt;/p&gt;
 &lt;h2 id=&#34;入门&#34;&gt;入门&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;http://code.tutsplus.com/series/learn-android-sdk-development-from-scratch--mobile-14542&#34;&gt;http://code.tutsplus.com/series/learn-android-sdk-development-from-scratch--mobile-14542&lt;/a&gt;&lt;/p&gt;

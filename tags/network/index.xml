@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on Racksam</title>
-    <link>https://www.racksam.com/tags/network/</link>
+    <link>https://racksam.github.io/tags/network/</link>
     <description>Recent content in Network on Racksam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Sep 2012 09:41:23 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.racksam.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 22 Sep 2012 09:41:23 +0000</lastBuildDate><atom:link href="https://racksam.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux下使用wondershaper限制网速</title>
-      <link>https://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
+      <link>https://racksam.github.io/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</link>
       <pubDate>Sat, 22 Sep 2012 09:41:23 +0000</pubDate>
       
-      <guid>https://www.racksam.com/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
+      <guid>https://racksam.github.io/2012/09/22/use-wondershaper-to-limit-network-connection-speed/</guid>
       <description>&lt;p&gt;Linux下主要是使用tc工具来进行限速。不过tc用起来真是不容易，参数非常多且很难懂，要想用好的话很耗时间。&lt;/p&gt;
 &lt;p&gt;推荐一个老外写的脚本wondershaper，简单易用，也是很好的tc参考样例。
 虽然脚本早就不更新了，但是在CentOS6.2 64bit下验证仍可以用。
