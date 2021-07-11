@@ -396,7 +396,7 @@ Web项目中如果要实现全文检索，最主流的做法是Web项目以外�
 <p>通过网上的查找，发现了很多人都推荐的一个中文分词解决方案：<a href="http://www.xunsearch.com/scws">SCWS</a>，以及实现调用这个分词引擎的PostgreSQL的扩展插件：<a href="http://pgxn.org/dist/zhparser/">zhparser</a>。经过反复测试，终于实现了Rails4+pg_search来进行中文全文检索。</p>
 <p>以下是CentOS6下SCWS+zhparser+rails4+pg_search+PostgreSQL的安装配置和开发的要点总结。另外，我也提供了一个完整的样例代码，以供参考</p>
 <h2 id="二安装scws">二、安装SCWS</h2>
-<p>前提：正确安装PostgreSQL数据库。请参照<a href="http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/">CentOS6下最新版PostgreSQL的安装及设置</a></p>
+<p>前提：正确安装PostgreSQL数据库。请参照<a href="https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/">CentOS6下最新版PostgreSQL的安装及设置</a></p>
 <ol>
 <li>
 <p>确保Linux系统中已经安装了gcc编译环境，如果没有安装，CentOS的话可以使用yum工具安装需要的编译环境</p>
@@ -516,7 +516,7 @@ end
 <p>对程序员来说可以运行的代码是最好的参考文档。这里我开发了一个使用pg_search中文全文检索的样例。
 源代码地址：<a href="https://github.com/racksam/pg_search_chinese_japanese_demo">https://github.com/racksam/pg_search_chinese_japanese_demo</a></p>
 <p><strong>注意: 这套代码能够运行的前提是按照以上的文档，正确安装并配置好PostgreSQL + SCWS + zhparser。</strong></p>
-<p>在线演示：<a href="http://demo.racksam.com/pg_search_chinese_japanese_demo/">Full-text Searching Demo [Chinese/English/Japanese]</a></p>
+<p>在线演示：<a href="pg_search_chinese_japanese_demo/">Full-text Searching Demo [Chinese/English/Japanese]</a></p>
 <h2 id="六todos">六、TODOs</h2>
 <p>性能测试</p>
 <h2 id="参考资源">参考资源</h2>
@@ -527,8 +527,8 @@ end
 <li><a href="http://rachbelaid.com/postgres-full-text-search-is-good-enough/">Postgres full-text search is Good Enough!</a></li>
 <li><a href="https://yq.aliyun.com/articles/7730">使用PostgreSQL zhparser时不可不知的几个参数</a></li>
 <li><a href="http://blog.chinaunix.net/uid-20726500-id-4820580">PostgreSQL的全文检索插件zhparser的中文分词效果</a></li>
-<li><a href="http://www.racksam.com/2016/04/02/install-postgresql9-with-yum-on-centos6/">CentOS6下最新版PostgreSQL的安装及设置</a></li>
-<li><a href="http://www.racksam.com/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/">Centos6 下安装rbenv + ruby + rails + puma + ngnix</a></li>
+<li><a href="https://racksam.github.io/2016/04/02/install-postgresql9-with-yum-on-centos6/">CentOS6下最新版PostgreSQL的安装及设置</a></li>
+<li><a href="https://racksam.github.io/2016/03/01/install-rbenv-ruby-rails-nginx-puma-on-centos6/">Centos6 下安装rbenv + ruby + rails + puma + ngnix</a></li>
 </ul>
         </div>
         <footer class="article-footer">
